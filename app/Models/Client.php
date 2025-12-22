@@ -62,4 +62,14 @@ class Client extends Model
     {
         return $this->belongsTo(Branch::class);
     }
+
+    /**
+     * Doctors assigned to this client
+     */
+    public function doctors(): BelongsToMany
+    {
+        return $this->belongsToMany(Doctor::class, 'client_doctor')
+            ->withPivot(['assigned_date', 'notes'])
+            ->withTimestamps();
+    }
 }

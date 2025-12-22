@@ -176,6 +176,14 @@ class ClientResource extends Resource
                             ->searchable()
                             ->preload()
                             ->helperText('Select a carer to be responsible for this client'),
+                        Forms\Components\Select::make('doctors')
+                            ->label('Assigned Doctors')
+                            ->relationship('doctors', 'name', fn ($query) => $query->where('is_active', true))
+                            ->multiple()
+                            ->searchable()
+                            ->preload()
+                            ->helperText('Select one or more doctors for this client')
+                            ->columnSpanFull(),
                         Forms\Components\Select::make('guardians')
                             ->label('Guardians')
                             ->relationship('guardians', 'name')
@@ -236,6 +244,12 @@ class ClientResource extends Resource
                     ->label('Officer in Charge')
                     ->sortable()
                     ->searchable()
+                    ->toggleable(),
+                Tables\Columns\TextColumn::make('doctors.name')
+                    ->label('Doctors')
+                    ->badge()
+                    ->color('success')
+                    ->separator(',')
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('guardians.name')
                     ->label('Guardians')
