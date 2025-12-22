@@ -47,7 +47,7 @@ return [
     'resources' => [
         'label' => 'Media',
         'plural_label' => 'Media',
-        'navigation_group' => null,
+        'navigation_group' => 'Media Management',
         'cluster' => null,
         'navigation_label' => 'Media Library',
         'navigation_icon' => 'heroicon-o-photo',
