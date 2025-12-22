@@ -24,6 +24,7 @@ class Client extends Model
         'waist_circumference',
         'hip_circumference',
         'officer_in_charge_id',
+        'branch_id',
     ];
 
     protected $casts = [
@@ -52,5 +53,13 @@ class Client extends Model
     {
         return $this->belongsToMany(User::class, 'client_guardian')
             ->withTimestamps();
+    }
+
+    /**
+     * Branch relationship
+     */
+    public function branch(): BelongsTo
+    {
+        return $this->belongsTo(Branch::class);
     }
 }

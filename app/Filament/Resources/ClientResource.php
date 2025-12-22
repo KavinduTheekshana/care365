@@ -157,8 +157,15 @@ class ClientResource extends Resource
                     ])
                     ->columns(3),
 
-                Forms\Components\Section::make('Care Assignment')
+                Forms\Components\Section::make('Branch & Care Assignment')
                     ->schema([
+                        Forms\Components\Select::make('branch_id')
+                            ->label('Branch')
+                            ->relationship('branch', 'name', fn ($query) => $query->where('is_active', true))
+                            ->searchable()
+                            ->preload()
+                            ->required()
+                            ->helperText('Assign client to a branch'),
                         Forms\Components\Select::make('officer_in_charge_id')
                             ->label('Officer in Charge (Carer)')
                             ->options(function () {
@@ -175,7 +182,8 @@ class ClientResource extends Resource
                             ->multiple()
                             ->searchable()
                             ->preload()
-                            ->helperText('Select one or more guardians for this client'),
+                            ->helperText('Select one or more guardians for this client')
+                            ->columnSpanFull(),
                     ])
                     ->columns(2),
             ]);
@@ -218,10 +226,17 @@ class ClientResource extends Resource
                     ->numeric()
                     ->sortable()
                     ->toggleable(),
+                Tables\Columns\TextColumn::make('branch.name')
+                    ->label('Branch')
+                    ->badge()
+                    ->color('primary')
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('officerInCharge.name')
                     ->label('Officer in Charge')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('guardians.name')
                     ->label('Guardians')
                     ->badge()
@@ -238,6 +253,10 @@ class ClientResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
+                Tables\Filters\SelectFilter::make('branch')
+                    ->relationship('branch', 'name')
+                    ->label('Branch')
+                    ->preload(),
                 Tables\Filters\SelectFilter::make('gender')
                     ->options([
                         'male' => 'Male',

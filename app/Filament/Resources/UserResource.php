@@ -47,7 +47,7 @@ class UserResource extends Resource
                     ])
                     ->columns(2),
 
-                Forms\Components\Section::make('Role Assignment')
+                Forms\Components\Section::make('Role & Branch Assignment')
                     ->schema([
                         Forms\Components\Select::make('role')
                             ->label('User Role')
@@ -77,7 +77,14 @@ class UserResource extends Resource
                                 }
                             })
                             ->dehydrated(false),
-                    ]),
+                        Forms\Components\Select::make('branch_id')
+                            ->label('Branch')
+                            ->relationship('branch', 'name', fn ($query) => $query->where('is_active', true))
+                            ->searchable()
+                            ->preload()
+                            ->helperText('Assign user to a branch'),
+                    ])
+                    ->columns(2),
             ]);
     }
 
@@ -103,11 +110,18 @@ class UserResource extends Resource
                     ])
                     ->searchable()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('branch.name')
+                    ->label('Branch')
+                    ->badge()
+                    ->color('primary')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('email_verified_at')
                     ->label('Verified')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(),
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Joined')
                     ->dateTime()
