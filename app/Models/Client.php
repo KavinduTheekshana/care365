@@ -72,4 +72,12 @@ class Client extends Model
             ->withPivot(['assigned_date', 'notes'])
             ->withTimestamps();
     }
+
+    /**
+     * Medications assigned to this client
+     */
+    public function medications()
+    {
+        return $this->hasMany(Medication::class);
+    }
 }
