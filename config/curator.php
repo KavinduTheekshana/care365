@@ -52,7 +52,7 @@ return [
         'navigation_label' => 'Media Library',
         'navigation_icon' => 'heroicon-o-photo',
         'navigation_sort' => 10,
-        'navigation_count_badge' => false,
+        'navigation_count_badge' => true,
         'resource' => \App\Filament\Resources\MediaResource::class,
     ],
     'should_preserve_filenames' => false,
@@ -66,5 +66,16 @@ return [
     'multi_select_key' => 'metaKey',
     'table' => [
         'layout' => 'grid',
+    ],
+    'picker' => [
+        'default_view' => 'grid',
+        'columns' => [
+            'default' => 1,
+            'sm' => 2,
+            'md' => 3,
+            'lg' => 4,
+            'xl' => 5,
+            '2xl' => 6,
+        ],
     ],
 ];

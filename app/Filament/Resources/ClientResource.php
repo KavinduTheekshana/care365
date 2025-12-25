@@ -33,13 +33,30 @@ class ClientResource extends Resource
                             ->label('Client Photo')
                             ->image()
                             ->imageEditor()
+                            ->imageEditorMode(2)
                             ->imageEditorAspectRatios([
+                                null,
                                 '1:1',
                                 '4:3',
+                                '16:9',
                             ])
+                            ->imageEditorViewportWidth('1024')
+                            ->imageEditorViewportHeight('1024')
+                            ->imageResizeMode('cover')
+                            ->imageCropAspectRatio('1:1')
+                            ->imageResizeTargetWidth('1024')
+                            ->imageResizeTargetHeight('1024')
                             ->directory('clients')
                             ->visibility('public')
+                            ->disk('public')
                             ->maxSize(5120)
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/gif'])
+                            ->downloadable()
+                            ->openable()
+                            ->previewable()
+                            ->imagePreviewHeight('250')
+                            ->uploadingMessage('Uploading photo...')
+                            ->helperText('Upload a client photo. Click to crop/edit. Max 5MB. Recommended: 1024x1024px')
                             ->columnSpanFull(),
                         Forms\Components\TextInput::make('reg_number')
                             ->label('Registration Number')
@@ -204,7 +221,19 @@ class ClientResource extends Resource
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Photo')
                     ->circular()
-                    ->defaultImageUrl(url('/images/default-avatar.png'))
+                    ->size(60)
+                    ->defaultImageUrl(function ($record) {
+                        // Generate avatar with initials and color based on name
+                        return 'https://ui-avatars.com/api/?' . http_build_query([
+                            'name' => $record->name,
+                            'color' => 'FFFFFF',
+                            'background' => substr(md5($record->name), 0, 6),
+                            'font-size' => 0.4,
+                            'bold' => true,
+                            'length' => 2,
+                            'rounded' => true,
+                        ]);
+                    })
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('reg_number')
                     ->label('Reg. Number')
@@ -298,6 +327,7 @@ class ClientResource extends Resource
     {
         return [
             RelationManagers\MedicationsRelationManager::class,
+            RelationManagers\OutingsRelationManager::class,
         ];
     }
 

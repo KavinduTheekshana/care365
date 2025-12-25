@@ -80,4 +80,12 @@ class Client extends Model
     {
         return $this->hasMany(Medication::class);
     }
+
+    /**
+     * Client outings
+     */
+    public function outings()
+    {
+        return $this->hasMany(ClientOuting::class);
+    }
 }
