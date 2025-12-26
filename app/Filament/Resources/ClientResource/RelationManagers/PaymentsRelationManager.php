@@ -148,7 +148,7 @@ class PaymentsRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager']))
+                    ->visible(fn () => auth()->user()->hasRole('admin'))
                     ->mutateFormDataUsing(function (array $data): array {
                         $data['branch_id'] = $this->getOwnerRecord()->branch_id;
                         $data['created_by'] = auth()->id();
@@ -160,7 +160,7 @@ class PaymentsRelationManager extends RelationManager
                     ->label('Send Receipt')
                     ->icon('heroicon-o-envelope')
                     ->color('success')
-                    ->visible(fn (Payment $record) => auth()->user()->hasAnyRole(['admin', 'manager']) && !$record->email_sent)
+                    ->visible(fn (Payment $record) => auth()->user()->hasRole('admin') && !$record->email_sent)
                     ->requiresConfirmation()
                     ->modalHeading('Send Payment Receipt')
                     ->modalDescription(fn (Payment $record) => 'Send payment receipt email to the guardian of ' . $record->client->name . '?')
@@ -205,14 +205,14 @@ class PaymentsRelationManager extends RelationManager
                     }),
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make()
-                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
+                    ->visible(fn () => auth()->user()->hasRole('admin')),
                 Tables\Actions\DeleteAction::make()
-                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
+                    ->visible(fn () => auth()->user()->hasRole('admin')),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
-                        ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
+                        ->visible(fn () => auth()->user()->hasRole('admin')),
                 ]),
             ]);
     }
