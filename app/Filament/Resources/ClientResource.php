@@ -371,6 +371,7 @@ class ClientResource extends Resource
             RelationManagers\DocumentsRelationManager::class,
             RelationManagers\MedicationsRelationManager::class,
             RelationManagers\OutingsRelationManager::class,
+            RelationManagers\PaymentsRelationManager::class,
         ];
     }
 

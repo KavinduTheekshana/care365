@@ -112,4 +112,12 @@ class Client extends Model
     {
         return $this->hasMany(DoctorNote::class);
     }
+
+    /**
+     * Payments for this client
+     */
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }
