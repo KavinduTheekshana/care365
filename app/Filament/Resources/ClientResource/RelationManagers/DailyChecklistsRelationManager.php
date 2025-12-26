@@ -101,16 +101,26 @@ class DailyChecklistsRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(function ($query) {
+                // Careers can only see today's tasks
+                if (auth()->user()->hasRole('career')) {
+                    $query->where('date', today());
+                }
+                // Admins and managers can see all dates
+            })
             ->columns([
                 Tables\Columns\TextColumn::make('date')
                     ->label('Date')
                     ->date('M d, Y')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable()
+                    ->toggledHiddenByDefault(fn () => auth()->user()->hasRole('career')),
                 Tables\Columns\TextColumn::make('day_of_week')
                     ->label('Day')
                     ->badge()
-                    ->sortable(),
+                    ->sortable()
+                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
                 Tables\Columns\TextColumn::make('category')
                     ->label('Category')
                     ->badge()
@@ -152,7 +162,8 @@ class DailyChecklistsRelationManager extends RelationManager
                             $date = now()->subDays($day);
                             return [$date->format('Y-m-d') => $date->format('M d, Y (l)')];
                         });
-                    }),
+                    })
+                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
                 Tables\Filters\SelectFilter::make('category')
                     ->options([
                         'DRESSING & PERSONAL HYGIENE' => 'Dressing & Personal Hygiene',
@@ -168,9 +179,29 @@ class DailyChecklistsRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\Action::make('generate_today_checklist')
-                    ->label('Generate Today\'s Checklist')
+                    ->label(function (RelationManager $livewire) {
+                        $client = $livewire->getOwnerRecord();
+                        $todayExists = ClientDailyChecklist::where('client_id', $client->id)
+                            ->where('date', today())
+                            ->exists();
+
+                        return $todayExists ? 'Today\'s Checklist Already Generated' : 'Generate Today\'s Checklist';
+                    })
                     ->icon('heroicon-o-document-plus')
-                    ->color('success')
+                    ->color(function (RelationManager $livewire) {
+                        $client = $livewire->getOwnerRecord();
+                        $todayExists = ClientDailyChecklist::where('client_id', $client->id)
+                            ->where('date', today())
+                            ->exists();
+
+                        return $todayExists ? 'gray' : 'success';
+                    })
+                    ->disabled(function (RelationManager $livewire) {
+                        $client = $livewire->getOwnerRecord();
+                        return ClientDailyChecklist::where('client_id', $client->id)
+                            ->where('date', today())
+                            ->exists();
+                    })
                     ->action(function (RelationManager $livewire) {
                         $client = $livewire->getOwnerRecord();
                         $today = now()->toDateString();
