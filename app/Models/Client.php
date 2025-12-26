@@ -96,4 +96,12 @@ class Client extends Model
     {
         return $this->hasMany(ClientDocument::class);
     }
+
+    /**
+     * Daily checklists
+     */
+    public function dailyChecklists()
+    {
+        return $this->hasMany(ClientDailyChecklist::class);
+    }
 }

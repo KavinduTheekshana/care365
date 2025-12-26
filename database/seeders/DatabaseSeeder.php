@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             DoctorSeeder::class,
             MedicationSeeder::class,
             ClientOutingSeeder::class,
+            ClientDailyChecklistSeeder::class,
         ]);
 
         $this->command->newLine();
