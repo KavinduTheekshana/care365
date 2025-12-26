@@ -367,6 +367,7 @@ class ClientResource extends Resource
     {
         return [
             RelationManagers\DailyChecklistsRelationManager::class,
+            RelationManagers\DoctorNotesRelationManager::class,
             RelationManagers\DocumentsRelationManager::class,
             RelationManagers\MedicationsRelationManager::class,
             RelationManagers\OutingsRelationManager::class,

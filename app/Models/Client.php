@@ -104,4 +104,12 @@ class Client extends Model
     {
         return $this->hasMany(ClientDailyChecklist::class);
     }
+
+    /**
+     * Doctor notes for this client
+     */
+    public function doctorNotes()
+    {
+        return $this->hasMany(DoctorNote::class);
+    }
 }
