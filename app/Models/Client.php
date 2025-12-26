@@ -88,4 +88,12 @@ class Client extends Model
     {
         return $this->hasMany(ClientOuting::class);
     }
+
+    /**
+     * Client documents
+     */
+    public function documents()
+    {
+        return $this->hasMany(ClientDocument::class);
+    }
 }
