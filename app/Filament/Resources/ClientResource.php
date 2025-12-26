@@ -178,20 +178,45 @@ class ClientResource extends Resource
                     ->schema([
                         Forms\Components\Select::make('branch_id')
                             ->label('Branch')
-                            ->relationship('branch', 'name', fn ($query) => $query->where('is_active', true))
-                            ->searchable()
-                            ->preload()
-                            ->required()
-                            ->helperText('Assign client to a branch'),
-                        Forms\Components\Select::make('officer_in_charge_id')
-                            ->label('Officer in Charge (Carer)')
-                            ->options(function () {
-                                return User::whereHas('roles', function ($query) {
-                                    $query->where('name', 'career');
-                                })->pluck('name', 'id');
+                            ->relationship('branch', 'name', function ($query) {
+                                $user = auth()->user();
+                                $query->where('is_active', true);
+
+                                // Career and manager users can only select their own branch
+                                if ($user->hasRole('career') || $user->hasRole('manager')) {
+                                    $query->where('id', $user->branch_id);
+                                }
                             })
                             ->searchable()
                             ->preload()
+                            ->required()
+                            ->default(function () {
+                                $user = auth()->user();
+                                // Auto-select branch for career and manager users
+                                if ($user->hasRole('career') || $user->hasRole('manager')) {
+                                    return $user->branch_id;
+                                }
+                                return null;
+                            })
+                            ->disabled(fn () => auth()->user()->hasRole('career') || auth()->user()->hasRole('manager'))
+                            ->dehydrated()
+                            ->helperText('Assign client to a branch'),
+                        Forms\Components\Select::make('officer_in_charge_id')
+                            ->label('Officer in Charge (Carer)')
+                            ->options(function (callable $get) {
+                                $branchId = $get('branch_id');
+
+                                return User::whereHas('roles', function ($query) {
+                                    $query->where('name', 'career');
+                                })
+                                ->when($branchId, function ($query) use ($branchId) {
+                                    $query->where('branch_id', $branchId);
+                                })
+                                ->pluck('name', 'id');
+                            })
+                            ->searchable()
+                            ->preload()
+                            ->reactive()
                             ->helperText('Select a carer to be responsible for this client'),
                         Forms\Components\Select::make('doctors')
                             ->label('Assigned Doctors')
@@ -217,6 +242,21 @@ class ClientResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(function (Builder $query) {
+                $user = auth()->user();
+
+                // If user is a career staff, only show clients from their branch
+                if ($user->hasRole('career')) {
+                    $query->where('branch_id', $user->branch_id);
+                }
+
+                // Managers also see only their branch clients
+                if ($user->hasRole('manager')) {
+                    $query->where('branch_id', $user->branch_id);
+                }
+
+                // Admins see all clients (no filter)
+            })
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Photo')
