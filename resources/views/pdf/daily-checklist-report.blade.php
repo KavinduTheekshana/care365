@@ -136,7 +136,7 @@
                     <td><span class="category-badge">{{ $record->category }}</span></td>
                     <td>{{ $record->task_name }}</td>
                     <td class="{{ $record->completed ? 'completed' : 'pending' }}">
-                        {{ $record->completed ? '✓ Done' : '✗ Pending' }}
+                        {{ $record->completed ? 'Done' : 'Pending' }}
                     </td>
                     <td>{{ $record->completedBy->name ?? '-' }}</td>
                     <td>{{ $record->completed_at ? $record->completed_at->format('H:i') : '-' }}</td>

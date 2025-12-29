@@ -54,7 +54,10 @@ class DailyChecklistReportResource extends Resource
                 Tables\Columns\TextColumn::make('client.name')
                     ->label('Client')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->url(fn ($record) => \App\Filament\Pages\ClientChecklistDetail::getUrl(['client' => $record->client_id]))
+                    ->color('primary')
+                    ->weight('bold'),
                 Tables\Columns\TextColumn::make('client.reg_number')
                     ->label('Reg. Number')
                     ->searchable()
@@ -240,7 +243,8 @@ class DailyChecklistReportResource extends Resource
                         );
                     }),
             ])
-            ->defaultSort('date', 'desc');
+            ->defaultSort('date', 'desc')
+            ->defaultGroup('client.name');
     }
 
     public static function getPages(): array
