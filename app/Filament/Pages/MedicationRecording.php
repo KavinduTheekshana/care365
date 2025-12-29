@@ -60,7 +60,17 @@ class MedicationRecording extends Page implements HasForms, HasTable
                 ->form([
                     Select::make('client_id')
                         ->label('Client')
-                        ->options(Client::pluck('name', 'id'))
+                        ->options(function () {
+                            $user = auth()->user();
+                            $query = Client::query();
+
+                            // Managers can only see clients from their branch
+                            if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+                                $query->where('branch_id', $user->branch_id);
+                            }
+
+                            return $query->pluck('name', 'id');
+                        })
                         ->required()
                         ->searchable()
                         ->helperText('Select the client for export'),
@@ -130,7 +140,17 @@ class MedicationRecording extends Page implements HasForms, HasTable
                     ->afterStateUpdated(fn () => $this->resetTable()),
                 Select::make('selectedClient')
                     ->label('Client')
-                    ->options(Client::pluck('name', 'id'))
+                    ->options(function () {
+                        $user = auth()->user();
+                        $query = Client::query();
+
+                        // Managers can only see clients from their branch
+                        if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+                            $query->where('branch_id', $user->branch_id);
+                        }
+
+                        return $query->pluck('name', 'id');
+                    })
                     ->searchable()
                     ->placeholder('All Clients')
                     ->live()
@@ -196,9 +216,18 @@ class MedicationRecording extends Page implements HasForms, HasTable
                         Select::make('given_by')
                             ->label('Given By (Career)')
                             ->options(function () {
-                                return User::whereHas('roles', function ($query) {
-                                    $query->where('name', 'career');
-                                })->pluck('name', 'id');
+                                $user = auth()->user();
+
+                                $query = User::whereHas('roles', function ($roleQuery) {
+                                    $roleQuery->where('name', 'career');
+                                });
+
+                                // Managers can only see careers from their branch
+                                if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+                                    $query->where('branch_id', $user->branch_id);
+                                }
+
+                                return $query->pluck('name', 'id');
                             })
                             ->required()
                             ->searchable()
@@ -251,6 +280,7 @@ class MedicationRecording extends Page implements HasForms, HasTable
     protected function getTableQuery(): Builder
     {
         $date = $this->selectedDate ?? today()->toDateString();
+        $user = auth()->user();
 
         // Get all active medications
         $query = Medication::where('is_active', true)
@@ -259,6 +289,13 @@ class MedicationRecording extends Page implements HasForms, HasTable
                 $q->whereNull('end_date')
                     ->orWhere('end_date', '>=', $date);
             });
+
+        // Managers can only see medications for clients from their branch
+        if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+            $query->whereHas('client', function ($clientQuery) use ($user) {
+                $clientQuery->where('branch_id', $user->branch_id);
+            });
+        }
 
         // Filter by client if selected
         if ($this->selectedClient) {
