@@ -276,4 +276,9 @@ class ClientOutingResource extends Resource
             'edit' => Pages\EditClientOuting::route('/{record}/edit'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()->hasAnyRole(['admin', 'manager', 'career']);
+    }
 }
