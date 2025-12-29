@@ -80,9 +80,29 @@ class UserResource extends Resource
                         Forms\Components\Select::make('branch_id')
                             ->label('Branch')
                             ->relationship('branch', 'name', fn ($query) => $query->where('is_active', true))
+                            ->default(function () {
+                                $currentUser = auth()->user();
+                                // If manager (not admin), default to their branch
+                                if ($currentUser && $currentUser->hasRole('manager') && !$currentUser->hasRole('admin')) {
+                                    return $currentUser->branch_id;
+                                }
+                                return null;
+                            })
+                            ->disabled(function () {
+                                $currentUser = auth()->user();
+                                // Managers can't change the branch - it's always their branch
+                                return $currentUser && $currentUser->hasRole('manager') && !$currentUser->hasRole('admin');
+                            })
+                            ->dehydrated()
                             ->searchable()
                             ->preload()
-                            ->helperText('Assign user to a branch'),
+                            ->helperText(function () {
+                                $currentUser = auth()->user();
+                                if ($currentUser && $currentUser->hasRole('manager') && !$currentUser->hasRole('admin')) {
+                                    return 'Users will be assigned to your branch automatically';
+                                }
+                                return 'Assign user to a branch';
+                            }),
                     ])
                     ->columns(2),
             ]);
@@ -182,10 +202,18 @@ class UserResource extends Resource
 
         $user = auth()->user();
 
-        // Managers can't see or manage Admin users
+        // Managers can only see their own profile plus career, chef, and regular users from their branch (not admins or other managers)
         if ($user->hasRole('manager') && !$user->hasRole('admin')) {
-            $query->whereHas('roles', function ($q) {
-                $q->whereIn('name', ['manager', 'career', 'chef', 'user']);
+            $query->where(function ($q) use ($user) {
+                // Show logged-in manager's own profile
+                $q->where('id', $user->id)
+                    // OR show career, chef, and regular users from the same branch
+                    ->orWhere(function ($branchQuery) use ($user) {
+                        $branchQuery->where('branch_id', $user->branch_id)
+                            ->whereHas('roles', function ($roleQuery) {
+                                $roleQuery->whereIn('name', ['career', 'chef', 'user']);
+                            });
+                    });
             });
         }
 

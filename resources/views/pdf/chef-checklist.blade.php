@@ -95,16 +95,22 @@
             display: inline-block;
             position: relative;
             vertical-align: middle;
+            background-color: white;
+        }
+
+        .checkbox.checked {
+            background-color: #28a745;
+            border-color: #28a745;
         }
 
         .checkbox.checked::after {
-            content: '✓';
+            content: 'X';
             position: absolute;
-            top: -3px;
-            left: 2px;
-            font-size: 18px;
+            top: -1px;
+            left: 3px;
+            font-size: 12px;
             font-weight: bold;
-            color: #28a745;
+            color: white;
         }
 
         .signature-section {
@@ -320,7 +326,11 @@
         <div class="signature-box">
             <div class="signature-title">Chef Signature</div>
             <div class="signature-status {{ $checklist->chef_signed ? 'signed' : 'unsigned' }}">
-                {{ $checklist->chef_signed ? '✓ SIGNED' : '✗ NOT SIGNED' }}
+                @if($checklist->chef_signed)
+                    [YES] SIGNED
+                @else
+                    [NO] NOT SIGNED
+                @endif
             </div>
             @if($checklist->chef_signed && $checklist->chef_signed_at)
             <div style="font-size: 10px; color: #666; margin-top: 5px;">
@@ -333,7 +343,11 @@
         <div class="signature-box">
             <div class="signature-title">Manager Signature</div>
             <div class="signature-status {{ $checklist->manager_signed ? 'signed' : 'unsigned' }}">
-                {{ $checklist->manager_signed ? '✓ APPROVED' : '✗ PENDING' }}
+                @if($checklist->manager_signed)
+                    [YES] APPROVED
+                @else
+                    [NO] PENDING
+                @endif
             </div>
             @if($checklist->manager_signed && $checklist->manager_signed_at)
             <div style="font-size: 10px; color: #666; margin-top: 5px;">

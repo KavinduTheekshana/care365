@@ -46,7 +46,14 @@ class ChefChecklistResource extends Resource
 
                         Forms\Components\Select::make('chef_id')
                             ->label('Chef')
-                            ->relationship('chef', 'name')
+                            ->relationship(
+                                'chef',
+                                'name',
+                                fn($query) => $query->when(
+                                    auth()->user()->hasRole('manager') && !auth()->user()->hasRole('admin'),
+                                    fn($q) => $q->where('branch_id', auth()->user()->branch_id)
+                                )
+                            )
                             ->default(fn() => $isChef ? auth()->id() : null)
                             ->disabled(fn($operation) => $operation === 'edit' || $isChef)
                             ->dehydrated()
@@ -332,10 +339,20 @@ class ChefChecklistResource extends Resource
                 ]),
             ])
             ->modifyQueryUsing(function (Builder $query) {
+                $user = auth()->user();
+
                 // Chefs can only see their own checklists
-                if (auth()->user()->hasRole('chef') && !auth()->user()->hasAnyRole(['admin', 'manager'])) {
-                    $query->where('chef_id', auth()->id());
+                if ($user->hasRole('chef') && !$user->hasAnyRole(['admin', 'manager'])) {
+                    $query->where('chef_id', $user->id);
                 }
+
+                // Managers can only see checklists from chefs in their branch
+                if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+                    $query->whereHas('chef', function ($chefQuery) use ($user) {
+                        $chefQuery->where('branch_id', $user->branch_id);
+                    });
+                }
+
                 return $query;
             })
             ->defaultSort('date', 'desc');
