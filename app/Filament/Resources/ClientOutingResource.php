@@ -35,7 +35,13 @@ class ClientOutingResource extends Resource
                     ->schema([
                         Forms\Components\Select::make('client_id')
                             ->label('Client')
-                            ->relationship('client', 'name')
+                            ->relationship('client', 'name', function ($query) {
+                                $user = auth()->user();
+                                // Managers can only select clients from their branch
+                                if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+                                    $query->where('branch_id', $user->branch_id);
+                                }
+                            })
                             ->searchable()
                             ->preload()
                             ->required()
@@ -127,6 +133,15 @@ class ClientOutingResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(function (Builder $query) {
+                $user = auth()->user();
+                // Managers can only see outings for clients from their branch
+                if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+                    $query->whereHas('client', function ($clientQuery) use ($user) {
+                        $clientQuery->where('branch_id', $user->branch_id);
+                    });
+                }
+            })
             ->columns([
                 Tables\Columns\TextColumn::make('client.name')
                     ->label('Client')
@@ -197,7 +212,13 @@ class ClientOutingResource extends Resource
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('client')
-                    ->relationship('client', 'name')
+                    ->relationship('client', 'name', function ($query) {
+                        $user = auth()->user();
+                        // Managers can only see clients from their branch
+                        if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+                            $query->where('branch_id', $user->branch_id);
+                        }
+                    })
                     ->searchable()
                     ->preload(),
                 Tables\Filters\SelectFilter::make('status')

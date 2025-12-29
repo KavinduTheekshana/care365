@@ -49,10 +49,19 @@ class ChefChecklistResource extends Resource
                             ->relationship(
                                 'chef',
                                 'name',
-                                fn($query) => $query->when(
-                                    auth()->user()->hasRole('manager') && !auth()->user()->hasRole('admin'),
-                                    fn($q) => $q->where('branch_id', auth()->user()->branch_id)
-                                )
+                                function ($query) {
+                                    $user = auth()->user();
+
+                                    // Filter to show only users with 'chef' role
+                                    $query->whereHas('roles', function ($roleQuery) {
+                                        $roleQuery->where('name', 'chef');
+                                    });
+
+                                    // Managers can only select chefs from their branch
+                                    if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+                                        $query->where('branch_id', $user->branch_id);
+                                    }
+                                }
                             )
                             ->default(fn() => $isChef ? auth()->id() : null)
                             ->disabled(fn($operation) => $operation === 'edit' || $isChef)
@@ -255,7 +264,19 @@ class ChefChecklistResource extends Resource
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('chef')
-                    ->relationship('chef', 'name')
+                    ->relationship('chef', 'name', function ($query) {
+                        $user = auth()->user();
+
+                        // Filter to show only users with 'chef' role
+                        $query->whereHas('roles', function ($roleQuery) {
+                            $roleQuery->where('name', 'chef');
+                        });
+
+                        // Managers can only see chefs from their branch
+                        if ($user->hasRole('manager') && !$user->hasRole('admin')) {
+                            $query->where('branch_id', $user->branch_id);
+                        }
+                    })
                     ->searchable()
                     ->preload()
                     ->visible(fn() => auth()->user()->hasAnyRole(['admin', 'manager'])),
