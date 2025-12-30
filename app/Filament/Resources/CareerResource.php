@@ -21,11 +21,15 @@ class CareerResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
-    protected static ?string $navigationGroup = 'Staff Management';
+    protected static ?string $navigationGroup = 'User Management';
 
-    protected static ?string $navigationLabel = 'Career Staff';
+    protected static ?string $navigationLabel = 'Staff Management';
 
-    protected static ?int $navigationSort = 1;
+    protected static ?string $modelLabel = 'Staff';
+
+    protected static ?string $pluralModelLabel = 'Staff';
+
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
@@ -37,13 +41,13 @@ class CareerResource extends Resource
                             ->label('User Account')
                             ->relationship('user', 'name', function ($query) {
                                 $query->whereHas('roles', function ($roleQuery) {
-                                    $roleQuery->where('name', 'career');
+                                    $roleQuery->whereIn('name', ['career', 'manager', 'chef']);
                                 });
                             })
                             ->required()
                             ->searchable()
                             ->preload()
-                            ->helperText('Link this career profile to a user account'),
+                            ->helperText('Link this staff profile to a user account (Career, Manager, or Chef)'),
                         Forms\Components\TextInput::make('employee_id')
                             ->label('Employee ID')
                             ->required()
@@ -428,6 +432,6 @@ class CareerResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()->hasAnyRole(['admin', 'manager']);
+        return auth()->user()->hasRole('admin');
     }
 }
