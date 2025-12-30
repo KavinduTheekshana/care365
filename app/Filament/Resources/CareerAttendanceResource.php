@@ -23,9 +23,9 @@ class CareerAttendanceResource extends Resource
 
     protected static ?string $navigationLabel = 'Attendance';
 
-    protected static ?string $modelLabel = 'Career Attendance';
+    protected static ?string $modelLabel = 'Attendance';
 
-    protected static ?string $pluralModelLabel = 'Career Attendances';
+    protected static ?string $pluralModelLabel = 'Attendances';
 
     public static function form(Form $form): Form
     {
@@ -34,11 +34,11 @@ class CareerAttendanceResource extends Resource
                 Forms\Components\Section::make('Attendance Details')
                     ->schema([
                         Forms\Components\Select::make('user_id')
-                            ->label('Career')
+                            ->label('Employee')
                             ->relationship('user', 'name', function ($query) {
-                                $query->whereHas('roles', fn($q) => $q->where('name', 'career'));
+                                $query->whereHas('roles', fn($q) => $q->whereIn('name', ['career', 'chef']));
 
-                                // Managers can only see careers from their branch
+                                // Managers can only see employees from their branch
                                 if (auth()->user()->hasRole('manager')) {
                                     $query->where('branch_id', auth()->user()->branch_id);
                                 }
@@ -47,13 +47,13 @@ class CareerAttendanceResource extends Resource
                             ->searchable()
                             ->preload()
                             ->default(function () {
-                                // Auto-fill for careers creating their own attendance
-                                if (auth()->user()->hasRole('career')) {
+                                // Auto-fill for career/chef creating their own attendance
+                                if (auth()->user()->hasAnyRole(['career', 'chef'])) {
                                     return auth()->id();
                                 }
                                 return null;
                             })
-                            ->disabled(fn () => auth()->user()->hasRole('career'))
+                            ->disabled(fn () => auth()->user()->hasAnyRole(['career', 'chef']))
                             ->dehydrated()
                             ->native(false),
 
@@ -64,8 +64,8 @@ class CareerAttendanceResource extends Resource
                             ->maxDate(today()) // Can't select future dates
                             ->native(false)
                             ->disabled(function ($record) {
-                                // Careers: always disabled (read-only), auto-set to today
-                                if (auth()->user()->hasRole('career')) {
+                                // Career/Chef: always disabled (read-only), auto-set to today
+                                if (auth()->user()->hasAnyRole(['career', 'chef'])) {
                                     return true;
                                 }
                                 // Managers/admins can edit
@@ -73,8 +73,8 @@ class CareerAttendanceResource extends Resource
                             })
                             ->dehydrated() // Ensure disabled field value is still saved
                             ->formatStateUsing(function ($state) {
-                                // For careers creating new record, always show today
-                                if (auth()->user()->hasRole('career') && !$state) {
+                                // For career/chef creating new record, always show today
+                                if (auth()->user()->hasAnyRole(['career', 'chef']) && !$state) {
                                     return today();
                                 }
                                 return $state;
@@ -124,7 +124,7 @@ class CareerAttendanceResource extends Resource
 
                 Forms\Components\Hidden::make('branch_id')
                     ->default(function () {
-                        if (auth()->user()->hasRole('career')) {
+                        if (auth()->user()->hasAnyRole(['career', 'chef'])) {
                             return auth()->user()->branch_id;
                         }
                         return null;
@@ -139,13 +139,13 @@ class CareerAttendanceResource extends Resource
             ->modifyQueryUsing(function (Builder $query) {
                 $user = auth()->user();
 
-                // Careers see only their own attendance
-                if ($user->hasRole('career')) {
+                // Career/Chef see only their own attendance
+                if ($user->hasAnyRole(['career', 'chef'])) {
                     $query->where('user_id', $user->id);
                 }
 
-                // Managers see only their branch's careers
-                if ($user->hasRole('manager')) {
+                // Managers see only their branch's employees
+                if ($user->hasRole('manager') && !$user->hasRole('admin')) {
                     $query->where('branch_id', $user->branch_id);
                 }
 
@@ -159,7 +159,7 @@ class CareerAttendanceResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label('Career')
+                    ->label('Employee')
                     ->searchable()
                     ->sortable()
                     ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
@@ -210,13 +210,13 @@ class CareerAttendanceResource extends Resource
             ->filters([
                 Tables\Filters\SelectFilter::make('user')
                     ->relationship('user', 'name', function ($query) {
-                        $query->whereHas('roles', fn($q) => $q->where('name', 'career'));
+                        $query->whereHas('roles', fn($q) => $q->whereIn('name', ['career', 'chef']));
 
-                        if (auth()->user()->hasRole('manager')) {
+                        if (auth()->user()->hasRole('manager') && !auth()->user()->hasRole('admin')) {
                             $query->where('branch_id', auth()->user()->branch_id);
                         }
                     })
-                    ->label('Career')
+                    ->label('Employee')
                     ->searchable()
                     ->preload()
                     ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
@@ -314,8 +314,8 @@ class CareerAttendanceResource extends Resource
                             return true;
                         }
 
-                        // Careers can only edit today's attendance if not approved
-                        if (auth()->user()->hasRole('career')) {
+                        // Career/Chef can only edit today's attendance if not approved
+                        if (auth()->user()->hasAnyRole(['career', 'chef'])) {
                             return $record->date->isToday()
                                 && $record->user_id === auth()->id()
                                 && $record->status !== 'approved'; // Hide edit if approved
@@ -334,17 +334,17 @@ class CareerAttendanceResource extends Resource
                     ->color('success')
                     ->form([
                         Forms\Components\Select::make('user_id')
-                            ->label('Career')
+                            ->label('Employee')
                             ->relationship('user', 'name', function ($query) {
-                                $query->whereHas('roles', fn($q) => $q->where('name', 'career'));
+                                $query->whereHas('roles', fn($q) => $q->whereIn('name', ['career', 'chef']));
 
-                                // Managers can only see careers from their branch
-                                if (auth()->user()->hasRole('manager')) {
+                                // Managers can only see employees from their branch
+                                if (auth()->user()->hasRole('manager') && !auth()->user()->hasRole('admin')) {
                                     $query->where('branch_id', auth()->user()->branch_id);
                                 }
 
-                                // Careers can only select themselves
-                                if (auth()->user()->hasRole('career')) {
+                                // Career/Chef can only select themselves
+                                if (auth()->user()->hasAnyRole(['career', 'chef'])) {
                                     $query->where('id', auth()->id());
                                 }
                             })
@@ -353,13 +353,13 @@ class CareerAttendanceResource extends Resource
                             ->preload()
                             ->multiple()
                             ->default(function () {
-                                // Auto-select for careers
-                                if (auth()->user()->hasRole('career')) {
+                                // Auto-select for career/chef
+                                if (auth()->user()->hasAnyRole(['career', 'chef'])) {
                                     return [auth()->id()];
                                 }
                                 return null;
                             })
-                            ->disabled(fn () => auth()->user()->hasRole('career'))
+                            ->disabled(fn () => auth()->user()->hasAnyRole(['career', 'chef']))
                             ->dehydrated()
                             ->native(false),
                         Forms\Components\Select::make('month')
@@ -401,7 +401,7 @@ class CareerAttendanceResource extends Resource
 
                         // Get all users
                         $users = \App\Models\User::whereIn('id', $userIds)
-                            ->whereHas('roles', fn($q) => $q->where('name', 'career'))
+                            ->whereHas('roles', fn($q) => $q->whereIn('name', ['career', 'chef']))
                             ->get();
 
                         // Generate report data for each user
@@ -458,9 +458,9 @@ class CareerAttendanceResource extends Resource
                         $pdf = Pdf::loadView('pdf.attendance-report', $pdfData)
                             ->setPaper('a4', 'portrait');
 
-                        // Generate filename with career names
-                        $careerNames = $users->pluck('name')->map(fn($name) => str_replace(' ', '_', $name))->join('_');
-                        $filename = 'attendance_' . $careerNames . '_' . $year . '-' . str_pad($month, 2, '0', STR_PAD_LEFT) . '.pdf';
+                        // Generate filename with employee names
+                        $employeeNames = $users->pluck('name')->map(fn($name) => str_replace(' ', '_', $name))->join('_');
+                        $filename = 'attendance_' . $employeeNames . '_' . $year . '-' . str_pad($month, 2, '0', STR_PAD_LEFT) . '.pdf';
 
                         return response()->streamDownload(
                             fn () => print($pdf->output()),
@@ -510,11 +510,11 @@ class CareerAttendanceResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return auth()->user()->hasAnyRole(['admin', 'manager', 'career']);
+        return auth()->user()->hasAnyRole(['admin', 'manager', 'career', 'chef']);
     }
 
     public static function canCreate(): bool
     {
-        return auth()->user()->hasAnyRole(['admin', 'manager', 'career']);
+        return auth()->user()->hasAnyRole(['admin', 'manager', 'career', 'chef']);
     }
 }
