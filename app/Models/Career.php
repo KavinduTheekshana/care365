@@ -129,6 +129,14 @@ class Career extends Model
     }
 
     /**
+     * Get the daily checklists completed by this career staff.
+     */
+    public function completedChecklists(): HasMany
+    {
+        return $this->hasMany(ClientDailyChecklist::class, 'completed_by', 'user_id');
+    }
+
+    /**
      * Get employment type labels.
      */
     public static function getEmploymentTypeLabels(): array

@@ -403,6 +403,7 @@ class CareerResource extends Resource
     {
         return [
             RelationManagers\DocumentsRelationManager::class,
+            RelationManagers\CompletedChecklistsRelationManager::class,
         ];
     }
 
