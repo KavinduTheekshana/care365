@@ -300,7 +300,7 @@ class CareerResource extends Resource
                 Tables\Columns\ImageColumn::make('profile_photo')
                     ->label('Photo')
                     ->circular()
-                    ->defaultImageUrl(url('/images/default-avatar.png')),
+                    ->defaultImageUrl(fn ($record) => 'https://ui-avatars.com/api/?name=' . urlencode($record->full_name) . '&color=FFFFFF&background=' . ['3B82F6', '10B981', 'F59E0B', 'EF4444', '06B6D4', '6B7280'][crc32($record->full_name) % 6]),
                 Tables\Columns\TextColumn::make('employee_id')
                     ->label('Employee ID')
                     ->searchable()
