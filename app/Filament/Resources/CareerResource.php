@@ -21,7 +21,7 @@ class CareerResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
-    protected static ?string $navigationGroup = 'User Management';
+    protected static ?string $navigationGroup = 'HR Management';
 
     protected static ?string $navigationLabel = 'Staff Management';
 

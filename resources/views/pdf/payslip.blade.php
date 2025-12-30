@@ -137,9 +137,9 @@
         <div class="info-grid">
             <div class="info-row">
                 <div class="info-label">Employee:</div>
-                <div class="info-value">{{ $career->full_name }}</div>
+                <div class="info-value">{{ $payslip->career->full_name }}</div>
                 <div class="info-label">ID:</div>
-                <div class="info-value">{{ $career->employee_id }}</div>
+                <div class="info-value">{{ $payslip->career->employee_id }}</div>
             </div>
             <div class="info-row">
                 <div class="info-label">Pay Period:</div>
@@ -149,9 +149,9 @@
             </div>
             <div class="info-row">
                 <div class="info-label">Job Title:</div>
-                <div class="info-value">{{ $career->job_title ?? 'N/A' }}</div>
+                <div class="info-value">{{ $payslip->career->job_title ?? 'N/A' }}</div>
                 <div class="info-label">Department:</div>
-                <div class="info-value">{{ $career->department ?? 'N/A' }}</div>
+                <div class="info-value">{{ $payslip->career->department ?? 'N/A' }}</div>
             </div>
         </div>
 
@@ -242,9 +242,9 @@
 
         <div class="bank-details">
             <strong>Bank Details:</strong>
-            @if($career->bank_name){{ $career->bank_name }}@endif
-            @if($career->bank_account_number) | A/C: {{ $career->bank_account_number }}@endif
-            @if($career->bank_branch) | Branch: {{ $career->bank_branch }}@endif
+            @if($payslip->career->bank_name){{ $payslip->career->bank_name }}@endif
+            @if($payslip->career->bank_account_number) | A/C: {{ $payslip->career->bank_account_number }}@endif
+            @if($payslip->career->bank_branch) | Branch: {{ $payslip->career->bank_branch }}@endif
         </div>
 
         <div class="footer">

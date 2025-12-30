@@ -16,7 +16,7 @@ class BranchResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-building-office';
 
-    protected static ?string $navigationGroup = 'Settings';
+    protected static ?string $navigationGroup = 'Branch Management';
 
     protected static ?int $navigationSort = 1;
 

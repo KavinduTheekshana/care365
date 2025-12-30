@@ -19,7 +19,7 @@ class DailyChecklistReportResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
 
-    protected static ?string $navigationGroup = 'Reports';
+    protected static ?string $navigationGroup = 'Daily Operations';
 
     protected static ?string $navigationLabel = 'Daily Checklist Reports';
 
