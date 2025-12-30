@@ -38,7 +38,7 @@ class CompletedChecklistsRelationManager extends RelationManager
                     ->label('Category')
                     ->searchable()
                     ->badge()
-                    ->color(fn ($state) => match($state) {
+                    ->color(fn($state) => match ($state) {
                         'DRESSING & PERSONAL HYGIENE' => 'info',
                         'COMPANIONSHIP' => 'success',
                         'HEALTH & MEDI MANAGEMENT' => 'danger',
@@ -49,7 +49,7 @@ class CompletedChecklistsRelationManager extends RelationManager
                     ->label('Task')
                     ->searchable()
                     ->limit(50)
-                    ->tooltip(fn ($record) => $record->task_name),
+                    ->tooltip(fn($record) => $record->task_name),
                 Tables\Columns\IconColumn::make('completed')
                     ->label('Status')
                     ->boolean()
@@ -66,9 +66,16 @@ class CompletedChecklistsRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('notes')
                     ->label('Notes')
                     ->limit(40)
-                    ->tooltip(fn ($record) => $record->notes)
+                    ->tooltip(fn($record) => $record->notes)
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->groups([
+                Tables\Grouping\Group::make('date')
+                    ->label('Date')
+                    ->date()
+                    ->collapsible(),
+            ])
+            ->defaultGroup('date')
             ->filters([
                 Tables\Filters\SelectFilter::make('category')
                     ->options([
@@ -89,11 +96,11 @@ class CompletedChecklistsRelationManager extends RelationManager
                         return $query
                             ->when(
                                 $data['from'],
-                                fn (Builder $query, $date): Builder => $query->whereDate('date', '>=', $date),
+                                fn(Builder $query, $date): Builder => $query->whereDate('date', '>=', $date),
                             )
                             ->when(
                                 $data['until'],
-                                fn (Builder $query, $date): Builder => $query->whereDate('date', '<=', $date),
+                                fn(Builder $query, $date): Builder => $query->whereDate('date', '<=', $date),
                             );
                     }),
                 Tables\Filters\TernaryFilter::make('completed')
