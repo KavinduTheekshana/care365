@@ -137,6 +137,14 @@ class Career extends Model
     }
 
     /**
+     * Get the payslips for this career staff.
+     */
+    public function payslips(): HasMany
+    {
+        return $this->hasMany(Payslip::class);
+    }
+
+    /**
      * Get employment type labels.
      */
     public static function getEmploymentTypeLabels(): array
