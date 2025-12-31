@@ -120,4 +120,12 @@ class Client extends Model
     {
         return $this->hasMany(Payment::class);
     }
+
+    /**
+     * Client meals
+     */
+    public function meals()
+    {
+        return $this->hasMany(ClientMeal::class);
+    }
 }

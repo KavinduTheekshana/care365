@@ -26,12 +26,12 @@ class EditChefChecklist extends EditRecord
         $isChef = auth()->user()->hasRole('chef') && !auth()->user()->hasAnyRole(['admin', 'manager']);
 
         // Ensure chef_signed_at is set when chef signs
-        if ($data['chef_signed'] && !$data['chef_signed_at']) {
+        if (isset($data['chef_signed']) && $data['chef_signed'] && empty($data['chef_signed_at'])) {
             $data['chef_signed_at'] = now();
         }
 
         // Ensure manager_signed_at is set when manager signs
-        if ($data['manager_signed'] && !$data['manager_signed_at']) {
+        if (isset($data['manager_signed']) && $data['manager_signed'] && empty($data['manager_signed_at'])) {
             $data['manager_signed_at'] = now();
             $data['manager_id'] = auth()->id();
         }

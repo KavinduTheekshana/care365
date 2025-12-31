@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
 
         // Order is important - seed in dependency order
         $this->call([
+            RoleSeeder::class,
             BranchSeeder::class,
             UserSeeder::class,
             ClientSeeder::class,

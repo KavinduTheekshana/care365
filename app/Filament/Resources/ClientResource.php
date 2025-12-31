@@ -369,6 +369,7 @@ class ClientResource extends Resource
             RelationManagers\DailyChecklistsRelationManager::class,
             RelationManagers\DoctorNotesRelationManager::class,
             RelationManagers\DocumentsRelationManager::class,
+            RelationManagers\MealsRelationManager::class,
             RelationManagers\MedicationsRelationManager::class,
             RelationManagers\OutingsRelationManager::class,
             RelationManagers\PaymentsRelationManager::class,
