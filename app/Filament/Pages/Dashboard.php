@@ -8,8 +8,25 @@ class Dashboard extends BaseDashboard
 {
     public function getWidgets(): array
     {
-        return [
-            \App\Filament\Widgets\CareerDashboardWidget::class,
-        ];
+        $user = auth()->user();
+
+        // Show admin widgets for admin and manager users
+        if ($user && $user->hasAnyRole(['admin', 'manager'])) {
+            return [
+                \App\Filament\Widgets\AdminStatsOverviewWidget::class,
+                \App\Filament\Widgets\BranchClientsChart::class,
+                \App\Filament\Widgets\ClientDemographicsChart::class,
+            ];
+        }
+
+        // Show CareerDashboardWidget for career users
+        if ($user && $user->hasRole('career')) {
+            return [
+                \App\Filament\Widgets\CareerDashboardWidget::class,
+            ];
+        }
+
+        // Default to no widgets if no role matched
+        return [];
     }
 }
