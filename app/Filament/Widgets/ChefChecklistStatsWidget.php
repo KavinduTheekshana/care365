@@ -56,27 +56,17 @@ class ChefChecklistStatsWidget extends BaseWidget
             ->whereYear('date', now()->year)
             ->count();
 
-        $signedThisMonth = ChefChecklist::whereMonth('date', now()->month)
-            ->whereYear('date', now()->year)
-            ->where('chef_signed', true)
-            ->count();
-
         $pendingApproval = ChefChecklist::where('chef_signed', true)
             ->where('manager_signed', false)
             ->count();
 
         return [
-            Stat::make('Total Checklists', $totalThisMonth)
+            Stat::make('Total Chef’s Checklist', $totalThisMonth)
                 ->description('This month')
                 ->descriptionIcon('heroicon-m-calendar')
                 ->color('primary'),
 
-            Stat::make('Signed by Chefs', $signedThisMonth)
-                ->description('This month')
-                ->descriptionIcon('heroicon-m-check-circle')
-                ->color('success'),
-
-            Stat::make('Pending Approval', $pendingApproval)
+            Stat::make('Chef’s Checklist Pending Approval', $pendingApproval)
                 ->description('Needs manager signature')
                 ->descriptionIcon('heroicon-m-clock')
                 ->color('warning'),

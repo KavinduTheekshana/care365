@@ -14,6 +14,7 @@ class Dashboard extends BaseDashboard
         if ($user && $user->hasAnyRole(['admin', 'manager'])) {
             return [
                 \App\Filament\Widgets\AdminStatsOverviewWidget::class,
+                \App\Filament\Widgets\AttendancePendingApprovalWidget::class,
                 \App\Filament\Widgets\BranchClientsChart::class,
                 \App\Filament\Widgets\ClientDemographicsChart::class,
             ];
