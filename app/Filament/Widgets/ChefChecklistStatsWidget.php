@@ -52,21 +52,37 @@ class ChefChecklistStatsWidget extends BaseWidget
         }
 
         // If manager/admin, show overall stats
-        $totalThisMonth = ChefChecklist::whereMonth('date', now()->month)
+        $isManager = $user->hasRole('manager') && !$user->hasRole('admin');
+        $branchId = $isManager ? $user->branch_id : null;
+
+        $totalThisMonth = ChefChecklist::when($isManager, function ($query) use ($branchId) {
+                $query->whereHas('chef', function ($chefQuery) use ($branchId) {
+                    $chefQuery->where('branch_id', $branchId);
+                });
+            })
+            ->whereMonth('date', now()->month)
             ->whereYear('date', now()->year)
             ->count();
 
-        $pendingApproval = ChefChecklist::where('chef_signed', true)
+        $pendingApproval = ChefChecklist::when($isManager, function ($query) use ($branchId) {
+                $query->whereHas('chef', function ($chefQuery) use ($branchId) {
+                    $chefQuery->where('branch_id', $branchId);
+                });
+            })
+            ->where('chef_signed', true)
             ->where('manager_signed', false)
             ->count();
 
+        $branchName = $isManager ? $user->branch?->name : null;
+        $description = $isManager ? ($branchName . ' branch this month') : 'This month';
+
         return [
-            Stat::make('Total Chef’s Checklist', $totalThisMonth)
-                ->description('This month')
+            Stat::make('Total Chef\'s Checklist', $totalThisMonth)
+                ->description($description)
                 ->descriptionIcon('heroicon-m-calendar')
                 ->color('primary'),
 
-            Stat::make('Chef’s Checklist Pending Approval', $pendingApproval)
+            Stat::make('Chef\'s Checklist Pending Approval', $pendingApproval)
                 ->description('Needs manager signature')
                 ->descriptionIcon('heroicon-m-clock')
                 ->color('warning'),

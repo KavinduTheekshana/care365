@@ -22,6 +22,11 @@ class AdminStatsOverviewWidget extends BaseWidget
         return auth()->user()->hasAnyRole(['admin', 'manager']);
     }
 
+    protected function getColumns(): int
+    {
+        return 4;
+    }
+
     protected function getStats(): array
     {
         $user = auth()->user();
