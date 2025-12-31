@@ -128,4 +128,12 @@ class Client extends Model
     {
         return $this->hasMany(ClientMeal::class);
     }
+
+    /**
+     * Visitor logs for this client
+     */
+    public function visitors()
+    {
+        return $this->hasMany(VisitorLog::class);
+    }
 }

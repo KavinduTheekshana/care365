@@ -83,6 +83,20 @@ class VisitorLogResource extends Resource
                             })
                             ->disabled(fn () => auth()->user()->hasRole('manager'))
                             ->dehydrated()
+                            ->native(false)
+                            ->live(),
+
+                        Forms\Components\Select::make('client_id')
+                            ->label('Client (Optional)')
+                            ->helperText('Select a client if this visitor is a relative/visitor of a specific client')
+                            ->relationship('client', 'name', function ($query, $get) {
+                                $branchId = $get('branch_id');
+                                if ($branchId) {
+                                    $query->where('branch_id', $branchId);
+                                }
+                            })
+                            ->searchable()
+                            ->preload()
                             ->native(false),
 
                         Forms\Components\DatePicker::make('visit_date')
@@ -153,6 +167,14 @@ class VisitorLogResource extends Resource
                 Tables\Columns\TextColumn::make('visitor_contact')
                     ->label('Contact')
                     ->searchable(),
+
+                Tables\Columns\TextColumn::make('client.name')
+                    ->label('Client')
+                    ->searchable()
+                    ->sortable()
+                    ->placeholder('General Visitor')
+                    ->badge()
+                    ->color('info'),
 
                 Tables\Columns\TextColumn::make('purpose')
                     ->label('Purpose')
@@ -239,6 +261,18 @@ class VisitorLogResource extends Resource
                     ->preload()
                     ->placeholder('All Branches')
                     ->visible(fn () => auth()->user()->hasRole('admin')),
+
+                Tables\Filters\SelectFilter::make('client')
+                    ->relationship('client', 'name', function ($query) {
+                        $user = auth()->user();
+                        if ($user->hasRole('manager')) {
+                            $query->where('branch_id', $user->branch_id);
+                        }
+                    })
+                    ->label('Client')
+                    ->searchable()
+                    ->preload()
+                    ->placeholder('All Visitors'),
             ])
             ->actions([
                 Tables\Actions\Action::make('clock_out')

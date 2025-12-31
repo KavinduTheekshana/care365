@@ -377,11 +377,12 @@ class ClientResource extends Resource
             RelationManagers\OutingsRelationManager::class,
         ];
 
-        // Only admin and manager can see doctor notes, documents, and payments
+        // Only admin and manager can see doctor notes, documents, payments, and visitors
         if (!$isCareer) {
             $relations[] = RelationManagers\DoctorNotesRelationManager::class;
             $relations[] = RelationManagers\DocumentsRelationManager::class;
             $relations[] = RelationManagers\PaymentsRelationManager::class;
+            $relations[] = RelationManagers\VisitorsRelationManager::class;
         }
 
         return $relations;

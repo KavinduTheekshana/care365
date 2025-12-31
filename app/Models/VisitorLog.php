@@ -9,6 +9,7 @@ class VisitorLog extends Model
 {
     protected $fillable = [
         'branch_id',
+        'client_id',
         'visit_date',
         'visitor_name',
         'visitor_contact',
@@ -39,6 +40,14 @@ class VisitorLog extends Model
     public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
+    }
+
+    /**
+     * The client being visited (if visitor is a relative)
+     */
+    public function client(): BelongsTo
+    {
+        return $this->belongsTo(Client::class);
     }
 
     /**

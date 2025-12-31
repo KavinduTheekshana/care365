@@ -27,6 +27,13 @@ class Dashboard extends BaseDashboard
             ];
         }
 
+        // Show chef widgets for chef users
+        if ($user && $user->hasRole('chef')) {
+            return [
+                \App\Filament\Widgets\ChefChecklistStatsWidget::class,
+            ];
+        }
+
         // Default to no widgets if no role matched
         return [];
     }
