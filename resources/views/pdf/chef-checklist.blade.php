@@ -202,6 +202,11 @@
 </head>
 <body>
     <div class="header">
+        @if(file_exists(public_path('logo/care365.svg')))
+        <div style="margin-bottom: 15px;">
+            <img src="{{ public_path('logo/care365.svg') }}" alt="Care365 Logo" style="height: 60px; width: auto;">
+        </div>
+        @endif
         <h1>COOKING ASSISTANT CHECKLIST</h1>
         <div class="subtitle">Daily Task Completion Report</div>
     </div>
