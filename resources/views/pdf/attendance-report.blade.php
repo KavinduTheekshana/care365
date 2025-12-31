@@ -16,6 +16,11 @@
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
         }
+        .header .logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 5px;
+        }
         .header h1 {
             margin: 0;
             font-size: 14px;
@@ -98,6 +103,7 @@
 </head>
 <body>
     <div class="header">
+        <img src="{{ public_path('logo/care365.svg') }}" alt="Care365 Logo" class="logo">
         <h1>CARE 365 - Monthly Attendance Report</h1>
         <p>Period: {{ $month_name }} {{ $year }}</p>
         <p>Generated on: {{ $generated_at }}</p>

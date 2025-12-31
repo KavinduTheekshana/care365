@@ -13,7 +13,7 @@ class ListPayslips extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            // Create action removed - payslips are created automatically by the system
         ];
     }
 }
