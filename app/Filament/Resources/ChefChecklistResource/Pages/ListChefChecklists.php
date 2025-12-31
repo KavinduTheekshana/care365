@@ -14,7 +14,8 @@ class ListChefChecklists extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        $isChef = auth()->user()->hasRole('chef') && !auth()->user()->hasAnyRole(['admin', 'manager']);
+        $user = auth()->user();
+        $isChef = $user->hasRole('chef') && !$user->hasAnyRole(['admin', 'manager']);
 
         return [
             Actions\Action::make('today')
@@ -45,7 +46,8 @@ class ListChefChecklists extends ListRecords
                 ->visible($isChef),
 
             Actions\CreateAction::make()
-                ->visible(!$isChef),
+                ->label('New Chef Checklist')
+                ->visible($isChef), // Only chefs can create new checklists
         ];
     }
 }

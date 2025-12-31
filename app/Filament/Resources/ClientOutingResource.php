@@ -37,6 +37,12 @@ class ClientOutingResource extends Resource
                             ->label('Client')
                             ->relationship('client', 'name', function ($query) {
                                 $user = auth()->user();
+
+                                // Carers can only select clients from their branch
+                                if ($user->hasRole('career')) {
+                                    $query->where('branch_id', $user->branch_id);
+                                }
+
                                 // Managers can only select clients from their branch
                                 if ($user->hasRole('manager') && !$user->hasRole('admin')) {
                                     $query->where('branch_id', $user->branch_id);
@@ -135,6 +141,14 @@ class ClientOutingResource extends Resource
         return $table
             ->modifyQueryUsing(function (Builder $query) {
                 $user = auth()->user();
+
+                // Carers can only see outings for clients from their branch
+                if ($user->hasRole('career')) {
+                    $query->whereHas('client', function ($clientQuery) use ($user) {
+                        $clientQuery->where('branch_id', $user->branch_id);
+                    });
+                }
+
                 // Managers can only see outings for clients from their branch
                 if ($user->hasRole('manager') && !$user->hasRole('admin')) {
                     $query->whereHas('client', function ($clientQuery) use ($user) {
@@ -214,6 +228,12 @@ class ClientOutingResource extends Resource
                 Tables\Filters\SelectFilter::make('client')
                     ->relationship('client', 'name', function ($query) {
                         $user = auth()->user();
+
+                        // Carers can only see clients from their branch
+                        if ($user->hasRole('career')) {
+                            $query->where('branch_id', $user->branch_id);
+                        }
+
                         // Managers can only see clients from their branch
                         if ($user->hasRole('manager') && !$user->hasRole('admin')) {
                             $query->where('branch_id', $user->branch_id);

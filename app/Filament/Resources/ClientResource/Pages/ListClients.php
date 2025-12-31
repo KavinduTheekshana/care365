@@ -12,8 +12,12 @@ class ListClients extends ListRecords
 
     protected function getHeaderActions(): array
     {
+        $user = auth()->user();
+        $isCareer = $user->hasRole('career') && !$user->hasAnyRole(['admin', 'manager']);
+
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+                ->visible(!$isCareer), // Hide from carers
         ];
     }
 }

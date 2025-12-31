@@ -19,10 +19,10 @@ class Dashboard extends BaseDashboard
             ];
         }
 
-        // Show CareerDashboardWidget for career users
+        // Show career widgets for career users
         if ($user && $user->hasRole('career')) {
             return [
-                \App\Filament\Widgets\CareerDashboardWidget::class,
+                \App\Filament\Widgets\CareerStatsOverviewWidget::class,
             ];
         }
 
