@@ -353,11 +353,13 @@ class ClientResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
                 ]),
             ])
             ->defaultSort('created_at', 'desc');
@@ -365,15 +367,24 @@ class ClientResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
+        $user = auth()->user();
+        $isCareer = $user && $user->hasRole('career') && !$user->hasAnyRole(['admin', 'manager']);
+
+        $relations = [
             RelationManagers\DailyChecklistsRelationManager::class,
-            RelationManagers\DoctorNotesRelationManager::class,
-            RelationManagers\DocumentsRelationManager::class,
             RelationManagers\MealsRelationManager::class,
             RelationManagers\MedicationsRelationManager::class,
             RelationManagers\OutingsRelationManager::class,
-            RelationManagers\PaymentsRelationManager::class,
         ];
+
+        // Only admin and manager can see doctor notes, documents, and payments
+        if (!$isCareer) {
+            $relations[] = RelationManagers\DoctorNotesRelationManager::class;
+            $relations[] = RelationManagers\DocumentsRelationManager::class;
+            $relations[] = RelationManagers\PaymentsRelationManager::class;
+        }
+
+        return $relations;
     }
 
     public static function getPages(): array

@@ -125,11 +125,13 @@ class MedicationsRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                    ->label('Add Medication'),
+                    ->label('Add Medication')
+                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
                 Tables\Actions\Action::make('export_chart')
                     ->label('Export Monthly Chart')
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('success')
+                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager']))
                     ->form([
                         Forms\Components\Grid::make(2)
                             ->schema([
@@ -184,12 +186,16 @@ class MedicationsRelationManager extends RelationManager
                     }),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
+                Tables\Actions\DeleteAction::make()
+                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
                 ]),
             ])
             ->defaultSort('created_at', 'desc');
