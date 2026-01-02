@@ -371,7 +371,7 @@ class VisitorLogResource extends Resource
                         ];
 
                         $pdf = Pdf::loadView('pdf.visitor-log-report', $pdfData)
-                            ->setPaper('a4', 'landscape');
+                            ->setPaper('a4', 'portrait');
 
                         // Generate filename
                         $branchSlug = $branchName ? str_replace(' ', '_', $branchName) . '_' : '';

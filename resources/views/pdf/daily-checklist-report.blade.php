@@ -15,6 +15,11 @@
             border-bottom: 2px solid #333;
             padding-bottom: 10px;
         }
+        .header .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 8px;
+        }
         .header h1 {
             margin: 0;
             font-size: 18px;
@@ -79,6 +84,7 @@
 </head>
 <body>
     <div class="header">
+        <img src="{{ public_path('logo/care365.svg') }}" alt="Care365 Logo" class="logo">
         <h1>CARE 365 - Daily Checklist Report</h1>
         <p>Generated on: {{ $generated_at }}</p>
         @if($records->count() > 0)

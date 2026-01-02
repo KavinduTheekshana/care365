@@ -16,6 +16,11 @@
             border-bottom: 2px solid #333;
             padding-bottom: 8px;
         }
+        .header .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 8px;
+        }
         .header h1 {
             margin: 0;
             font-size: 16px;
@@ -80,6 +85,7 @@
 </head>
 <body>
     <div class="header">
+        <img src="{{ public_path('logo/care365.svg') }}" alt="Care365 Logo" class="logo">
         <h1>CARE 365 - Visitor Log Report</h1>
         @if($branch_name)
             <p>Branch: {{ $branch_name }}</p>
