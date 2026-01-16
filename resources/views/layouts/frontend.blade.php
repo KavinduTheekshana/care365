@@ -31,6 +31,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
+    @vite(['', 'resources/js/app.js'])
 
     <!--==============================
  Google Fonts
