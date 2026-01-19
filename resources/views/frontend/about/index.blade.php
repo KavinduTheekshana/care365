@@ -77,7 +77,7 @@ About Area
                             </div>
                         </div>
                         <div class="btn-wrap mt-50" data-cue="slideInUp">
-                            <a class="th-btn" href="contact.html">Join Now</a>
+                            <a class="th-btn" href="{{ route('contact') }}">Join Now</a>
                             <div class="info-card">
                                 <div class="box-icon style2">
                                     <img src="assets/img/icon/phone-black.svg" alt="phon-icon">
@@ -278,7 +278,7 @@ Service Area
                 </div>
                 <div class="col-auto">
                     <div class="sec-btn">
-                        <a class="th-btn style-border3" href="service.html">Browse All Services</a>
+                        <a class="th-btn style-border3" href="{{ route('services') }}">Browse All Services</a>
                     </div>
                 </div>
             </div>
@@ -287,96 +287,96 @@ Service Area
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" data-cue="slideInUp">
                             <div class="service-card">
-                                <a class="icon-btn style3" href="service-details.html"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
                                     <img src="assets/img/Home-img/Medical Care.png" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="service-details.html">Medical Care</a></h3>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Medical Care</a></h3>
                                     <p class="box-text">Comprehensive medical support tailored to your unique needs with dedicated professionals committed to compassionate care.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide" data-cue="slideInUp">
                             <div class="service-card">
-                                <a class="icon-btn style3" href="service-details.html"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
                                     <img src="assets/img/Home-img/Nutritious Meals.webp" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="service-details.html">Nutritious Meals</a></h3>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Nutritious Meals</a></h3>
                                     <p class="box-text">Meticulously crafted meals with wholesome ingredients and culinary excellence for optimal health.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide" data-cue="slideInUp">
                             <div class="service-card">
-                                <a class="icon-btn style3" href="service-details.html"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
                                     <img src="assets/img/Home-img/Recreational Activities.webp" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="service-details.html">Social/Recreational Activities</a></h3>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Social/Recreational Activities</a></h3>
                                     <p class="box-text">Engaging programs designed to ignite passions, foster meaningful connections, and enrich life.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide" data-cue="slideInUp">
                             <div class="service-card">
-                                <a class="icon-btn style3" href="service-details.html"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
                                     <img src="assets/img/service/service_card_1_4.jpg" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="service-details.html">24-hour Staff Availability</a></h3>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">24-hour Staff Availability</a></h3>
                                     <p class="box-text">Dedicated team available around the clock providing attentive care and unwavering support.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide" data-cue="slideInUp">
                             <div class="service-card">
-                                <a class="icon-btn style3" href="service-details.html"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
                                     <img src="assets/img/Home-img/Dementia-Parkinson-Care.webp" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="service-details.html">Dementia & Parkinson Care</a></h3>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Dementia & Parkinson Care</a></h3>
                                     <p class="box-text">Specialized care ensuring a safe and supportive environment for comfort and quality of life.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide" data-cue="slideInUp">
                             <div class="service-card">
-                                <a class="icon-btn style3" href="service-details.html"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
                                     <img src="assets/img/service/service_card_1_6.jpg" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="service-details.html">Physical Therapy</a></h3>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Physical Therapy</a></h3>
                                     <p class="box-text">State-of-the-art therapy and rehabilitation services to regain strength, mobility, and independence.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide" data-cue="slideInUp">
                             <div class="service-card">
-                                <a class="icon-btn style3" href="service-details.html"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
                                     <img src="assets/img/service/service_card_1_7.jpg" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="service-details.html">Wound Care</a></h3>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Wound Care</a></h3>
                                     <p class="box-text">Expert wound care services promoting healing and restoring your overall well-being.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide" data-cue="slideInUp">
                             <div class="service-card">
-                                <a class="icon-btn style3" href="service-details.html"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
                                     <img src="assets/img/service/service_card_2_2.jpg" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="service-details.html">Post-surgical Care</a></h3>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Post-surgical Care</a></h3>
                                     <p class="box-text">Personalized post-surgical care ensuring smooth transition and focused healing.</p>
                                 </div>
                             </div>
@@ -468,7 +468,7 @@ Our Homes Area
                 </div>
                 <div class="col-auto">
                     <div class="sec-btn">
-                        <a class="th-btn style-border3" href="service.html">Contact Us</a>
+                        <a class="th-btn style-border3" href="{{ route('contact') }}">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -532,7 +532,7 @@ Our Homes Area
                                             <p class="mb-2">Designed with modern comforts and amenities, this home will redefine the standard of care, combining thoughtfully planned living spaces, engaging common areas, and seamless integration of cutting-edge technology.</p>
                                         </div>
                                         <div class="button-wrap mb-4">
-                                            <a href="contact.html" class="th-btn th-btn-xl"> <img src="assets/img/icon/phone-white.svg" alt="icon"> Contact Us</a>
+                                            <a href="{{ route('contact') }}" class="th-btn th-btn-xl"> <img src="assets/img/icon/phone-white.svg" alt="icon"> Contact Us</a>
                                         </div>
                                         <div class="th-social">
                                             <a href="https://www.facebook.com/profile.php?id=61558599706737"><i class="fab fa-facebook-f"></i></a>
@@ -541,7 +541,7 @@ Our Homes Area
                                             
                                         </div>
                                     </div>
-                                    <a class="icon-btn style3" href="contact.html"><img data-mask-src="assets/img/icon/arrow-right-1.svg" src="assets/img/icon/arrow-right-1.svg" alt="img"></a>
+                                    <a class="icon-btn style3" href="{{ route('contact') }}"><img data-mask-src="assets/img/icon/arrow-right-1.svg" src="assets/img/icon/arrow-right-1.svg" alt="img"></a>
                                 </div>
                             </div>
 
@@ -561,7 +561,7 @@ Our Homes Area
                                             <p class="mb-2">Stay tuned as we bring our vision of elevated senior living to life, setting new standards in Sri Lanka.</p>
                                         </div>
                                         <div class="button-wrap mb-4">
-                                            <a href="contact.html" class="th-btn th-btn-xl"> <img src="assets/img/icon/phone-white.svg" alt="icon"> Contact Us</a>
+                                            <a href="{{ route('contact') }}" class="th-btn th-btn-xl"> <img src="assets/img/icon/phone-white.svg" alt="icon"> Contact Us</a>
                                         </div>
                                         <div class="th-social">
                                             <a href="https://www.facebook.com/profile.php?id=61558599706737"><i class="fab fa-facebook-f"></i></a>
@@ -570,7 +570,7 @@ Our Homes Area
                                             
                                         </div>
                                     </div>
-                                    <a class="icon-btn style3" href="contact.html"><img data-mask-src="assets/img/icon/arrow-right-1.svg" src="assets/img/icon/arrow-right-1.svg" alt="img"></a>
+                                    <a class="icon-btn style3" href="{{ route('contact') }}"><img data-mask-src="assets/img/icon/arrow-right-1.svg" src="assets/img/icon/arrow-right-1.svg" alt="img"></a>
                                 </div>
                             </div>
 
@@ -590,7 +590,7 @@ Our Homes Area
                                             <p class="mb-2">Designed with modern comforts and amenities, this home will redefine the standard of care, combining thoughtfully planned living spaces, engaging common areas, and seamless integration of cutting-edge technology.</p>
                                         </div>
                                         <div class="button-wrap mb-4">
-                                            <a href="contact.html" class="th-btn th-btn-xl"> <img src="assets/img/icon/phone-white.svg" alt="icon"> Contact Us</a>
+                                            <a href="{{ route('contact') }}" class="th-btn th-btn-xl"> <img src="assets/img/icon/phone-white.svg" alt="icon"> Contact Us</a>
                                         </div>
                                         <div class="th-social">
                                             <a href="https://www.facebook.com/profile.php?id=61558599706737"><i class="fab fa-facebook-f"></i></a>
@@ -599,7 +599,7 @@ Our Homes Area
                                             
                                         </div>
                                     </div>
-                                    <a class="icon-btn style3" href="contact.html"><img data-mask-src="assets/img/icon/arrow-right-1.svg" src="assets/img/icon/arrow-right-1.svg" alt="img"></a>
+                                    <a class="icon-btn style3" href="{{ route('contact') }}"><img data-mask-src="assets/img/icon/arrow-right-1.svg" src="assets/img/icon/arrow-right-1.svg" alt="img"></a>
                                 </div>
                             </div>
 
@@ -718,7 +718,7 @@ Careers Area
                         </div>
                         <p class="fs-18 mb-35 text-anim2" data-cue="slideInUp">Join our team of passionate professionals dedicated to enriching lives. At Care365, we offer rewarding career opportunities for those driven to make a meaningful difference through compassionate care. Explore roles that align with your expertise and values.</p>
                         <div class="btn-wrap" data-cue="slideInUp">
-                            <a href="contact.html" class="th-btn">Join Now <span class="th-btn-icon"></span></a>
+                            <a href="{{ route('contact') }}" class="th-btn">Join Now <span class="th-btn-icon"></span></a>
                         </div>
                     </div>
                 </div>
