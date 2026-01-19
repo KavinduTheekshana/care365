@@ -8,9 +8,7 @@ use Illuminate\View\View;
 
 class ContactController extends Controller
 {
-    /**
-     * Show the contact form
-     */
+
     public function index(): View
     {
         return view('frontend.contact.index');
