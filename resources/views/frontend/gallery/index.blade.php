@@ -21,79 +21,16 @@
     <!-- slider drag cursor -->
     <!-- <div class="slider-drag-cursor"> DRAG </div> -->
 
-    <!--==============================
-    Breadcumb
-============================== -->
-    <div class="breadcumb-wrapper ">
-        <div class="breadcumb-bg-thumb" data-overlay="title" data-opacity="5" data-bg-src="assets/img/bg/breadcumb-bg.png"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-12">
-                    <div class="breadcumb-content">
-                        <h1 class="breadcumb-title text-anim" data-cue="slideInUp" data-delay="100">Gallery</h1>
-                        <ul class="breadcumb-menu">
-                            <li><a href="{{ route('home') }}">Home</a></li>
-                            <li>Gallery</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--==============================
+
+
+    @include('frontend.gallery.hero')
+    @include('frontend.gallery.gallery')
+
+
+<!--==============================
 Gallery Area  
 ==============================-->
-    <div class="overflow-hidden overflow-hidden space z-index-common">
-        <div class="container">
-            <div class="gallery-1-wrap style2 mb-4">
-                <div class="gallery-card-wrap">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_2.jpg" alt="img">
-                            <a href="assets/img/gallery/gallery_1_2.jpg" class="icon-btn th-popup-image"><i class="fa-regular fa-magnifying-glass"></i></a>
-                        </div>
-                    </div>
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_3.jpg" alt="img">
-                            <a href="assets/img/gallery/gallery_1_3.jpg" class="icon-btn th-popup-image"><i class="fa-regular fa-magnifying-glass"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="assets/img/gallery/gallery_1_1.jpg" alt="img">
-                        <a href="assets/img/gallery/gallery_1_1.jpg" class="icon-btn th-popup-image"><i class="fa-regular fa-magnifying-glass"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-1-wrap style2 style1">
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="assets/img/gallery/gallery_1_4.jpg" alt="img">
-                        <a href="assets/img/gallery/gallery_1_4.jpg" class="icon-btn th-popup-image"><i class="fa-regular fa-magnifying-glass"></i></a>
-                    </div>
-                </div>
-
-                <div class="gallery-card-wrap">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_5.jpg" alt="img">
-                            <a href="assets/img/gallery/gallery_1_5.jpg" class="icon-btn th-popup-image"><i class="fa-regular fa-magnifying-glass"></i></a>
-                        </div>
-                    </div>
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_6.jpg" alt="img">
-                            <a href="assets/img/gallery/gallery_1_6.jpg" class="icon-btn th-popup-image"><i class="fa-regular fa-magnifying-glass"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    
     
 
     <!--********************************
