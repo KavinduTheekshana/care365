@@ -689,13 +689,13 @@ Price Area
                                 </div>
                             </div>
                         </div>
-                        <a class="th-btn" href="contact.html">Enquire Now</a>
+                        <a class="th-btn" href="{{ route('contact') }}">Enquire Now</a>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center mt-5">
                 <div class="col-12 text-center" data-cue="slideInUp">
-                    <a class="th-btn style-border3" href="contact.html">Contact Us for More Details <img src="assets/img/icon/arrow-right-black.svg" alt="icon"></a>
+                    <a class="th-btn style-border3" href="{{ route('contact') }}">Contact Us for More Details <img src="assets/img/icon/arrow-right-black.svg" alt="icon"></a>
                 </div>
             </div>
         </div>
@@ -911,18 +911,18 @@ Blog Area
                 <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
                     <div class="blog-card">
                         <div class="blog-img">
-                            <a href="blog-details.html">
+                            <a href="{{ route('blogdetails') }}">
                                 <img src="assets/img/blog/blog-s-1-1.jpg" alt="blog image">
                             </a>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <a href="blog.html"><i class="fas fa-user"></i>Jordan Park</a>
-                                <a href="blog.html"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-user"></i>Jordan Park</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
                             </div>
-                            <h3 class="box-title"><a href="blog-details.html">How to Keep Your Loved Ones Healthy Year-Round </a></h3>
+                            <h3 class="box-title"><a href="{{ route('blogdetails') }}">How to Keep Your Loved Ones Healthy Year-Round </a></h3>
                             <div class="btn-wrap">
-                                <a href="blog-details.html" class="link-btn th-btn-icon">Read More</a>
+                                <a href="{{ route('blogdetails') }}" class="link-btn th-btn-icon">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -931,18 +931,18 @@ Blog Area
                 <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
                     <div class="blog-card">
                         <div class="blog-img">
-                            <a href="blog-details.html">
+                            <a href="{{ route('blogdetails') }}">
                                 <img src="assets/img/blog/blog-s-1-2.jpg" alt="blog image">
                             </a>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <a href="blog.html"><i class="fas fa-user"></i>Jordan Park</a>
-                                <a href="blog.html"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-user"></i>Jordan Park</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
                             </div>
-                            <h3 class="box-title"><a href="blog-details.html">How to Look After Dogs Loved Ones Healthy Year-Round</a></h3>
+                            <h3 class="box-title"><a href="{{ route('blogdetails') }}">How to Look After Dogs Loved Ones Healthy Year-Round</a></h3>
                             <div class="btn-wrap">
-                                <a href="blog-details.html" class="link-btn th-btn-icon">Read More</a>
+                                <a href="{{ route('blogdetails') }}" class="link-btn th-btn-icon">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -957,12 +957,12 @@ Blog Area
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <a href="blog.html"><i class="fas fa-user"></i>Jordan Park</a>
-                                <a href="blog.html"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-user"></i>Jordan Park</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
                             </div>
-                            <h3 class="box-title"><a href="blog-details.html">Signs Your Cat is Stressed Your Loved Ones </a></h3>
+                            <h3 class="box-title"><a href="{{ route('blogdetails') }}">Signs Your Cat is Stressed Your Loved Ones </a></h3>
                             <div class="btn-wrap">
-                                <a href="blog-details.html" class="link-btn th-btn-icon">Read More</a>
+                                <a href="{{ route('blogdetails') }}" class="link-btn th-btn-icon">Read More</a>
                             </div>
                         </div>
                     </div>

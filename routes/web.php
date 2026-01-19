@@ -23,6 +23,7 @@ Route::get('service-details', [ServicesController::class, 'servicedetails'])->na
 
 // Blog Page
 Route::get('blog/', [BlogController::class, 'index'])->name('blog');
+Route::get('blog-details', [BlogController::class, 'blogdetails'])->name('blogdetails');
 
 // Contact Page
 Route::get('contact/', [ContactController::class, 'index'])->name('contact');
