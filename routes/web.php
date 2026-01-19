@@ -44,3 +44,6 @@ Route::get('team/', [TeamController::class, 'index'])->name('team');
 
 // Packages Page
 Route::get('packages/', [PackagesController::class, 'index'])->name('packages');
+
+//Send Contact Mail
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
