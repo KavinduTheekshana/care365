@@ -6,10 +6,10 @@
     <title>Contact Form Submission</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            color: #1e293b;                /* slate-800 for good readability */
+            background-color: #f0f9ff;     /* very light blue-gray bg */
             margin: 0;
             padding: 0;
         }
@@ -17,56 +17,64 @@
             max-width: 600px;
             margin: 20px auto;
             background: #ffffff;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #bfdbfe;     /* subtle light blue border */
         }
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%);
+            color: #1e40af;                /* deep blue text */
+            padding: 35px 30px;
             text-align: center;
         }
         .header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 26px;
+            font-weight: 600;
         }
         .content {
             padding: 30px;
         }
         .field {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 22px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #e0f2fe;
         }
         .field:last-child {
             border-bottom: none;
         }
         .label {
             font-weight: bold;
-            color: #667eea;
-            font-size: 12px;
+            color: #3b82f6;                /* bright but professional blue */
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
         }
         .value {
-            color: #333;
+            color: #1e293b;
             font-size: 16px;
+            word-break: break-word;
         }
         .footer {
-            background: #f8f9fa;
+            background: #f0f9ff;
             padding: 20px;
             text-align: center;
-            font-size: 12px;
-            color: #666;
+            font-size: 13px;
+            color: #475569;
+            border-top: 1px solid #bfdbfe;
+        }
+        .emoji {
+            font-size: 28px;
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📧 New Contact Form Submission</h1>
+            <h1><span class="emoji">📧</span> New Contact Form Submission</h1>
         </div>
         
         <div class="content">

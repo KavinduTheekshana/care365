@@ -126,15 +126,16 @@
 
 .alert-modal-content {
     position: relative;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%);
     margin: 10% auto;
     padding: 40px;
     border-radius: 20px;
     max-width: 450px;
     text-align: center;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     animation: slideDown 0.4s ease;
-    color: white;
+    color: #1e40af;               /* dark blue text for good contrast */
+    border: 1px solid #93c5fd;
 }
 
 .alert-icon {
@@ -146,27 +147,30 @@
     align-items: center;
     justify-content: center;
     font-size: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    color: #1d4ed8;                /* blue icon */
+    border: 2px solid #60a5fa;
 }
 
 .alert-modal-content h3 {
     margin: 15px 0;
     font-size: 24px;
     font-weight: 600;
-    color: white;
+    color: #1e40af;
 }
 
 .alert-modal-content p {
     margin: 15px 0 25px;
     font-size: 16px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    color: #1e40af;
+    opacity: 0.95;
 }
 
 .alert-close-btn {
-    background: white;
-    color: #667eea;
+    background: #3b82f6;
+    color: white;
     border: none;
     padding: 12px 35px;
     font-size: 16px;
@@ -174,16 +178,29 @@
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 .alert-close-btn:hover {
+    background: #2563eb;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
+/* Remove error state or make it a darker blue variant if you still want to keep it */
 .alert-modal.error .alert-modal-content {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border: 1px solid #60a5fa;
+}
+
+.alert-modal.error .alert-icon {
+    color: #1e40af;
+    border-color: #3b82f6;
+}
+
+.alert-modal.error .alert-modal-content h3,
+.alert-modal.error .alert-modal-content p {
+    color: #1e40af;
 }
 
 .btn-loader {
