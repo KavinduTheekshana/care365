@@ -20,7 +20,7 @@
             
                                     <li><a href="error.html">Error Page</a></li>
                                     <li><a href="{{ route('blog') }}">Blog</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                 </ul>
                             </nav>
                             <div class="header-button d-flex d-lg-none">
@@ -40,7 +40,7 @@
                                                 40 40</a></p>
                                     </div>
                                 </div>
-                                {{-- <a href="contact.html" class="th-btn style-border">Book Now</a> --}}
+                                {{-- <a href="{{ route('contact') }}" class="th-btn style-border">Book Now</a> --}}
                             </div>
                         </div>
                     </div>
