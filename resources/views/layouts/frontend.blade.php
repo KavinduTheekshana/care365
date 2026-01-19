@@ -162,11 +162,11 @@ Designed & Developed by Creatx Software Ltd. -->
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="service.html">Services</a></li>
-                                    <li><a href="blog.html">Our Groomers</a></li>
-                                    <li><a href="contact.html">Book an Appointment</a></li>
+                                    <li><a href="{{ route('home') }}">Home</a></li>
+                                    <li><a href="{{ route('about') }}">About Us</a></li>
+                                    <li><a href="{{ route('services') }}">Services</a></li>
+                                    <li><a href="{{ route('team') }}">Our Groomers</a></li>
+                                    <li><a href="{{ route('contact') }}">Book an Appointment</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -176,11 +176,11 @@ Designed & Developed by Creatx Software Ltd. -->
                             <h3 class="widget_title">Resources</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="about.html">Articles & Tips</a></li>
-                                    <li><a href="about.html">Preventative Care</a></li>
-                                    <li><a href="blog.html">Our Blog</a></li>
-                                    <li><a href="about.html">Investors Relations</a></li>
-                                    <li><a href="contact.html">Term & Conditions </a></li>
+                                    <li><a href="{{ route('about') }}">Articles & Tips</a></li>
+                                    <li><a href="{{ route('about') }}">Preventative Care</a></li>
+                                    <li><a href="{{ route('blog') }}">Our Blog</a></li>
+                                    <li><a href="{{ route('about') }}">Investors Relations</a></li>
+                                    <li><a href="{{ route('contact') }}">Term & Conditions </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -190,11 +190,11 @@ Designed & Developed by Creatx Software Ltd. -->
                             <h3 class="widget_title">Services</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="service.html">Dog & Cat Grooming</a></li>
-                                    <li><a href="service.html">Bath & Brush</a></li>
-                                    <li><a href="service.html">Haircuts & Styling</a></li>
-                                    <li><a href="service.html">Nail Trimming</a></li>
-                                    <li><a href="service.html">Ear Cleaning</a></li>
+                                    <li><a href="{{ route('services') }}">Dog & Cat Grooming</a></li>
+                                    <li><a href="{{ route('services') }}">Bath & Brush</a></li>
+                                    <li><a href="{{ route('services') }}">Haircuts & Styling</a></li>
+                                    <li><a href="{{ route('services') }}">Nail Trimming</a></li>
+                                    <li><a href="{{ route('services') }}">Ear Cleaning</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -204,11 +204,11 @@ Designed & Developed by Creatx Software Ltd. -->
                             <h3 class="widget_title">Support</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="contact.html">Help Center</a></li>
-                                    <li><a href="faq.html">FAQs</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                    <li><a href="about.html">Ticket Support</a></li>
-                                    <li><a href="about.html">Live Chat </a></li>
+                                    <li><a href="{{ route('contact') }}">Help Center</a></li>
+                                    <li><a href="{{ route('faq') }}">FAQs</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                                    <li><a href="{{ route('about') }}">Ticket Support</a></li>
+                                    <li><a href="{{ route('about') }}">Live Chat </a></li>
                                 </ul>
                             </div>
                         </div>
