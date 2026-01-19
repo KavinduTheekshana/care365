@@ -32,7 +32,7 @@
                     <div class="breadcumb-content">
                         <h1 class="breadcumb-title text-anim" data-cue="slideInUp" data-delay="100">Our Services</h1>
                         <ul class="breadcumb-menu">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
                             <li>Our Services</li>
                         </ul>
                     </div>
