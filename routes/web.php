@@ -5,6 +5,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GalleryController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -21,3 +22,6 @@ Route::get('blog/', [BlogController::class, 'index'])->name('blog');
 
 // Contact Page
 Route::get('contact/', [ContactController::class, 'index'])->name('contact');
+
+// Gallery Page
+Route::get('gallery/', [GalleryController::class, 'index'])->name('gallery');
