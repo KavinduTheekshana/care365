@@ -106,7 +106,7 @@ Designed & Developed by Creatx Software Ltd. -->
                     <div class="col-xl-5 order-xl-3">
                         <div class="btn-wrap style2 justify-content-xl-end justify-content-center"
                             data-cue="slideInRight">
-                            <a class="th-btn" href="contact.html">Make Appointment <span
+                            <a class="th-btn" href="{{ route('contact') }}">Make Appointment <span
                                     class="th-btn-icon"></span></a>
                             <a class="th-btn style2" href="team.html">Our Specialists <span
                                     class="th-btn-icon"></span></a>
