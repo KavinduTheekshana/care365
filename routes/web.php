@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TestimonialsController;
+use App\Http\Controllers\FaqController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -29,3 +30,6 @@ Route::get('gallery/', [GalleryController::class, 'index'])->name('gallery');
 
 // Testimonials Page
 Route::get('testimonials/', [TestimonialsController::class, 'index'])->name('testimonial');
+
+// FAQ Page
+Route::get('faq/', [FaqController::class, 'index'])->name('faq');
