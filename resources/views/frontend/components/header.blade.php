@@ -6,7 +6,7 @@
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
                             <div class="header-logo">
-                                <a href="index.html">
+                                <a href="{{ route('home') }}">
                                     <img src="assets/img/logo.png" alt="Care 365">
                                 </a>
                             </div>
@@ -14,7 +14,7 @@
                         <div class="col-auto me-xxl-auto">
                             <nav class="main-menu d-none d-lg-inline-block">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="{{ route('home') }}">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="service.html">Services</a></li>
             
