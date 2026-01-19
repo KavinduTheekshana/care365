@@ -36,9 +36,9 @@ class ContactController extends Controller
                 'message' => $validated['message'],
             ];
 
-            // Send email directly without Mailable class
+
             Mail::send('emails.contact-form', ['data' => $data], function($message) use ($data) {
-                $message->to('thisara.a2001@gmail.com')
+                $message->to(env('CONTACT_FORM_RECIPIENT', 'default@example.com'))
                         ->subject('New Contact Form Submission - ' . $data['subject'])
                         ->from(config('mail.from.address'), config('mail.from.name'));
             });
