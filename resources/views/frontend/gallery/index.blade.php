@@ -1,59 +1,10 @@
+@extends('layouts.frontend')
+
+
 <!doctype html>
 <html class="no-js" lang="zxx" dir="ltr">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Babet - Pet Care & Shop HTML Template - Blog</title>
-    <meta name="author" content="Babet">
-    <meta name="description" content="Babet - Pet Care & Shop HTML Template">
-    <meta name="keywords" content="Babet - Pet Care & Shop HTML Template">
-    <meta name="robots" content="INDEX,FOLLOW">
 
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-    <!--==============================
-	  Google Fonts
-	============================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Onest:wght@100..900&display=swap" rel="stylesheet">
-
-    <!--==============================
-	    All CSS File
-	============================== -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-</head>
 
 <body class="bg-smoke2">
 
@@ -71,84 +22,6 @@
     <!-- <div class="slider-drag-cursor"> DRAG </div> -->
 
     <!--==============================
-    Mobile Menu
-  ============================== -->
-    <div class="th-menu-wrapper allow-natural-scroll">
-        <div class="th-menu-area text-center">
-            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo">
-                <a href="index.html"><img src="assets/img/logo3.png" alt="Care 365"></a>
-            </div>
-                        <div class="th-mobile-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="testimonial.html">Testimonial</a></li>
-                    <li><a href="faq.html">FAQ'S Page</a></li>
-                    <li><a href="price.html">Price Package</a></li>
-                    <li><a href="error.html">Error Page</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--==============================
-	Header Area
-==============================-->
-    <header class="th-header header-default">
-        <div class="sticky-wrapper">
-            <!-- Main Menu Area -->
-            <div class="menu-area">
-                <div class="container">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-auto">
-                            <div class="header-logo">
-                                <a href="index.html">
-                                    <img src="assets/img/logo.png" alt="Care 365">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-auto me-xxl-auto">
-                                                        <nav class="main-menu d-none d-lg-inline-block">
-                                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="testimonial.html">Testimonial</a></li>
-                    <li><a href="faq.html">FAQ'S Page</a></li>
-                    <li><a href="price.html">Price Package</a></li>
-                    <li><a href="error.html">Error Page</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </nav>
-                            <div class="header-button d-flex d-lg-none">
-                                <button type="button" class="th-menu-toggle icon-btn"><i class="far fa-bars"></i></button>
-                            </div>
-                        </div>
-                        <div class="col-auto d-xl-block d-none">
-                            <div class="header-button">
-                                <div class="info-card">
-                                    <div class="box-icon">
-                                        <img src="assets/img/icon/phone-white.svg" alt="phon-icon">
-                                    </div>
-                                    <div class="box-content">
-                                        <h4 class="box-title text-white">Call us: </h4>
-                                        <p class="box-text"><a class="text-white" href="tel:94776604040">(+94)77 660 40 40</a></p>
-                                    </div>
-                                </div>
-                                <a href="contact.html" class="th-btn style-border">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header><!--==============================
     Breadcumb
 ============================== -->
     <div class="breadcumb-wrapper ">
@@ -159,7 +32,7 @@
                     <div class="breadcumb-content">
                         <h1 class="breadcumb-title text-anim" data-cue="slideInUp" data-delay="100">Gallery</h1>
                         <ul class="breadcumb-menu">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
                             <li>Gallery</li>
                         </ul>
                     </div>
