@@ -15,7 +15,7 @@
                                         <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">Emphasize your holistic approach to care, addressing not only physical needs but also mental, emotional, and spiritual well-being.</p>
                                         <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
                                             <a href="{{ route('contact') }}" class="th-btn th-btn-lg">Get Started</a>
-                                            <a href="{{ route('services') }}" class="th-btn th-btn-lg style-border">Visit Gallery</a>
+                                            <a href="{{route('gallery')}}" class="th-btn th-btn-lg style-border">Visit Gallery</a>
                                         </div>
                                     </div>
                                 </div>
