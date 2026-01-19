@@ -9,6 +9,8 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\PackagesController;
+
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -39,3 +41,6 @@ Route::get('faq/', [FaqController::class, 'index'])->name('faq');
 
 // Team Page
 Route::get('team/', [TeamController::class, 'index'])->name('team');
+
+// Packages Page
+Route::get('packages/', [PackagesController::class, 'index'])->name('packages');
