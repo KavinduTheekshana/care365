@@ -18,6 +18,7 @@
                                     <li><a href="{{ route('about') }}">About Us</a></li>
                                     <li><a href="{{route('services')}}">Services</a></li>
                                     <li><a href="{{route('gallery')}}">Gallery</a></li>
+                                    <li><a href="{{route('testimonial')}}">Testimonial</a></li>
                                     <li><a href="error.html">Error Page</a></li>
                                     <li><a href="{{ route('blog') }}">Blog</a></li>
                                     <li><a href="{{ route('contact') }}">Contact Us</a></li>

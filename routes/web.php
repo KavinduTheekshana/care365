@@ -6,6 +6,7 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\TestimonialsController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -25,3 +26,6 @@ Route::get('contact/', [ContactController::class, 'index'])->name('contact');
 
 // Gallery Page
 Route::get('gallery/', [GalleryController::class, 'index'])->name('gallery');
+
+// Testimonials Page
+Route::get('testimonials/', [TestimonialsController::class, 'index'])->name('testimonial');
