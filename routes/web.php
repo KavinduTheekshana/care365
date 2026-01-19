@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\TeamController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -33,3 +34,6 @@ Route::get('testimonials/', [TestimonialsController::class, 'index'])->name('tes
 
 // FAQ Page
 Route::get('faq/', [FaqController::class, 'index'])->name('faq');
+
+// Team Page
+Route::get('team/', [TeamController::class, 'index'])->name('team');
