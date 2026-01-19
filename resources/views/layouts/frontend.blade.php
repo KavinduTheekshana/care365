@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>CARE365</title>
+    <title>Care365</title>
     <meta name="author" content="Babet">
     <meta name="description" content="Babet - Pet Care & Shop HTML Template">
     <meta name="keywords" content="Babet - Pet Care & Shop HTML Template">
