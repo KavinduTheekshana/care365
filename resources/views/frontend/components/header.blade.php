@@ -19,7 +19,7 @@
                                     <li><a href="{{route('services')}}">Services</a></li>
             
                                     <li><a href="error.html">Error Page</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="{{ route('blog') }}">Blog</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                             </nav>

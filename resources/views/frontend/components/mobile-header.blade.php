@@ -14,7 +14,7 @@
                     <li><a href="faq.html">FAQ'S Page</a></li>
                     <li><a href="price.html">Price Package</a></li>
                     <li><a href="error.html">Error Page</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="{{ route('blog') }}">Blog</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
