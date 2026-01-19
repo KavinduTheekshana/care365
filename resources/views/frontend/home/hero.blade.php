@@ -14,8 +14,8 @@
                                         </h1>
                                         <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">Emphasize your holistic approach to care, addressing not only physical needs but also mental, emotional, and spiritual well-being.</p>
                                         <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
-                                            <a href="contact.html" class="th-btn th-btn-lg">Get Started</a>
-                                            <a href="service.html" class="th-btn th-btn-lg style-border">Visit Gallery</a>
+                                            <a href="{{ route('contact') }}" class="th-btn th-btn-lg">Get Started</a>
+                                            <a href="{{ route('services') }}" class="th-btn th-btn-lg style-border">Visit Gallery</a>
                                         </div>
                                     </div>
                                 </div>
@@ -36,8 +36,8 @@
                                         </h1>
                                         <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">Highlight your personalized care plans tailored to each resident's unique preferences, needs, and goals</p>
                                         <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
-                                            <a href="contact.html" class="th-btn th-btn-lg">Get Started</a>
-                                            <a href="service.html" class="th-btn th-btn-lg style-border">Visit Gallery</a>
+                                            <a href="{{ route('contact') }}" class="th-btn th-btn-lg">Get Started</a>
+                                            <a href="{{ route('services') }}" class="th-btn th-btn-lg style-border">Visit Gallery</a>
                                         </div>
                                     </div>
                                 </div>
@@ -58,8 +58,8 @@
                                         </h1>
                                         <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">Showcase the vibrant community and engaging social activities available to residents, promoting a sense of belonging and purpose.</p>
                                         <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
-                                            <a href="contact.html" class="th-btn th-btn-lg">Get Started</a>
-                                            <a href="service.html" class="th-btn th-btn-lg style-border">Visit Gallery</a>
+                                            <a href="{{ route('contact') }}" class="th-btn th-btn-lg">Get Started</a>
+                                            <a href="{{ route('services') }}" class="th-btn th-btn-lg style-border">Visit Gallery</a>
                                         </div>
                                     </div>
                                 </div>

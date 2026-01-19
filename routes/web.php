@@ -19,6 +19,7 @@ Route::get('about/', [AboutUsController::class, 'index'])->name('about');
 
 // Services Page
 Route::get('services/', [ServicesController::class, 'index'])->name('services');
+Route::get('service-details', [ServicesController::class, 'servicedetails'])->name('servicedetails');
 
 // Blog Page
 Route::get('blog/', [BlogController::class, 'index'])->name('blog');
