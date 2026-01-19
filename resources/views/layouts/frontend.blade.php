@@ -188,15 +188,15 @@ Designed & Developed by Creatx Software Ltd. -->
                     <div class="col-sm-6 col-xl-auto" data-cue="slideInUp">
                         <div class="widget widget_nav_menu footer-widget">
                             <h3 class="widget_title">Services</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="{{ route('services') }}">Dog & Cat Grooming</a></li>
-                                    <li><a href="{{ route('services') }}">Bath & Brush</a></li>
-                                    <li><a href="{{ route('services') }}">Haircuts & Styling</a></li>
-                                    <li><a href="{{ route('services') }}">Nail Trimming</a></li>
-                                    <li><a href="{{ route('services') }}">Ear Cleaning</a></li>
-                                </ul>
-                            </div>
+                                <div class="menu-all-pages-container">
+                                    <ul class="menu">
+                                        <li><a href="{{ route('services') }}">In-Home Care</a></li>
+                                        <li><a href="{{ route('services') }}">Personal Hygiene Assistance</a></li>
+                                        <li><a href="{{ route('services') }}">Medication Reminders</a></li>
+                                        <li><a href="{{ route('services') }}">Meal Preparation & Nutrition</a></li>
+                                        <li><a href="{{ route('services') }}">Companionship & Social Activities</a></li>
+                                    </ul>
+                                </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-auto" data-cue="slideInUp">
