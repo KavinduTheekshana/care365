@@ -41,7 +41,7 @@ Marquee Area
                     <div class="swiper-slide">
                         <div class="marquee-card">
                             <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon1-1.svg" alt="img">
+                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
                             </div>
                             <a target="_blank" href="#">
                                 Comfort </a>
@@ -50,7 +50,7 @@ Marquee Area
                     <div class="swiper-slide">
                         <div class="marquee-card">
                             <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon1-1.svg" alt="img">
+                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
                             </div>
                             <a target="_blank" href="#">
                                 Quality of Life </a>
@@ -59,7 +59,7 @@ Marquee Area
                     <div class="swiper-slide">
                         <div class="marquee-card">
                             <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon1-1.svg" alt="img">
+                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
                             </div>
                             <a target="_blank" href="#">
                                 Continuum of Care </a>
@@ -68,7 +68,7 @@ Marquee Area
                     <div class="swiper-slide">
                         <div class="marquee-card">
                             <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon1-1.svg" alt="img">
+                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
                             </div>
                             <a target="_blank" href="#">
                                 friendly Staff </a>
@@ -77,7 +77,7 @@ Marquee Area
                     <div class="swiper-slide">
                         <div class="marquee-card">
                             <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon1-1.svg" alt="img">
+                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
                             </div>
                             <a target="_blank" href="#">
                                 Customized Care Plans </a>
@@ -86,7 +86,7 @@ Marquee Area
                     <div class="swiper-slide">
                         <div class="marquee-card">
                             <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon1-1.svg" alt="img">
+                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
                             </div>
                             <a target="_blank" href="#">
                                 Holistic Approach </a>
@@ -95,8 +95,8 @@ Marquee Area
                     
                     <div class="swiper-slide">
                         <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon1-1.svg" alt="img">
+                            <div class="marquee-icon hidden">
+                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
                             </div>
                             <a target="_blank" href="#">
                                 Expertise </a>
@@ -689,13 +689,13 @@ Price Area
                                 </div>
                             </div>
                         </div>
-                        <a class="th-btn" href="contact.html">Enquire Now</a>
+                        <a class="th-btn" href="{{ route('contact') }}">Enquire Now</a>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center mt-5">
                 <div class="col-12 text-center" data-cue="slideInUp">
-                    <a class="th-btn style-border3" href="contact.html">Contact Us for More Details <img src="assets/img/icon/arrow-right-black.svg" alt="icon"></a>
+                    <a class="th-btn style-border3" href="{{ route('contact') }}">Contact Us for More Details <img src="assets/img/icon/arrow-right-black.svg" alt="icon"></a>
                 </div>
             </div>
         </div>
@@ -841,21 +841,22 @@ Appointment Area
             </div>
             <div class="row gy-40 align-items-center flex-row-reverse">
                 <div class="col-xl-7">
-                    <form action="mail.php" method="POST" class="appointment-form ajax-contact">
+                     <form id="contactForm" class="appointment-form ajax-contact">
+                        @csrf
                         <div class="row">
-                            <div class="form-group style-border col-md-6">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name*">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Your name*" required>
                             </div>
-                            <div class="form-group style-border col-md-6">
-                                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter your phone number*">
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address*" required>
                             </div>
-                            <div class="form-group style-border col-md-6">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email address*">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="number" id="number" placeholder="Phone Number*" required>
                             </div>
 
-                            <div class="form-group col-md-6 style-border3">
-                                <select name="subject" id="subject" class="form-select">
-                                    <option value="" disabled selected hidden>Select service*</option>
+                            <div class="form-group col-md-6">
+                                <select name="subject" id="subject" class="form-select" required>
+                                    <option value="" disabled selected hidden>Select Service*</option>
                                     <option value="Medical Care">Medical Care</option>
                                     <option value="Nutritious Meals">Nutritious Meals</option>
                                     <option value="Social/Recreational Activities">Social/Recreational Activities</option>
@@ -875,17 +876,25 @@ Appointment Area
                                     <option value="Post-surgical Care">Post-surgical Care</option>
                                     <option value="Green Environment">Green Environment</option>
                                 </select>
-                                <i class="fal fa-chevron-down"></i>
                             </div>
-
-                            <div class="form-group style-border col-md-12">
-                                <input type="date" class="form-control" value="2025-11-16" name="date" id="date">
+                            <div class="form-group col-12">
+                                <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Write a message*" required></textarea>
                             </div>
                             <div class="form-btn col-12">
-                                <button class="th-btn">Submit Now</button>
+                                <button type="submit" class="th-btn style5" id="submitBtn">
+                                    <span class="btn-text">Submit Message</span>
+                                    <span class="btn-loader" style="display: none;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10" opacity="0.25"/>
+                                            <path d="M12 2a10 10 0 0 1 10 10" opacity="0.75">
+                                                <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                                            </path>
+                                        </svg>
+                                        Sending...
+                                    </span>
+                                </button>
                             </div>
                         </div>
-                        <p class="form-messages mb-0 mt-3"></p>
                     </form>
                 </div>
                 <div class="col-xl-5">
@@ -911,18 +920,18 @@ Blog Area
                 <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
                     <div class="blog-card">
                         <div class="blog-img">
-                            <a href="blog-details.html">
+                            <a href="{{ route('blogdetails') }}">
                                 <img src="assets/img/blog/blog-s-1-1.jpg" alt="blog image">
                             </a>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <a href="blog.html"><i class="fas fa-user"></i>Jordan Park</a>
-                                <a href="blog.html"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-user"></i>Jordan Park</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
                             </div>
-                            <h3 class="box-title"><a href="blog-details.html">How to Keep Your Loved Ones Healthy Year-Round </a></h3>
+                            <h3 class="box-title"><a href="{{ route('blogdetails') }}">How to Keep Your Loved Ones Healthy Year-Round </a></h3>
                             <div class="btn-wrap">
-                                <a href="blog-details.html" class="link-btn th-btn-icon">Read More</a>
+                                <a href="{{ route('blogdetails') }}" class="link-btn th-btn-icon">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -931,18 +940,18 @@ Blog Area
                 <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
                     <div class="blog-card">
                         <div class="blog-img">
-                            <a href="blog-details.html">
+                            <a href="{{ route('blogdetails') }}">
                                 <img src="assets/img/blog/blog-s-1-2.jpg" alt="blog image">
                             </a>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <a href="blog.html"><i class="fas fa-user"></i>Jordan Park</a>
-                                <a href="blog.html"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-user"></i>Jordan Park</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
                             </div>
-                            <h3 class="box-title"><a href="blog-details.html">How to Look After Dogs Loved Ones Healthy Year-Round</a></h3>
+                            <h3 class="box-title"><a href="{{ route('blogdetails') }}">How to Look After Dogs Loved Ones Healthy Year-Round</a></h3>
                             <div class="btn-wrap">
-                                <a href="blog-details.html" class="link-btn th-btn-icon">Read More</a>
+                                <a href="{{ route('blogdetails') }}" class="link-btn th-btn-icon">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -957,12 +966,12 @@ Blog Area
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <a href="blog.html"><i class="fas fa-user"></i>Jordan Park</a>
-                                <a href="blog.html"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-user"></i>Jordan Park</a>
+                                <a href="{{ route('blog') }}"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
                             </div>
-                            <h3 class="box-title"><a href="blog-details.html">Signs Your Cat is Stressed Your Loved Ones </a></h3>
+                            <h3 class="box-title"><a href="{{ route('blogdetails') }}">Signs Your Cat is Stressed Your Loved Ones </a></h3>
                             <div class="btn-wrap">
-                                <a href="blog-details.html" class="link-btn th-btn-icon">Read More</a>
+                                <a href="{{ route('blogdetails') }}" class="link-btn th-btn-icon">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -971,4 +980,102 @@ Blog Area
             </div>
         </div>
     </section>
+
+    @include('frontend.components.email_alert_modal')
+
+        <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoader = submitBtn.querySelector('.btn-loader');
+            
+            // Disable button and show loader
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline-flex';
+            
+            const formData = new FormData(this);
+            
+            fetch('/contact/send', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+                    'Accept': 'application/json',
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw err;
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Re-enable button
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoader.style.display = 'none';
+                
+                if (data.success) {
+                    showAlert('success', 'Success!', data.message);
+                    document.getElementById('contactForm').reset();
+                } else {
+                    showAlert('error', 'Error!', data.message);
+                }
+            })
+            .catch(error => {
+                // Re-enable button
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoader.style.display = 'none';
+                
+                console.error('Error:', error);
+                
+                let errorMessage = 'An unexpected error occurred. Please try again.';
+                if (error.message) {
+                    errorMessage = error.message;
+                }
+                if (error.error) {
+                    errorMessage = error.error;
+                }
+                
+                showAlert('error', 'Error!', errorMessage);
+            });
+        });
+
+        function showAlert(type, title, message) {
+            const modal = document.getElementById('alertModal');
+            const icon = document.getElementById('alertIcon');
+            const titleEl = document.getElementById('alertTitle');
+            const messageEl = document.getElementById('alertMessage');
+            
+            if (type === 'success') {
+                icon.innerHTML = '✓';
+                modal.classList.remove('error');
+            } else {
+                icon.innerHTML = '✕';
+                modal.classList.add('error');
+            }
+            
+            titleEl.textContent = title;
+            messageEl.textContent = message;
+            modal.style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('alertModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('alertModal');
+            if (event.target == modal) {
+                closeAlert();
+            }
+        }
+        </script>
  @endsection

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Babet - Pet Care & Shop HTML Template - Home One</title>
+    <title>Care365</title>
     <meta name="author" content="Babet">
     <meta name="description" content="Babet - Pet Care & Shop HTML Template">
     <meta name="keywords" content="Babet - Pet Care & Shop HTML Template">
@@ -14,22 +14,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/img/favicons/apple-icon-57x57.png') }}">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/img/favicons/apple-icon-60x60.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/favicons/apple-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/favicons/apple-icon-76x76.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/favicons/apple-icon-114x114.png') }}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/favicons/apple-icon-120x120.png') }}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/favicons/apple-icon-144x144.png') }}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/favicons/apple-icon-152x152.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-icon-180x180.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/favicons/android-icon-192x192.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/favicons/favicon-96x96.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicons/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('assets/img/favicons/manifest.json') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="manifest" href="{{ asset('assets/img/logo.png') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/ms-icon-144x144.png') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/img/logo.png') }}">
     <meta name="theme-color" content="#ffffff">
     @vite(['', 'resources/js/app.js'])
 
@@ -106,9 +106,9 @@ Designed & Developed by Creatx Software Ltd. -->
                     <div class="col-xl-5 order-xl-3">
                         <div class="btn-wrap style2 justify-content-xl-end justify-content-center"
                             data-cue="slideInRight">
-                            <a class="th-btn" href="contact.html">Make Appointment <span
+                            <a class="th-btn" href="{{ route('contact') }}">Make Appointment <span
                                     class="th-btn-icon"></span></a>
-                            <a class="th-btn style2" href="team.html">Our Specialists <span
+                            <a class="th-btn style2" href="{{ route('team') }}">Our Specialists <span
                                     class="th-btn-icon"></span></a>
                         </div>
                     </div>
@@ -162,11 +162,11 @@ Designed & Developed by Creatx Software Ltd. -->
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="service.html">Services</a></li>
-                                    <li><a href="blog.html">Our Groomers</a></li>
-                                    <li><a href="contact.html">Book an Appointment</a></li>
+                                    <li><a href="{{ route('home') }}">Home</a></li>
+                                    <li><a href="{{ route('about') }}">About Us</a></li>
+                                    <li><a href="{{ route('services') }}">Services</a></li>
+                                    <li><a href="{{ route('team') }}">Our Groomers</a></li>
+                                    <li><a href="{{ route('contact') }}">Book an Appointment</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -176,11 +176,11 @@ Designed & Developed by Creatx Software Ltd. -->
                             <h3 class="widget_title">Resources</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="about.html">Articles & Tips</a></li>
-                                    <li><a href="about.html">Preventative Care</a></li>
-                                    <li><a href="blog.html">Our Blog</a></li>
-                                    <li><a href="about.html">Investors Relations</a></li>
-                                    <li><a href="contact.html">Term & Conditions </a></li>
+                                    <li><a href="{{ route('about') }}">Articles & Tips</a></li>
+                                    <li><a href="{{ route('about') }}">Preventative Care</a></li>
+                                    <li><a href="{{ route('blog') }}">Our Blog</a></li>
+                                    <li><a href="{{ route('about') }}">Investors Relations</a></li>
+                                    <li><a href="{{ route('contact') }}">Term & Conditions </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -188,15 +188,15 @@ Designed & Developed by Creatx Software Ltd. -->
                     <div class="col-sm-6 col-xl-auto" data-cue="slideInUp">
                         <div class="widget widget_nav_menu footer-widget">
                             <h3 class="widget_title">Services</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="service.html">Dog & Cat Grooming</a></li>
-                                    <li><a href="service.html">Bath & Brush</a></li>
-                                    <li><a href="service.html">Haircuts & Styling</a></li>
-                                    <li><a href="service.html">Nail Trimming</a></li>
-                                    <li><a href="service.html">Ear Cleaning</a></li>
-                                </ul>
-                            </div>
+                                <div class="menu-all-pages-container">
+                                    <ul class="menu">
+                                        <li><a href="{{ route('services') }}">In-Home Care</a></li>
+                                        <li><a href="{{ route('services') }}">Personal Hygiene Assistance</a></li>
+                                        <li><a href="{{ route('services') }}">Medication Reminders</a></li>
+                                        <li><a href="{{ route('services') }}">Meal Preparation & Nutrition</a></li>
+                                        <li><a href="{{ route('services') }}">Companionship & Social Activities</a></li>
+                                    </ul>
+                                </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-auto" data-cue="slideInUp">
@@ -204,11 +204,11 @@ Designed & Developed by Creatx Software Ltd. -->
                             <h3 class="widget_title">Support</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="contact.html">Help Center</a></li>
-                                    <li><a href="faq.html">FAQs</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                    <li><a href="about.html">Ticket Support</a></li>
-                                    <li><a href="about.html">Live Chat </a></li>
+                                    <li><a href="{{ route('contact') }}">Help Center</a></li>
+                                    <li><a href="{{ route('faq') }}">FAQs</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                                    <li><a href="{{ route('about') }}">Ticket Support</a></li>
+                                    <li><a href="{{ route('about') }}">Live Chat </a></li>
                                 </ul>
                             </div>
                         </div>

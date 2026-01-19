@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="btn-wrap mt-50" data-cue="slideInUp">
-                        <a class="th-btn" href="about.html">Learn More</a>
+                        <a class="th-btn" href="{{ route('about') }}">Learn More</a>
                         <div class="info-card">
                             <div class="box-icon style2">
                                 <img src="assets/img/icon/phone-black.svg" alt="phon-icon">

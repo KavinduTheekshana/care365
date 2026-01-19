@@ -1,12 +1,10 @@
-    <section class="space bg-white overflow-hidden" id="service-sec">
-
+<section class="bg-smoke2 space overflow-hidden" id="service-sec">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-xxl-5 col-xl-7 col-md-8">
                     <div class="title-area">
-                              <span class="sub-title style2 text-anim" data-cue="slideInUp">Our Services</span>
-
-                        <h2 class="sec-title text-anim2" data-cue="slideInUp">Comprehensive Care Services We Offer</h2>
+                        <span class="sub-title subtitle-line text-anim" data-cue="slideInUp"> Our Services</span>
+                        <h2 class="sec-title text-anim2" data-cue="slideInUp">Our Comprehensive Care Services</h2>
                     </div>
                 </div>
                 <div class="col-auto">
@@ -16,7 +14,7 @@
                 </div>
             </div>
             <div class="slider-area service-slider1">
-                <div class="swiper th-slider" id="serviceSlider1" data-slider-options='{"autoHeight":true,"breakpoints":{"0":{"slidesPerView":1},"767":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
+                <div class="swiper th-slider" id="serviceSlider1" data-slider-options='{"autoHeight":true,"breakpoints":{"0":{"slidesPerView":1},"767":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1400":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" data-cue="slideInUp">
                             <div class="service-card">
@@ -26,7 +24,7 @@
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="{{ route('servicedetails') }}">Medical Care</a></h3>
-                                    <p class="box-text">Embrace a world of comprehensive medical support tailored to your unique needs, with a team of dedicated professionals committed to delivering compassionate care and promoting your overall well-being.</p>
+                                    <p class="box-text">Comprehensive medical support tailored to your unique needs with dedicated professionals committed to compassionate care.</p>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +36,7 @@
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="{{ route('servicedetails') }}">Nutritious Meals</a></h3>
-                                    <p class="box-text">Nourish your body and soul with our meticulously crafted meals, where every bite is a celebration of wholesome ingredients and culinary excellence, fueling your journey towards optimal health.</p>
+                                    <p class="box-text">Meticulously crafted meals with wholesome ingredients and culinary excellence for optimal health.</p>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +48,7 @@
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="{{ route('servicedetails') }}">Social/Recreational Activities</a></h3>
-                                    <p class="box-text">Discover a vibrant tapestry of engaging social and recreational programs designed to ignite your passions, foster meaningful connections, and enrich your life with laughter, creativity, and personal growth.</p>
+                                    <p class="box-text">Engaging programs designed to ignite passions, foster meaningful connections, and enrich life.</p>
                                 </div>
                             </div>
                         </div>
@@ -58,11 +56,11 @@
                             <div class="service-card">
                                 <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
-                                    <img src="assets/img/Home-img/Religious & Spiritual Support.webp" alt="img">
+                                    <img src="assets/img/service/service_card_1_4.jpg" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Religious & Spiritual Support</a></h3>
-                                    <p class="box-text">Find solace in our nurturing environment that embraces diversity and provides a sanctuary for spiritual growth, where your beliefs are honored and celebrated.</p>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">24-hour Staff Availability</a></h3>
+                                    <p class="box-text">Dedicated team available around the clock providing attentive care and unwavering support.</p>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +72,7 @@
                                 </div>
                                 <div class="box-content">
                                     <h3 class="box-title"><a href="{{ route('servicedetails') }}">Dementia & Parkinson Care</a></h3>
-                                    <p class="box-text">Embrace a nurturing haven where our specialized care for individuals with dementia and Parkinson's disease ensures a safe and supportive environment, promoting comfort and quality of life.</p>
+                                    <p class="box-text">Specialized care ensuring a safe and supportive environment for comfort and quality of life.</p>
                                 </div>
                             </div>
                         </div>
@@ -82,11 +80,35 @@
                             <div class="service-card">
                                 <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
                                 <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
-                                    <img src="assets/img/Home-img/Paralysis Care.jpeg" alt="img">
+                                    <img src="assets/img/service/service_card_1_6.jpg" alt="img">
                                 </div>
                                 <div class="box-content">
-                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Paralysis Care</a></h3>
-                                    <p class="box-text">Rediscover independence and empowerment with our compassionate paralysis care services, designed to support your unique needs and foster a life filled with dignity and quality.</p>
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Physical Therapy</a></h3>
+                                    <p class="box-text">State-of-the-art therapy and rehabilitation services to regain strength, mobility, and independence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" data-cue="slideInUp">
+                            <div class="service-card">
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
+                                    <img src="assets/img/service/service_card_1_7.jpg" alt="img">
+                                </div>
+                                <div class="box-content">
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Wound Care</a></h3>
+                                    <p class="box-text">Expert wound care services promoting healing and restoring your overall well-being.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" data-cue="slideInUp">
+                            <div class="service-card">
+                                <a class="icon-btn style3" href="{{ route('servicedetails') }}"><img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img"></a>
+                                <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
+                                    <img src="assets/img/service/service_card_2_2.jpg" alt="img">
+                                </div>
+                                <div class="box-content">
+                                    <h3 class="box-title"><a href="{{ route('servicedetails') }}">Post-surgical Care</a></h3>
+                                    <p class="box-text">Personalized post-surgical care ensuring smooth transition and focused healing.</p>
                                 </div>
                             </div>
                         </div>

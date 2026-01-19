@@ -56,7 +56,7 @@
                             
                         </div>
                         <div class="btn-wrap justify-content-center">
-                            <a class="th-btn" href="contact.html">Schedule a Visit</a>
+                            <a class="th-btn" href="{{ route('contact') }}">Schedule a Visit</a>
                         </div>
                         {{-- <div class="why-img-box1" data-cue="slideInUp">
                             <img src="assets/img/Home-img/10.png" alt="img">

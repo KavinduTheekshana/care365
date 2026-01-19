@@ -2,20 +2,19 @@
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="assets/img/logo3.png" alt="Care 365"></a>
+                <a href="{{ route('home') }}"><img src="assets/img/logo3.png" alt="Care 365"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="testimonial.html">Testimonial</a></li>
-                    <li><a href="faq.html">FAQ'S Page</a></li>
-                    <li><a href="price.html">Price Package</a></li>
-                    <li><a href="error.html">Error Page</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="{{route('services')}}">Services</a></li>
+                    <li><a href="{{route('gallery')}}">Gallery</a></li>
+                    <li><a href="{{route('testimonial')}}">Testimonial</a></li>
+                    <li><a href="{{ route('packages') }}">Price Package</a></li>
+                    <li><a href="{{route('faq')}}">FAQ'S</a></li>
+                    <li><a href="{{ route('blog') }}">Blog</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
             </div>
         </div>

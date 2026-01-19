@@ -6,7 +6,7 @@
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
                             <div class="header-logo">
-                                <a href="index.html">
+                                <a href="{{ route('home') }}">
                                     <img src="assets/img/logo.png" alt="Care 365">
                                 </a>
                             </div>
@@ -14,13 +14,14 @@
                         <div class="col-auto me-xxl-auto">
                             <nav class="main-menu d-none d-lg-inline-block">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="service.html">Services</a></li>
-            
-                                    <li><a href="error.html">Error Page</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="{{ route('home') }}">Home</a></li>
+                                    <li><a href="{{ route('about') }}">About Us</a></li>
+                                    <li><a href="{{route('services')}}">Services</a></li>
+                                    <li><a href="{{route('gallery')}}">Gallery</a></li>
+                                    <li><a href="{{route('testimonial')}}">Testimonial</a></li>
+                                    <li><a href="{{route('faq')}}">FAQ'S</a></li>
+                                    <li><a href="{{ route('blog') }}">Blog</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                 </ul>
                             </nav>
                             <div class="header-button d-flex d-lg-none">
@@ -40,7 +41,7 @@
                                                 40 40</a></p>
                                     </div>
                                 </div>
-                                {{-- <a href="contact.html" class="th-btn style-border">Book Now</a> --}}
+                                {{-- <a href="{{ route('contact') }}" class="th-btn style-border">Book Now</a> --}}
                             </div>
                         </div>
                     </div>
