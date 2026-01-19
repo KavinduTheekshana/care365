@@ -15,7 +15,7 @@
                             <nav class="main-menu d-none d-lg-inline-block">
                                 <ul>
                                     <li><a href="{{ route('home') }}">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="{{ route('about') }}">About Us</a></li>
                                     <li><a href="service.html">Services</a></li>
             
                                     <li><a href="error.html">Error Page</a></li>
