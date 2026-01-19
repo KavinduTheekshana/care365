@@ -9,6 +9,6 @@ class AboutUsController extends Controller
 {
     public function index(): View
     {
-
+        return view('admin.manageCustomer', compact('product'));
     }
 }
