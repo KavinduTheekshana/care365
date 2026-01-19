@@ -10,7 +10,7 @@
                     <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="{{route('services')}}">Services</a></li>
                     <li><a href="{{route('gallery')}}">Gallery</a></li>
-                    <li><a href="testimonial.html">Testimonial</a></li>
+                    <li><a href="{{route('testimonial')}}">Testimonial</a></li>
                     <li><a href="faq.html">FAQ'S Page</a></li>
                     <li><a href="price.html">Price Package</a></li>
                     <li><a href="error.html">Error Page</a></li>
