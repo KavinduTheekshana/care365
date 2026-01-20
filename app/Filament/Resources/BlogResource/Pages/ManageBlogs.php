@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\BlogResource\Pages;
 
 use App\Filament\Resources\BlogResource;
-use Filament\Actions;
 use Filament\Resources\Pages\ManageRecords;
 
 class ManageBlogs extends ManageRecords
@@ -13,7 +12,7 @@ class ManageBlogs extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            \Filament\Actions\CreateAction::make(),
         ];
     }
 }
