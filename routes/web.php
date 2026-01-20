@@ -19,17 +19,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // About Us Page
 Route::get('about/', [AboutUsController::class, 'index'])->name('about');
 
-// Services Page
-Route::get('services/', [ServicesController::class, 'index'])->name('services');
-
-// Service Details Page
-Route::get('/{slug?}', [ServicesController::class, 'servicedetails'])->name('servicedetails');
-
-// You can also have a route that redirects from old URL to new slug-based URL
-Route::get('/service-details', function () {
-    return redirect()->route('servicedetails');
-});
-
 // Blog Page
 Route::get('blog/', [BlogController::class, 'index'])->name('blog');
 Route::get('blog-details', [BlogController::class, 'blogdetails'])->name('blogdetails');
@@ -54,3 +43,22 @@ Route::get('packages/', [PackagesController::class, 'index'])->name('packages');
 
 //Send Contact Mail
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
+
+
+
+
+
+
+// Services Page
+Route::get('services/', [ServicesController::class, 'index'])->name('services');
+
+// Service Details Page
+Route::get('/{slug?}', [ServicesController::class, 'servicedetails'])->name('servicedetails');
+
+// You can also have a route that redirects from old URL to new slug-based URL
+/*
+Route::get('/service-details', function () {
+    return redirect()->route('servicedetails');
+});
+*/
