@@ -87,6 +87,13 @@ return [
             'visibility' => 'public',
             'throw'      => false,
         ],
+        'care_homes_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('care_homes_img'),
+            'url'        => env('APP_URL') . '/care_homes_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
 
     ],
 
