@@ -7,6 +7,8 @@ use Illuminate\View\View;
 use App\Models\Service;
 use App\Models\Whoweare;
 use App\Models\CareHome;
+use App\Models\Testimonial;
+
 
 class AboutUsController extends Controller
 {
@@ -27,7 +29,12 @@ class AboutUsController extends Controller
         $carehomes = CareHome::where('is_public', true)
                             ->orderBy('created_at', 'desc')
                             ->get();
+
+        $testimonials = Testimonial::where('is_public', true)
+                            ->inRandomOrder()
+                             ->take(4)
+                            ->get();
         
-        return view('frontend.about.index', compact('services', 'whoweares', 'carehomes'));
+        return view('frontend.about.index', compact('services', 'whoweares', 'carehomes', 'testimonials'));
     }
 }
