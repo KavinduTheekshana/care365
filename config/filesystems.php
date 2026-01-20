@@ -73,6 +73,13 @@ return [
             'visibility' => 'public',
             'throw'      => false,
         ],
+        'services_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('services_img'),
+            'url'        => env('APP_URL') . '/services_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
 
     ],
 
