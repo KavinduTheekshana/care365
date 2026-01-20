@@ -7,6 +7,9 @@
     @include('frontend.home.specialities')
 
     
+    
+
+    
 
 
    
@@ -240,132 +243,9 @@ Gallery Area
     <!--==============================
 Testimonial Area  
 ==============================-->
-    <section class="testi-area-1 space overflow-hidden bg-white" id="testi-sec">
-        <!-- <div class="service-bg-shape1-1 shape-mockup shake d-xxl-block d-none" data-top="20%" data-left="5%">
-            <img src="assets/img/shape/shape1-18.png" alt="img">
-        </div>
-        <div class="service-bg-shape1-2 shape-mockup shake d-xxl-block d-none" data-top="20%" data-right="5%">
-            <img src="assets/img/shape/shape1-19.png" alt="img">
-        </div>
-        <div class="service-bg-shape1-3 shape-mockup heartbeat d-xxl-block d-none" data-bottom="27%" data-left="5%">
-            <img src="assets/img/shape/shape1-20.png" alt="img">
-        </div>
-        <div class="service-bg-shape1-3 shape-mockup jump d-xxl-block d-none" data-top="65%" data-right="5%">
-            <img src="assets/img/shape/shape1-21.png" alt="img">
-        </div>
-        <div class="service-bg-shape1-3 shape-mockup moving d-xxl-block d-none" data-bottom="0%" data-left="5%">
-            <img src="assets/img/shape/shape1-22.png" alt="img">
-        </div> -->
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">Testimonials</span>
-                <h2 class="sec-title text-anim" data-cue="slideInUp">What Families Say About Us</h2>
-                <p class="fs-18 text-anim2" data-cue="slideInUp">Read the heartwarming stories from families who entrusted their loved ones to our care.</p>
-            </div>
-            <div class="row gy-50 flex-row-reverse">
-                <div class="slider-area testi-slider1" data-cue="slideInUp">
-                    <div class="swiper th-slider has-shadow" id="testiSlide1" data-slider-options='{"autoHeight": false,"breakpoints":{"0":{"slidesPerView":1},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"1"},"1200":{"slidesPerView":"2"},"1600":{"slidesPerView":"2"}}}'>
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="testi-card">
-                                    <div class="testi-1-quote">
-                                        <img src="assets/img/icon/quote_icon.svg" alt="icon">
-                                    </div>
-                                    <div class="testi-bg-mask" data-mask-src="assets/img/shape/testi_card_mask1_1.jpg"></div>
-                                    <div class="testi-card-profile">
-                                        <div class="testi-card-avater">
-                                            <img src="assets/img/testimonial/testi1-1.jpg" alt="img" width="80" height="80">
-                                        </div>
-                                        <div class="testi-card-profile-detaile">
-                                            <h3 class="box-title">Ruwan de Silva</h3>
-                                            <p class="box-desig">Senior Software Engineer</p>
-                                        </div>
-                                    </div>
+    @include('frontend.home.testimonial')
 
-                                    <div class="testi-card_review">
-                                        <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
-                                    </div>
-                                    <p class="box-text">"Elder Care Home's compassionate team understood my mom's needs, giving me confidence in my decision for her care."</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testi-card">
-                                    <div class="testi-1-quote">
-                                        <img src="assets/img/icon/quote_icon.svg" alt="icon">
-                                    </div>
-                                    <div class="testi-bg-mask" data-mask-src="assets/img/shape/testi_card_mask1_1.jpg"></div>
-                                    <div class="testi-card-profile">
-                                        <div class="testi-card-avater">
-                                            <img src="assets/img/testimonial/testi1-2.jpg" alt="img" width="80" height="80">
-                                        </div>
-                                        <div class="testi-card-profile-detaile">
-                                            <h3 class="box-title">Silvia Peiris</h3>
-                                            <p class="box-desig">Bank Officer</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="testi-card_review">
-                                        <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
-                                    </div>
-                                    <p class="box-text">"Moving my dad to ElderCare Home was easy thanks to their personalized approach and welcoming environment."</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testi-card">
-                                    <div class="testi-1-quote">
-                                        <img src="assets/img/icon/quote_icon.svg" alt="icon">
-                                    </div>
-                                    <div class="testi-bg-mask" data-mask-src="assets/img/shape/testi_card_mask1_1.jpg"></div>
-                                    <div class="testi-card-profile">
-                                        <div class="testi-card-avater">
-                                            <img src="assets/img/testimonial/testi1-3.jpg" alt="img" width="80" height="80">
-                                        </div>
-                                        <div class="testi-card-profile-detaile">
-                                            <h3 class="box-title">Jeewan Mahanama</h3>
-                                            <p class="box-desig">Accountant</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="testi-card_review">
-                                        <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
-                                    </div>
-                                    <p class="box-text">“Eager to explore options for my loved one's care, I stumbled upon ElderCare's digital platform. Little did I know, this virtual portal would become my lifeline, offering a wealth of information and support as I navigated the journey ahead.”</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testi-card">
-                                    <div class="testi-1-quote">
-                                        <img src="assets/img/icon/quote_icon.svg" alt="icon">
-                                    </div>
-                                    <div class="testi-bg-mask" data-mask-src="assets/img/shape/testi_card_mask1_1.jpg"></div>
-                                    <div class="testi-card-profile">
-                                        <div class="testi-card-avater">
-                                            <img src="assets/img/testimonial/testi1-4.jpg" alt="img" width="80" height="80">
-                                        </div>
-                                        <div class="testi-card-profile-detaile">
-                                            <h3 class="box-title">Arjuna Perera</h3>
-                                            <p class="box-desig">Business Owner</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="testi-card_review">
-                                        <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
-                                    </div>
-                                    <p class="box-text">"The staff at ElderCare Home treats my mother with dignity and respect. Their attention to detail and genuine care has made all the difference in her quality of life."</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slider-pagination-wrap mt-30">
-                            <button data-slider-prev="#testiSlide1" class="slider-arrow default"><i class="far fa-arrow-left"></i></button>
-                            <div class="slider-pagination"></div>
-                            <button data-slider-next="#testiSlide1" class="slider-arrow default"><i class="far fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+    
     <!--==============================
 Team Area  
 ==============================-->
@@ -624,82 +504,8 @@ Brand Area
             </div>
         </div>
     </section> -->
-    <!--==============================
-Price Area  
-==============================-->
-    <section class="overflow-hidden bg-white space">
 
-        <!-- <div class="why-bg-shape1-3 shape-mockup shake d-xxl-block d-none" data-top="49%" data-left="7%">
-            <img src="assets/img/shape/shape1-7.png" alt="img">
-        </div>
-        <div class="why-bg-shape1-6 shape-mockup shake d-xxl-block d-none" data-top="26%" data-left="6%">
-            <img src="assets/img/shape/shape1-5.png" alt="img">
-        </div>
-        <div class="why-bg-shape1-4 shape-mockup shake d-xxl-block d-none" data-top="71%" data-left="4%">
-            <img src="assets/img/shape/shape1-23.png" alt="img">
-        </div>
 
-        <div class="why-bg-shape1-2 shape-mockup heartbeat d-xxl-block d-none" data-top="46%" data-right="5%">
-            <img src="assets/img/shape/shape1-6.png" alt="img">
-        </div>
-        <div class="why-bg-shape1-2 shape-mockup moving d-xxl-block d-none" data-bottom="0" data-left="-1%">
-            <img src="assets/img/shape/shape1-24.png" alt="img">
-        </div> -->
-
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">pricing Plan</span>
-                <h2 class="sec-title text-anim" data-cue="slideInUp">Our Best Package</h2>
-                <p class="fs-18 text-anim2" data-cue="slideInUp">Discover our premium care package designed to provide the highest level of comfort and support for your loved ones.</p>
-            </div>
-            <div class="row gy-30 justify-content-center">
-                <div class="col-xl-9 col-lg-10">
-                    <div class="pricing-card-grid style-2" data-cue="slideInUp">
-                        <div class="pricing-1-bg_mask" data-mask-src="assets/img/shape/pricing-1-2_mask.jpg"></div>
-                        <div class="content">
-                            <div class="text-center mb-40">
-                                <h3 class="box-title">Private Heaven</h3>
-                                <h5 class="text-theme">Monthly Package</h5>
-                                <div class="price-box mt-30">
-                                    <h2 class="price">175,000 LKR <span class="fs-18">($575)</span></h2>
-                                    <p class="box-text">Upwards Monthly</p>
-                                </div>
-                            </div>
-                            
-                            <div class="row justify-content-center">
-                                <div class="col-lg-10">
-                                    <div class="checklist mb-40">
-                                        <ul class="list-two-column">
-                                            <li><i class="fa-solid fa-check text-theme"></i> Individual Room</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Birthday Surprise service with Pik Bokz</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Wardrobe/ Mirror/Chair with Mini Table</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Mini Fridge</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> In Suit Bathroom</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Air Conditioning (T&C Apply)</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Separate Double Bed with double layer Mattress + Pillow + Bedding</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Door Bell Communication System</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> PEO TV Facility</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Common Library/ TV Lobby / Garden</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Additional Medication Management (T&C Apply)</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Weekend News Papers</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Extra Meal Package & Switch Menu x 2 (T&C Apply)</li>
-                                            <li><i class="fa-solid fa-check text-theme"></i> Monthly activity plans & access to our "Fun Time Club"</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="th-btn" href="{{ route('contact') }}">Enquire Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-5">
-                <div class="col-12 text-center" data-cue="slideInUp">
-                    <a class="th-btn style-border3" href="{{ route('contact') }}">Contact Us for More Details <img src="assets/img/icon/arrow-right-black.svg" alt="icon"></a>
-                </div>
-            </div>
-        </div>
-    </section>
     <!--==============================
 Faq Area
 ==============================-->

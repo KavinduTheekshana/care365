@@ -23,9 +23,10 @@ class HomeController extends Controller
                    ->orderBy('created_at', 'desc')
                    ->get();
         
-        // Get public testimonials
+        // Get random 4 public testimonials for slider (2 slides on desktop)
         $testimonials = Testimonial::where('is_public', true)
-                                  ->orderBy('created_at', 'desc')
+                                  ->inRandomOrder()
+                                  ->take(4)
                                   ->get();
         
         // Get public services
