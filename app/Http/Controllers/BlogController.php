@@ -18,16 +18,12 @@ class BlogController extends Controller
         return view('frontend.blog.index', compact('blogs'));
     }
 
-    public function blogdetails($id): View
+    public function blogdetails(Blog $blog): View
     {
-        // Find blog by ID
-        $blog = Blog::where('id', $id)
-                   ->where('is_public', true)
-                   ->firstOrFail();
-        
+        // Laravel automatically finds the blog by title_slug
         // Get related blogs (excluding current one)
         $relatedBlogs = Blog::where('is_public', true)
-                           ->where('id', '!=', $id)
+                           ->where('id', '!=', $blog->id)
                            ->inRandomOrder()
                            ->take(3)
                            ->get();

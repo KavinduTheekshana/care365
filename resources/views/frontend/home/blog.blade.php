@@ -11,7 +11,7 @@
             <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
                 <div class="blog-card">
                     <div class="blog-img">
-                        <a href="{{ url('/blog/' . $blog->id) }}">
+                        <a href="{{ route('blogdetails', $blog->title_slug) }}">
                             @if($blog->image_path)
                             <img src="{{ asset('blog_img/' . $blog->image_path) }}" alt="{{ $blog->title }}">
                             @else
@@ -25,7 +25,7 @@
                             <span><i class="fas fa-calendar"></i>{{ $blog->date->format('d M, Y') }}</span>
                         </div>
                         <h3 class="box-title">
-                            <a href="{{ url('/blog/' . $blog->id) }}">
+                            <a href="{{ route('blogdetails', $blog->title_slug) }}">
                                 {{ $blog->title }}
                             </a>
                         </h3>
@@ -33,7 +33,7 @@
                             {{ Str::limit($blog->description, 120) }}
                         </p>
                         <div class="btn-wrap">
-                            <a href="{{ url('/blog/' . $blog->id) }}" class="link-btn th-btn-icon">
+                            <a href="{{ route('blogdetails', $blog->title_slug) }}" class="link-btn th-btn-icon">
                                 Read More
                             </a>
                         </div>

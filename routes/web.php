@@ -21,8 +21,10 @@ Route::get('about/', [AboutUsController::class, 'index'])->name('about');
 
 // Blog Page
 Route::get('blog/', [BlogController::class, 'index'])->name('blog');
-Route::get('/blog/{id}', [BlogController::class, 'blogdetails'])->name('blogdetails');
+//Route::get('/blog/{id}', [BlogController::class, 'blogdetails'])->name('blogdetails');
 
+// Services Page
+Route::get('services/', [ServicesController::class, 'index'])->name('services');
 
 // Contact Page
 Route::get('contact/', [ContactController::class, 'index'])->name('contact');
@@ -51,8 +53,7 @@ Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.
 
 
 
-// Services Page
-Route::get('services/', [ServicesController::class, 'index'])->name('services');
+
 
 // Service Details Page
 Route::get('/{slug?}', [ServicesController::class, 'servicedetails'])->name('servicedetails');
@@ -66,6 +67,4 @@ Route::get('/service-details', function () {
 
 
 //Blog Page
-Route::get('/{slug}', [BlogController::class, 'blogdetails'])
-    ->name('blogdetails')
-    ->where('slug', '[a-z0-9-]+'); // Only allow slugs
+Route::get('/{blog:title_slug}', [BlogController::class, 'blogdetails'])->name('blogdetails');

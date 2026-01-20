@@ -32,6 +32,18 @@ class BlogResource extends Resource
                         Forms\Components\TextInput::make('title')
                             ->required()
                             ->maxLength(150)
+                            ->live(onBlur: true)                      // important for live preview
+                            ->afterStateUpdated(function ($state, callable $set) {
+                                $set('title_slug_preview', Str::slug($state));
+                            })
+                            ->columnSpan(1),
+
+                        // Live preview of the slug (not saved, just for UX)
+                        Forms\Components\TextInput::make('title_slug_preview')
+                            ->label('Slug Preview')
+                            ->disabled()
+                            ->dehydrated(false)
+                            ->helperText('This will be automatically generated and saved when you create/update the post. Duplicates get -2, -3 etc.')
                             ->columnSpan(1),
 
                         Forms\Components\TextInput::make('name')
@@ -96,6 +108,14 @@ class BlogResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
                     ->sortable(),
+
+                Tables\Columns\TextColumn::make('title_slug')
+                    ->label('Slug')
+                    ->searchable()
+                    ->sortable()
+                    ->copyable()
+                    ->description(fn ($record) => url('/blog/' . $record->title_slug))
+                    ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('name')
                     ->label('Author')
