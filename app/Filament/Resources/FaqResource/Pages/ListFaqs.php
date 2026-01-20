@@ -4,9 +4,9 @@ namespace App\Filament\Resources\FaqResource\Pages;
 
 use App\Filament\Resources\FaqResource;
 use Filament\Actions;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Resources\Pages\ListRecords;
 
-class ManageFaqs extends ManageRecords
+class ListFaqs extends ListRecords
 {
     protected static string $resource = FaqResource::class;
 
