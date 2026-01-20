@@ -13,7 +13,7 @@ class BlogController extends Controller
         // Get all public blogs, ordered by date
         $blogs = Blog::where('is_public', true)
                     ->orderBy('date', 'desc')
-                    ->paginate(9);
+                    ->paginate(5);
         
         return view('frontend.blog.index', compact('blogs'));
     }
