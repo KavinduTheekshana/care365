@@ -59,6 +59,13 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        'testimonial_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('testimonial_img'),
+            'url'        => env('APP_URL') . '/testimonial_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
 
     ],
 
