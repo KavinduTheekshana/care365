@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Service;
+use App\Models\Whoweare;
 
 class AboutUsController extends Controller
 {
@@ -16,6 +17,11 @@ class AboutUsController extends Controller
                           ->take(8)
                           ->get();
         
-        return view('frontend.about.index', compact('services'));
+        // Get all public Who We Are items ordered by display_order
+        $whoweares = Whoweare::where('is_public', true)
+                            ->orderBy('display_order')
+                            ->get();
+        
+        return view('frontend.about.index', compact('services', 'whoweares'));
     }
 }
