@@ -179,12 +179,8 @@ Homes</h2>
 Gallery Area  
 ==============================-->
     <div class="overflow-hidden overflow-hidden space z-index-common">
-        <div class="shape-mockup gallery-bg-shape1-1 d-xxl-block d-none jump" data-left="4%" data-top="20%">
-            <img src="assets/img/shape/shape1-16.png" alt="img">
-        </div>
-        <div class="shape-mockup gallery-bg-shape1-1 d-xxl-block d-none shake " data-right="4%" data-top="20%">
-            <img src="assets/img/shape/shape1-17.png" alt="img">
-        </div>
+
+
         <div class="container-fluid p-0">
             <div class="title-area text-center">
                 <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">Recent stories</span>

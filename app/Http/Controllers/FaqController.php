@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 use App\Models\Faq;
+use App\Models\Testimonial;
+
 
 class FaqController extends Controller
 {
@@ -13,7 +15,12 @@ class FaqController extends Controller
         $faqs = Faq::where('visibility', true)
                    ->orderBy('created_at', 'desc')
                    ->get();
+
+        $testimonials = Testimonial::where('is_public', true)
+                            ->inRandomOrder()
+                             ->take(4)
+                            ->get();                   
         
-        return view('frontend.faq.index', compact('faqs'));
+        return view('frontend.faq.index', compact('faqs', 'testimonials'));
     }
 }

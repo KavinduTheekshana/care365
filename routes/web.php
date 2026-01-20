@@ -12,6 +12,8 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PackagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RouteController;
+use App\Http\Controllers\CareersController;
+
 
 
 // Home Page
@@ -44,6 +46,9 @@ Route::get('team/', [TeamController::class, 'index'])->name('team');
 
 // Packages Page
 Route::get('packages/', [PackagesController::class, 'index'])->name('packages');
+
+// Careers Page
+Route::get('careers/', [CareersController::class, 'index'])->name('careers');
 
 //Send Contact Mail
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');

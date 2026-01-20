@@ -165,7 +165,7 @@ Designed & Developed by Creatx Software Ltd. -->
                                     <li><a href="{{ route('home') }}">Home</a></li>
                                     <li><a href="{{ route('about') }}">About Us</a></li>
                                     <li><a href="{{ route('services') }}">Services</a></li>
-                                    <li><a href="{{ route('team') }}">Our Groomers</a></li>
+                                    <li><a href="{{ route('careers') }}">Careers</a></li>
                                     <li><a href="{{ route('contact') }}">Book an Appointment</a></li>
                                 </ul>
                             </div>
