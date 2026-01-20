@@ -21,7 +21,8 @@ Route::get('about/', [AboutUsController::class, 'index'])->name('about');
 
 // Blog Page
 Route::get('blog/', [BlogController::class, 'index'])->name('blog');
-Route::get('blog-details', [BlogController::class, 'blogdetails'])->name('blogdetails');
+Route::get('/blog/{id}', [BlogController::class, 'blogdetails'])->name('blogdetails');
+
 
 // Contact Page
 Route::get('contact/', [ContactController::class, 'index'])->name('contact');
@@ -62,3 +63,9 @@ Route::get('/service-details', function () {
     return redirect()->route('servicedetails');
 });
 */
+
+
+//Blog Page
+Route::get('/{slug}', [BlogController::class, 'blogdetails'])
+    ->name('blogdetails')
+    ->where('slug', '[a-z0-9-]+'); // Only allow slugs

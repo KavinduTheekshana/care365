@@ -596,76 +596,9 @@ Appointment Area
     <!--==============================
 Blog Area  
 ==============================-->
-    <section class="bg-smoke2 space overflow-hidden" id="blog-sec">
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">Articles & Tips</span>
-                <h2 class="sec-title text-anim" data-cue="slideInUp">Latest Articles & Blog</h2>
-            </div>
-            <div class="row gy-40 justify-content-center">
-                <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <a href="{{ route('blogdetails') }}">
-                                <img src="assets/img/blog/blog-s-1-1.jpg" alt="blog image">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <a href="{{ route('blog') }}"><i class="fas fa-user"></i>Jordan Park</a>
-                                <a href="{{ route('blog') }}"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
-                            </div>
-                            <h3 class="box-title"><a href="{{ route('blogdetails') }}">How to Keep Your Loved Ones Healthy Year-Round </a></h3>
-                            <div class="btn-wrap">
-                                <a href="{{ route('blogdetails') }}" class="link-btn th-btn-icon">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    @include('frontend.home.blog')
 
-                <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <a href="{{ route('blogdetails') }}">
-                                <img src="assets/img/blog/blog-s-1-2.jpg" alt="blog image">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <a href="{{ route('blog') }}"><i class="fas fa-user"></i>Jordan Park</a>
-                                <a href="{{ route('blog') }}"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
-                            </div>
-                            <h3 class="box-title"><a href="{{ route('blogdetails') }}">How to Look After Dogs Loved Ones Healthy Year-Round</a></h3>
-                            <div class="btn-wrap">
-                                <a href="{{ route('blogdetails') }}" class="link-btn th-btn-icon">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <a href="blog-details.html">
-                                <img src="assets/img/blog/blog-s-1-3.jpg" alt="blog image">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <a href="{{ route('blog') }}"><i class="fas fa-user"></i>Jordan Park</a>
-                                <a href="{{ route('blog') }}"><i class="fas fa-calendar"></i>24 Jun, 2025</a>
-                            </div>
-                            <h3 class="box-title"><a href="{{ route('blogdetails') }}">Signs Your Cat is Stressed Your Loved Ones </a></h3>
-                            <div class="btn-wrap">
-                                <a href="{{ route('blogdetails') }}" class="link-btn th-btn-icon">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+    
 
     @include('frontend.components.email_alert_modal')
 
