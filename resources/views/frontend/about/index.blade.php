@@ -9,7 +9,6 @@
     @include('frontend.about.services')
     @include('frontend.about.care')
     @include('frontend.about.homes')
-    @include('frontend.about.careers')
     @include('frontend.about.testimonial')
 @endsection
 

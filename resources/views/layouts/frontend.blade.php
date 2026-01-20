@@ -6,8 +6,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Care365</title>
     <meta name="author" content="Babet">
-    <meta name="description" content="Babet - Pet Care & Shop HTML Template">
-    <meta name="keywords" content="Babet - Pet Care & Shop HTML Template">
+    <meta name="description" content="The Best Elderly Retirement Home For You">
+    <meta name="keywords" content="The Best Elderly Retirement Home For You">
     <meta name="robots" content="INDEX,FOLLOW">
 
     <!-- Mobile Specific Metas -->
@@ -165,7 +165,7 @@ Designed & Developed by Creatx Software Ltd. -->
                                     <li><a href="{{ route('home') }}">Home</a></li>
                                     <li><a href="{{ route('about') }}">About Us</a></li>
                                     <li><a href="{{ route('services') }}">Services</a></li>
-                                    <li><a href="{{ route('team') }}">Our Groomers</a></li>
+                                    <li><a href="{{ route('careers') }}">Careers</a></li>
                                     <li><a href="{{ route('contact') }}">Book an Appointment</a></li>
                                 </ul>
                             </div>

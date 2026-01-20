@@ -59,6 +59,48 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        'testimonial_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('testimonial_img'),
+            'url'        => env('APP_URL') . '/testimonial_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
+        'gallery_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('gallery_img'),
+            'url'        => env('APP_URL') . '/gallery_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
+        'services_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('services_img'),
+            'url'        => env('APP_URL') . '/services_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
+        'whoweare_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('whoweare_img'),
+            'url'        => env('APP_URL') . '/whoweare_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
+        'care_homes_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('care_homes_img'),
+            'url'        => env('APP_URL') . '/care_homes_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
+        'blog_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('blog_img'),
+            'url'        => env('APP_URL') . '/blog_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
 
     ],
 
