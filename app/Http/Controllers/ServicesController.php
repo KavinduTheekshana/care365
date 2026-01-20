@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Service;
+use App\Models\Faq;
+
 
 class ServicesController extends Controller
 {
@@ -14,7 +16,13 @@ class ServicesController extends Controller
                           ->orderBy('created_at', 'desc')
                           ->get();
         
-        return view('frontend.services.index', compact('services'));
+        // Get random 5 FAQs for services page if needed
+        $faqs = Faq::where('visibility', true)
+                   ->inRandomOrder()
+                   ->take(5)
+                   ->get();
+        
+        return view('frontend.services.index', compact('services', 'faqs'));
     }
 
     public function servicedetails($slug = null): View
