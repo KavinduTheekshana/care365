@@ -25,11 +25,7 @@
                                 <img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img">
                             </a>
                             <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
-                                @if($service->image_path)
-                                <img src="{{ asset('services_img/' . $service->image_path) }}" alt="{{ $service->title }}">
-                                @else
-                                <img src="assets/img/Home-img/service-placeholder.jpg" alt="{{ $service->title }}">
-                                @endif
+                                <img src="{{ image_url($service->image_path, 'service') }}" alt="{{ $service->title }}">
                             </div>
                             <div class="box-content">
                                 <h3 class="box-title">
@@ -38,7 +34,7 @@
                                     </a>
                                 </h3>
                                 <p class="box-text">
-                                    {{ Str::limit($service->description, 200) }}
+                                    {{ excerpt($service->description, 200) }}
                                 </p>
                             </div>
                         </div>

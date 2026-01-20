@@ -11,6 +11,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PackagesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RouteController;
 
 
 // Home Page
@@ -51,20 +52,23 @@ Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.
 
 
 
+// Catch-all dynamic routes - MUST BE LAST
+Route::get('/{slug}', [RouteController::class, 'resolve']);
 
 
 
-
-// Service Details Page
-Route::get('/{slug?}', [ServicesController::class, 'servicedetails'])->name('servicedetails');
-
-// You can also have a route that redirects from old URL to new slug-based URL
-/*
-Route::get('/service-details', function () {
-    return redirect()->route('servicedetails');
+// In routes/web.php
+Route::get('/test-helpers', function() {
+    $blog = App\Models\Blog::first();
+    $service = App\Models\Service::first();
+    
+    return [
+        'blog_url' => blog_url($blog),
+        'service_url' => service_url($service),
+        'image_url' => image_url('test.jpg', 'blog'),
+        'placeholder' => placeholder_image('blog'),
+        'excerpt' => excerpt('This is a long text that needs to be shortened', 20),
+        'date' => format_date(now()),
+        'active_menu' => active_menu('test-helpers'),
+    ];
 });
-*/
-
-
-//Blog Page
-Route::get('/{blog:title_slug}', [BlogController::class, 'blogdetails'])->name('blogdetails');

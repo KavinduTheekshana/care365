@@ -61,7 +61,7 @@
                                              class="img-fluid mb-3 rounded">
                                         @endif
                                         <h5>
-                                            <a href="{{ route('blogdetails', $relatedBlog->title_slug) }}">
+                                            <a href="{{ url('/' . $relatedBlog->title_slug) }}">
                                                 {{ $relatedBlog->title }}
                                             </a>
                                         </h5>

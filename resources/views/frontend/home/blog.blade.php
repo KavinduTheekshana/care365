@@ -11,29 +11,25 @@
             <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
                 <div class="blog-card">
                     <div class="blog-img">
-                        <a href="{{ route('blogdetails', $blog->title_slug) }}">
-                            @if($blog->image_path)
-                            <img src="{{ asset('blog_img/' . $blog->image_path) }}" alt="{{ $blog->title }}">
-                            @else
-                            <img src="assets/img/blog/blog-placeholder.jpg" alt="{{ $blog->title }}">
-                            @endif
+                        <a href="{{ blog_url($blog) }}">
+                            <img src="{{ image_url($blog->image_path, 'blog') }}" alt="{{ $blog->title }}">
                         </a>
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span><i class="fas fa-user"></i>{{ $blog->name }}</span>
-                            <span><i class="fas fa-calendar"></i>{{ $blog->date->format('d M, Y') }}</span>
+                            <span><i class="fas fa-calendar"></i>{{ format_date($blog->date) }}</span>
                         </div>
                         <h3 class="box-title">
-                            <a href="{{ route('blogdetails', $blog->title_slug) }}">
+                            <a href="{{ blog_url($blog) }}">
                                 {{ $blog->title }}
                             </a>
                         </h3>
                         <p class="blog-excerpt mt-2 mb-3">
-                            {{ Str::limit($blog->description, 120) }}
+                            {{ excerpt($blog->description, 120) }}
                         </p>
                         <div class="btn-wrap">
-                            <a href="{{ route('blogdetails', $blog->title_slug) }}" class="link-btn th-btn-icon">
+                            <a href="{{ blog_url($blog) }}" class="link-btn th-btn-icon">
                                 Read More
                             </a>
                         </div>

@@ -45,7 +45,7 @@
                                     <img src="{{ asset('services_img/' . $relatedService->image_path) }}" alt="{{ $relatedService->title }}" class="img-fluid mb-2">
                                     @endif
                                     <h5>
-                                        <a href="{{ route('servicedetails', $relatedService->title_slug) }}">
+                                        <a href="{{ url('/' . $relatedService->title_slug) }}">
                                             {{ $relatedService->title }}
                                         </a>
                                     </h5>

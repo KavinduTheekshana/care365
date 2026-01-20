@@ -11,7 +11,7 @@
             @foreach($services as $service)
             <div class="col-xl-4 col-lg-6 col-md-12">
                 <div class="service-card">
-                    <a class="icon-btn style3" href="{{ route('servicedetails', $service->title_slug) }}">
+                    <a class="icon-btn style3" href="{{ url('/' . $service->title_slug) }}">
                         <img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img">
                     </a>
                     <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
@@ -23,7 +23,7 @@
                     </div>
                     <div class="box-content">
                         <h3 class="box-title">
-                            <a href="{{ route('servicedetails', $service->title_slug) }}">
+                            <a href="{{ url('/' . $service->title_slug) }}">
                                 {{ $service->title }}
                             </a>
                         </h3>
