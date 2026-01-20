@@ -18,9 +18,10 @@ class HomeController extends Controller
                     ->take(3)
                     ->get();
         
-        // Get FAQs with visibility (adjust condition as needed)
-        $faqs = Faq::where('visibility', true) // or your visibility condition
-                   ->orderBy('created_at', 'desc')
+        // Get random 8 FAQs with visibility
+        $faqs = Faq::where('visibility', true)
+                   ->inRandomOrder()
+                   ->take(8)
                    ->get();
         
         // Get random 4 public testimonials for slider (2 slides on desktop)
