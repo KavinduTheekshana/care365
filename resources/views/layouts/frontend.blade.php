@@ -6,8 +6,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Care365</title>
     <meta name="author" content="Babet">
-    <meta name="description" content="Babet - Pet Care & Shop HTML Template">
-    <meta name="keywords" content="Babet - Pet Care & Shop HTML Template">
+    <meta name="description" content="The Best Elderly Retirement Home For You">
+    <meta name="keywords" content="The Best Elderly Retirement Home For You">
     <meta name="robots" content="INDEX,FOLLOW">
 
     <!-- Mobile Specific Metas -->
