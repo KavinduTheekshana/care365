@@ -80,6 +80,13 @@ return [
             'visibility' => 'public',
             'throw'      => false,
         ],
+        'whoweare_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('whoweare_img'),
+            'url'        => env('APP_URL') . '/whoweare_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
 
     ],
 

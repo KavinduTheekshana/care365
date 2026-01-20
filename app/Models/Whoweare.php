@@ -9,7 +9,7 @@ class Whoweare extends Model
 {
     use HasFactory;
 
-    protected $table = 'whoweares'; // or change to 'who_we_are' if you rename table
+    protected $table = 'whoweares'; 
 
     protected $fillable = [
         'title',
