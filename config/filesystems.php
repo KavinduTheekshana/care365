@@ -66,6 +66,13 @@ return [
             'visibility' => 'public',
             'throw'      => false,
         ],
+        'gallery_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('gallery_img'),
+            'url'        => env('APP_URL') . '/gallery_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
 
     ],
 
