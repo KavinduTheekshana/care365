@@ -10,11 +10,11 @@ use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PackagesController;
+use App\Http\Controllers\HomeController;
 
 
-Route::get('/', function () {
-    return view('frontend.home.index');
-})->name('home');
+// Home Page
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // About Us Page
 Route::get('about/', [AboutUsController::class, 'index'])->name('about');

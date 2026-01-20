@@ -94,6 +94,13 @@ return [
             'visibility' => 'public',
             'throw'      => false,
         ],
+        'blog_public' => [
+            'driver'     => 'local',
+            'root'       => public_path('blog_img'),
+            'url'        => env('APP_URL') . '/blog_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
 
     ],
 
