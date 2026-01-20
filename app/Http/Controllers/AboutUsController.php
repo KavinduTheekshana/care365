@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Service;
 use App\Models\Whoweare;
+use App\Models\CareHome;
 
 class AboutUsController extends Controller
 {
@@ -22,6 +23,11 @@ class AboutUsController extends Controller
                             ->orderBy('display_order')
                             ->get();
         
-        return view('frontend.about.index', compact('services', 'whoweares'));
+        // Get all public Care Homes
+        $carehomes = CareHome::where('is_public', true)
+                            ->orderBy('created_at', 'desc')
+                            ->get();
+        
+        return view('frontend.about.index', compact('services', 'whoweares', 'carehomes'));
     }
 }
