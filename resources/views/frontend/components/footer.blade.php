@@ -114,7 +114,7 @@
                                 <li><a href="{{ route('faq') }}">FAQs</a></li>
                                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                 <li><a href="{{ route('about') }}">Ticket Support</a></li>
-                                <li><a href="{{ route('about') }}">Live Chat </a></li>
+                                <li><a href="https://wa.me/94779191818?text=Hello%20I%20need%20support" target="_blank">Live Chat </a></li>
                             </ul>
                         </div>
                     </div>
