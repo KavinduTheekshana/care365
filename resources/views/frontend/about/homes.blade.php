@@ -66,14 +66,25 @@
                                     @endif
                                 </div>
                                 <div class="team-content">
-                                    <div class="top">
-                                        <h3 class="box-title">{{ $carehome->title }}</h3>
-                                        <p class="desi">
-                                            @if($carehome->badge_text)
-                                            <span class="badge {{ $carehome->badge_color_class }}">{{ $carehome->badge_text }}</span>
-                                            @endif
-                                        </p>
-                                    </div>
+                                <div class="top">
+                                    <h3 class="box-title" style="font-size: 1.4rem; margin-bottom: 0.6rem;">{{ $carehome->title }}</h3>
+                                    <p class="desi" style="margin-bottom: 1rem;">
+                                        @if($carehome->badge_text)
+                                            <span class="badge" style="
+                                                background-color: transparent;
+                                                border: 1px solid #000000;
+                                                color: #000000;
+                                                padding: 4px 10px;
+                                                border-radius: 0 12px 0 0;
+                                                font-size: 0.7rem;   
+                                                font-weight: 500;
+                                                display: inline-block;
+                                            ">
+                                                {{ $carehome->badge_text }}
+                                            </span>
+                                        @endif
+                                    </p>
+                                </div>
                                     <div class="body-text mb-4">
                                         <p class="mb-2">{{ $carehome->description }}</p>
                                         @if($carehome->location)
