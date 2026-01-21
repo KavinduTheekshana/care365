@@ -29,9 +29,7 @@
                                 <li class="{{ request()->routeIs('testimonial') ? 'active' : '' }}">
                                     <a href="{{route('testimonial')}}">Testimonial</a>
                                 </li>
-                                <li class="{{ request()->routeIs('faq') ? 'active' : '' }}">
-                                    <a href="{{route('faq')}}">FAQ'S</a>
-                                </li>
+
                                 <li class="{{ request()->routeIs('blog') ? 'active' : '' }}">
                                     <a href="{{ route('blog') }}">Blog</a>
                                 </li>
