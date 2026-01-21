@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-xl-6">
                         <div class="title-area mb-35">
-                            <span class="sub-title subtitle-line text-anim" data-cue="slideInUp">Careers</span>
+                            <span class="sub-title style2 text-anim" data-cue="slideInUp">Careers</span>
                             <h2 class="sec-title text-anim2" data-cue="slideInUp">Join Our Team of Compassionate Professionals</h2>
                         </div>
                         <p class="fs-18 mb-35 text-anim2" data-cue="slideInUp">Join our team of passionate professionals dedicated to enriching lives. At Care365, we offer rewarding career opportunities for those driven to make a meaningful difference through compassionate care. Explore roles that align with your expertise and values.</p>

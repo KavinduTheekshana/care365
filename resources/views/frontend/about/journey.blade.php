@@ -3,7 +3,7 @@
         <div class="row gy-40 gx-80 justify-content-center">
             <div class="col-xxl-12">
                 <div class="title-area text-center">
-                    <span class="sub-title text-anim subtitle-line" data-cue="slideInUp"> Who We Are</span>
+                    <span class="sub-title style2 text-anim" data-cue="slideInUp"> Who We Are</span>
                     <h2 class="sec-title text-anim" data-cue="slideInUp">Navigating Life's Journey with Care 365</h2>
                 </div>
             </div>

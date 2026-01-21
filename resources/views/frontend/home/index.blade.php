@@ -26,7 +26,7 @@
         </div> -->
         <div class="container">
             <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">How We Work</span>
+                <span class="sub-title style2 text-anim" data-cue="slideInUp">How We Work</span>
                 <h2 class="sec-title text-anim" data-cue="slideInUp">The Process of Admitting to Our Homes</h2>
                 <p class="fs-18 text-anim2" data-cue="slideInUp">How to Proceed</p>
             </div>
@@ -84,7 +84,7 @@ Gallery Area
 
         <div class="container-fluid p-0">
             <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">Recent stories</span>
+                <span class="sub-title style2 text-anim" data-cue="slideInUp">Recent stories</span>
                 <h2 class="sec-title text-anim" data-cue="slideInUp">Our success stories</h2>
                 <p class="fs-18 text-anim2" data-cue="slideInUp">Easily find and book trusted Pet Caregivers near you</p>
             </div>
@@ -416,7 +416,7 @@ Appointment Area
             <div class="row">
                 <div class="col-lg-8 col-xl-7 col-xxl-6">
                     <div class="title-area">
-                        <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">book an Appointment</span>
+                        <span class="sub-title style2 text-anim" data-cue="slideInUp">book an Appointment</span>
                         <h2 class="sec-title text-anim" data-cue="slideInUp">Make an Appointment</h2>
                         <p class="fs-18 text-anim2 pe-xl-4" data-cue="slideInUp">Need some advice or have any questions about our services? Contact us in any convenient way.</p>
                     </div>

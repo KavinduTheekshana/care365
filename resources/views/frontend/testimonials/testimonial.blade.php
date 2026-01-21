@@ -3,7 +3,7 @@
 <section class="space-top space-bottom bg-smoke2">
     <div class="container">
         <div class="title-area text-center mb-50">
-            <span class="sub-title subtitle-line">What Families Say</span>
+            <span class="sub-title style2 text-anim">What Families Say</span>
             <h2 class="sec-title">Client Testimonials</h2>
             <p class="fs-18">Read heartwarming stories from families who entrusted their loved ones to our care.</p>
         </div>

@@ -3,7 +3,7 @@
             <div class="row gy-40 gx-80 justify-content-center">
                 <div class="col-xxl-12">
                     <div class="title-area text-center">
-                        <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">Our Specialities</span>
+                        <span class="sub-title style2 text-anim" data-cue="slideInUp">Our Specialities</span>
                         <h2 class="sec-title text-anim" data-cue="slideInUp">Why Choose Us?</h2>
                         <p class="fs-18 text-anim2" data-cue="slideInUp">What is Our Speciality?</p>
                     </div>

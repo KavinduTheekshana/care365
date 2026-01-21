@@ -25,7 +25,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-10">
                     <div class="title-area text-center">
-                        <span class="sub-title subtitle-line text-anim" data-cue="slideInUp">{{ $blog->name }}</span>
+                        <span class="sub-title style2 text-anim" data-cue="slideInUp">{{ $blog->name }}</span>
                         <h2 class="sec-title text-anim2" data-cue="slideInUp">{{ $blog->title }}</h2>
                     </div>
                 </div>

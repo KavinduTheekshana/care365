@@ -4,7 +4,7 @@
         </div> -->
         <div class="container">
             <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp"> How We Work</span>
+                <span class="sub-title style2 text-anim" data-cue="slideInUp"> How We Work</span>
                 <h2 class="sec-title text-anim" data-cue="slideInUp">How We Care For You</h2>
                 <p class="fs-18 text-anim2" data-cue="slideInUp">Experience quality care with our dedicated team of professionals</p>
             </div>

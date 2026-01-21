@@ -1,7 +1,7 @@
 <section class="testi-area-1 space overflow-hidden bg-white" id="testi-sec">
     <div class="container">
         <div class="title-area text-center">
-            <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">Testimonials</span>
+            <span class="sub-title style2 text-anim" data-cue="slideInUp">Testimonials</span>
             <h2 class="sec-title text-anim" data-cue="slideInUp">What Families Say About Us</h2>
             <p class="fs-18 text-anim2" data-cue="slideInUp">Read the heartwarming stories from families who entrusted their loved ones to our care.</p>
         </div>
