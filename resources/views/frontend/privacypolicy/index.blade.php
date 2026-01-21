@@ -1,25 +1,13 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <div class="breadcumb-wrapper">
-        <div class="breadcumb-bg-thumb" data-overlay="title" data-opacity="5" data-bg-src="assets/img/bg/breadcumb-bg.png"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-12">
-                    <div class="breadcumb-content">
-                        <h1 class="breadcumb-title text-anim" data-cue="slideInUp" data-delay="100">Privacy Policy</h1>
-                        <ul class="breadcumb-menu">
-                            <li><a href="{{ route('home') }}">Home</a></li>
-                            <li>Privacy Policy</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="space bg-white">
-        <div class="container">
+    @include('frontend.privacypolicy.hero')
+
+
+
+    <div class="space ">
+        <div class="container ">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="privacy-policy-content">
@@ -276,7 +264,7 @@
                                     >
                                 </div>
                                 <div class="col-md-9">
-                                    <div class="contact-info-box p-4 bg-light rounded">
+                                    <div class="contact-info-box p-4  rounded">
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
                                                 <h5 class="mb-2"><i class="fas fa-user-shield me-2"></i>Privacy Officer</h5>
@@ -313,7 +301,7 @@
                                     <p>By using our website, services, or digital platform, or by residing in our facility, you acknowledge that you have read and understood this Privacy Policy and consent to the collection, use, and disclosure of your information as described herein. For residents, a separate consent form will be provided during the admission process.</p>
                                 </div>
                                 <div class="col-md-4 text-center">
-                                    <img src="{{ asset('assets/img/privacy/verified-ribbon-check-mark-green_78370-6057.avif') }}" alt="Consent Icon" class="img-fluid" style="max-width: 150px;">
+                                    <img src="{{ asset('assets/img/privacy/6757578.png') }}" alt="Consent Icon" class="img-fluid" style="max-width: 150px;">
                                 </div>
                             </div>
                         </div>
@@ -349,7 +337,6 @@
             margin-bottom: 2rem;
             padding: 1.5rem;
             border-radius: 8px;
-            background: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
@@ -390,7 +377,7 @@
         }
 
         .contact-info-box {
-            background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+            background: transparent;
         }
 
         .contact-info-box h5 {
@@ -399,7 +386,6 @@
         }
 
         .policy-footer {
-            border: 2px solid #27ae60;
             background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);
         }
 
