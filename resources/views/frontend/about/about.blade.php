@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-xxl-5">
                         <div class="title-area mb-40">
-                            <span class="sub-title subtitle-line text-anim" data-cue="slideInUp"> Our Story</span>
+                            <span class="sub-title style2 text-anim" data-cue="slideInUp"> Our Story</span>
                             <h2 class="sec-title text-anim2" data-cue="slideInLeft" data-delay="300">Understanding Life's Journey with Care 365</h2>
                             <p class="fs-18 mt-4" data-cue="slideInUp">At Care 365, we understand the intricate needs that arise through life's journey. Whether you need post-surgical care, support for mobility, or a nurturing environment for dementia and Parkinson's, our compassionate team embraces your unique story.</p>
                         </div>

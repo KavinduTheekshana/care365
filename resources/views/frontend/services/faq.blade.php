@@ -3,7 +3,7 @@
         <div class="row gy-40 gx-60">
             <div class="col-xxl-7 col-xl-7">
                 <div class="title-area">
-                    <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">quick answers</span>
+                    <span class="sub-title style2 text-anim" data-cue="slideInUp">quick answers</span>
                     <h2 class="sec-title text-anim2" data-cue="slideInLeft">Frequently Ask Questions</h2>
                 </div>
 

@@ -1,7 +1,7 @@
 <section class="bg-smoke2 space overflow-hidden" id="blog-sec">
     <div class="container">
         <div class="title-area text-center">
-            <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">Articles & Tips</span>
+            <span class="sub-title style2 text-anim" data-cue="slideInUp">Articles & Tips</span>
             <h2 class="sec-title text-anim" data-cue="slideInUp">Latest Articles & Blog</h2>
         </div>
         

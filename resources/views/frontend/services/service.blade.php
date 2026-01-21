@@ -1,7 +1,7 @@
 <section class="space" id="service-sec">
     <div class="container">
         <div class="title-area text-center mb-50">
-            <span class="sub-title subtitle-line text-anim" data-cue="slideInUp">Our Services</span>
+            <span class="sub-title style2 text-anim" data-cue="slideInUp">Our Services</span>
             <h2 class="sec-title text-anim2" data-cue="slideInUp">Safe And Secure Elderly Care</h2>
             <p class="fs-18 text-anim2" data-cue="slideInUp">Discover our comprehensive services, providing personalized support and engaging activities to enhance the well-being and quality of life for seniors.</p>
         </div>

@@ -3,7 +3,7 @@
         <div class="row justify-content-between align-items-center">
             <div class="col-xxl-5 col-xl-7 col-md-8">
                 <div class="title-area">
-                    <span class="sub-title subtitle-line text-anim" data-cue="slideInUp"> Our Services</span>
+                    <span class="sub-title style2 text-anim" data-cue="slideInUp"> Our Services</span>
                     <h2 class="sec-title text-anim2" data-cue="slideInUp">Our Comprehensive Care Services</h2>
                 </div>
             </div>

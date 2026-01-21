@@ -26,18 +26,10 @@
                                 <li class="{{ request()->routeIs('gallery') ? 'active' : '' }}">
                                     <a href="{{route('gallery')}}">Gallery</a>
                                 </li>
-                                <li class="{{ request()->routeIs('testimonial') ? 'active' : '' }}">
-                                    <a href="{{route('testimonial')}}">Testimonial</a>
-                                </li>
-                                <li class="{{ request()->routeIs('faq') ? 'active' : '' }}">
-                                    <a href="{{route('faq')}}">FAQ'S</a>
-                                </li>
-                                <li class="{{ request()->routeIs('blog') ? 'active' : '' }}">
-                                    <a href="{{ route('blog') }}">Blog</a>
-                                </li>
                                 <li class="{{ request()->routeIs('contact') ? 'active' : '' }}">
                                     <a href="{{ route('contact') }}">Contact Us</a>
                                 </li>
+
                             </ul>
                         </nav>
                         <div class="header-button d-flex d-lg-none">

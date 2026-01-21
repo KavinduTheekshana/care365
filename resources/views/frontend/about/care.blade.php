@@ -4,20 +4,17 @@
         </div> -->
         <div class="container">
             <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp"> How We Work</span>
+                <span class="sub-title style2 text-anim" data-cue="slideInUp"> How We Work</span>
                 <h2 class="sec-title text-anim" data-cue="slideInUp">How We Care For You</h2>
                 <p class="fs-18 text-anim2" data-cue="slideInUp">Experience quality care with our dedicated team of professionals</p>
             </div>
             <div class="row gy-40">
-                <div class="col-xl-6 col-lg-6">
-                    <div class="process2-1-box pe-xxl-5 me-xl-5">
-                        <div class="process2-1-thumb" data-mask-src="assets/img/bg/process-2.1-bg.png">
-                            <img class="process-2-1-img" src="assets/img/normal/BLOG15_480x480.webp" alt="img">
-                            <!-- <img class="process1-1-shape" src="assets/img/bg/process1.1-shape.png" alt="img"> -->
+                <div class="col-xl-6">
+                    <div class="process-slide-image">
+                        <div class="img background-img bg-white" 
+                            data-bg-src="assets/img/Home-img/our-mission-image-final_orig.png"
+                            style="background-image: url('assets/img/Home-img/our-mission-image-final_orig.png');">
                         </div>
-                        <!-- <div class="process2-2-img">
-                            <img src="assets/img/normal/process2-2-img.png" alt="">
-                        </div> -->
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">

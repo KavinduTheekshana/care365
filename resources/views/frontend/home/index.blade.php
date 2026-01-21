@@ -5,6 +5,9 @@
     @include('frontend.home.about')
     @include('frontend.home.services')
     @include('frontend.home.specialities')
+    @include('frontend.home.videoarea')
+    @include('frontend.home.marqueearea ')
+
 
     
     
@@ -13,106 +16,7 @@
 
 
    
-        <!--==============================
-Video Area  
-==============================-->
-        <div class="video-area-1 overflow-hidden space-top">
-            <div class="container-fluid p-0">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="video-wrap1">
-                            <div class="video-thumb1-1" data-cue="slideInUp" data-overlay="title" data-opacity="4">
-                                <img src="assets/img/Home-img/happy-nurse-holding-elderly-man-hand-wheelchair-garden-nursing-home-1024x683.jpg" alt="img">
-                                <a href="https://www.youtube.com/watch?v=HyZvbVf2SSY" class="video-btn th-popup-video">
-                                    <span class="play-btn style2"><i class="fa-sharp fa-solid fa-play"></i></span>
-                                    <span class="video-text">Watch Video</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--==============================
-Marquee Area  
-==============================-->
-    <div class="overflow-hidden space-bottom">
-        <div class="container-fluid p-0" data-cue="slideInUp">
-            <div class="swiper th-slider marquee-slider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":"auto"}},"autoplay":{"delay":0,"disableOnInteraction":false},"noSwiping":"true","speed":10000,"spaceBetween":0}'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Comfort </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Quality of Life </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Continuum of Care </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                friendly Staff </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Customized Care Plans </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Holistic Approach </a>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon hidden">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Expertise </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </div>
-    <!--==============================
-Process Area  
-==============================-->
     <section class="position-relative bg-white overflow-hidden space" >
         <!-- <div class="why-bg-shape1-2 shape-mockup moving d-xxl-block d-none" data-bottom="1%" data-left="-1%">
             <img src="assets/img/shape/shape1-25.png" alt="img">
@@ -122,20 +26,17 @@ Process Area
         </div> -->
         <div class="container">
             <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">How We Work</span>
-                <h2 class="sec-title text-anim" data-cue="slideInUp">The Process of Admitting to Our
-Homes</h2>
+                <span class="sub-title style2 text-anim" data-cue="slideInUp">How We Work</span>
+                <h2 class="sec-title text-anim" data-cue="slideInUp">The Process of Admitting to Our Homes</h2>
                 <p class="fs-18 text-anim2" data-cue="slideInUp">How to Proceed</p>
             </div>
             <div class="row gy-40">
                 <div class="col-xl-6">
                     <div class="process-slide-image">
-                        <div class="img background-img" data-bg-src="assets/img/Home-img/private-duty-caregiver.jpg">
+                        <div class="img background-img bg-white" 
+                            data-bg-src="assets/img/Home-img/our-mission-image-final_orig.png"
+                            style="background-image: url('assets/img/Home-img/our-mission-image-final_orig.png');">
                         </div>
-                        <div class="img foreground-img" data-bg-src="assets/img/Home-img/private-duty-caregiver-2.jpeg">
-                        </div>
-                        <input type="range" min="1" max="100" value="50" class="slider" name='slider' id="slider">
-                        <div class='slider-button'></div>
                     </div>
                 </div>
                 <div class="col-xl-6">
@@ -183,7 +84,7 @@ Gallery Area
 
         <div class="container-fluid p-0">
             <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">Recent stories</span>
+                <span class="sub-title style2 text-anim" data-cue="slideInUp">Recent stories</span>
                 <h2 class="sec-title text-anim" data-cue="slideInUp">Our success stories</h2>
                 <p class="fs-18 text-anim2" data-cue="slideInUp">Easily find and book trusted Pet Caregivers near you</p>
             </div>
@@ -515,7 +416,7 @@ Appointment Area
             <div class="row">
                 <div class="col-lg-8 col-xl-7 col-xxl-6">
                     <div class="title-area">
-                        <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">book an Appointment</span>
+                        <span class="sub-title style2 text-anim" data-cue="slideInUp">book an Appointment</span>
                         <h2 class="sec-title text-anim" data-cue="slideInUp">Make an Appointment</h2>
                         <p class="fs-18 text-anim2 pe-xl-4" data-cue="slideInUp">Need some advice or have any questions about our services? Contact us in any convenient way.</p>
                     </div>
@@ -580,8 +481,19 @@ Appointment Area
                     </form>
                 </div>
                 <div class="col-xl-5">
-                    <div class="appointment-thumb-1-1 pe-xl-5 me-xl-3" data-cue="slideInUp">
-                        <img src="assets/img/Home-img/galary-img5.png" alt="img">
+                    <div class="pe-xl-5 me-xl-3" data-cue="slideInUp">
+                        <img 
+                            src="assets/img/Home-img/hero55-1024x938.webp" 
+                            alt="img"
+                            style="
+                                border-radius: 16px;          
+                                width: 100%;                  
+                                height: auto;                 
+                                max-width: 500px;            
+                                display: block;               
+                                object-fit: cover;            
+                            "
+                        >
                     </div>
                 </div>
 
