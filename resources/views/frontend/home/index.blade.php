@@ -5,6 +5,9 @@
     @include('frontend.home.about')
     @include('frontend.home.services')
     @include('frontend.home.specialities')
+    @include('frontend.home.videoarea')
+    @include('frontend.home.marqueearea ')
+
 
     
     
@@ -13,106 +16,7 @@
 
 
    
-        <!--==============================
-Video Area  
-==============================-->
-        <div class="video-area-1 overflow-hidden space-top">
-            <div class="container-fluid p-0">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="video-wrap1">
-                            <div class="video-thumb1-1" data-cue="slideInUp" data-overlay="title" data-opacity="4">
-                                <img src="assets/img/Home-img/happy-nurse-holding-elderly-man-hand-wheelchair-garden-nursing-home-1024x683.jpg" alt="img">
-                                <a href="https://www.youtube.com/watch?v=HyZvbVf2SSY" class="video-btn th-popup-video">
-                                    <span class="play-btn style2"><i class="fa-sharp fa-solid fa-play"></i></span>
-                                    <span class="video-text">Watch Video</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--==============================
-Marquee Area  
-==============================-->
-    <div class="overflow-hidden space-bottom">
-        <div class="container-fluid p-0" data-cue="slideInUp">
-            <div class="swiper th-slider marquee-slider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":"auto"}},"autoplay":{"delay":0,"disableOnInteraction":false},"noSwiping":"true","speed":10000,"spaceBetween":0}'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Comfort </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Quality of Life </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Continuum of Care </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                friendly Staff </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Customized Care Plans </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Holistic Approach </a>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="marquee-icon hidden">
-                                <img src="assets/img/icon/marquee-icon3-1.png" alt="img">
-                            </div>
-                            <a target="_blank" href="#">
-                                Expertise </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </div>
-    <!--==============================
-Process Area  
-==============================-->
     <section class="position-relative bg-white overflow-hidden space" >
         <!-- <div class="why-bg-shape1-2 shape-mockup moving d-xxl-block d-none" data-bottom="1%" data-left="-1%">
             <img src="assets/img/shape/shape1-25.png" alt="img">
