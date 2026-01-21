@@ -13,6 +13,7 @@ use App\Http\Controllers\PackagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\CareersController;
+use App\Http\Controllers\PrivacyPolicyController;
 
 
 
@@ -53,7 +54,8 @@ Route::get('careers/', [CareersController::class, 'index'])->name('careers');
 //Send Contact Mail
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
-
+// Privacy Policy Page
+Route::get('privacy-policy/', [PrivacyPolicyController::class, 'index'])->name('privacy-policy');
 
 
 
@@ -62,18 +64,3 @@ Route::get('/{slug}', [RouteController::class, 'resolve']);
 
 
 
-// In routes/web.php
-Route::get('/test-helpers', function() {
-    $blog = App\Models\Blog::first();
-    $service = App\Models\Service::first();
-    
-    return [
-        'blog_url' => blog_url($blog),
-        'service_url' => service_url($service),
-        'image_url' => image_url('test.jpg', 'blog'),
-        'placeholder' => placeholder_image('blog'),
-        'excerpt' => excerpt('This is a long text that needs to be shortened', 20),
-        'date' => format_date(now()),
-        'active_menu' => active_menu('test-helpers'),
-    ];
-});
