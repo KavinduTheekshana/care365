@@ -180,7 +180,7 @@ Designed & Developed by Creatx Software Ltd. -->
                                     <li><a href="{{route('testimonial')}}">Testimonial</a></li>
                                     <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                                     <li><a href="{{ route('about') }}">Investors Relations</a></li>
-                                    <li><a href="{{ route('contact') }}">Term & Conditions </a></li>
+                                    <li><a href="{{ route('termsconditions') }}">Term & Conditions </a></li>
                                 </ul>
                             </div>
                         </div>

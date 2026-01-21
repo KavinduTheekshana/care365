@@ -14,6 +14,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\CareersController;
 use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\TermsConditionController;
 
 
 
@@ -56,6 +57,9 @@ Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.
 
 // Privacy Policy Page
 Route::get('privacy-policy/', [PrivacyPolicyController::class, 'index'])->name('privacy-policy');
+
+// Terms and Conditions Page
+Route::get('terms-and-conditions/', [TermsConditionController::class, 'index'])->name('termsconditions');
 
 
 

@@ -270,12 +270,11 @@
                                                 <h5 class="mb-2"><i class="fas fa-user-shield me-2"></i>Privacy Officer</h5>
                                                 <p class="mb-1"><i class="fas fa-envelope me-2"></i>Email: privacy@care36t5.com</p>
                                                 <p class="mb-1"><i class="fas fa-phone me-2"></i>Phone: +94 77 660 40 40</p>
-                                                <p class="mb-1"><i class="fas fa-envelope me-2"></i>General Inquiries: info@care36t5.com</p>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <h5 class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Mailing Address</h5>
                                                 <p class="mb-0">
-                                                    Care 36<br>
+                                                    Care 365<br>
                                                     407 C1, Nomis Weragala Mw,<br>
                                                     Hokandara South, Thalawathugoda,<br>
                                                     Sri Lanka
