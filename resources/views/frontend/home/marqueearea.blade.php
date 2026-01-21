@@ -73,7 +73,7 @@
         </div>
     </div>
 -->
-    <div class="brand-wrap1 text-center overflow-hidden mb-4 mb-lg-5">
+    <div class="brand-wrap1 text-center overflow-hidden ">
         <div class="container th-container">
             <div class="swiper th-slider" data-cue="slideInUp" id="brandSlider1"
                 data-slider-options='{
@@ -172,6 +172,8 @@
             </div>
         </div>
     </div>
+    </div>
+
 
 <style>
     .brand-box {

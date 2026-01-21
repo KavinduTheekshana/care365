@@ -31,9 +31,9 @@
                 <p class="fs-18 text-anim2" data-cue="slideInUp">How to Proceed</p>
             </div>
             <div class="row gy-40">
-                <div class="col-xl-6 ">
-                    <div class="process-slide-image bg-white">
-                        <div class="img background-img bg-white" 
+                <div class="col-xl-6">
+                    <div class="process-slide-image">
+                        <div class="img background-img" 
                             data-bg-src="assets/img/Home-img/our-mission-image-final_orig.png"
                             style="background-image: url('assets/img/Home-img/our-mission-image-final_orig.png');">
                         </div>
