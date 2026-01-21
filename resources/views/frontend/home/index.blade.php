@@ -27,19 +27,16 @@
         <div class="container">
             <div class="title-area text-center">
                 <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">How We Work</span>
-                <h2 class="sec-title text-anim" data-cue="slideInUp">The Process of Admitting to Our
-Homes</h2>
+                <h2 class="sec-title text-anim" data-cue="slideInUp">The Process of Admitting to Our Homes</h2>
                 <p class="fs-18 text-anim2" data-cue="slideInUp">How to Proceed</p>
             </div>
             <div class="row gy-40">
-                <div class="col-xl-6">
-                    <div class="process-slide-image">
-                        <div class="img background-img" data-bg-src="assets/img/Home-img/private-duty-caregiver.jpg">
+                <div class="col-xl-6 ">
+                    <div class="process-slide-image bg-white">
+                        <div class="img background-img bg-white" 
+                            data-bg-src="assets/img/Home-img/our-mission-image-final_orig.png"
+                            style="background-image: url('assets/img/Home-img/our-mission-image-final_orig.png');">
                         </div>
-                        <div class="img foreground-img" data-bg-src="assets/img/Home-img/private-duty-caregiver-2.jpeg">
-                        </div>
-                        <input type="range" min="1" max="100" value="50" class="slider" name='slider' id="slider">
-                        <div class='slider-button'></div>
                     </div>
                 </div>
                 <div class="col-xl-6">
