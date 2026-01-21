@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-lg-5">
                                 <div class="img-box1">
-                                    <div class="img1" data-mask-src="assets/img/term/75675765.jpg"
+                                    <div class="img1" data-mask-src="assets/img/normal/about-thumb-mask1-1.png"
                                         style="border-radius: 15px; overflow: hidden;">
                                         <img src="assets/img/term/75675765.jpg" alt="Healthcare Terms">
                                     </div>
