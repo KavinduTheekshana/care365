@@ -72,8 +72,8 @@
                                         @if($carehome->badge_text)
                                             <span class="badge" style="
                                                 background-color: transparent;
-                                                border: 1px solid #000000;
-                                                color: #000000;
+                                                border: 1px solid #89CFF0;
+                                                color: #89CFF0;
                                                 padding: 4px 10px;
                                                 border-radius: 0 12px 0 0;
                                                 font-size: 0.7rem;   
