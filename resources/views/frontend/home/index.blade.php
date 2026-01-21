@@ -481,8 +481,19 @@ Appointment Area
                     </form>
                 </div>
                 <div class="col-xl-5">
-                    <div class="appointment-thumb-1-1 pe-xl-5 me-xl-3" data-cue="slideInUp">
-                        <img src="assets/img/Home-img/galary-img5.png" alt="img">
+                    <div class="pe-xl-5 me-xl-3" data-cue="slideInUp">
+                        <img 
+                            src="assets/img/Home-img/hero55-1024x938.webp" 
+                            alt="img"
+                            style="
+                                border-radius: 16px;          
+                                width: 100%;                  
+                                height: auto;                 
+                                max-width: 500px;            
+                                display: block;               
+                                object-fit: cover;            
+                            "
+                        >
                     </div>
                 </div>
 
