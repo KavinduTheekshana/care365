@@ -17,9 +17,9 @@ class WhoweareResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
-    protected static ?string $navigationLabel = 'Who We Are Manage';
+    protected static ?string $navigationLabel = 'Who We Are';
 
-    protected static ?string $navigationGroup = 'Who We Are Management'; 
+    protected static ?string $navigationGroup = 'Who We Are Management';
 
     protected static ?int $navigationSort = 8;
 
@@ -117,7 +117,7 @@ class WhoweareResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->defaultSort('display_order', 'asc') // important for ordering
+            ->defaultSort('display_order', 'asc') // keeps your ordering
             ->filters([
                 Tables\Filters\TernaryFilter::make('is_public')
                     ->label('Visibility')
@@ -139,7 +139,9 @@ class WhoweareResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageWhoweares::route('/'),
+            'index'   => Pages\ListWhoweares::route('/'),            // /admin/whoweares
+            'create'  => Pages\CreateWhoweare::route('/create'),     // /admin/whoweares/create
+            'edit'    => Pages\EditWhoweare::route('/{record}/edit'), // /admin/whoweares/1/edit
         ];
     }
 

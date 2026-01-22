@@ -3,16 +3,17 @@
 namespace App\Filament\Resources\WhoweareResource\Pages;
 
 use App\Filament\Resources\WhoweareResource;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Actions;
+use Filament\Resources\Pages\ListRecords;
 
-class ManageWhoweares extends ManageRecords
+class ListWhoweares extends ListRecords
 {
     protected static string $resource = WhoweareResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            \Filament\Actions\CreateAction::make(),
+            Actions\CreateAction::make(),
         ];
     }
 }
