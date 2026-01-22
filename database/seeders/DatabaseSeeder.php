@@ -16,26 +16,46 @@ class DatabaseSeeder extends Seeder
 
         // Order is important - seed in dependency order
         $this->call([
+            // Core system data
             RoleSeeder::class,
             BranchSeeder::class,
             UserSeeder::class,
+
+            // Client-related data
             ClientSeeder::class,
             DoctorSeeder::class,
             MedicationSeeder::class,
             ClientOutingSeeder::class,
             ClientDailyChecklistSeeder::class,
+
+            // Staff-related data
+            CareerSeeder::class,
+            ChefChecklistSeeder::class,
+
+            // Financial data
+            ExpenseSeeder::class,
+
+            // Public website data
+            ServiceSeeder::class,
+            TestimonialSeeder::class,
+            FaqSeeder::class,
+            GallerySeeder::class,
+            WhoweareSeeder::class,
+            CareHomeSeeder::class,
+            BlogSeeder::class,
+            ContactMessageSeeder::class,
+            EnquirySeeder::class,
         ]);
 
         $this->command->newLine();
         $this->command->info('✅ Database seeding completed successfully!');
         $this->command->newLine();
         $this->command->info('📋 Summary:');
-        $this->command->info('   - 4 Branches created');
-        $this->command->info('   - 20+ Users created (Admin, Managers, Careers, Chefs, Guardians)');
-        $this->command->info('   - 6 Clients created with guardians');
-        $this->command->info('   - 7 Doctors created and assigned to clients');
-        $this->command->info('   - 12-30 Medications created with 7 days of records');
-        $this->command->info('   - 18-42 Client outings created');
+        $this->command->info('   - Core System: Roles, Branches, Users');
+        $this->command->info('   - Clients: 6 Clients with guardians, doctors, medications, outings');
+        $this->command->info('   - Staff: Careers, chef checklists');
+        $this->command->info('   - Financial: Expenses data');
+        $this->command->info('   - Website: Services, Testimonials, FAQs, Gallery, Care Homes, Blogs, Contact Messages, Enquiries');
         $this->command->newLine();
         $this->command->info('🔑 Login Credentials (password: password):');
         $this->command->info('   Admin:   admin@care365.com');
