@@ -7,6 +7,8 @@ use App\Models\Blog;
 use App\Models\Faq;
 use App\Models\Testimonial;
 use App\Models\Service;
+use App\Models\Gallery;
+
 
 class HomeController extends Controller
 {
@@ -35,8 +37,12 @@ class HomeController extends Controller
                           ->orderBy('created_at', 'desc')
                           ->take(6)
                           ->get();
+
+        $galleryImages = Gallery::orderBy('created_at', 'desc')
+                           ->take(6)
+                           ->get();
         
         // Return view with all data
-        return view('frontend.home.index', compact('blogs', 'faqs', 'testimonials', 'services'));
+        return view('frontend.home.index', compact('blogs', 'faqs', 'testimonials', 'services','galleryImages'));
     }
 }

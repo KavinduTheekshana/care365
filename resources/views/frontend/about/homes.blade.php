@@ -57,14 +57,23 @@
                              aria-labelledby="team_{{ $carehome->id }}-tab" 
                              data-cue="slideInUp">
                             <div class="team-tab-content">
-                                <div class="team-1-bg-mask" data-mask-src="assets/img/shape/team-1_mask.jpg"></div>
-                                <div class="team-thumb" style="max-width: 350px;">
-                                    @if($carehome->image_path)
-                                    <img src="{{ asset('care_homes_img/' . $carehome->image_path) }}" alt="{{ $carehome->title }}">
-                                    @else
-                                    <img src="assets/img/care-home/home-placeholder.jpg" alt="{{ $carehome->title }}">
-                                    @endif
-                                </div>
+                                <div class="team-1-bg-mask" style="border-radius: 20px; overflow: hidden;"> </div>
+                                    <div class="" style="max-width: 350px;">
+                                        @if($carehome->image_path)
+                                            <img 
+                                                src="{{ asset('care_homes_img/' . $carehome->image_path) }}" 
+                                                alt="{{ $carehome->title }}"
+                                                style="border-radius: 12px; width: 100%;"
+                                            >
+                                        @else
+                                            <img 
+                                                src="assets/img/care-home/home-placeholder.jpg" 
+                                                alt="{{ $carehome->title }}"
+                                                style="border-radius: 12px; width: 100%;"
+                                            >
+                                        @endif
+                                    </div>
+
                                 <div class="team-content">
                                 <div class="top">
                                     <h3 class="box-title" style="font-size: 1.4rem; margin-bottom: 0.6rem;">{{ $carehome->title }}</h3>
@@ -110,9 +119,11 @@
                                         @endif
                                     </div>
                                 </div>
-                                <a class="icon-btn style3" href="{{ route('contact') }}">
+                                <!--
+                                <a class="icon-btn style3 hidden" href="{{ route('contact') }}">
                                     <img data-mask-src="assets/img/icon/arrow-right-1.svg" src="assets/img/icon/arrow-right-1.svg" alt="img">
                                 </a>
+                                -->
                             </div>
                         </div>
                         @endforeach
