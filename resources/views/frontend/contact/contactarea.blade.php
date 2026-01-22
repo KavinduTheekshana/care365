@@ -1,4 +1,4 @@
-<div class="space overflow-hidden bg-smoke2 contact-area-1 position-relative z-index-common" id="contact-sec">
+<div class="space overflow-hidden bg-smoke2 contact-area-1 position-relative " id="contact-sec">
     <div class="container">
         <div class="row gy-40 gx-40 justify-content-center">
             <div class="col-xl-5" data-cue="slideInUp">
