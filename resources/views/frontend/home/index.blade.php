@@ -1,12 +1,11 @@
 @extends('layouts.frontend')
 
 @section('content')
-    @include('frontend.home.hero')
+    @include('frontend.home.hero_2')
     @include('frontend.home.about')
     @include('frontend.home.services')
     @include('frontend.home.specialities')
     @include('frontend.home.videoarea')
-    @include('frontend.home.marqueearea ')
 
 
     
