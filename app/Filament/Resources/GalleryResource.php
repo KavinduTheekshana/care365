@@ -19,7 +19,8 @@ class GalleryResource extends Resource
 
     protected static ?string $navigationLabel = 'Gallery';
 
-    protected static ?string $navigationGroup = 'Manage Gallery';
+ 
+    protected static ?string $navigationGroup = 'Frontend Management';
 
     protected static ?int $navigationSort = 6;
 

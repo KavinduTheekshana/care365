@@ -19,7 +19,8 @@ class TestimonialResource extends Resource
 
     protected static ?string $navigationLabel = 'Testimonials';
 
-    protected static ?string $navigationGroup = 'Testimonial Management';
+    
+    protected static ?string $navigationGroup = 'Frontend Management';
 
     protected static ?int $navigationSort = 5;
 

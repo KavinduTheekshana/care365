@@ -19,7 +19,7 @@ class CareHomeResource extends Resource
 
     protected static ?string $navigationLabel = 'Care Homes';
 
-    protected static ?string $navigationGroup = 'Care Homes Management';
+    protected static ?string $navigationGroup = 'Frontend Management';
 
     protected static ?int $navigationSort = 9;
 

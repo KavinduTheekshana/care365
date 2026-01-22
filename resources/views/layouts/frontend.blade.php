@@ -54,6 +54,8 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    <!-- Preloader CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/preloader.css') }}">
     @stack('styles')
 
 </head>
@@ -64,6 +66,8 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
+    <!-- Preloader -->
+    @include('frontend.components.preloader')
 
     <!--********************************
    Code Start From Here
@@ -130,6 +134,8 @@
 
     <!-- Main Js File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <!-- Preloader Js -->
+    <script src="{{ asset('assets/js/preloader.js') }}"></script>
     @stack('scripts')
 </body>
 

@@ -19,7 +19,7 @@ class WhoweareResource extends Resource
 
     protected static ?string $navigationLabel = 'Who We Are';
 
-    protected static ?string $navigationGroup = 'Who We Are Management';
+    protected static ?string $navigationGroup = 'Frontend Management';
 
     protected static ?int $navigationSort = 8;
 

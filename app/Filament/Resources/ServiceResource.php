@@ -19,7 +19,7 @@ class ServiceResource extends Resource
 
     protected static ?string $navigationLabel = 'Services';
 
-    protected static ?string $navigationGroup = 'Services Management';
+    protected static ?string $navigationGroup = 'Frontend Management';
 
     protected static ?int $navigationSort = 7;
 
