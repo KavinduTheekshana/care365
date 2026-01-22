@@ -168,4 +168,9 @@ class BlogResource extends Resource
             'index' => Pages\ManageBlogs::route('/'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
+    }
 }

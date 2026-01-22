@@ -142,4 +142,9 @@ class WhoweareResource extends Resource
             'index' => Pages\ManageWhoweares::route('/'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
+    }
 }

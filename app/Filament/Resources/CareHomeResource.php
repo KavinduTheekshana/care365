@@ -156,4 +156,9 @@ class CareHomeResource extends Resource
             'index' => Pages\ManageCareHomes::route('/'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
+    }
 }

@@ -154,4 +154,9 @@ class TestimonialResource extends Resource
             'index' => Pages\ManageTestimonials::route('/'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
+    }
 }

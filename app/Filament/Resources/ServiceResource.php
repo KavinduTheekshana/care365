@@ -146,4 +146,9 @@ class ServiceResource extends Resource
             'index' => Pages\ManageServices::route('/'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
+    }
 }

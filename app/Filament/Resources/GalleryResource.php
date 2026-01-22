@@ -100,4 +100,9 @@ class GalleryResource extends Resource
             'index' => Pages\ManageGalleries::route('/'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
+    }
 }
