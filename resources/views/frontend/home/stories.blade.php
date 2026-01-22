@@ -1,4 +1,4 @@
-<div class="overflow-hidden space z-index-common">
+<div class="overflow-hidden space ">
     <div class="container-fluid p-0">
         <div class="title-area text-center">
             <span class="sub-title style2 text-anim" data-cue="slideInUp">Recent stories</span>
