@@ -17,9 +17,9 @@ class GalleryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
 
-    protected static ?string $navigationLabel = 'Gallery Manage';
+    protected static ?string $navigationLabel = 'Gallery';
 
-    protected static ?string $navigationGroup = 'Manage Gallery'; // same group as Testimonial if you want
+    protected static ?string $navigationGroup = 'Manage Gallery';
 
     protected static ?int $navigationSort = 6;
 
@@ -33,14 +33,14 @@ class GalleryResource extends Resource
                             ->label('Category Name')
                             ->required()
                             ->maxLength(100)
-                            ->placeholder('e.g. Events, Team, Nature')
+                            ->placeholder('e.g. Events, Team, Nature, Facility, Residents')
                             ->columnSpan(1),
 
                         Forms\Components\FileUpload::make('image_path')
                             ->label('Image')
                             ->image()
                             ->imageEditor()
-                            ->directory('')                           // direct in gallery_img/
+                            ->directory('')
                             ->disk('gallery_public')
                             ->preserveFilenames(false)
                             ->maxSize(5120) // 5MB
@@ -80,7 +80,8 @@ class GalleryResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                // You can add filter by category later if needed
+                // Optional: add category filter later if you want
+                // Tables\Filters\SelectFilter::make('category_name')->relationship(...)
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -97,7 +98,9 @@ class GalleryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageGalleries::route('/'),
+            'index'   => Pages\ListGalleries::route('/'),           // /admin/galleries
+            'create'  => Pages\CreateGallery::route('/create'),     // /admin/galleries/create
+            'edit'    => Pages\EditGallery::route('/{record}/edit'), // /admin/galleries/1/edit
         ];
     }
 

@@ -3,16 +3,17 @@
 namespace App\Filament\Resources\GalleryResource\Pages;
 
 use App\Filament\Resources\GalleryResource;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Actions;
+use Filament\Resources\Pages\EditRecord;
 
-class ManageGalleries extends ManageRecords
+class EditGallery extends EditRecord
 {
     protected static string $resource = GalleryResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            \Filament\Actions\CreateAction::make(),
+            Actions\DeleteAction::make(),
         ];
     }
 }
