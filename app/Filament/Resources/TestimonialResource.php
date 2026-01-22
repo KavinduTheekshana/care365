@@ -17,11 +17,11 @@ class TestimonialResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-oval-left';
 
-    protected static ?string $navigationLabel = 'Testimonial Manage';
+    protected static ?string $navigationLabel = 'Testimonials';
 
-    protected static ?string $navigationGroup = 'Testimonial Management'; 
+    protected static ?string $navigationGroup = 'Testimonial Management';
 
-    protected static ?int $navigationSort = 5; 
+    protected static ?int $navigationSort = 5;
 
     public static function form(Form $form): Form
     {
@@ -52,7 +52,7 @@ class TestimonialResource extends Resource
                             ->native(false)
                             ->columnSpan(1),
 
-                        Forms\Components\Textarea::make('message')          // ← NEW FIELD
+                        Forms\Components\Textarea::make('message')
                             ->label('Testimonial Message')
                             ->rows(5)
                             ->maxLength(1500)
@@ -108,8 +108,8 @@ class TestimonialResource extends Resource
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('message')
-                    ->limit(60)                     // show only first 60 chars
-                    ->tooltip(fn ($record) => $record->message)  // full text on hover
+                    ->limit(60)
+                    ->tooltip(fn ($record) => $record->message)
                     ->searchable()
                     ->wrap(),
 
@@ -151,7 +151,9 @@ class TestimonialResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageTestimonials::route('/'),
+            'index'   => Pages\ListTestimonials::route('/'),          // /admin/testimonials
+            'create'  => Pages\CreateTestimonial::route('/create'),   // /admin/testimonials/create
+            'edit'    => Pages\EditTestimonial::route('/{record}/edit'), // /admin/testimonials/1/edit
         ];
     }
 
