@@ -3,16 +3,17 @@
 namespace App\Filament\Resources\BlogResource\Pages;
 
 use App\Filament\Resources\BlogResource;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Actions;
+use Filament\Resources\Pages\ListRecords;
 
-class ManageBlogs extends ManageRecords
+class ListBlogs extends ListRecords
 {
     protected static string $resource = BlogResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            \Filament\Actions\CreateAction::make(),
+            Actions\CreateAction::make(),
         ];
     }
 }
