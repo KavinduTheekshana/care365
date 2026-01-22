@@ -20,13 +20,19 @@ class BlogController extends Controller
 
     public function blogdetails(Blog $blog): View
     {
-        // Laravel automatically finds the blog by title_slug
-        // Get related blogs (excluding current one)
+        // Eager load relationships to prevent N+1 queries
+        $blog->load(['category', 'tags']);
+        
+        // Get related blogs from same category (excluding current one)
         $relatedBlogs = Blog::where('is_public', true)
-                           ->where('id', '!=', $blog->id)
-                           ->inRandomOrder()
-                           ->take(3)
-                           ->get();
+                        ->where('id', '!=', $blog->id)
+                        ->when($blog->category_id, function($query) use ($blog) {
+                            return $query->where('category_id', $blog->category_id);
+                        })
+                        ->inRandomOrder()
+                        ->take(3)
+                        ->with('category')
+                        ->get();
         
         return view('frontend.blogdetails.index', compact('blog', 'relatedBlogs'));
     }

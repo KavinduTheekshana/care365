@@ -48,6 +48,29 @@
                             {!! nl2br(e($blog->description)) !!}
                         </div>
                         
+                        <!-- Category and Tags at bottom of description -->
+                        <div class="post-info mt-5 pt-4 border-top">
+                            <!-- Category -->
+                            @if($blog->category)
+                                <div class="category-info mb-3">
+                                    <span class="info-label"><i class="fas fa-folder"></i> Category:</span>
+                                    <span class="category-name">{{ $blog->category->name }}</span>
+                                </div>
+                            @endif
+                            
+                            <!-- Tags -->
+                            @if($blog->tags->count() > 0)
+                                <div class="tags-info">
+                                    <span class="info-label"><i class="fas fa-tags"></i> Tags:</span>
+                                    <div class="tags-list">
+                                        @foreach($blog->tags as $tag)
+                                            <span class="tag-item">{{ $tag->name }}</span>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                        
                         @if($relatedBlogs->count() > 0)
                         <div class="related-blogs mt-60 pt-5 border-top">
                             <h3 class="mb-4">Related Articles</h3>
@@ -83,3 +106,61 @@
 </section>
 
 @endsection
+
+@push('styles')
+<style>
+    .post-info {
+        color: #666;
+    }
+    
+    .info-label {
+        font-weight: 600;
+        color: #333;
+        margin-right: 10px;
+        display: inline-block;
+        min-width: 80px;
+    }
+    
+    .info-label i {
+        margin-right: 5px;
+        color: #007bff;
+    }
+    
+    .category-name {
+        color: #007bff;
+        font-weight: 500;
+    }
+    
+    .tags-list {
+        display: inline-block;
+    }
+    
+    .tag-item {
+        display: inline-block;
+        background: #f0f0f0;
+        color: #555;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        border: 1px solid #ddd;
+    }
+    
+    .tag-item:last-child {
+        margin-right: 0;
+    }
+    
+    /* Responsive */
+    @media (max-width: 576px) {
+        .info-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .tags-list {
+            margin-top: 5px;
+        }
+    }
+</style>
+@endpush
