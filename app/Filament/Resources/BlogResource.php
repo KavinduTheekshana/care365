@@ -10,6 +10,8 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use App\Models\Category;
+use App\Models\Tag;
 
 class BlogResource extends Resource
 {
@@ -17,11 +19,11 @@ class BlogResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $navigationLabel = 'Blog Manage';
+    protected static ?string $navigationLabel = 'Blogs';
 
-    protected static ?string $navigationGroup = 'Blog Management';
+    protected static ?string $navigationGroup = 'Content Management';
 
-    protected static ?int $navigationSort = 10;
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -32,18 +34,21 @@ class BlogResource extends Resource
                         Forms\Components\TextInput::make('title')
                             ->required()
                             ->maxLength(150)
-                            ->live(onBlur: true)                      // important for live preview
-                            ->afterStateUpdated(function ($state, callable $set) {
-                                $set('title_slug_preview', Str::slug($state));
+                            ->live(onBlur: true) // live update on blur
+                            ->afterStateUpdated(function ($state, callable $set, $get) {
+                                // Only auto-update slug if it wasn't manually changed
+                                if (!$get('title_slug') || $get('title_slug') === Str::slug($get('title') ?? '')) {
+                                    $set('title_slug', Str::slug($state));
+                                }
                             })
                             ->columnSpan(1),
 
-                        // Live preview of the slug (not saved, just for UX)
-                        Forms\Components\TextInput::make('title_slug_preview')
-                            ->label('Slug Preview')
-                            ->disabled()
-                            ->dehydrated(false)
-                            ->helperText('This will be automatically generated and saved when you create/update the post. Duplicates get -2, -3 etc.')
+                        Forms\Components\TextInput::make('title_slug')
+                            ->label('Slug (Customizable)')
+                            ->required()
+                            ->maxLength(255)
+                            ->unique(Blog::class, 'title_slug', ignoreRecord: true)
+                            ->helperText('Auto-generated from title. You can edit it manually.')
                             ->columnSpan(1),
 
                         Forms\Components\TextInput::make('name')
@@ -62,8 +67,36 @@ class BlogResource extends Resource
                             ->label('Publicly Visible')
                             ->default(true)
                             ->columnSpan(1),
+
+                        Forms\Components\Select::make('category_id')
+                            ->label('Category')
+                            ->relationship('category', 'name')
+                            ->searchable()
+                            ->nullable()
+                            ->columnSpan(1),
                     ])
                     ->columns(2),
+
+                Forms\Components\Section::make('Tags')
+                    ->schema([
+                        Forms\Components\Select::make('tags')
+                            ->multiple()
+                            ->relationship('tags', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->createOptionForm([
+                                Forms\Components\TextInput::make('name')
+                                    ->required()
+                                    ->live(onBlur: true)
+                                    ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
+                                Forms\Components\TextInput::make('slug')
+                                    ->required()
+                                    ->unique(Tag::class, 'slug', ignoreRecord: true)
+                                    ->helperText('Auto-generated, but editable.'),
+                            ])
+                            ->createOptionUsing(fn (array $data): int => Tag::create($data)->id)
+                            ->columnSpanFull(),
+                    ]),
 
                 Forms\Components\Section::make('Content & Image')
                     ->schema([
@@ -81,7 +114,7 @@ class BlogResource extends Resource
                             ->directory('')
                             ->disk('blog_public')
                             ->preserveFilenames(false)
-                            ->maxSize(2048) // 2MB
+                            ->maxSize(2048)
                             ->imageResizeTargetWidth(800)
                             ->imageResizeTargetHeight(400)
                             ->getUploadedFileNameForStorageUsing(function ($file): string {
@@ -90,6 +123,27 @@ class BlogResource extends Resource
                                 $random = Str::random(8);
                                 return "blog_{$timestamp}_{$random}.{$ext}";
                             })
+                            ->columnSpanFull(),
+                    ]),
+
+                Forms\Components\Section::make('SEO Meta')
+                    ->schema([
+                        Forms\Components\TextInput::make('meta_title')
+                            ->label('Meta Title')
+                            ->maxLength(60)
+                            ->helperText('Recommended: 50-60 characters')
+                            ->columnSpanFull(),
+
+                        Forms\Components\Textarea::make('meta_description')
+                            ->label('Meta Description')
+                            ->rows(3)
+                            ->maxLength(160)
+                            ->helperText('Recommended: 150-160 characters')
+                            ->columnSpanFull(),
+
+                        Forms\Components\TextInput::make('meta_keywords')
+                            ->label('Meta Keywords')
+                            ->helperText('Comma-separated, e.g. elderly care, retirement home')
                             ->columnSpanFull(),
                     ]),
             ]);
@@ -116,6 +170,18 @@ class BlogResource extends Resource
                     ->copyable()
                     ->description(fn ($record) => url('/blog/' . $record->title_slug))
                     ->toggleable(isToggledHiddenByDefault: true),
+
+                Tables\Columns\TextColumn::make('category.name')
+                    ->label('Category')
+                    ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('tags.name')
+                    ->label('Tags')
+                    ->badge()
+                    ->separator(',')
+                    ->limit(3)
+                    ->toggleable(),
 
                 Tables\Columns\TextColumn::make('name')
                     ->label('Author')
@@ -165,7 +231,14 @@ class BlogResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageBlogs::route('/'),
+            'index'  => Pages\ListBlogs::route('/'),       
+            'create' => Pages\CreateBlog::route('/create'),  
+            'edit'   => Pages\EditBlog::route('/{record}/edit'),
         ];
+    }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
     }
 }

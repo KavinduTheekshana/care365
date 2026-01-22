@@ -1,4 +1,4 @@
-<div class="overflow-hidden space z-index-common">
+<div class="overflow-hidden space">
     <div class="container">
         {{-- Category Filter (only show if there are galleries) --}}
         @if($galleries->isNotEmpty())

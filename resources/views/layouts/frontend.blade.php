@@ -32,7 +32,6 @@
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/logo.png') }}">
     <meta name="theme-color" content="#ffffff">
     {{-- @vite(['', 'resources/js/app.js']) --}}
-
     <!--==============================
  Google Fonts
  ============================== -->

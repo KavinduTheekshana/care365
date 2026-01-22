@@ -17,9 +17,9 @@ class ServiceResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
 
-    protected static ?string $navigationLabel = 'Services Manage';
+    protected static ?string $navigationLabel = 'Services';
 
-    protected static ?string $navigationGroup = 'Services Management'; // Group with others if wanted
+    protected static ?string $navigationGroup = 'Services Management';
 
     protected static ?int $navigationSort = 7;
 
@@ -33,17 +33,17 @@ class ServiceResource extends Resource
                             ->required()
                             ->maxLength(150)
                             ->live(onBlur: true)
-                            ->afterStateUpdated(function (string $state, $set) {
+                            ->afterStateUpdated(function (string $state, callable $set) {
                                 $set('title_slug', Str::slug($state));
                             })
                             ->columnSpan(1),
 
                         Forms\Components\TextInput::make('title_slug')
+                            ->label('Slug')
                             ->required()
                             ->maxLength(150)
-                            ->disabled()
-                            ->dehydrated()
                             ->unique(Service::class, 'title_slug', ignoreRecord: true)
+                            ->helperText('Auto-generated from title. You can edit if needed.')
                             ->columnSpan(1),
 
                         Forms\Components\Textarea::make('description')
@@ -55,7 +55,7 @@ class ServiceResource extends Resource
 
                         Forms\Components\Toggle::make('is_public')
                             ->label('Public?')
-                            ->helperText('If enabled, service is public; else private.')
+                            ->helperText('If enabled, service is visible on the public website.')
                             ->default(true)
                             ->columnSpan(1),
                     ])
@@ -143,7 +143,14 @@ class ServiceResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageServices::route('/'),
+            'index'   => Pages\ListServices::route('/'),           // /admin/services
+            'create'  => Pages\CreateService::route('/create'),    // /admin/services/create
+            'edit'    => Pages\EditService::route('/{record}/edit'), // /admin/services/1/edit
         ];
+    }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
     }
 }

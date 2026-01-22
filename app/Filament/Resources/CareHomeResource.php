@@ -17,7 +17,7 @@ class CareHomeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-home-modern';
 
-    protected static ?string $navigationLabel = 'Care Homes Manage';
+    protected static ?string $navigationLabel = 'Care Homes';
 
     protected static ?string $navigationGroup = 'Care Homes Management';
 
@@ -153,7 +153,14 @@ class CareHomeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageCareHomes::route('/'),
+            'index'   => Pages\ListCareHomes::route('/'),             // /admin/care-homes
+            'create'  => Pages\CreateCareHome::route('/create'),      // /admin/care-homes/create
+            'edit'    => Pages\EditCareHome::route('/{record}/edit'), // /admin/care-homes/1/edit
         ];
+    }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
     }
 }

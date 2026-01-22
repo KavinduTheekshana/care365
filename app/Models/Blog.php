@@ -17,15 +17,29 @@ class Blog extends Model
         'description',
         'image_path',
         'is_public',
-        'title_slug',           
+        'title_slug',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+        'category_id',
     ];
 
     protected $casts = [
         'is_public' => 'boolean',
-        'date'      => 'date',
+        'date' => 'date',
     ];
 
-    // Auto-generate slug when creating or updating
+    // Relationships
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
     protected static function booted()
     {
         static::creating(function ($blog) {
@@ -35,7 +49,8 @@ class Blog extends Model
         });
 
         static::updating(function ($blog) {
-            if ($blog->isDirty('title') && $blog->title) {
+            // Regenerate only if title changed AND slug wasn't manually edited
+            if ($blog->isDirty('title') && !$blog->isDirty('title_slug') && $blog->title) {
                 $blog->title_slug = static::generateUniqueSlug($blog->title, $blog->id);
             }
         });
@@ -43,8 +58,7 @@ class Blog extends Model
 
     protected static function generateUniqueSlug(string $title, ?int $ignoreId = null): string
     {
-        $slug = Str::slug($title); // or Str::limit(Str::slug($title), 100, '')
-        
+        $slug = Str::slug($title);
         $original = $slug;
         $count = 1;
 

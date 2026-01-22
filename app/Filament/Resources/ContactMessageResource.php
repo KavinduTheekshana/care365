@@ -11,7 +11,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Actions\Action;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\HtmlString;
 
 class ContactMessageResource extends Resource
 {
@@ -19,11 +18,11 @@ class ContactMessageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-envelope-open';
 
-    protected static ?string $navigationGroup = 'Contact Management'; // or wherever you want
+    protected static ?string $navigationGroup = 'Contact Management';
 
-    protected static ?string $navigationLabel = 'Contact Us';
+    protected static ?string $navigationLabel = 'Contact Messages';
 
-    protected static ?int $navigationSort = 5; // optional - order in sidebar
+    protected static ?int $navigationSort = 5;
 
     public static function form(Form $form): Form
     {
@@ -32,42 +31,35 @@ class ContactMessageResource extends Resource
                 Forms\Components\Section::make('Sender Information')
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                            ->required()
-                            ->maxLength(255)
-                            ->disabled(),
+                            ->disabled()
+                            ->columnSpan(1),
 
                         Forms\Components\TextInput::make('email')
                             ->email()
-                            ->required()
-                            ->maxLength(255)
-                            ->disabled(),
+                            ->disabled()
+                            ->columnSpan(1),
 
                         Forms\Components\TextInput::make('number')
                             ->tel()
-                            ->maxLength(20)
-                            ->disabled(),
+                            ->disabled()
+                            ->columnSpan(1),
                     ])
-                    ->columns(2),
+                    ->columns(3),
 
                 Forms\Components\Section::make('Message Details')
                     ->schema([
                         Forms\Components\TextInput::make('subject')
-                            ->required()
-                            ->maxLength(255)
                             ->disabled(),
 
                         Forms\Components\Textarea::make('message')
-                            ->required()
-                            ->maxLength(5000)
-                            ->rows(8)
+                            ->rows(10)
                             ->disabled(),
 
                         Forms\Components\Toggle::make('is_read')
                             ->label('Mark as Read')
                             ->inline(false)
                             ->onColor('success')
-                            ->offColor('danger')
-                            ->visibleOn(['edit', 'view']),
+                            ->offColor('danger'),
                     ]),
             ]);
     }
@@ -117,10 +109,6 @@ class ContactMessageResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
 
-                Tables\Actions\EditAction::make()
-                    ->visible(false), // optional - disable editing if you don't need it
-
-                // Simple "Mark as Read / Unread" action
                 Action::make('toggleRead')
                     ->label(fn (ContactMessage $record): string => $record->is_read ? 'Mark Unread' : 'Mark Read')
                     ->icon(fn (ContactMessage $record): string => $record->is_read ? 'heroicon-o-eye-slash' : 'heroicon-o-eye')
@@ -128,11 +116,9 @@ class ContactMessageResource extends Resource
                     ->requiresConfirmation()
                     ->action(function (ContactMessage $record) {
                         $record->update(['is_read' => !$record->is_read]);
-                    })
-                    ->after(function () {
-                        // Optional: refresh table after action
-                        // $this->dispatch('refresh-table'); // if needed in v3
                     }),
+
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkAction::make('markAsRead')
@@ -140,32 +126,32 @@ class ContactMessageResource extends Resource
                     ->icon('heroicon-o-eye')
                     ->color('success')
                     ->requiresConfirmation()
-                    ->action(fn (\Illuminate\Database\Eloquent\Collection $records) => $records->each->update(['is_read' => true])),
+                    ->action(fn ($records) => $records->each->update(['is_read' => true])),
 
                 Tables\Actions\BulkAction::make('markAsUnread')
                     ->label('Mark selected as Unread')
                     ->icon('heroicon-o-eye-slash')
                     ->color('warning')
                     ->requiresConfirmation()
-                    ->action(fn (\Illuminate\Database\Eloquent\Collection $records) => $records->each->update(['is_read' => false])),
+                    ->action(fn ($records) => $records->each->update(['is_read' => false])),
             ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index'  => Pages\ListContactMessages::route('/'),
-            'edit'   => Pages\EditContactMessage::route('/{record}/edit'), // optional
+            'index' => Pages\ListContactMessages::route('/'),           // /admin/contact-messages
+            'view'  => Pages\ViewContactMessage::route('/{record}'),    // /admin/contact-messages/1
+            // 'create' => Pages\CreateContactMessage::route('/create'), // ← uncomment only if you really need it
+            // 'edit'   => Pages\EditContactMessage::route('/{record}/edit'),
         ];
     }
 
-    // Optional: only admins (or specific roles) can access
     public static function canViewAny(): bool
     {
-        return auth()->user()->hasRole('admin'); // adjust to your logic
+        return auth()->user()?->hasRole('admin') ?? false;
     }
 
-    // Optional: you can also filter records if needed (e.g. per branch)
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()->latest();
