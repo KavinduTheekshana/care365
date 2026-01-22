@@ -3,16 +3,17 @@
 namespace App\Filament\Resources\CareHomeResource\Pages;
 
 use App\Filament\Resources\CareHomeResource;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Actions;
+use Filament\Resources\Pages\EditRecord;
 
-class ManageCareHomes extends ManageRecords
+class EditCareHome extends EditRecord
 {
     protected static string $resource = CareHomeResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            \Filament\Actions\CreateAction::make(),
+            Actions\DeleteAction::make(),
         ];
     }
 }
