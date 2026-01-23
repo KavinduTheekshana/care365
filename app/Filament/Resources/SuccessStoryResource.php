@@ -172,4 +172,9 @@ class SuccessStoryResource extends Resource
             'edit' => Pages\EditSuccessStory::route('/{record}/edit'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
+    }
 }
