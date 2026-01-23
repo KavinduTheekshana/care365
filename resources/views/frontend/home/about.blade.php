@@ -7,10 +7,12 @@
                         <div class="img1" data-mask-src="assets/img/normal/about-thumb-mask1-1.png">
                             <img src="assets/img/Home-img/shutterstock_2267075473-640w.webp" alt="About">
                         </div>
+                        <!--
                         <div class="year-counter-wrap">
                             <h4 class="box-title text-white"><span class="counter-number">2500</span>+</h4>
                             <p class="box-text text-white">Happy Clients</p>
                         </div>
+                         -->
                     </div>
                 </div>
                 <div class="col-xxl-5">
