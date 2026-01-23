@@ -23,7 +23,7 @@ class HomeController extends Controller
         // Get random 8 FAQs with visibility
         $faqs = Faq::where('visibility', true)
                    ->inRandomOrder()
-                   ->take(8)
+                   ->take(5)
                    ->get();
         
         // Get random 4 public testimonials for slider (2 slides on desktop)

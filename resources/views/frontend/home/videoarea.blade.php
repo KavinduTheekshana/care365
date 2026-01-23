@@ -1,4 +1,6 @@
-        <div class="video-area-1 overflow-hidden space-top">
+     <div class="why-sec-1 overflow-hidden">
+    
+        <div class="video-area-1 overflow-hidden space-top space-bottom">
             <div class="container-fluid p-0">
                 <div class="row">
                     <div class="col-lg-12">
