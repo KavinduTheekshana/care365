@@ -18,10 +18,13 @@ class BlogController extends Controller
         return view('frontend.blog.index', compact('blogs'));
     }
 
-    public function blogdetails(Blog $blog): View
+    public function blogdetails($slug): View
     {
-        // Eager load relationships to prevent N+1 queries
-        $blog->load(['category', 'tags']);
+        // Find blog by slug
+        $blog = Blog::where('title_slug', $slug)
+                    ->where('is_public', true)
+                    ->with(['category', 'tags'])
+                    ->firstOrFail();
         
         // Get related blogs from same category (excluding current one)
         $relatedBlogs = Blog::where('is_public', true)
@@ -34,26 +37,8 @@ class BlogController extends Controller
                         ->with('category')
                         ->get();
         
-        // Prepare SEO meta data for blog detail page
-        $meta_title = $blog->meta_title ?: ($blog->title . ' - Care365');
-        $meta_description = $blog->meta_description ?: \Illuminate\Support\Str::limit(strip_tags($blog->description), 160);
-        $meta_keywords = $blog->meta_keywords ?: ($blog->tags->pluck('name')->implode(', ') ?: 'care365, elderly care, retirement home');
-        
-        // IMPORTANT: OG Image uses blog's image_path for blog detail pages
-        $og_image = $blog->image_path 
-            ? asset('blog_img/' . $blog->image_path) 
-            : asset('assets/img/logo.png');
-        
-        $og_type = 'article';
-        
-        return view('frontend.blogdetails.index', compact(
-            'blog', 
-            'relatedBlogs',
-            'meta_title',
-            'meta_description',
-            'meta_keywords',
-            'og_image',
-            'og_type'
-        ));
+        // Return view with blog data
+        // Meta tags are handled by @section in the view
+        return view('frontend.blogdetails.index', compact('blog', 'relatedBlogs'));
     }
 }
