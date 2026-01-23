@@ -18,7 +18,11 @@
                     @if(isset($successStories[$storyIndex]))
                         <div class="gallery-card">
                             <div class="gallery-img">
-                                <img src="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" alt="{{ $successStories[$storyIndex]->image_alt ?? $successStories[$storyIndex]->title }}">
+                                <img 
+                                    src="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" 
+                                    alt="{{ $successStories[$storyIndex]->image_alt ?? $successStories[$storyIndex]->title }}"
+                                    style="width: 100%; height: 380px; object-fit: cover; display: block;"
+                                >
                                 <a href="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" class="icon-btn th-popup-image">
                                     <i class="fa-regular fa-magnifying-glass"></i>
                                 </a>
