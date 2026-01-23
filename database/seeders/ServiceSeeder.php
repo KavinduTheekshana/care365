@@ -4,58 +4,102 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Service;
+use Illuminate\Support\Facades\DB;
 
 class ServiceSeeder extends Seeder
 {
     public function run(): void
     {
+        // Disable foreign key checks (just in case)
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        // Clear existing services
+        Service::truncate();
+
+        // Re-enable foreign key checks
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+        // Service data
         $services = [
             [
-                'title' => '24/7 Medical Care',
-                'title_slug' => '24-7-medical-care',
-                'description' => 'Round-the-clock medical supervision and emergency support for elderly residents.',
-                'image_path' => 'default_service_img.jpg',
+                'title' => 'Medical Care',
+                'description' => 'Embrace a world of comprehensive medical support tailored to your unique needs, with a team of dedicated professionals committed to delivering compassionate care and promoting your overall well-being.',
+                'image_path' => 'service_20260123080740_hNLoi0aa.jpg',
                 'is_public' => true,
             ],
             [
-                'title' => 'Assisted Living Support',
-                'title_slug' => 'assisted-living-support',
-                'description' => 'Daily assistance with personal care, mobility, and routine activities.',
-                'image_path' => 'default_service_img.jpg',
+                'title' => 'Housekeeping/Laundry Services',
+                'description' => 'Relax and enjoy a hassle-free lifestyle, with our attentive housekeeping and laundry services taking care of the daily tasks, allowing you to focus on what truly matters.',
+                'image_path' => 'service_20260123080830_p9Ecy32x.jpg',
                 'is_public' => true,
             ],
             [
-                'title' => 'Nutritious Meal Services',
-                'title_slug' => 'nutritious-meal-services',
-                'description' => 'Healthy, balanced meals prepared to meet senior dietary needs.',
-                'image_path' => 'default_service_img.jpg',
+                'title' => 'Nutritious Meals',
+                'description' => 'Nourish your body and soul with our meticulously crafted meals, where every bite is a celebration of wholesome ingredients and culinary excellence, fueling your journey towards optimal health.',
+                'image_path' => 'service_20260123080956_kIzY7jfl.jpg',
                 'is_public' => true,
             ],
             [
-                'title' => 'Recreation & Wellness',
-                'title_slug' => 'recreation-and-wellness',
-                'description' => 'Engaging activities and wellness programs for mental and physical health.',
-                'image_path' => 'default_service_img.jpg',
+                'title' => 'Physical Therapy and Rehabilitation',
+                'description' => 'Unlock your potential with our state-of-the-art physical therapy and rehabilitation services, expertly designed to help you regain strength, mobility, and independence.',
+                'image_path' => 'service_20260123081044_wnOEF4vG.jpg',
                 'is_public' => true,
             ],
             [
-                'title' => 'Physiotherapy Care',
-                'title_slug' => 'physiotherapy-care',
-                'description' => 'Professional physiotherapy services to improve mobility and strength.',
-                'image_path' => 'default_service_img.jpg',
+                'title' => 'Social/Recreational Activities',
+                'description' => 'Discover a vibrant tapestry of engaging social and recreational programs designed to ignite your passions, foster meaningful connections, and enrich your life with laughter, creativity, and personal growth.',
+                'image_path' => 'service_20260123081159_rzE7gOwo.jpg',
                 'is_public' => true,
             ],
             [
-                'title' => 'Safe & Comfortable Living',
-                'title_slug' => 'safe-and-comfortable-living',
-                'description' => 'Secure, clean, and comfortable accommodation designed for seniors.',
-                'image_path' => 'default_service_img.jpg',
+                'title' => 'Video Conferencing Facility',
+                'description' => 'Stay connected with loved ones near and far through our cutting-edge video conferencing facilities, bridging distances and fostering meaningful connections.',
+                'image_path' => 'service_20260123081403_kHNVtVKn.jpg',
+                'is_public' => true,
+            ],
+            [
+                'title' => 'Transportation',
+                'description' => 'Embark on seamless adventures beyond our doors with our reliable transportation services, ensuring your mobility needs are met with convenience and care.',
+                'image_path' => 'service_20260123081518_gqmzcufS.jpg',
+                'is_public' => true,
+            ],
+            [
+                'title' => 'Music, Art Activities/Library Facilities',
+                'description' => 'Ignite your creativity and expand your horizons with our vibrant array of music, art activities, and well-stocked library facilities, offering endless opportunities for personal growth and enrichment.',
+                'image_path' => 'service_20260123081611_DowxhW4h.jpg',
+                'is_public' => true,
+            ],
+            [
+                'title' => '24-hour Staff Availability',
+                'description' => 'Rest assured that your well-being is our top priority, with a dedicated team of professionals available around the clock to provide attentive care and unwavering support whenever you need it.',
+                'image_path' => 'service_20260123081705_iHMCnn8b.jpg',
+                'is_public' => true,
+            ],
+            [
+                'title' => 'Affordable Packages',
+                'description' => 'Experience exceptional care without compromising affordability, with our thoughtfully designed packages that balance quality and cost-effectiveness.',
+                'image_path' => 'service_20260123081822_pqTcZais.jpg',
+                'is_public' => true,
+            ],
+            [
+                'title' => 'Religious and Spiritual Support',
+                'description' => 'Find solace in our nurturing environment that embraces diversity and provides a sanctuary for spiritual growth, where your beliefs are honored and celebrated.',
+                'image_path' => 'service_20260123082215_dCpyXgXP.jpg',
+                'is_public' => true,
+            ],
+            [
+                'title' => 'Paralysis Care',
+                'description' => 'Rediscover independence and empowerment with our compassionate paralysis care services, designed to support your unique needs and foster a life filled with dignity and quality.',
+                'image_path' => 'service_20260123082650_sgdsbrrp.jpg',
                 'is_public' => true,
             ],
         ];
 
+        // Insert each service (slug auto-generated)
         foreach ($services as $service) {
             Service::create($service);
         }
+
+        $this->command->info('✅ Services seeded successfully!');
     }
 }
