@@ -1,53 +1,35 @@
 <!doctype html>
-<html class="no-js" lang="{{ app()->getLocale() }}" dir="ltr">
+<html class="no-js" lang="zxx" dir="ltr">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     
-    <!-- Dynamic Meta Tags -->
-    <title>{{ $pageTitle ?? 'Care365 - The Best Elderly Retirement Home For You' }}</title>
-    <meta name="author" content="{{ $metaAuthor ?? 'Babet' }}">
-    <meta name="description" content="{{ $metaDescription ?? 'The Best Elderly Retirement Home For You' }}">
-    <meta name="keywords" content="{{ $metaKeywords ?? 'elderly care, retirement home, senior living, elderly retirement home' }}">
-    <meta name="robots" content="{{ $metaRobots ?? 'INDEX,FOLLOW' }}">
+    {{-- Dynamic Title --}}
+    <title>{{ $meta_title ?? 'Care365 - The Best Elderly Retirement Home For You' }}</title>
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="{{ $ogType ?? 'website' }}">
-    <meta property="og:url" content="{{ $ogUrl ?? url()->current() }}">
-    <meta property="og:title" content="{{ $ogTitle ?? $pageTitle ?? 'Care365 - The Best Elderly Retirement Home For You' }}">
-    <meta property="og:description" content="{{ $ogDescription ?? $metaDescription ?? 'The Best Elderly Retirement Home For You' }}">
-    
-    <!-- Dynamic OG Image: Use blog image for blog pages, logo for others -->
-    @isset($ogImage)
-        <meta property="og:image" content="{{ $ogImage }}">
-    @elseif(isset($blog) && $blog->image_path)
-        <!-- For blog detail pages, use blog image -->
-        <meta property="og:image" content="{{ asset('blog_img/' . $blog->image_path) }}">
-    @else
-        <!-- For all other pages, use logo -->
-        <meta property="og:image" content="{{ asset('assets/img/logo.png') }}">
-    @endisset
-    
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    {{-- Basic Meta Tags --}}
+    <meta name="author" content="{{ $meta_author ?? 'Care365' }}">
+    <meta name="description" content="{{ $meta_description ?? 'The Best Elderly Retirement Home For You' }}">
+    <meta name="keywords" content="{{ $meta_keywords ?? 'elderly care, retirement home, senior living, care365' }}">
+    <meta name="robots" content="INDEX,FOLLOW">
+
+    {{-- Open Graph Meta Tags --}}
+    <meta property="og:title" content="{{ $meta_title ?? 'Care365 - The Best Elderly Retirement Home For You' }}">
+    <meta property="og:description" content="{{ $meta_description ?? 'The Best Elderly Retirement Home For You' }}">
+    <meta property="og:image" content="{{ $og_image ?? asset('assets/img/logo.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="{{ $og_type ?? 'website' }}">
     <meta property="og:site_name" content="Care365">
     
-    <!-- Twitter -->
+    {{-- Twitter Card Meta Tags --}}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $twitterTitle ?? $pageTitle ?? 'Care365 - The Best Elderly Retirement Home For You' }}">
-    <meta name="twitter:description" content="{{ $twitterDescription ?? $metaDescription ?? 'The Best Elderly Retirement Home For You' }}">
-    
-    <!-- Dynamic Twitter Image -->
-    @isset($twitterImage)
-        <meta name="twitter:image" content="{{ $twitterImage }}">
-    @elseif(isset($blog) && $blog->image_path)
-        <meta name="twitter:image" content="{{ asset('blog_img/' . $blog->image_path) }}">
-    @else
-        <meta name="twitter:image" content="{{ asset('assets/img/logo.png') }}">
-    @endisset
-    
-    <meta name="twitter:site" content="@care365">
+    <meta name="twitter:title" content="{{ $meta_title ?? 'Care365 - The Best Elderly Retirement Home For You' }}">
+    <meta name="twitter:description" content="{{ $meta_description ?? 'The Best Elderly Retirement Home For You' }}">
+    <meta name="twitter:image" content="{{ $og_image ?? asset('assets/img/logo.png') }}">
+
+    {{-- Canonical URL --}}
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -70,8 +52,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/logo.png') }}">
     <meta name="theme-color" content="#ffffff">
-    
-    {{-- @vite(['', 'resources/js/app.js']) --}}
     
     <!--==============================
     Google Fonts
@@ -102,6 +82,7 @@
 </head>
 
 <body class="bg-smoke2">
+
     <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
@@ -113,9 +94,6 @@
     Code Start From Here
     ******************************** -->
     <div class="cursor-follower"></div>
-
-    <!-- slider drag cursor -->
-    <!-- <div class="slider-drag-cursor"> DRAG </div> -->
 
     @include('frontend.components.mobile-header')
     @include('frontend.components.header')
@@ -163,7 +141,7 @@
     <script src="{{ asset('assets/js/SplitText.min.js') }}"></script>
     <!-- Lenis Js -->
     <script src="{{ asset('assets/js/lenis.min.js') }}"></script>
-    <!-- Particle Js -->
+    <!-- Perticle Js -->
     <script src="{{ asset('assets/js/particles.min.js') }}"></script>
     <script src="{{ asset('assets/js/particles-config.js') }}"></script>
     <!-- Main Js File -->
