@@ -18,10 +18,13 @@ class BlogController extends Controller
         return view('frontend.blog.index', compact('blogs'));
     }
 
-    public function blogdetails(Blog $blog): View
+    public function blogdetails($slug): View
     {
-        // Eager load relationships to prevent N+1 queries
-        $blog->load(['category', 'tags']);
+        // Find blog by slug
+        $blog = Blog::where('title_slug', $slug)
+                    ->where('is_public', true)
+                    ->with(['category', 'tags'])
+                    ->firstOrFail();
         
         // Get related blogs from same category (excluding current one)
         $relatedBlogs = Blog::where('is_public', true)
@@ -34,6 +37,8 @@ class BlogController extends Controller
                         ->with('category')
                         ->get();
         
+        // Return view with blog data
+        // Meta tags are handled by @section in the view
         return view('frontend.blogdetails.index', compact('blog', 'relatedBlogs'));
     }
 }

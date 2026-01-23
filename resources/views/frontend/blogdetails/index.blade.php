@@ -1,8 +1,23 @@
 @extends('layouts.frontend')
+
+{{-- Dynamic SEO Meta Tags for Blog Detail Page --}}
+@section('title', $blog->meta_title ?: ($blog->title . ' - Care365'))
+
+@section('meta_author', $blog->name ?: 'Care365')
+
+@section('meta_description', $blog->meta_description ?: Str::limit(strip_tags($blog->description), 160))
+
+@section('meta_keywords', $blog->meta_keywords ?: ($blog->tags->pluck('name')->implode(', ') ?: 'care365, elderly care, retirement home'))
+
+{{-- OG Image - Uses blog image if available --}}
+@section('og_image', $blog->image_path ? asset('blog_img/' . $blog->image_path) : asset('assets/img/logo.png'))
+
+@section('og_type', 'article')
+
 @section('content')
 
 <div class="breadcumb-wrapper">
-    <div class="breadcumb-bg-thumb" data-overlay="title" data-opacity="5" data-bg-src="assets/img/bg/breadcumb-bg.png"></div>
+    <div class="breadcumb-bg-thumb" data-overlay="title" data-opacity="5" data-bg-src="{{ asset('assets/img/bg/breadcumb-bg.png') }}"></div>
     <div class="container">
         <div class="row">
             <div class="col-xxl-12">

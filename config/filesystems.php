@@ -101,7 +101,13 @@ return [
             'visibility' => 'public',
             'throw'      => false,
         ],
-
+        'success_stories' => [
+            'driver' => 'local',
+            'root' => public_path('success_stories_img'),
+            'url' => env('APP_URL') . '/success_stories_img',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
     ],
 
     /*

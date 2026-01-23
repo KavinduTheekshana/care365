@@ -181,7 +181,7 @@ class BlogResource extends Resource
                     ->badge()
                     ->separator(',')
                     ->limit(3)
-                    ->toggleable(),
+                    ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('name')
                     ->label('Author')

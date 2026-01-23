@@ -1,4 +1,4 @@
-<div class="overflow-hidden space ">
+<div class="overflow-hidden space z-index-common">
     <div class="container-fluid p-0">
         <div class="title-area text-center">
             <span class="sub-title style2 text-anim" data-cue="slideInUp">Recent stories</span>
@@ -7,81 +7,48 @@
         </div>
 
         <div class="gallery-1-wrap">
-            @if($galleryImages->isNotEmpty())
-                {{-- First single image --}}
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="{{ asset('gallery_img/' . $galleryImages[0]->image_path) }}" alt="{{ $galleryImages[0]->category_name }}">
-                        <a href="{{ asset('gallery_img/' . $galleryImages[0]->image_path) }}" class="icon-btn th-popup-image">
-                            <i class="fa-regular fa-magnifying-glass"></i>
-                        </a>
-                    </div>
-                </div>
+            @php
+                $storyIndex = 0;
+                $totalStories = count($successStories);
+            @endphp
 
-                {{-- First two images wrapped --}}
-                <div class="gallery-card-wrap">
-                    @if(isset($galleryImages[1]))
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="{{ asset('gallery_img/' . $galleryImages[1]->image_path) }}" alt="{{ $galleryImages[1]->category_name }}">
-                            <a href="{{ asset('gallery_img/' . $galleryImages[1]->image_path) }}" class="icon-btn th-popup-image">
-                                <i class="fa-regular fa-magnifying-glass"></i>
-                            </a>
+            @while($storyIndex < $totalStories)
+                @if($storyIndex % 3 === 0)
+                    {{-- Single large image (left side) --}}
+                    @if(isset($successStories[$storyIndex]))
+                        <div class="gallery-card">
+                            <div class="gallery-img">
+                                <img 
+                                    src="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" 
+                                    alt="{{ $successStories[$storyIndex]->image_alt ?? $successStories[$storyIndex]->title }}"
+                                    style="width: 100%; height: 400px; object-fit: cover; display: block;"
+                                >
+                                <a href="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" class="icon-btn th-popup-image">
+                                    <i class="fa-regular fa-magnifying-glass"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                        @php $storyIndex++; @endphp
                     @endif
-                    
-                    @if(isset($galleryImages[2]))
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="{{ asset('gallery_img/' . $galleryImages[2]->image_path) }}" alt="{{ $galleryImages[2]->category_name }}">
-                            <a href="{{ asset('gallery_img/' . $galleryImages[2]->image_path) }}" class="icon-btn th-popup-image">
-                                <i class="fa-regular fa-magnifying-glass"></i>
-                            </a>
-                        </div>
+                @else
+                    {{-- Paired images (right side) --}}
+                    <div class="gallery-card-wrap">
+                        @for($i = 0; $i < 2; $i++)
+                            @if(isset($successStories[$storyIndex]))
+                                <div class="gallery-card">
+                                    <div class="gallery-img">
+                                        <img src="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" alt="{{ $successStories[$storyIndex]->image_alt ?? $successStories[$storyIndex]->title }}">
+                                        <a href="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" class="icon-btn th-popup-image">
+                                            <i class="fa-regular fa-magnifying-glass"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                @php $storyIndex++; @endphp
+                            @endif
+                        @endfor
                     </div>
-                    @endif
-                </div>
-
-                {{-- Second single image --}}
-                @if(isset($galleryImages[3]))
-                <div class="gallery-card">
-                    <div class="gallery-img">
-                        <img src="{{ asset('gallery_img/' . $galleryImages[3]->image_path) }}" alt="{{ $galleryImages[3]->category_name }}">
-                        <a href="{{ asset('gallery_img/' . $galleryImages[3]->image_path) }}" class="icon-btn th-popup-image">
-                            <i class="fa-regular fa-magnifying-glass"></i>
-                        </a>
-                    </div>
-                </div>
                 @endif
-
-                {{-- Last two images wrapped --}}
-                <div class="gallery-card-wrap">
-                    @if(isset($galleryImages[4]))
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="{{ asset('gallery_img/' . $galleryImages[4]->image_path) }}" alt="{{ $galleryImages[4]->category_name }}">
-                            <a href="{{ asset('gallery_img/' . $galleryImages[4]->image_path) }}" class="icon-btn th-popup-image">
-                                <i class="fa-regular fa-magnifying-glass"></i>
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-                    
-                    @if(isset($galleryImages[5]))
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="{{ asset('gallery_img/' . $galleryImages[5]->image_path) }}" alt="{{ $galleryImages[5]->category_name }}">
-                            <a href="{{ asset('gallery_img/' . $galleryImages[5]->image_path) }}" class="icon-btn th-popup-image">
-                                <i class="fa-regular fa-magnifying-glass"></i>
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-                </div>
-            @else
-                <p class="text-center">No gallery images found.</p>
-            @endif
+            @endwhile
         </div>
     </div>
 </div>
