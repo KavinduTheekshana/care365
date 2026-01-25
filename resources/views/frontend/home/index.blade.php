@@ -99,8 +99,9 @@ Gallery Area
 
     <!--==============================
 Testimonial Area  
-==============================-->
     @include('frontend.home.testimonial')
+==============================-->
+
 
     
     <!--==============================
@@ -365,12 +366,14 @@ Brand Area
 
     <!--==============================
 Faq Area
-==============================-->
     @include('frontend.home.faq')
+==============================-->
+
 
     <!--==============================
 Appointment Area   
 ==============================-->
+<!--
     <div class="space overflow-hidden  bg-white">
         <div class="container">
             <div class="row">
@@ -461,10 +464,12 @@ Appointment Area
 
         </div>
     </div>
+-->
     <!--==============================
 Blog Area  
-==============================-->
     @include('frontend.home.blog')
+==============================-->
+
 
     
 
