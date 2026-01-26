@@ -8,7 +8,7 @@
                             <img 
                                 src="assets/img/Home-img/shutterstock_2267075473-640w.webp" 
                                 alt="About"
-                                style="border-radius: 16px;"
+                                style="border-radius: 20px;"
                             >
                         </div>
 
