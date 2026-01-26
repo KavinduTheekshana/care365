@@ -23,6 +23,13 @@
                                 <li class="{{ request()->routeIs('services') ? 'active' : '' }}">
                                     <a href="{{route('services')}}">Services</a>
                                 </li>
+                                <li class="menu-item-has-children">
+                                    <a href="{{route('services')}}">Services</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="service.html">Services</a></li>
+                                        <li><a href="service-details.html">Service Details</a></li>
+                                    </ul>
+                                </li>
                                 <li class="{{ request()->routeIs('gallery') ? 'active' : '' }}">
                                     <a href="{{route('gallery')}}">Gallery</a>
                                 </li>

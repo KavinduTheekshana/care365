@@ -10851,7 +10851,7 @@ Version: 1.0.0
   text-transform: capitalize;
 }
 .main-menu ul.sub-menu li a:before {
-  content: "\f1b0";
+  content: "\f4be";
   position: absolute;
   top: 6px;
   left: 10px;
