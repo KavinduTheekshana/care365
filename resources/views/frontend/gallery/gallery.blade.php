@@ -136,20 +136,24 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
-    width: 50px;
-    height: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 0.6;
+    transition: all 0.25s ease;
     z-index: 3;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    font-size: 1.4rem;           /* bigger icon if you want */
+    color: #333;
 }
 
 .gallery-card:hover .icon-btn {
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
 }
 
 .empty-gallery-state {
