@@ -15,6 +15,7 @@ use App\Http\Controllers\RouteController;
 use App\Http\Controllers\CareersController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\TermsConditionController;
+use App\Http\Controllers\EventController;
 
 
 
@@ -61,7 +62,9 @@ Route::get('privacy-policy/', [PrivacyPolicyController::class, 'index'])->name('
 // Terms and Conditions Page
 Route::get('terms-and-conditions/', [TermsConditionController::class, 'index'])->name('termsconditions');
 
-
+//Get Events by Month 
+Route::get('/events', [EventController::class, 'getMonthEvents']);
+Route::get('/events/upcoming', [EventController::class, 'getUpcomingEvents']);
 
 // Catch-all dynamic routes - MUST BE LAST
 Route::get('/{slug}', [RouteController::class, 'resolve']);

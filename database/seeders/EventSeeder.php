@@ -20,8 +20,8 @@ class EventSeeder extends Seeder
         $events = [
             // January 2026
             [
-                'title'       => 'New Year Gratitude Circle',
-                'description' => 'Residents share memories from 2025 and set positive intentions for the new year. Light refreshments provided.',
+                'title'       => 'New Year Reflection & Blessings',
+                'description' => 'A calm group discussion where residents reflect on the past year and share hopes for the new year. Herbal tea and light snacks provided.',
                 'event_date'  => '2026-01-05',
                 'event_time'  => '10:00:00',
                 'location'    => 'TV Lounge',
@@ -31,8 +31,8 @@ class EventSeeder extends Seeder
                 'updated_at'  => now(),
             ],
             [
-                'title'       => 'Morning Chair Yoga Session',
-                'description' => 'Gentle yoga exercises suitable for all mobility levels. Focus on breathing and flexibility.',
+                'title'       => 'Gentle Chair Stretching',
+                'description' => 'Slow, guided stretching exercises done while seated. Designed to improve circulation and relaxation.',
                 'event_date'  => '2026-01-07',
                 'event_time'  => '09:30:00',
                 'location'    => 'Garden',
@@ -44,8 +44,8 @@ class EventSeeder extends Seeder
 
             // February 2026
             [
-                'title'       => 'Valentine’s Day Memory Lane',
-                'description' => 'Share love stories and old photos. Heart-shaped cookies and tea will be served.',
+                'title'       => 'Friendship & Memories Tea Time',
+                'description' => 'Residents share fond memories and enjoy tea together in a warm, friendly atmosphere.',
                 'event_date'  => '2026-02-14',
                 'event_time'  => '14:00:00',
                 'location'    => 'Activity Room',
@@ -55,8 +55,8 @@ class EventSeeder extends Seeder
                 'updated_at'  => now(),
             ],
             [
-                'title'       => 'Indoor Plant Care Workshop',
-                'description' => 'Learn how to care for indoor plants. Each resident gets to take home a small potted plant.',
+                'title'       => 'Indoor Gardening Session',
+                'description' => 'Simple indoor plant care demonstration. Residents can water plants and learn basic care tips.',
                 'event_date'  => '2026-02-20',
                 'event_time'  => '10:30:00',
                 'location'    => 'Garden Patio',
@@ -68,8 +68,8 @@ class EventSeeder extends Seeder
 
             // March 2026
             [
-                'title'       => 'Women’s Day Celebration',
-                'description' => 'Special talk by a guest speaker + musical performance. Everyone welcome.',
+                'title'       => 'Women’s Appreciation Gathering',
+                'description' => 'A peaceful gathering honoring women with soft music, short talks, and appreciation moments.',
                 'event_date'  => '2026-03-08',
                 'event_time'  => '15:00:00',
                 'location'    => 'Main Hall',
@@ -79,11 +79,11 @@ class EventSeeder extends Seeder
                 'updated_at'  => now(),
             ],
             [
-                'title'       => 'Sinhala & Tamil New Year Games',
-                'description' => 'Traditional games like elle, olinda and kanam. Prizes for winners!',
+                'title'       => 'Traditional Board & Table Games',
+                'description' => 'Light games such as carrom, cards, and memory games to encourage social interaction.',
                 'event_date'  => '2026-03-31',
                 'event_time'  => '09:00:00',
-                'location'    => 'Garden',
+                'location'    => 'Activity Room',
                 'order'       => 2,
                 'is_active'   => true,
                 'created_at'  => now(),
@@ -92,19 +92,19 @@ class EventSeeder extends Seeder
 
             // April 2026
             [
-                'title'       => 'Avurudu Sweet Making Demo',
-                'description' => 'Learn to make kokis, aluwa and other traditional sweets. Tasting session included.',
+                'title'       => 'Avurudu Sweets Tasting Session',
+                'description' => 'Staff demonstrate traditional Avurudu sweets while residents enjoy tasting in moderation.',
                 'event_date'  => '2026-04-10',
                 'event_time'  => '10:00:00',
-                'location'    => 'Kitchen Activity Area',
+                'location'    => 'Dining Area',
                 'order'       => 1,
                 'is_active'   => true,
                 'created_at'  => now(),
                 'updated_at'  => now(),
             ],
             [
-                'title'       => 'Movie Afternoon – Classic Sinhala Film',
-                'description' => 'Screening of “Gamperaliya” with popcorn and discussion after.',
+                'title'       => 'Classic Movie & Relax Time',
+                'description' => 'A calm afternoon watching a classic local movie with light refreshments.',
                 'event_date'  => '2026-04-18',
                 'event_time'  => '14:30:00',
                 'location'    => 'TV Lounge',
@@ -114,10 +114,10 @@ class EventSeeder extends Seeder
                 'updated_at'  => now(),
             ],
 
-            // May 2026 (example future month)
+            // May 2026
             [
-                'title'       => 'Vesak Lantern Making',
-                'description' => 'Create beautiful Vesak lanterns together. Materials provided.',
+                'title'       => 'Vesak Lantern Viewing & Crafts',
+                'description' => 'Simple Vesak-themed craft activities and lantern viewing to promote relaxation and mindfulness.',
                 'event_date'  => '2026-05-15',
                 'event_time'  => '09:30:00',
                 'location'    => 'Activity Room',
@@ -127,6 +127,7 @@ class EventSeeder extends Seeder
                 'updated_at'  => now(),
             ],
         ];
+
 
         DB::table('events')->insert($events);
 
