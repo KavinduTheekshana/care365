@@ -25,8 +25,12 @@
                                         <li><a href="{{ route('about') }}#our-homes" class="scroll-link">Our Homes</a></li>
                                     </ul>
                                 </li>
-                                <li class="{{ request()->routeIs('services') ? 'active' : '' }}">
+                                <li class="menu-item-has-children {{ request()->routeIs('services') ? 'active' : '' }}">
                                     <a href="{{route('services')}}">Services</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{{ route('services') }}#Packages" class="scroll-link">Packages</a></li>
+                                            <li><a href="{{ route('services') }}#Calander" class="scroll-link">Calander</a></li>
+                                        </ul>
                                 </li>
 
                                 <li class="{{ request()->routeIs('gallery') ? 'active' : '' }}">

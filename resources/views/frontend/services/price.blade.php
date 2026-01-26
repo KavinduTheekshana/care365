@@ -1,4 +1,4 @@
-<section class="bg-smoke2 overflow-hidden space">
+<section class="bg-smoke2 overflow-hidden space" id="Packages">
     <div class="container">
         <div class="title-area text-center mb-5">
             <span class="sub-title style2 text-anim" data-cue="slideInUp">Pricing Plan</span>
