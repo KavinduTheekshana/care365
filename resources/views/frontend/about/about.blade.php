@@ -4,9 +4,14 @@
                 <div class="row gy-40 gx-60 align-items-center flex-row-reverse">
                     <div class="col-xxl-7 align-self-center">
                         <div class="img-box1" data-cue="slideInUp" data-delay="300">
-                            <div class="img1" data-mask-src="assets/img/normal/about-thumb-mask1-1.1.png">
-                                <img src="assets/img/normal/about-thumb1-1.1.jpg" alt="About">
+                            <div class="img1">
+                                <img 
+                                    src="assets/img/normal/IMG_1010.jpg" 
+                                    alt="About" 
+                                    style="border-radius: 16px;"
+                                >
                             </div>
+
                         </div>
                     </div>
                     <div class="col-xxl-5">

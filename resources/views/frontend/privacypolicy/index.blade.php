@@ -40,8 +40,12 @@
                             </div>
                             <div class="col-lg-5">
                                 <div class="img-box1">
-                                    <div class="img1" data-mask-src="assets/img/normal/about-thumb-mask1-1.png">
-                                        <img src="assets/img/privacy/667667.jpg" alt="Privacy">
+                                    <div class="img1">
+                                        <img 
+                                            src="assets/img/privacy/667667.jpg" 
+                                            alt="Privacy"
+                                            style="border-radius: 16px;"
+                                        >
                                     </div>
                                 </div>
                             </div>
