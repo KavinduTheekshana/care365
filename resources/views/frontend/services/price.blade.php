@@ -119,7 +119,7 @@
 
 
 
-<section class="price-sec-2 overflow-hidden space" data-bg-src="assets/img/bg/pricing-2-bg.png">
+<section class="price-sec-2 overflow-hidden space" data-bg-src="assets/img/bg/pricing-2-bg.png" id="Packages">
     <div class="container th-container2">
         <div class="title-area text-center mb-5">
             <span class="sub-title style2 text-anim" data-cue="slideInUp">Pricing Plan</span>
@@ -137,14 +137,14 @@
                     @endphp
                     
                     <div class="col-xl-4 col-md-6" data-cue="slideInUp">
-                        <div class="price-card {{ $isBestValue ? 'active-plan' : '' }}">
+                        <div class="price-card {{ $isBestValue ? 'active-plan' : '' }} h-100 d-flex flex-column">
                             @if($isBestValue)
                                 <p class="premium">Best Value For You</p>
                             @else
                                 <p class="premium">&nbsp;</p>
                             @endif
                             
-                            <div class="price-card-inner">
+                            <div class="price-card-inner flex-grow-1 d-flex flex-column">
                                 <h3 class="box-title">{{ $package->title }}</h3>
                                 <p class="box-text">
                                     {{ $package->room_type }} room • 
@@ -175,7 +175,6 @@
                                             <small class="d-block text-muted mt-1" style="font-size: 14px;">
                                                 (${{ number_format($package->price_usd, 0) }})
                                             </small>
-
                                         @endif
                                         <span class="bg-transparent" style="color: #555; font-size: 13px; line-height: 1.6;">
                                             Upwards Monthly
@@ -183,8 +182,8 @@
                                     </h4>
                                 </div>
 
-                                <div class="checklist">
-                                    <ul>
+                                <div class="checklist flex-grow-1">
+                                    <ul class="features-list-scroll">
                                         @forelse($package->features as $feature)
                                             <li class="{{ !$feature->is_active ? 'unavailable' : '' }}">
                                                 <i class="fa-solid fa-check"></i> {{ $feature->feature }}
@@ -208,3 +207,35 @@
         </div>
     </div>
 </section>
+
+<style>
+
+
+/* Features list with scroll */
+.features-list-scroll {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 0.6rem;
+}
+
+
+
+/* Custom scrollbar styling */
+.features-list-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.features-list-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.features-list-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.features-list-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+</style>
