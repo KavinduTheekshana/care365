@@ -180,4 +180,9 @@ class PackageResource extends Resource
             // 'view'   => Pages\ViewPackage::route('/{record}'),  // Keep commented or remove if not generated
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->hasRole('admin') ?? false;
+    }
 }
