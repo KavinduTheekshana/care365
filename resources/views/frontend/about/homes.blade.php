@@ -1,4 +1,4 @@
-<section class="bg-smoke2 space overflow-hidden team-area-1">
+<section class="bg-smoke2 space overflow-hidden team-area-1" id="our-homes">
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-xxl-7 col-xl-7 col-md-8">

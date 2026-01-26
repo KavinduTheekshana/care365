@@ -1,4 +1,4 @@
-<div class="overflow-hidden space overflow-hidden" id="about-sec">
+<div class="overflow-hidden space overflow-hidden"  >
         <div class="container">
             <div class="about-wrap1">
                 <div class="row gy-40 gx-60 align-items-center flex-row-reverse">

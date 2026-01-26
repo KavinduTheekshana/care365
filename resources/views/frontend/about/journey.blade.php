@@ -1,4 +1,4 @@
-<div class="why-sec-2 overflow-hidden space-bottom overflow-hidden">
+<div class="why-sec-2 overflow-hidden space-bottom overflow-hidden" id="who-we-are">
     <div class="container">
         <div class="row gy-40 gx-80 justify-content-center">
             <div class="col-xxl-12">

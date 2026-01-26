@@ -17,19 +17,18 @@
                                 <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
                                     <a href="{{ route('home') }}">Home</a>
                                 </li>
-                                <li class="{{ request()->routeIs('about') ? 'active' : '' }}">
+                                <li class="menu-item-has-children {{ request()->routeIs('about*') ? 'active' : '' }}">
                                     <a href="{{ route('about') }}">About Us</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('about') }}#who-we-are" class="scroll-link">Who We Are</a></li>
+                                        <li><a href="{{ route('about') }}#how-we-work" class="scroll-link">How We Work</a></li>
+                                        <li><a href="{{ route('about') }}#our-homes" class="scroll-link">Our Homes</a></li>
+                                    </ul>
                                 </li>
                                 <li class="{{ request()->routeIs('services') ? 'active' : '' }}">
                                     <a href="{{route('services')}}">Services</a>
                                 </li>
-                                <li class="menu-item-has-children">
-                                    <a href="{{route('services')}}">Services</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="service.html">Services</a></li>
-                                        <li><a href="service-details.html">Service Details</a></li>
-                                    </ul>
-                                </li>
+
                                 <li class="{{ request()->routeIs('gallery') ? 'active' : '' }}">
                                     <a href="{{route('gallery')}}">Gallery</a>
                                 </li>
@@ -65,10 +64,67 @@
     </div>
 </header>
 
-
 <style>
-.main-menu ul li.active a {
-    color: #3A8DCA !important; 
+.main-menu > ul > li.active > a {
+    color: #3A8DCA !important;
 }
 
+.main-menu > ul > li.active.menu-item-has-children > a:after {
+    color: #3A8DCA;           
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all scroll links
+    const scrollLinks = document.querySelectorAll('.scroll-link');
+    
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const url = new URL(href, window.location.origin);
+            
+            // Check if we're on the same page
+            if (url.pathname === window.location.pathname) {
+                e.preventDefault();
+                
+                // Get the hash/ID
+                const targetId = url.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    // Smooth scroll to the element
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update URL without triggering scroll
+                    history.pushState(null, '', href);
+                }
+            }
+            // If not on the same page, allow normal navigation
+        });
+    });
+    
+    // Handle scroll on page load if there's a hash in URL
+    if (window.location.hash) {
+        setTimeout(() => {
+            const targetId = window.location.hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }, 100);
+    }
+});
+</script>
