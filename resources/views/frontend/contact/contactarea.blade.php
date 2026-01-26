@@ -9,17 +9,18 @@
                     </div>
 
                     <div class="info-box" data-cue="slideInUp">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/con-call.svg" alt="img">
+                        <div class="box-icon" style="background-color: #e6f2ff;">
+                            <img src="assets/img/icon/674764367.png" alt="img">
                         </div>
+
                         <div class="content">
                             <h4 class="box-title">Call Us</h4>
                             <p class="box-text"><a href="tel:+94776604040">(+94)77 660 40 40</a></p>
                         </div>
                     </div>
                     <div class="info-box" data-cue="slideInUp">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/con-email.svg" alt="img">
+                        <div class="box-icon" style="background-color: #e6f2ff;">
+                            <img src="assets/img/icon/flat-icon-unread-message-blue-600nw-1909756030-removebg-preview.png" alt="img">
                         </div>
                         <div class="content">
                             <h4 class="box-title">E-mail</h4>
@@ -27,8 +28,8 @@
                         </div>
                     </div>
                     <div class="info-box" data-cue="slideInUp">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/con-location.svg" alt="img">
+                        <div class="box-icon" style="background-color: #e6f2ff;">
+                            <img src="assets/img/icon/10489216.png" alt="img">
                         </div>
                         <div class="content">
                             <h4 class="box-title">Visit Us</h4>
