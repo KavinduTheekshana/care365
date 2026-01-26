@@ -1,7 +1,7 @@
 <!--==============================
 Calendar Area  
 ==============================-->
-<section class="space bg-white overflow-hidden" id="calander">
+<section class="space bg-white overflow-hidden" id="Calander">
     <div class="container">
         <div class="title-area text-center mb-5">
             <span class="sub-title style2 text-anim" data-cue="slideInUp">Calendar</span>

@@ -15,6 +15,15 @@
                         <li><a href="{{ route('about') }}#how-we-work" class="scroll-link mobile-scroll-link">How We Work</a></li>
                         <li><a href="{{ route('about') }}#our-homes" class="scroll-link mobile-scroll-link">Our Homes</a></li>
                     </ul>
+                </li>
+                
+                <li class="menu-item-has-children">
+                    <a href="{{route('services')}}">Services</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{route('services')}}" class="scroll-link mobile-scroll-link">Services</a></li>
+                        <li><a href="{{route('services')}}#Packages" class="scroll-link mobile-scroll-link">Packages</a></li>
+                        <li><a href="{{route('services')}}#Calander" class="scroll-link mobile-scroll-link">Calander</a></li>
+                    </ul>
                 </li>                   
                 <li><a href="{{route('services')}}">Services</a></li>
                 <li><a href="{{route('gallery')}}">Gallery</a></li>
