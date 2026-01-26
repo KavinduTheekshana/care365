@@ -64,6 +64,9 @@
     </div>
 </header>
 
+<!-- Mobile Menu -->
+
+
 <style>
 .main-menu > ul > li.active > a {
     color: #3A8DCA !important;
@@ -71,6 +74,33 @@
 
 .main-menu > ul > li.active.menu-item-has-children > a:after {
     color: #3A8DCA;           
+}
+
+.mobile-logo {
+    padding: 18px 15px 14px;   
+    text-align: center;
+}
+
+.mobile-logo img {
+    width: auto;
+    max-width: 90%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Small phones safety net */
+@media (max-width: 380px) {
+    .mobile-logo img {
+        max-height: 100px;
+    }
+}
+
+/* Larger / wider mobile screens */
+@media (min-width: 420px) {
+    .mobile-logo img {
+        height: 100px;
+    }
 }
 
 /* Smooth scroll behavior */
@@ -81,24 +111,54 @@ html {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all scroll links
-    const scrollLinks = document.querySelectorAll('.scroll-link');
     
-    scrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            const url = new URL(href, window.location.origin);
+    // Function to close mobile menu
+    function closeMobileMenu() {
+        const menuWrapper = document.querySelector('.th-menu-wrapper');
+        const body = document.body;
+        const closeButton = document.querySelector('.th-menu-wrapper .th-menu-toggle');
+        
+        // Remove classes
+        if (menuWrapper) {
+            menuWrapper.classList.remove('active');
+            menuWrapper.classList.remove('open');
+        }
+        
+        if (body) {
+            body.classList.remove('th-body-visible');
+            body.classList.remove('mobile-menu-active');
+            body.classList.remove('overflow-hidden');
+        }
+        
+        // Trigger click on close button (most reliable)
+        if (closeButton) {
+            closeButton.click();
+        }
+    }
+    
+    // Function to handle smooth scrolling
+    function handleSmoothScroll(e, link, isMobile = false) {
+        const href = link.getAttribute('href');
+        const url = new URL(href, window.location.origin);
+        
+        // Check if we're on the same page
+        if (url.pathname === window.location.pathname) {
+            e.preventDefault();
             
-            // Check if we're on the same page
-            if (url.pathname === window.location.pathname) {
-                e.preventDefault();
+            // Close mobile menu if it's a mobile link
+            if (isMobile) {
+                closeMobileMenu();
+            }
+            
+            // Get the hash/ID
+            const targetId = url.hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Delay for mobile to let menu close
+                const delay = isMobile ? 300 : 0;
                 
-                // Get the hash/ID
-                const targetId = url.hash.substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    // Smooth scroll to the element
+                setTimeout(() => {
                     targetElement.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -106,9 +166,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Update URL without triggering scroll
                     history.pushState(null, '', href);
-                }
+                }, delay);
             }
-            // If not on the same page, allow normal navigation
+        } else {
+            // If navigating to different page and mobile, close menu
+            if (isMobile) {
+                closeMobileMenu();
+            }
+        }
+    }
+    
+    // Handle DESKTOP scroll links
+    const desktopScrollLinks = document.querySelectorAll('.main-menu .scroll-link');
+    desktopScrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            handleSmoothScroll(e, this, false);
+        });
+    });
+    
+    // Handle MOBILE scroll links
+    const mobileScrollLinks = document.querySelectorAll('.th-mobile-menu .scroll-link');
+    mobileScrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            handleSmoothScroll(e, this, true);
         });
     });
     
@@ -124,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     block: 'start'
                 });
             }
-        }, 100);
+        }, 500);
     }
 });
 </script>
