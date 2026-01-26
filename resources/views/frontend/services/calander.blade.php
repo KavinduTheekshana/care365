@@ -166,7 +166,7 @@ Calendar Area
 <style>
 
         /*==============================
-        Calendar Area Styles - Compact
+        Calendar Area Styles - Enhanced Responsive
         ==============================*/
         
         /* Custom column for 5-column layout */
@@ -190,9 +190,11 @@ Calendar Area
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
         
-        .calendar-month-card:hover {
+        .calendar-month-card:hover,
+        .calendar-month-card:active {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
@@ -219,7 +221,8 @@ Calendar Area
             transition: transform 0.3s ease;
         }
         
-        .calendar-month-card:hover .calendar-icon {
+        .calendar-month-card:hover .calendar-icon,
+        .calendar-month-card:active .calendar-icon {
             transform: scale(1.05);
         }
         
@@ -227,7 +230,7 @@ Calendar Area
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 4px;
-            font-family: 'Fredoka', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         .calendar-theme {
@@ -261,19 +264,20 @@ Calendar Area
             margin-bottom: 0;
         }
         
-        /* Modal Styles - Apple-inspired Minimalist */
+        /* Modal Styles - Enhanced Mobile Support */
         .modal-dialog {
-            max-width: 380px;
-            background: white;
-            border-radius: 20px;
+            max-width: 40%;
+            margin: 1.75rem auto;
+           
         }
         
         .modal-content {
             border: none;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(20px);
             background: rgba(255, 255, 255, 0.98);
+            display: flex;
+            flex-direction: column;
         }
         
         .modal-header {
@@ -281,6 +285,7 @@ Calendar Area
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             padding: 16px 20px 12px;
             border-radius: 20px 20px 0 0;
+            flex-shrink: 0;
         }
         
         .modal-title {
@@ -293,6 +298,31 @@ Calendar Area
         
         .modal-body {
             padding: 16px 20px 20px;
+            max-height: calc(90vh - 60px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            background: white;
+
+        }
+        
+        /* FIXED: Enable mouse wheel scrolling */
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .modal-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .modal-body::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
         }
         
         .btn-close {
@@ -301,10 +331,11 @@ Calendar Area
             opacity: 1;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 50%;
-            background: #d1d1d6;  /* ← THIS IS THE GRAY BACKGROUND */
+            background: #d1d1d6;
             background-image: none;
             position: relative;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .btn-close::before,
@@ -315,7 +346,7 @@ Calendar Area
             left: 50%;
             width: 14px;
             height: 2px;
-            background: #ffffff;  /* ← THIS IS THE WHITE X ICON */
+            background: #ffffff;
             border-radius: 2px;
             transition: background 0.2s ease;
         }
@@ -328,14 +359,17 @@ Calendar Area
             transform: translate(-50%, -50%) rotate(-45deg);
         }
 
-        .btn-close:hover {
-            background: #a1a1a6;  /* ← DARKER GRAY ON HOVER */
+        .btn-close:hover,
+        .btn-close:active {
+            background: #a1a1a6;
             transform: scale(1.05);
         }
 
         .btn-close:hover::before,
-        .btn-close:hover::after {
-            background: #ffffff;  /* ← WHITE X ON HOVER */
+        .btn-close:hover::after,
+        .btn-close:active::before,
+        .btn-close:active::after {
+            background: #ffffff;
         }
 
         .btn-close:active {
@@ -345,8 +379,9 @@ Calendar Area
         .calendar-days-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 3px;
+            gap: 4px;
             margin-bottom: 12px;
+            flex-shrink: 0;
         }
         
         .calendar-day {
@@ -361,6 +396,8 @@ Calendar Area
             cursor: default;
             background: white;
             color: #86868b;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
         }
         
         .calendar-day.has-event {
@@ -370,7 +407,8 @@ Calendar Area
             font-weight: 600;
         }
         
-        .calendar-day.has-event:hover {
+        .calendar-day.has-event:hover,
+        .calendar-day.has-event:active {
             transform: scale(1.05);
             background: #0051d5;
         }
@@ -408,24 +446,10 @@ Calendar Area
             letter-spacing: 0.5px;
         }
         
-        /* Events List - Apple Style */
+        /* Events List - Enhanced Scrolling */
         .events-list {
-            max-height: 280px;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .events-list::-webkit-scrollbar {
-            width: 4px;
-        }
-        
-        .events-list::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        
-        .events-list::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            max-height: none;
+            overflow: visible;
         }
         
         .event-card {
@@ -435,9 +459,11 @@ Calendar Area
             margin-bottom: 8px;
             transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
             border: none;
+            -webkit-tap-highlight-color: transparent;
         }
         
-        .event-card:hover {
+        .event-card:hover,
+        .event-card:active {
             background: #e8e8ed;
             transform: scale(1.01);
         }
@@ -514,7 +540,7 @@ Calendar Area
             letter-spacing: -0.1px;
         }
         
-        /* Responsive Design */
+        /* Enhanced Responsive Design */
         @media (max-width: 1199px) {
             .col-lg-2-4 {
                 width: 33.333%;
@@ -541,6 +567,11 @@ Calendar Area
             
             .calendar-description-box {
                 padding: 20px;
+            }
+            
+            .modal-dialog {
+                max-width: 90%;
+                margin: 1.5rem auto;
             }
         }
         
@@ -573,12 +604,16 @@ Calendar Area
             }
             
             .modal-dialog {
-                max-width: calc(100% - 20px);
-                margin: 10px;
+                max-width: calc(100% - 32px);
+                margin: 1rem auto;
             }
             
             .modal-content {
                 border-radius: 16px;
+            }
+            
+            .modal-body {
+                max-height: calc(85vh - 60px);
             }
             
             .modal-header {
@@ -590,16 +625,12 @@ Calendar Area
             }
             
             .calendar-days-grid {
-                gap: 2px;
+                gap: 3px;
             }
             
             .calendar-day {
                 font-size: 12px;
                 border-radius: 6px;
-            }
-            
-            .events-list {
-                max-height: 240px;
             }
             
             .event-card {
@@ -615,13 +646,17 @@ Calendar Area
             
             .calendar-month-card {
                 min-height: 110px;
-                max-width: 280px;
-                margin: 0 auto;
+                max-width: 100%;
+                margin: 0;
             }
             
             .modal-dialog {
-                max-width: calc(100% - 16px);
-                margin: 8px;
+                max-width: calc(100% - 24px);
+                margin: 0.5rem auto;
+            }
+            
+            .modal-content {
+                max-height: calc(92vh - 60px);
             }
             
             .modal-title {
@@ -637,8 +672,17 @@ Calendar Area
             }
             
             .btn-close {
-                width: 24px;
-                height: 24px;
+                width: 28px;
+                height: 28px;
+            }
+            
+            .btn-close::before,
+            .btn-close::after {
+                width: 12px;
+            }
+            
+            .calendar-days-grid {
+                gap: 2px;
             }
         }
         
@@ -658,6 +702,33 @@ Calendar Area
             .event-card p,
             .event-detail-item {
                 font-size: 11px;
+            }
+            
+            .modal-dialog {
+                max-width: calc(100% - 16px);
+                margin: 0.5rem auto;
+            }
+            
+            .btn-close {
+                width: 26px;
+                height: 26px;
+            }
+        }
+        
+        /* Landscape Mobile Support */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .modal-body {
+                padding: 10px 16px;
+                max-height: calc(95vh - 50px);
+            }
+            
+            .calendar-days-grid {
+                margin-bottom: 8px;
+            }
+            
+            .event-card {
+                padding: 8px 12px;
+                margin-bottom: 6px;
             }
         }
 </style>
