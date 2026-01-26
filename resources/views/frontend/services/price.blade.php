@@ -1,3 +1,4 @@
+<!--
 <section class="bg-smoke2 overflow-hidden space" id="Packages">
     <div class="container">
         <div class="title-area text-center mb-5">
@@ -20,13 +21,11 @@
                         <div class="pricing-card-grid shadow-sm" data-cue="slideInUp" data-cue-delay="{{ $index * 200 }}" style="border-radius: 12px; overflow: hidden; ">
                             <div class="pricing-1-bg_mask"></div>
                             
-                            <!-- Package Header -->
                             <div class="pricing-header text-center p-4 border-bottom">
                                 <h3 class="box-title mb-3" style="font-size: 24px; font-weight: 600; color: #2c3e50;">
                                     {{ $package->title }}
                                 </h3>
                                 
-                                <!-- Pricing Display -->
                                 <div class="pricing-amount mb-2">
                                     <h2 class="price mb-0" style="font-size: 42px; font-weight: 700; color: #2c3e50; line-height: 1;">
                                         {{ $package->formatted_price_lkr }}
@@ -40,7 +39,6 @@
                                 </span>
                             </div>
                             
-                            <!-- Features List -->
                             <div class="pricing-body p-4">
                                 @if($package->features->isNotEmpty())
                                     <ul class="features-list mb-0" style="list-style: none; padding: 0;">
@@ -64,7 +62,7 @@
                             </div>
                             
                             <div class="pricing-footer pb-5 pt-3">
-                                <div class="d-flex justify-content-end">  <!-- this pushes it to the right -->
+                                <div class="d-flex justify-content-end">  
                                     <a href="{{ route('contact') }}" class="enquire-link d-inline-flex align-items-center gap-2 fw-medium text-decoration-none"
                                     style="color: #2c3e50; font-size: 16px;">
                                         Enquire Now
@@ -117,3 +115,96 @@
     transform: translateX(6px);
 }
 </style>
+-->
+
+
+
+<section class="price-sec-2 overflow-hidden space" data-bg-src="assets/img/bg/pricing-2-bg.png">
+    <div class="container th-container2">
+        <div class="title-area text-center mb-5">
+            <span class="sub-title style2 text-anim" data-cue="slideInUp">Pricing Plan</span>
+            <h2 class="sec-title text-anim" data-cue="slideInUp">Our Packages</h2>
+            <p class="fs-18 text-anim2" data-cue="slideInUp">Comprehensive care packages designed to meet the unique needs of our residents.</p>
+        </div>
+        
+        <!-- Single Package Section -->
+        <div class="wrapper-pack">
+            <div class="row gy-4 justify-content-center">
+                @forelse($packages as $index => $package)
+                    @php
+                        // Determine if this is the "Best Value" package
+                        $isBestValue = $package->is_best_value ?? ($index == 1);
+                    @endphp
+                    
+                    <div class="col-xl-4 col-md-6" data-cue="slideInUp">
+                        <div class="price-card {{ $isBestValue ? 'active-plan' : '' }}">
+                            @if($isBestValue)
+                                <p class="premium">Best Value For You</p>
+                            @else
+                                <p class="premium">&nbsp;</p>
+                            @endif
+                            
+                            <div class="price-card-inner">
+                                <h3 class="box-title">{{ $package->title }}</h3>
+                                <p class="box-text">
+                                    {{ $package->room_type }} room • 
+                                    {{ $package->sharing_capacity }} {{ $package->sharing_capacity > 1 ? 'sharing' : 'single' }} • 
+                                    @switch($package->bathroom_type)
+                                        @case('ensuite')
+                                            En-suite Bathroom
+                                            @break
+                                        @case('shared')
+                                            Shared Bathroom
+                                            @break
+                                        @case('mixed')
+                                            Mixed Bathroom Types
+                                            @break
+                                        @default
+                                            {{ $package->bathroom_type }}
+                                    @endswitch
+                                </p>
+                                
+                                <div class="price_card-wrap">
+                                    <a href="{{ route('contact') }}" class="th-btn">Enquire Now</a>
+                                    <h4 class="price-card_price">
+                                        <span class="currency-sing">Rs.</span>
+                                        {{ number_format($package->price_lkr, 0) }}
+                                        <span class="duration"></span>
+                                        @if($package->price_usd)
+                                            <br>
+                                            <small class="d-block text-muted mt-1" style="font-size: 14px;">
+                                                (${{ number_format($package->price_usd, 0) }})
+                                            </small>
+
+                                        @endif
+                                        <span class="bg-transparent" style="color: #555; font-size: 13px; line-height: 1.6;">
+                                            Upwards Monthly
+                                        </span>
+                                    </h4>
+                                </div>
+
+                                <div class="checklist">
+                                    <ul>
+                                        @forelse($package->features as $feature)
+                                            <li class="{{ !$feature->is_active ? 'unavailable' : '' }}">
+                                                <i class="fa-solid fa-check"></i> {{ $feature->feature }}
+                                            </li>
+                                        @empty
+                                            <li class="text-muted">No features listed yet</li>
+                                        @endforelse
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12 text-center">
+                        <div class="alert alert-info">
+                            <p>No packages available at the moment. Please check back later.</p>
+                        </div>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </div>
+</section>
