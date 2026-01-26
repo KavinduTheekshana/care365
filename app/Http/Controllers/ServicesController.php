@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Service;
 use App\Models\Faq;
+use App\Models\Package;
+
 
 
 class ServicesController extends Controller
@@ -16,13 +18,21 @@ class ServicesController extends Controller
                           ->orderBy('created_at', 'desc')
                           ->get();
         
+        // Get packages with their features
+        $packages = Package::with(['features' => function($query) {
+            $query->where('is_active', true);
+        }])
+        ->where('status', 'active')
+        ->orderBy('price_lkr', 'asc')
+        ->get();
+        
         // Get random 5 FAQs for services page if needed
         $faqs = Faq::where('visibility', true)
                    ->inRandomOrder()
                    ->take(5)
                    ->get();
         
-        return view('frontend.services.index', compact('services', 'faqs'));
+        return view('frontend.services.index', compact('services', 'faqs', 'packages'));
     }
 
     public function servicedetails($slug = null): View

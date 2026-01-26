@@ -1,61 +1,119 @@
-    <section class="bg-smoke2 overflow-hidden space">
-
-        <!-- <div class="why-bg-shape1-3 shape-mockup shake d-xxl-block d-none" data-top="49%" data-left="7%">
-            <img src="assets/img/shape/shape1-7.png" alt="img">
+<section class="bg-smoke2 overflow-hidden space">
+    <div class="container">
+        <div class="title-area text-center mb-5">
+            <span class="sub-title style2 text-anim" data-cue="slideInUp">Pricing Plan</span>
+            <h2 class="sec-title text-anim" data-cue="slideInUp">Our Packages</h2>
+            <p class="fs-18 text-anim2" data-cue="slideInUp">Comprehensive care packages designed to meet the unique needs of our residents.</p>
         </div>
-        <div class="why-bg-shape1-6 shape-mockup shake d-xxl-block d-none" data-top="26%" data-left="6%">
-            <img src="assets/img/shape/shape1-5.png" alt="img">
-        </div>
-        <div class="why-bg-shape1-4 shape-mockup shake d-xxl-block d-none" data-top="71%" data-left="4%">
-            <img src="assets/img/shape/shape1-23.png" alt="img">
-        </div>
-
-        <div class="why-bg-shape1-2 shape-mockup heartbeat d-xxl-block d-none" data-top="46%" data-right="5%">
-            <img src="assets/img/shape/shape1-6.png" alt="img">
-        </div>
-        <div class="why-bg-shape1-2 shape-mockup moving d-xxl-block d-none" data-bottom="0" data-left="-1%">
-            <img src="assets/img/shape/shape1-24.png" alt="img">
-        </div> -->
-
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="sub-title text-anim subtitle-line" data-cue="slideInUp">pricing Plan</span>
-                <h2 class="sec-title text-anim" data-cue="slideInUp">Our Packages</h2>
-                <p class="fs-18 text-anim2" data-cue="slideInUp">Comprehensive care packages designed to meet the unique needs of our residents.</p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-10">
-                    <div class="pricing-card-grid" data-cue="slideInUp">
-                        <div class="pricing-1-bg_mask" data-mask-src="assets/img/shape/pricing-1-1_mask.jpg"></div>
-                        <div class="content p-4">
-                            <h3 class="box-title mb-3">Private Heaven</h3>
-                            <p class="fs-14 text-muted mb-2">Monthly Package</p>
-                            <div class="mb-4">
-                                <p class="price mb-0" style="font-size: 32px; font-weight: 700; color: #1a1a1a;">175,000 LKR</p>
-                                <p class="fs-18" style="color: #666;">( $575 ) Upwards Monthly</p>
-                            </div>
-                            <div class="box-text">
-                                <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Individual Room</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Wardrobe/ Mirror/Chair with Mini Table</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>In Suit Bathroom</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Separate Double Bed with double layer Mattress + Pillow + Bedding</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>PEO TV Facility</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Additional Medication Management (T&C Apply)</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Extra Meal Package & Switch Menu x 2 (T&C Apply)</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Birthday Surprise service with Pik Bokz</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Mini Fridge</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Air Conditioning (T&C Apply)</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Door Bell Communication System</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Common Library/ TV Lobby / Garden</li>
-                                    <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Weekend News Papers</li>
-                                    <li style="padding: 8px 0;"><i class="fa-solid fa-check" style="color: #4CAF50; margin-right: 10px;"></i>Monthly activity plans & access to our "Fun Time Club"</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a class="th-btn" href="{{ route('contact') }}">Enquire Now</a>
-                    </div>
+        
+        @if($packages->isEmpty())
+            <div class="text-center py-5">
+                <div class="alert alert-info d-inline-block">
+                    <i class="fa-solid fa-info-circle me-2"></i>
+                    No packages available at the moment. Please check back soon.
                 </div>
             </div>
-        </div>
-    </section>
+        @else
+            <div class="row justify-content-center g-4">
+                @foreach($packages as $index => $package)
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="pricing-card-grid shadow-sm" data-cue="slideInUp" data-cue-delay="{{ $index * 200 }}" style="border-radius: 12px; overflow: hidden; ">
+                            <div class="pricing-1-bg_mask"></div>
+                            
+                            <!-- Package Header -->
+                            <div class="pricing-header text-center p-4 border-bottom">
+                                <h3 class="box-title mb-3" style="font-size: 24px; font-weight: 600; color: #2c3e50;">
+                                    {{ $package->title }}
+                                </h3>
+                                
+                                <!-- Pricing Display -->
+                                <div class="pricing-amount mb-2">
+                                    <h2 class="price mb-0" style="font-size: 42px; font-weight: 700; color: #2c3e50; line-height: 1;">
+                                        {{ $package->formatted_price_lkr }}
+                                    </h2>
+                                    <p class="text-muted mb-0" style="font-size: 14px;">
+                                        ({{ $package->formatted_price_usd }})
+                                    </p>
+                                </div>
+                                <span class="bg-transparent" style="color: #555; font-size: 13px; line-height: 1.6;">
+                                    Upwards Monthly
+                                </span>
+                            </div>
+                            
+                            <!-- Features List -->
+                            <div class="pricing-body p-4">
+                                @if($package->features->isNotEmpty())
+                                    <ul class="features-list mb-0" style="list-style: none; padding: 0;">
+                                        @foreach($package->features as $feature)
+                                            <li class="feature-item d-flex align-items-start mb-3">
+                                                <i class="fa-solid fa-circle-check flex-shrink-0 me-3 mt-1" style="color: #4CAF50; font-size: 18px;"></i>
+                                                <span style="color: #555; font-size: 15px; line-height: 1.6;">
+                                                    {{ $feature->feature }}
+                                                </span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @else
+                                    <div class="text-center py-4">
+                                        <i class="fa-solid fa-box-open text-muted mb-3" style="font-size: 40px; opacity: 0.3;"></i>
+                                        <p class="text-muted mb-0" style="font-size: 14px;">
+                                            Features will be added soon
+                                        </p>
+                                    </div>
+                                @endif
+                            </div>
+                            
+                            <div class="pricing-footer pb-5 pt-3">
+                                <div class="d-flex justify-content-end">  <!-- this pushes it to the right -->
+                                    <a href="{{ route('contact') }}" class="enquire-link d-inline-flex align-items-center gap-2 fw-medium text-decoration-none"
+                                    style="color: #2c3e50; font-size: 16px;">
+                                        Enquire Now
+                                        <i class="fa-solid fa-arrow-right ms-2" style="font-size: 14px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endif
+    </div>
+</section>
+
+<style>
+    /* Reduce text size on mobile */
+@media (max-width: 767.98px) {
+    .pricing-card-grid .box-title {
+        font-size: 21px !important;      /* was 24px */
+    }
+    
+    .pricing-card-grid .price {
+        font-size: 36px !important;      /* was 42px */
+    }
+    
+    .pricing-card-grid .feature-item span {
+        font-size: 14px !important;      /* was 15px */
+    }
+    
+    .pricing-card-grid .pricing-amount p {
+        font-size: 13px !important;
+    }
+    
+    /* Optional: slightly less padding on mobile if cards feel too tall */
+    .pricing-body {
+        padding: 1.5rem !important;     /* reduced from p-4 (2rem) */
+    }
+}
+
+.enquire-link {
+    transition: all 0.3s ease;
+}
+
+.enquire-link:hover {
+    color: #4CAF50 !important;
+}
+
+.enquire-link:hover i {
+    transform: translateX(6px);
+}
+</style>
