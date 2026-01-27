@@ -25,11 +25,23 @@
                                         <li><a href="{{ route('about') }}#our-homes" class="scroll-link">Our Homes</a></li>
                                     </ul>
                                 </li>
+                                <!--
                                 <li class="menu-item-has-children {{ request()->routeIs('services') ? 'active' : '' }}">
                                     <a href="{{route('services')}}">Services</a>
                                         <ul class="sub-menu">
                                             <li><a href="{{ route('services') }}#Packages" class="scroll-link">Packages</a></li>
                                             <li><a href="{{ route('services') }}#Calander" class="scroll-link">Calander</a></li>
+                                        </ul>
+                                </li>
+                                -->
+                                <li class="menu-item-has-children {{ request()->routeIs('wecare') ? 'active' : '' }}">
+                                    <a href="{{route('wecare')}}">We Care</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{{ route('wecare') }}#Packages" class="scroll-link">Packages</a></li>
+                                            <li><a href="{{ route('services') }}" class="scroll-link">Services</a></li>
+                                            <li><a href="{{ route('wecare') }}#FAQ" class="scroll-link">FAQ</a></li>
+                                            <li><a href="{{ route('wecare') }}#Admissions" class="scroll-link">Admissions</a></li>
+                                            <li><a href="{{ route('wecare') }}#Meal-Plan" class="scroll-link">Meal-Plan</a></li>
                                         </ul>
                                 </li>
 
