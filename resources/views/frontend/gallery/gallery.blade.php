@@ -47,6 +47,7 @@
             @endforelse
         </div>
     </div>
+    
 </div>
 
 <style>
@@ -191,41 +192,139 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Gallery page loaded');
+    
+    // OPTION 1: Check URL for filter parameter (Most reliable)
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlFilter = urlParams.get('filter');
+    
+    // OPTION 2: Check localStorage
+    const storageFilter = localStorage.getItem('galleryFilterLocation');
+    const storageTime = localStorage.getItem('galleryFilterTime');
+    const currentTime = Date.now();
+    
+    // Determine which filter to use
+    let activeFilter = 'all';
+    
+    if (urlFilter) {
+        // URL parameter takes priority
+        activeFilter = urlFilter;
+        console.log('Using URL filter:', activeFilter);
+        
+        // Remove filter from URL without reloading
+        if (history.replaceState) {
+            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({path: newUrl}, '', newUrl);
+        }
+    } else if (storageFilter && storageTime && (currentTime - storageTime) < 10000) {
+        // Use localStorage filter if recent
+        activeFilter = storageFilter;
+        console.log('Using localStorage filter:', activeFilter);
+        
+        // Clear storage
+        localStorage.removeItem('galleryFilterLocation');
+        localStorage.removeItem('galleryFilterTime');
+    }
+    
+    console.log('Final filter to apply:', activeFilter);
+    
+    // Apply the filter
+    if (activeFilter && activeFilter !== 'all') {
+        applyFilter(activeFilter);
+    }
+    
+    // Filter function
+    function applyFilter(filterValue) {
+        console.log('Applying filter:', filterValue);
+        
+        // Find and click the corresponding filter button
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        let found = false;
+        
+        filterBtns.forEach(btn => {
+            const btnFilter = btn.getAttribute('data-filter');
+            console.log('Checking button filter:', btnFilter, 'against:', filterValue);
+            
+            if (btnFilter === filterValue) {
+                console.log('Found matching button!');
+                found = true;
+                
+                // Remove active from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active to this button
+                btn.classList.add('active');
+                
+                // Filter the gallery items
+                filterGalleryItems(filterValue);
+            }
+        });
+        
+        if (!found) {
+            console.warn('No filter button found for:', filterValue);
+            // Fallback to "all"
+            const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+            if (allBtn) {
+                allBtn.click();
+            }
+        }
+    }
+    
+    // Gallery items filtering function
+    function filterGalleryItems(filterValue) {
+        console.log('Filtering gallery items with:', filterValue);
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            console.log('Item category:', itemCategory);
+            
+            if (filterValue === 'all' || itemCategory === filterValue) {
+                item.classList.remove('hidden');
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 10);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    item.classList.add('hidden');
+                }, 300);
+            }
+        });
+    }
+    
+    // Setup filter button click handlers
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
+    
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
+            // Remove active class from all buttons
             filterBtns.forEach(b => b.classList.remove('active'));
+            
+            // Add active class to clicked button
             this.classList.add('active');
             
+            // Get filter value
             const filterValue = this.getAttribute('data-filter');
             
-            galleryItems.forEach(item => {
-                if (filterValue === 'all') {
-                    item.classList.remove('hidden');
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, 10);
-                } else {
-                    const itemCategory = item.getAttribute('data-category');
-                    if (itemCategory === filterValue) {
-                        item.classList.remove('hidden');
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
-                        }, 10);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.8)';
-                        setTimeout(() => {
-                            item.classList.add('hidden');
-                        }, 300);
-                    }
-                }
-            });
+            // Apply filter
+            filterGalleryItems(filterValue);
         });
+    });
+    
+    // Log all available filters for debugging
+    console.log('Available filters:');
+    filterBtns.forEach(btn => {
+        console.log('-', btn.getAttribute('data-filter'));
+    });
+    
+    // Log all gallery item categories for debugging
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    console.log('Gallery item categories:');
+    galleryItems.forEach(item => {
+        console.log('-', item.getAttribute('data-category'));
     });
 });
 </script>
