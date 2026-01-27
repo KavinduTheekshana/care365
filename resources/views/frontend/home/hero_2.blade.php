@@ -1,4 +1,4 @@
-<div class="th-hero-wrapper hero-7 " id="hero">
+<div class="th-hero-wrapper hero-7 " id="hero" style="height: 95vh; ">
 
         <div class="hero-left-social">
             <ul>
