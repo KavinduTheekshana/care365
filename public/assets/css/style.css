@@ -19175,17 +19175,18 @@ Version: 1.0.0
 }
 
 .about1-list-wrap .checklist.style2 li::before {
-  color: #D55302;
-  font-size: 9px;
-  content: "";
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHYSURBVHgBpVXbUcJAFD03Ir9iBaYD4oczPsYZ0oEdiBWIFbhUIB0IFWgH8KGOf2IFxgqMnwJmPbs3jAxCJHBmsrvZx9nN3XNuBDOw5rABKxFE6nytAVLDUtiURQprXyH2XsxzMh0RJWtw8fiGzabOxztH0nzhEvgN93Rzv6gLVK/EDNKKdow7LM45sQ1UOtIeFJDNndc0QmDSZPOaPK7rQrRz/OYIxTwYrAlrjg05SCxxAPt1pt2TLjZCtaPs31EACSI209lArwMXS70LqQekdoFOUBLWHER/mfHBcpekssMpnygB2z5m7KovjOM8sbvgWoCS8IRWjF7s03DRnFKk9vqopYToFSmlsnCxl9mIZsiuphdozSlVkjmDDMU8NlGAypJ+xoZ2RdCndWPWvMzsltQJYxnjHyz8fC8PbMfq4qDP+k4tm8U6tgZpTpz8Elso4WpaDlROTlZFxNX9FQmd5l1CEZeN6ig88coI+Qzp/Yxak1DT3/pQxfCkzK/0/lYu4FELm0BG51ozYesuJ124fMpEyJP3yiQX/4UyulRT2C5ddpHrdLvlE6wf2DLcxMkmgXp5GWr6jEOuc+89l/n9Yed2DX1+FUT576Iozvq7sRi6ENK2g+nAD4kYvaAy6tUkAAAAAElFTkSuQmCC);
-  background-repeat: no-repeat;
+  color: #4dabf7; /* Light blue color */
+  font-size: 16px;
+  content: "✓";
+  background: none;
   top: 10%;
   left: 0%;
   height: 21px;
   width: 21px;
   border-radius: 0;
   margin-left: 0;
+  line-height: 21px;
+  text-align: center;
 }
 
 .about1-list-wrap .checklist.style2 li {
