@@ -22,5 +22,7 @@
     @include('frontend.wecare.daypackages')
     @include('frontend.wecare.otherpackage')
     @include('frontend.wecare.packageaddons')
+    @include('frontend.wecare.faq')
+
 
 @endsection
