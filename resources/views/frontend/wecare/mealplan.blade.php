@@ -1,32 +1,36 @@
 <div class="overflow-hidden space overflow-hidden bg-white" id="Meal-Plan">
     <div class="container">
         <div class="about-wrap1">
-            <!-- Removed gx-60 class to eliminate horizontal gap -->
+            <!-- 50-50 split with reduced gap -->
             <div class="row gy-40 align-items-center" style="--bs-gutter-x: 0;">
-                <!-- Image on the LEFT now -->
-                <div class="col-xxl-7 align-self-center order-xxl-1 order-2" 
-                     style="padding-right: 15px;">  <!-- Custom right padding -->
+                <!-- Lottie Animation on the LEFT - 50% -->
+                <div class="col-xxl-6 align-self-center order-xxl-1 order-2" 
+                     style="padding-right: 0 !important; padding-left: 0 !important; display: flex; align-items: center; justify-content: center;">
                     
                     <div class="img-box1" data-cue="slideInUp" data-delay="300"
-                        style="text-align: center; padding: 5px 0;">
+                        style="text-align: center; padding: 5px 0; width: 100%;">
 
                         <div class="img1" 
-                            style="max-width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden;">  <!-- Increased max-width -->
+                            style="max-width: 70%; margin: 0 auto; border-radius: 20px; overflow: hidden;">
                             
-                            <img
-                                src="assets/img/we care/vegetables.gif"
-                                alt="About"
-                                style="width: 100%; height: auto; display: block;"
-                            >
+                            <!-- Lottie Animation -->
+                            <dotlottie-player 
+                                src="assets/img/we care/Food Carousel.json"
+                                background="transparent" 
+                                speed="1" 
+                                style="width: 100%; height: auto;" 
+                                loop 
+                                autoplay>
+                            </dotlottie-player>
                         </div>
                     </div>
                 </div>
 
-                <!-- Text on the RIGHT now -->
-                <div class="col-xxl-5 order-xxl-2 order-1" 
-                     style="padding-left: 15px;">  <!-- Custom left padding -->
+                <!-- Text on the RIGHT - 50% -->
+                <div class="col-xxl-6 order-xxl-2 order-1" 
+                     style="padding-left: 0 !important; padding-right: 0 !important; display: flex; align-items: center;">
                     
-                    <div class="title-area mb-40">
+                    <div class="title-area mb-40" style="width: 100%;">
                         <span class="sub-title style2 text-anim" 
                               data-cue="slideInUp"
                               style="font-size: 0.95rem; font-weight: 500; display: inline-block;">
@@ -54,3 +58,6 @@
         </div>
     </div>
 </div>
+
+
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
