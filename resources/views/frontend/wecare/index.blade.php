@@ -20,5 +20,6 @@
     @include('frontend.wecare.hero')
     @include('frontend.wecare.packages')
     @include('frontend.wecare.daypackages')
+    @include('frontend.wecare.otherpackage')
 
 @endsection

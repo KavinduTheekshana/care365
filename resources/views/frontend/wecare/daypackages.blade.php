@@ -20,7 +20,7 @@
                         </div>
                         <div class="bottom-text">
 
-                            <a class="th-btn th-btn-sm w-100" href="contact.html">Enquire Now</a>
+                            <a class="th-btn th-btn-sm w-100" href="{{ route('contact') }}">Enquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                             <div class="checklist style2">
    
                             </div>
-                            <a class="th-btn th-btn-sm w-100" href="contact.html">Enquire Now </a>
+                            <a class="th-btn th-btn-sm w-100" href="{{ route('contact') }}">Enquire Now </a>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="bottom-text">
 
-                            <a class="th-btn th-btn-sm w-100" href="contact.html">Enquire Now </a>
+                            <a class="th-btn th-btn-sm w-100" href="{{ route('contact') }}">Enquire Now </a>
                         </div>
                     </div>
                 </div>
@@ -64,12 +64,11 @@
         .top-wrap {
             display: flex;
             flex-direction: column;
-            align-items: center;        /* Centers all children horizontally */
-            text-align: center;         /* Centers text inside h3 and p */
+            align-items: center;        
+            text-align: center;         
         }
 
-        /* Optional: If the icon still isn't centering perfectly (e.g., if .box-icon has fixed width or margins) */
         .box-icon {
-            margin-bottom: 1rem;        /* Adds some space below the icon - adjust as needed */
+            margin-bottom: 1rem;        
         }
     </style>
