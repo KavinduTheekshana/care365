@@ -14,7 +14,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Get public blogs, limit to 6
         $blogs = Blog::where('is_public', true)
                     ->orderBy('date', 'desc')
                     ->take(3)

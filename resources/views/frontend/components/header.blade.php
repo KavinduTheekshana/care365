@@ -45,9 +45,20 @@
                                         </ul>
                                 </li>
 
+                                <li class="menu-item-has-children {{ request()->routeIs('digitalwellbeing') ? 'active' : '' }}">
+                                    <a href="{{route('digitalwellbeing')}}">Digital Wellbeing</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{{ route('digitalwellbeing') }}#News-Center" class="scroll-link">News-Center</a></li>
+                                            <li><a href="{{ route('digitalwellbeing') }}#Calander" class="scroll-link">Calander</a></li>
+                                            <li><a href="{{route('gallery')}}" class="scroll-link">Gallery</a></li>
+                                            <li><a href="{{ route('digitalwellbeing') }}#Online-Admissions" class="scroll-link">Online-Admissions</a></li>
+                                        </ul>
+                                </li>
+                                <!--
                                 <li class="{{ request()->routeIs('gallery') ? 'active' : '' }}">
                                     <a href="{{route('gallery')}}">Gallery</a>
                                 </li>
+                                -->
                                 <li class="{{ request()->routeIs('contact') ? 'active' : '' }}">
                                     <a href="{{ route('contact') }}">Contact Us</a>
                                 </li>
