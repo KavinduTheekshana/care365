@@ -17,7 +17,7 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="{{ route('about') }}">We Care</a>
+                    <a href="{{route('wecare')}}">We Care</a>
                     <ul class="sub-menu">
                         <li><a href="{{route('wecare')}}" class="scroll-link mobile-scroll-link">We Care</a></li>
                         <li><a href="{{route('wecare')}}#Packages" class="scroll-link mobile-scroll-link">Packages</a></li>
@@ -37,8 +37,19 @@
                     </ul>
                 </li>                   
                 <li><a href="{{route('services')}}">Services</a></li>
-                -->
+                
                 <li><a href="{{route('gallery')}}">Gallery</a></li>
+                -->
+                <li class="menu-item-has-children">
+                    <a href="{{route('digitalwellbeing')}}">Digital Wellbeing</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{route('digitalwellbeing')}}" class="scroll-link mobile-scroll-link">Digital Wellbeing</a></li>
+                        <li><a href="{{route('digitalwellbeing')}}#News-Center" class="scroll-link mobile-scroll-link">News-Center</a></li>
+                        <li><a href="{{route('digitalwellbeing')}}#Calander" class="scroll-link mobile-scroll-link">Calander</a></li>
+                        <li><a href="{{route('gallery')}}" class="scroll-link mobile-scroll-link">Gallery</a></li>
+                        <li><a href="{{route('digitalwellbeing')}}#Online-Admissions" class="scroll-link mobile-scroll-link">Online-Admissions</a></li>
+                    </ul>
+                </li>
                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
             </ul>
         </div>

@@ -29,7 +29,7 @@
                                 onerror="this.onerror=null; this.src='{{ asset('images/no-image-available.jpg') }}'; this.alt='Image not available';"
                             >
                             @if(file_exists(public_path('gallery_img/' . $gallery->image_path)))
-                                <a href="{{ asset('gallery_img/' . $gallery->image_path) }}" class="icon-btn th-popup-image">
+                                <a href="{{ asset('gallery_img/' . $gallery->image_path) }}" class="icon-btnn th-popup-image">
                                     <i class="fa-regular fa-magnifying-glass"></i>
                                 </a>
                             @endif
@@ -132,7 +132,7 @@
     z-index: 2;
 }
 
-.icon-btn {
+.icon-btnn {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -152,7 +152,7 @@
     color: #333;
 }
 
-.gallery-card:hover .icon-btn {
+.gallery-card:hover .icon-btnn {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.08);
 }
