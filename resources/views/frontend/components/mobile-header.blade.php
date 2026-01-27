@@ -16,7 +16,18 @@
                         <li><a href="{{ route('about') }}#our-homes" class="scroll-link mobile-scroll-link">Our Homes</a></li>
                     </ul>
                 </li>
-                
+                <li class="menu-item-has-children">
+                    <a href="{{ route('about') }}">We Care</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{route('wecare')}}" class="scroll-link mobile-scroll-link">We Care</a></li>
+                        <li><a href="{{route('wecare')}}#Packages" class="scroll-link mobile-scroll-link">Packages</a></li>
+                        <li><a href="{{ route('services') }}" class="scroll-link mobile-scroll-link">Services</a></li>
+                        <li><a href="{{route('wecare')}}#FAQ" class="scroll-link mobile-scroll-link">FAQ</a></li>
+                        <li><a href="{{route('wecare')}}#Admissions" class="scroll-link mobile-scroll-link">Admissions</a></li>
+                        <li><a href="{{route('wecare')}}#Meal-Plan" class="scroll-link mobile-scroll-link">Meal-Plan</a></li>
+                    </ul>
+                </li>
+                <!--
                 <li class="menu-item-has-children">
                     <a href="{{route('services')}}">Services</a>
                     <ul class="sub-menu">
@@ -26,6 +37,7 @@
                     </ul>
                 </li>                   
                 <li><a href="{{route('services')}}">Services</a></li>
+                -->
                 <li><a href="{{route('gallery')}}">Gallery</a></li>
                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
             </ul>
