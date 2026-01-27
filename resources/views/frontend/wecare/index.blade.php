@@ -21,5 +21,6 @@
     @include('frontend.wecare.packages')
     @include('frontend.wecare.daypackages')
     @include('frontend.wecare.otherpackage')
+    @include('frontend.wecare.packageaddons')
 
 @endsection
