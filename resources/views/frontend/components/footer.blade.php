@@ -38,7 +38,7 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="index.html"><img src="assets/img/logo2.png" alt="Care 365"
+                                <a href="index.html"><img src="logo/care365_light.svg" alt="Care 365"
                                         width="150px"></a>
                             </div>
                             <p class="about-text">Join Care 365's extraordinary odyssey, infused with compassion

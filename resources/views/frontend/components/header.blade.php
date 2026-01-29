@@ -7,7 +7,7 @@
                     <div class="col-auto">
                         <div class="header-logo">
                             <a href="{{ route('home') }}">
-                                <img src="assets/img/logo.png" alt="Care 365">
+                                <img src="logo/care365_light.svg" alt="Care 365">
                             </a>
                         </div>
                     </div>

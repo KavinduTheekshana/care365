@@ -1,4 +1,4 @@
-<div class="th-hero-wrapper hero-7" id="hero" style="height: 95vh;">
+<div class="th-hero-wrapper hero-7" id="hero" style="height: 70vh;">
 
     <div class="hero-left-social">
         <ul>
@@ -97,16 +97,35 @@
 .hero-inner {
     position: relative;
     z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
 }
 
-.swiper-slide {
+.th-hero-wrapper.hero-7 .swiper-slide {
     position: relative;
+    height: 70vh !important;
 }
 
-/* Reduced font size for hero titles */
+.th-hero-wrapper.hero-7 .swiper-wrapper,
+.th-hero-wrapper.hero-7 .swiper-slide {
+    height: 100%;
+}
+
+/* Hero titles */
 .hero-title {
-    font-size: 2.5rem !important; /* Adjust this value as needed */
-    line-height: 1.2 !important;
+    font-size: 2.5rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Hero text */
+.hero-text {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
 }
 
 /* Center alignment enhancements */
@@ -114,20 +133,192 @@
     text-align: center !important;
 }
 
+/* Ensure container takes full height */
+.hero-inner .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* Responsive font sizes */
-@media (max-width: 768px) {
+.hero-inner .row {
+    width: 100%;
+}
+
+/* Button responsive */
+.hero-style7 .th-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+}
+
+/* Large tablets and small desktops */
+@media (max-width: 1199px) {
+    .th-hero-wrapper.hero-7 {
+        height: 90vh !important;
+    }
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 90vh !important;
+    }
+}
+
+/* Responsive adjustments for tablets and small laptops */
+@media (max-width: 1024px) {
     .hero-title {
-        font-size: 1.8rem !important;
+        font-size: 2rem !important;
+    }
+
+    .hero-text {
+        font-size: 1rem !important;
+    }
+}
+
+/* Tablet devices */
+@media (max-width: 768px) {
+    .th-hero-wrapper.hero-7 {
+        height: 60vh !important;
+    }
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 60vh !important;
+    }
+
+    .hero-title {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .hero-text {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+
+    .hero-style7 .th-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    .hero-inner {
+        padding: 15px 0;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 576px) {
+    .th-hero-wrapper.hero-7 {
+        height: 55vh !important;
+    }
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 55vh !important;
+    }
+
+    .hero-title {
+        font-size: 1.3rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .hero-text {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-style7 .th-btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+
+    .hero-inner {
+        padding: 10px 0;
+    }
+
+    .col-xxl-8, .col-xl-9, .col-lg-10 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Extra small devices (320px and below) */
+@media (max-width: 420px) {
+    .th-hero-wrapper.hero-7 {
+        height: 50vh !important;
+    }
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 50vh !important;
+    }
+
+    .hero-title {
+        font-size: 1.1rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .hero-text {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .hero-style7 .th-btn {
+        padding: 7px 18px;
+        font-size: 0.8rem;
+    }
+
+    .hero-inner {
+        padding: 8px 0;
+    }
+}
+
+/* Very small devices (280px - old phones) */
+@media (max-width: 320px) {
+    .th-hero-wrapper.hero-7 {
+        height: 45vh !important;
+    }
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 45vh !important;
+    }
+
+    .hero-title {
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .hero-text {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.7rem !important;
+    }
+
+    .hero-style7 .th-btn {
+        padding: 6px 15px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Slider arrows responsive */
+@media (max-width: 768px) {
+    .slider-arrow {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .slider-arrow img {
+        width: 18px !important;
     }
 }
 
 @media (max-width: 576px) {
-    .hero-title {
-        font-size: 1.5rem !important;
+    .slider-arrow {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .slider-arrow img {
+        width: 15px !important;
     }
 }
-
-
-
 </style>

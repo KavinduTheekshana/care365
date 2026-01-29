@@ -3847,7 +3847,7 @@ Version: 1.0.0
 .th-btn.th-btn-icon2 {
   padding: 22px 37px;
 }
-.th-btn.th-btn-icon2 i:after {
+/* .th-btn.th-btn-icon2 i:after {
   content: "";
   content: "";
   position: absolute;
@@ -3857,7 +3857,7 @@ Version: 1.0.0
   width: 1px;
   height: 16px;
   z-index: 1;
-}
+} */
 .th-btn.style2 {
   background: var(--title-color);
 }
