@@ -45,6 +45,9 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
             ContactMessageSeeder::class,
             EnquirySeeder::class,
+            PackageSeeder::class,
+            EventSeeder::class,
+            
         ]);
 
         $this->command->newLine();

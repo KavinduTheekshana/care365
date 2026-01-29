@@ -14,7 +14,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Get public blogs, limit to 6
         $blogs = Blog::where('is_public', true)
                     ->orderBy('date', 'desc')
                     ->take(3)
@@ -23,7 +22,7 @@ class HomeController extends Controller
         // Get random 8 FAQs with visibility
         $faqs = Faq::where('visibility', true)
                    ->inRandomOrder()
-                   ->take(8)
+                   ->take(5)
                    ->get();
         
         // Get random 4 public testimonials for slider (2 slides on desktop)
@@ -35,7 +34,7 @@ class HomeController extends Controller
         // Get public services
         $services = Service::where('is_public', true)
                           ->orderBy('created_at', 'desc')
-                          ->take(6)
+                          ->take(10)
                           ->get();
 
         // Get all active stories ordered by sort_order

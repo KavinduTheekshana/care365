@@ -1,4 +1,4 @@
-<section class="bg-smoke2 space overflow-hidden team-area-1">
+<section class="bg-smoke2 space overflow-hidden team-area-1" id="our-homes">
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-xxl-7 col-xl-7 col-md-8">
@@ -100,6 +100,21 @@
                                         <p class="mb-2"><strong>Location:</strong> {{ $carehome->location }}</p>
                                         @endif
                                     </div>
+                                    
+                                    <!-- Gallery Link  -->
+                                    <div class="mb-3">
+                                        <a href="{{ route('gallery') }}" class="gallery-link" 
+                                        onclick="setGalleryFilter('{{ Str::slug($carehome->location) }}')"
+                                        style="display: inline-flex; align-items: center; color: #89CFF0; text-decoration: none; font-size: 0.9rem; cursor: pointer;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                                                class="bi bi-images me-1" viewBox="0 0 16 16" style="margin-right: 6px;">
+                                                <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                                                <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+                                            </svg>
+                                            View Gallery
+                                        </a>
+                                    </div>
+                                    
                                     <div class="button-wrap mb-4">
                                         <a href="{{ route('contact') }}" class="th-btn th-btn-xl">
                                             <img src="assets/img/icon/phone-white.svg" alt="icon">
@@ -140,3 +155,58 @@
         @endif
     </div>
 </section>
+
+
+<script>
+// Function to set gallery filter using slug
+function setGalleryFilter(locationSlug) {
+    console.log('Setting gallery filter for slug:', locationSlug);
+    
+    // Store the slug in localStorage
+    localStorage.setItem('galleryFilterLocation', locationSlug);
+    localStorage.setItem('galleryFilterTime', Date.now());
+    
+    // Navigate to gallery page
+    window.location.href = "{{ route('gallery') }}";
+    return false;
+}
+
+// Alternative: Auto-attach to all gallery links
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryLinks = document.querySelectorAll('a.gallery-link[href="{{ route('gallery') }}"]');
+    
+    galleryLinks.forEach(link => {
+        // Remove existing onclick if present
+        link.onclick = null;
+        
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the location from the parent card
+            const card = this.closest('.team-content');
+            if (card) {
+                // Find location text - adjust selector based on your HTML structure
+                const locationText = card.querySelector('.body-text')?.textContent;
+                let location = 'all';
+                
+                // Extract location from text
+                if (locationText && locationText.includes('Location:')) {
+                    const match = locationText.match(/Location:\s*(.+)/);
+                    if (match && match[1]) {
+                        location = match[1].trim();
+                    }
+                }
+                
+                // Convert to slug (same as in gallery page)
+                const locationSlug = location.toLowerCase()
+                    .replace(/[^a-z0-9\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-');
+                
+                console.log('Found location slug:', locationSlug);
+                setGalleryFilter(locationSlug);
+            }
+        });
+    });
+});
+</script>

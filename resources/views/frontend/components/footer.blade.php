@@ -14,7 +14,7 @@
                         data-cue="slideInRight">
                         <a class="th-btn" href="{{ route('contact') }}">Make Appointment <span
                                 class="th-btn-icon"></span></a>
-                        <a class="th-btn style2" href="{{ route('team') }}">Our Specialists <span
+                        <a class="th-btn style2" href="{{ route('about') }}">Our Specialists <span
                                 class="th-btn-icon"></span></a>
                     </div>
                 </div>

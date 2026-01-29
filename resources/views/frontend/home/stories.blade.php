@@ -17,11 +17,10 @@
                     {{-- Single large image (left side) --}}
                     @if(isset($successStories[$storyIndex]))
                         <div class="gallery-card">
-                            <div class="gallery-img">
+                            <div class="gallery-img gallery-img-large">
                                 <img 
                                     src="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" 
                                     alt="{{ $successStories[$storyIndex]->image_alt ?? $successStories[$storyIndex]->title }}"
-                                    style="width: 100%; height: 400px; object-fit: cover; display: block;"
                                 >
                                 <a href="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" class="icon-btn th-popup-image">
                                     <i class="fa-regular fa-magnifying-glass"></i>
@@ -36,7 +35,7 @@
                         @for($i = 0; $i < 2; $i++)
                             @if(isset($successStories[$storyIndex]))
                                 <div class="gallery-card">
-                                    <div class="gallery-img">
+                                    <div class="gallery-img gallery-img-small">
                                         <img src="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" alt="{{ $successStories[$storyIndex]->image_alt ?? $successStories[$storyIndex]->title }}">
                                         <a href="{{ asset('success_stories_img/' . $successStories[$storyIndex]->image) }}" class="icon-btn th-popup-image">
                                             <i class="fa-regular fa-magnifying-glass"></i>
@@ -52,3 +51,52 @@
         </div>
     </div>
 </div>
+
+<style>
+/* Large image (left side) - fixed height */
+.gallery-img-large {
+    height: 500px; /* Adjust this value as needed */
+    overflow: hidden;
+}
+
+.gallery-img-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Small images (right side) - fixed height */
+.gallery-img-small {
+    height: 240px; /* Adjust this value as needed */
+    overflow: hidden;
+}
+
+.gallery-img-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive - adjust heights for different screen sizes */
+@media (max-width: 768px) {
+    .gallery-img-large {
+        height: 300px;
+    }
+    
+    .gallery-img-small {
+        height: 200px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gallery-img-large {
+        height: 400px;
+    }
+    
+    .gallery-img-small {
+        height: 190px;
+    }
+}
+</style>

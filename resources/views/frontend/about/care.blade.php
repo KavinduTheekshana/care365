@@ -1,4 +1,4 @@
-<section class="position-relative bg-white overflow-hidden space">
+<section class="position-relative bg-white overflow-hidden space" id="how-we-work">
         <!-- <div class="why-bg-shape1-2 shape-mockup jump d-xxl-block d-none" data-bottom="0" data-right="1%">
             <img src="assets/img/shape/shape1-26.png" alt="img">
         </div> -->

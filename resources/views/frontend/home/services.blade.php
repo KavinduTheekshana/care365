@@ -4,7 +4,7 @@
             <div class="col-xxl-5 col-xl-7 col-md-8">
                 <div class="title-area">
                     <span class="sub-title style2 text-anim" data-cue="slideInUp">Our Services</span>
-                    <h2 class="sec-title text-anim2" data-cue="slideInUp">Comprehensive Care Services We Offer</h2>
+                    <h3 class="sec-title text-anim2" data-cue="slideInUp">Comprehensive Care Services We Offer</h3>
                 </div>
             </div>
             <div class="col-auto">
@@ -13,15 +13,14 @@
                 </div>
             </div>
         </div>
-        
         @if($services->count() > 0)
         <div class="slider-area service-slider1">
-            <div class="swiper th-slider" id="serviceSlider1" data-slider-options='{"autoHeight":true,"breakpoints":{"0":{"slidesPerView":1},"767":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
+            <div class="swiper th-slider" id="serviceSlider1" data-slider-options='{"autoHeight":true,"slidesPerGroup":4,"pagination":{"el":"#serviceSlider1 .slider-pagination","clickable":true,"type":"bullets"},"breakpoints":{"0":{"slidesPerView":1,"slidesPerGroup":1},"767":{"slidesPerView":2,"slidesPerGroup":2},"1200":{"slidesPerView":3,"slidesPerGroup":3},"1400":{"slidesPerView":4,"slidesPerGroup":4}}}'>
                 <div class="swiper-wrapper">
                     @foreach($services as $service)
                     <div class="swiper-slide" data-cue="slideInUp">
                         <div class="service-card">
-                            <a class="icon-btn style3" href="{{ url('/' . $service->title_slug) }}">
+                            <a class="icon-btn style3" href="{{ service_url($service) }}">
                                 <img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img">
                             </a>
                             <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
@@ -29,12 +28,12 @@
                             </div>
                             <div class="box-content">
                                 <h3 class="box-title">
-                                    <a href="{{ url('/' . $service->title_slug) }}">
+                                    <a href="{{ service_url($service) }}">
                                         {{ $service->title }}
                                     </a>
                                 </h3>
                                 <p class="box-text">
-                                    {{ excerpt($service->description, 200) }}
+                                    {{ excerpt($service->description, 120) }}
                                 </p>
                             </div>
                         </div>
@@ -45,7 +44,7 @@
                     <button data-slider-prev="#serviceSlider1" class="slider-arrow default style-border2 slider-prev">
                         <img data-mask-src="assets/img/icon/arrow-left.svg" src="assets/img/icon/arrow-left.svg" alt="img">
                     </button>
-                    <div class="slider-pagination"></div>
+                    <div class="slider-pagination swiper-pagination"></div>
                     <button data-slider-next="#serviceSlider1" class="slider-arrow default style-border2 slider-next">
                         <img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img">
                     </button>

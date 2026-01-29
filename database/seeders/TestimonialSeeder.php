@@ -9,55 +9,42 @@ class TestimonialSeeder extends Seeder
 {
     public function run(): void
     {
+        Testimonial::truncate();
+
         $testimonials = [
             [
-                'name' => 'Sunil Perera',
+                'name' => 'Ruwan de Silva',
+                'position' => 'senior Software Engineer',
+                'rating' => 5,
+                'message' => "Elder Care Home's compassionate team understood my mom's needs, giving me confidence in my decision for her care.",
+                'image_path' => 'default_testimonial_img.png',
+                'is_public' => true,
+            ],
+            [
+                'name' => 'Silvia Peoiris',
                 'position' => 'Bank Officer',
                 'rating' => 5,
-                'message' => 'Care 365 provides outstanding elderly care with professionalism and compassion. I feel confident knowing my loved one is in safe hands.',
+                'message' => 'Moving my dad to ElderCare Home was easy thanks to their personalized approach and welcoming environment.',
                 'image_path' => 'default_testimonial_img.png',
                 'is_public' => true,
             ],
             [
-                'name' => 'Nimal Fernando',
-                'position' => 'Business Manager',
-                'rating' => 5,
-                'message' => 'The environment at Care 365 is calm, clean, and caring. The staff treats every resident with respect and dignity.',
-                'image_path' => 'default_testimonial_img.png',
-                'is_public' => true,
-            ],
-            [
-                'name' => 'Ruwan Silva',
-                'position' => 'Software Engineer',
+                'name' => 'Jeewan Mahanama',
+                'position' => 'Accountant',
                 'rating' => 4,
-                'message' => 'As someone who values organization and reliability, I am impressed with the services and care standards at Care 365.',
+                'message' => "Eager to explore options for my loved one's care, I stumbled upon ElderCare's digital platform. Little did I know, this virtual portal would become my lifeline, offering a wealth of information and support as I navigated the journey ahead.",
                 'image_path' => 'default_testimonial_img.png',
                 'is_public' => true,
             ],
             [
-                'name' => 'Mahesh Gunawardena',
-                'position' => 'Government Officer',
+                'name' => 'Srimani Alwis',
+                'position' => 'Lawyer',
                 'rating' => 5,
-                'message' => 'Care 365 offers a safe and comfortable environment for seniors. The caregivers are attentive and truly compassionate.',
+                'message' => 'Thanks to Care 365s digital platform, I\'ve gained invaluable insights into elder care options. From informative website with interactive tools, it\'s empowered me to make informed decisions with confidence, ensuring the best possible outcome for my loved one.',
                 'image_path' => 'default_testimonial_img.png',
                 'is_public' => true,
             ],
-            [
-                'name' => 'Dinesh Jayawardena',
-                'position' => 'Chartered Accountant',
-                'rating' => 4,
-                'message' => 'Transparency, safety, and quality care are clearly visible at Care 365. I highly recommend their elderly care services.',
-                'image_path' => 'default_testimonial_img.png',
-                'is_public' => true,
-            ],
-            [
-                'name' => 'Kasun Wijesinghe',
-                'position' => 'Entrepreneur',
-                'rating' => 5,
-                'message' => 'Care 365 truly feels like a family. The dedication of the staff and the quality of care provided are exceptional.',
-                'image_path' => 'default_testimonial_img.png',
-                'is_public' => true,
-            ],
+            
         ];
 
         foreach ($testimonials as $testimonial) {

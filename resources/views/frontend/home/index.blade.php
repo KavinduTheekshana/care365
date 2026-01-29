@@ -20,7 +20,7 @@
     @include('frontend.home.hero_2')
     @include('frontend.home.about')
     @include('frontend.home.services')
-    @include('frontend.home.specialities')
+    @include('frontend.home.specialities_2')
     @include('frontend.home.videoarea')
 
 
@@ -99,8 +99,9 @@ Gallery Area
 
     <!--==============================
 Testimonial Area  
-==============================-->
     @include('frontend.home.testimonial')
+==============================-->
+
 
     
     <!--==============================
@@ -365,12 +366,14 @@ Brand Area
 
     <!--==============================
 Faq Area
-==============================-->
     @include('frontend.home.faq')
+==============================-->
+
 
     <!--==============================
 Appointment Area   
 ==============================-->
+<!--
     <div class="space overflow-hidden  bg-white">
         <div class="container">
             <div class="row">
@@ -461,10 +464,12 @@ Appointment Area
 
         </div>
     </div>
+-->
     <!--==============================
 Blog Area  
-==============================-->
     @include('frontend.home.blog')
+==============================-->
+
 
     
 

@@ -15,6 +15,9 @@ use App\Http\Controllers\RouteController;
 use App\Http\Controllers\CareersController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\TermsConditionController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\WeCareController;
+use App\Http\Controllers\DigitalWellbeingController;
 
 
 
@@ -61,6 +64,15 @@ Route::get('privacy-policy/', [PrivacyPolicyController::class, 'index'])->name('
 // Terms and Conditions Page
 Route::get('terms-and-conditions/', [TermsConditionController::class, 'index'])->name('termsconditions');
 
+//Get Events by Month 
+Route::get('/events', [EventController::class, 'getMonthEvents']);
+Route::get('/events/upcoming', [EventController::class, 'getUpcomingEvents']);
+
+// We Care Page
+Route::get('/we-care', [WeCareController::class, 'index'])->name('wecare');
+
+// Digital Wellbeing Page
+Route::get('/digital-wellbeing', [DigitalWellbeingController::class, 'index'])->name('digitalwellbeing');
 
 
 // Catch-all dynamic routes - MUST BE LAST

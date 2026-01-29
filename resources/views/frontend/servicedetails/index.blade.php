@@ -38,16 +38,22 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="page-single">
                         @if($service->image_path)
-                        <div class="mb-4">
-                            <img src="{{ asset('services_img/' . $service->image_path) }}" alt="{{ $service->title }}" class="img-fluid rounded">
-                        </div>
+                            <div class="mb-4">
+                                <img 
+                                    src="{{ asset('services_img/' . $service->image_path) }}" 
+                                    alt="{{ $service->title }}" 
+                                    class="img-fluid"
+                                    style="border-radius: 16px;"
+                                >
+                            </div>
+
                         @endif
                         
                         <h3 class="mb-3">Service Overview</h3>
                         <div class="mb-4">
                             {!! nl2br(e($service->description)) !!}
                         </div>
-                        
+                        <!--
                         @if($relatedServices->count() > 0)
                         <h4 class="mb-3">Related Services</h4>
                         <div class="row gy-3">
@@ -68,6 +74,7 @@
                             @endforeach
                         </div>
                         @endif
+                        -->
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-5">

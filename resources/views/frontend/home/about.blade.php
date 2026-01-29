@@ -4,9 +4,14 @@
             <div class="row gy-40 gx-60 align-items-center flex-row-reverse">
                 <div class="col-xxl-7 align-self-center">
                     <div class="img-box1" data-cue="slideInUp" data-delay="300">
-                        <div class="img1" data-mask-src="assets/img/normal/about-thumb-mask1-1.png">
-                            <img src="assets/img/Home-img/shutterstock_2267075473-640w.webp" alt="About">
+                        <div class="img1">
+                            <img 
+                                src="assets/img/Home-img/shutterstock_2267075473-640w.webp" 
+                                alt="About"
+                                style="border-radius: 20px;"
+                            >
                         </div>
+
                         <!--
                         <div class="year-counter-wrap">
                             <h4 class="box-title text-white"><span class="counter-number">2500</span>+</h4>
