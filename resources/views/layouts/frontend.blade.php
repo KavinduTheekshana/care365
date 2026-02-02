@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="zxx" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -71,19 +71,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!--==============================
-    All CSS File
-    ============================== -->
-    <!--
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/preloader.css') }}">
-    -->
 
+    
+    <!-- CSS Files
+    ================================================== -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
     <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" >
     <link href="assets/css/swiper.css" rel="stylesheet" type="text/css" >
@@ -91,59 +82,36 @@
     <link href="assets/css/coloring.css" rel="stylesheet" type="text/css" >
     <!-- color scheme -->
     <link id="colors" href="assets/css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
-    @stack('styles')
 
-    {{-- Schema.org Markup for Local Business --}}
-    @verbatim
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "NursingHome",
-    "name": "Care365",
-    "description": "Luxury retirement living where seniors thrive with joy, independence, and exceptional care in Sri Lanka.",
-    "url": "{{ url('/') }}",
-    "telephone": "0779191818",
-    "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "LK"
-    },
-    "sameAs": [
-        "https://www.facebook.com/Care36t5"
-    ]
-    }
-    </script>
-    @endverbatim
+
+
+        @stack('styles')
+
+        {{-- Schema.org Markup for Local Business --}}
+        @verbatim
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "NursingHome",
+        "name": "Care365",
+        "description": "Luxury retirement living where seniors thrive with joy, independence, and exceptional care in Sri Lanka.",
+        "url": "{{ url('/') }}",
+        "telephone": "0779191818",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "LK"
+        },
+        "sameAs": [
+            "https://www.facebook.com/Care36t5"
+        ]
+        }
+        </script>
+        @endverbatim
+
 </head>
 
-<body >
+<body>
     <div id="wrapper">
-
-    <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-
-    <!-- Preloader -->
-    <!--
-    @include('frontend.components.preloader')
-    -->
-
-    <!--********************************
-    Code Start From Here
-    ******************************** -->
-
-    @include('frontend.components.header')
-    <div class="no-bottom no-top" id="content">
-        <div id="top"></div>
-            @yield('content')
-
-    </div>
-    @include('frontend.components.footer')
-
-    <!--********************************
-    Code End  Here
-    ******************************** -->
-
-    <!-- Scroll To Top -->
         <div class="float-text show-on-scroll">
             <span><a href="#">Scroll to top</a></span>
         </div>
@@ -153,10 +121,30 @@
         <div id="de-loader"></div>
         <!-- page preloader close -->
 
+        <!-- header begin -->
+        @include('frontend.components.header')
+
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+
+            <div id="top"></div>
+
+                @yield('content')
+
+
+            
+        </div>
+        <!-- content close -->
+
+        <!-- footer begin -->
+        @include('frontend.components.footer')
+        <!-- footer close -->
     </div>
-    <!--==============================
-    All Js File
-    ============================== -->
+
+
+    <!-- Javascript Files
+    ================================================== -->
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/designesia.js"></script>
     <script src="assets/js/swiper.js"></script>
@@ -171,7 +159,5 @@
       $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
     });
     </script>
-    @stack('scripts')
-</body>
 
 </html>
