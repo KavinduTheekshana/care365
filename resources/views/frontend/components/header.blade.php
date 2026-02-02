@@ -7,9 +7,12 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="index.html">
-                                        <img class="logo-main" src="assets/img/logo.png" alt="" >
-                                        <img class="logo-scroll" src="assets/img/logo.png" alt="" >
-                                        <img class="logo-mobile" src="assets/img/logo.png" alt="" >
+                                        <img class="logo-main" src="assets/img/logo.png" alt="" 
+                                            style="max-height: 60px; width: auto; height: auto;">
+                                        <img class="logo-scroll" src="assets/img/logo.png" alt="" 
+                                            style="max-height: 60px; width: auto; height: auto;">
+                                        <img class="logo-mobile" src="assets/img/logo.png" alt="" 
+                                            style="max-height: 60px; width: auto; height: auto;">
                                     </a>
                                 </div>
                                 <!-- logo close -->
