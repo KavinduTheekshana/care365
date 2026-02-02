@@ -1,25 +1,63 @@
-    <section class="overflow-hidden space bg-smoke2" id="careers-sec">
-        <div class="container">
-            <div class="about-wrap1">
-                <div class="row gy-40 gx-60 align-items-center">
-                    <div class="col-xl-6">
-                        <div class="about-thumb1" data-cue="slideInUp">
-                            <div class="img1">
-                                <img src="assets/img/normal/440414325-122109984758286656-9076875144893731399-n-6642f09db2f4b.webp" alt="Join Our Team">
+            <section class="pt-30 pb-0 border-top">
+                <div class="container relative">
+                    <div class="row g-4 gx-5 align-items-center">
+                        
+                        <div class="col-lg-6">
+                            <img src="assets/images/misc/6235665.png" class="w-100" alt="Join Care365 Team">
+                        </div>
+
+                        <div class="col-lg-6 relative">
+                            <div class="relative z-1000">
+                                <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Join Our Team</div>
+                                <h2>Make a Difference in Elderly Care</h2>
+                                <p>Join our compassionate team of caregivers and healthcare professionals! We offer rewarding career opportunities where you can make a meaningful impact in the lives of seniors. Enjoy competitive compensation, ongoing training, and the fulfillment of providing dignified care to those who need it most.</p>
+
+                                <a href="{{ route('contact') }}" class="btn-main">Join Our Team</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="border-top">
+                <div class="container relative z-2">
+                    <div class="row g-4">
+                        <div class="col-lg-5 text-center">
+                            <h2 class="mb-0">We Are a Trusted Cleaning Company</h2>
+                        </div>
+                        <div class="col-lg-6  text-center">
+                            <div class="d-inline-block text-center mx-4">
+                                <h4 class="mb-1">Excellent</h4>
+                                <div class="de-rating-ext fs-18">
+                                    <div class="d-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="fs-14 mb-0">Based on <span class="fw-bold">185 reviews</span></div>
+                                    <img src="assets/images/misc/trustpilot-invert.webp" class="w-120px" alt="">
+                                </div>
+                            </div>
+
+                            <div class="d-inline-block text-center mx-4">
+                                <h4 class="mb-1">4.8 out of 5</h4>
+                                <div class="de-rating-ext fs-18">
+                                    <div class="d-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="fs-14 mb-0">Based on <span class="fw-bold">200 reviews</span></div>
+                                    <img src="assets/images/misc/google.webp" class="w-120px" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6">
-                        <div class="title-area mb-35">
-                            <span class="sub-title subtitle-line text-anim" data-cue="slideInUp">Careers</span>
-                            <h2 class="sec-title text-anim2" data-cue="slideInUp">Join Our Team of Compassionate Professionals</h2>
-                        </div>
-                        <p class="fs-18 mb-35 text-anim2" data-cue="slideInUp">Join our team of passionate professionals dedicated to enriching lives. At Care365, we offer rewarding career opportunities for those driven to make a meaningful difference through compassionate care. Explore roles that align with your expertise and values.</p>
-                        <div class="btn-wrap" data-cue="slideInUp">
-                            <a href="{{ route('contact') }}" class="th-btn">Join Now <span class="th-btn-icon"></span></a>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>

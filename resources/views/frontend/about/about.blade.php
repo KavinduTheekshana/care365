@@ -1,52 +1,29 @@
-<div class="overflow-hidden space overflow-hidden"  >
-        <div class="container">
-            <div class="about-wrap1">
-                <div class="row gy-40 gx-60 align-items-center flex-row-reverse">
-                    <div class="col-xxl-7 align-self-center">
-                        <div class="img-box1" data-cue="slideInUp" data-delay="300">
-                            <div class="img1">
-                                <img 
-                                    src="assets/img/normal/IMG_1010.jpg" 
-                                    alt="About" 
-                                    style="border-radius: 16px;"
-                                >
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-xxl-5">
-                        <div class="title-area mb-40">
-                            <span class="sub-title style2 text-anim" data-cue="slideInUp"> Our Story</span>
-                            <h2 class="sec-title text-anim2" data-cue="slideInLeft" data-delay="300">Understanding Life's Journey with Care 365</h2>
-                            <p class="fs-18 mt-4" data-cue="slideInUp">At Care 365, we understand the intricate needs that arise through life's journey. Whether you need post-surgical care, support for mobility, or a nurturing environment for dementia and Parkinson's, our compassionate team embraces your unique story.</p>
-                        </div>
-                        <div class="about1-list-wrap" data-cue="slideInUp">
-                            <div class="checklist list-two-column style2">
-                                <ul>
-                                    <li>Post-Surgical Care</li>
-                                    <li>Mobility Support</li>
-                                    <li>Dementia Care</li>
-                                    <li>Wound Care</li>
-                                    <li>Physical Therapy</li>
-                                    <li>24/7 Staff Support</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="btn-wrap mt-50" data-cue="slideInUp">
-                            <a class="th-btn" href="{{ route('contact') }}">Join Now</a>
-                            <div class="info-card">
-                                <div class="box-icon style2">
-                                    <img src="assets/img/icon/phone-black.svg" alt="phon-icon">
-                                </div>
-                                <div class="box-content">
-                                    <h4 class="box-title">Call us: </h4>
-                                    <p class="box-text"><a class="text-title" href="tel:+94776604040">(+94)77 660 40 40</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+<section>
+    <div class="container relative">
+        <div class="row g-4 gx-5 align-items-center">
+            <div class="col-lg-6 relative">
+                <div class="relative z-1000">
+                    <div class="subtitle wow fadeInUp" data-wow-delay=".0s">About Care365</div>
+                    <h2>Compassionate Care for Your Loved Ones</h2>
+                    <p>We are dedicated to providing exceptional elderly care services in a warm, nurturing environment. With experienced caregivers and healthcare professionals, we ensure your loved ones receive personalized attention, medical support, and companionship they deserve. Our commitment is to enhance quality of life while maintaining dignity and independence.</p>
                 </div>
             </div>
+
+
+                        <div class="col-lg-6">
+                            <div class="row g-4">
+                                <div class="col-6">
+                                    <img src="assets\img\Home-img\galary-img2.png" class="img-fluid rounded-10 mb-4 w-70 ms-30 wow scaleIn" alt="">
+                                    <img src="assets\img\Home-img\galaryimg1.png" class="img-fluid rounded-10 wow scaleIn" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <div class="spacer-single sm-hide"></div>
+                                    <img src="assets\img\Home-img\02f06849_560x560.jpg" class="img-fluid rounded-10 mb-4 wow scaleIn" alt="">
+                                    <img src="assets\img\Home-img\private-duty-caregiver-2.jpeg" class="img-fluid rounded-10 w-70 wow scaleIn" alt="">
+                                </div>
+                            </div>
+                        </div>
+
         </div>
     </div>
+</section>
