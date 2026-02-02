@@ -8,8 +8,8 @@
                                 <div id="logo">
                                     <a href="index.html">
                                         <img class="logo-main" src="assets/img/logo.png" alt="" >
-                                        <img class="logo-scroll" src="assets/img/logo-black.png" alt="" >
-                                        <img class="logo-mobile" src="assets/img/logo-black.png" alt="" >
+                                        <img class="logo-scroll" src="assets/img/logo.png" alt="" >
+                                        <img class="logo-mobile" src="assets/img/logo.png" alt="" >
                                     </a>
                                 </div>
                                 <!-- logo close -->
