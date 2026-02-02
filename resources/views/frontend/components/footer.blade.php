@@ -88,4 +88,72 @@
                     </div>
                 </div>
             </div>
+
+
+            <div class="whatsapp-chat-widget">
+                    <!-- WhatsApp Button -->
+                    <div class="whatsapp-btn" id="whatsappBtn">
+                        <div class="whatsapp-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <span class="whatsapp-text">Chat with us</span>
+                    </div>
+                    
+                    <!-- Chat Box -->
+                    <div class="whatsapp-chat-box" id="whatsappChatBox">
+                        <div class="chat-header">
+                            <div class="header-left">
+                                <div class="chat-avatar">
+                                    <img src="assets/img/logo2.png" alt="Care 365 Logo" onerror="this.src='https://via.placeholder.com/40/25D366/FFFFFF?text=C365'">
+                                </div>
+                                <div class="chat-info">
+                                    <h4>Care 365 Support</h4>
+                                    <p class="status">Welcome to CARE365!</p>
+                                </div>
+                            </div>
+                            <button class="close-chat" id="closeChat">×</button>
+                        </div>
+                        
+                        <div class="chat-body">
+                            <div class="message received">
+                                <div class="message-content" style="color:#555;">
+                                    <strong>Caring for Golden Years - Care365</strong><br><br>
+                                    Welcome to CARE365!<br><br>
+                                    Hello! Thank you for reaching out to us on WhatsApp. How can we assist you today?
+                                </div>
+                                <div class="message-time">Just now</div>
+                            </div>
+                            
+                            <div class="message received">
+                                <div class="message-content" style="color:#555;">
+                                    Our staff is available 24/7 to provide support and assistance whenever you need it. Our qualified and compassionate team ensures your loved ones are in capable hands.
+                                </div>
+                                <div class="message-time">Just now</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-footer">
+                            <div class="chat-cta">
+                                <a href="https://wa.me/94779191818?text=Hello!%20I'm%20interested%20in%20learning%20more%20about%20Care365%20services." 
+                                target="_blank" class="whatsapp-cta-btn">
+                                    <i class="fab fa-whatsapp"></i> Start Conversation
+                                </a>
+                                <p class="cta-note">Click to open WhatsApp and chat directly with our team</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
         </footer>
+
+
+        @include('frontend.components.whatsapp')
+
+
+
+
+
+
+
+        
