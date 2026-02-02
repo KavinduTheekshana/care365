@@ -1,133 +1,121 @@
-<div class="th-hero-wrapper hero-7" id="hero" style="height: 95vh;">
+<section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
+                <div class="v-center">
+                    <div class="swiper">
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="swiper-inner" data-bgimage="url(images/slider/1.webp)">
+                                <div class="sw-caption">
+                                    <div class="container">
+                                        <div class="row g-4 justify-content-center">
 
-    <div class="hero-left-social">
-        <ul>
-            <li><span class="hero-border"></span></li>
-            <li class="follow-text">
-                <h6>FOLLOW US -</h6>
-            </li>
-            <li><a href="https://www.facebook.com/Care36t5"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
-        </ul>
-    </div>
+                                            <div class="spacer-double"></div>
 
-    <div class="swiper th-slider" id="heroSlider8" data-slider-options='{"effect":"fade", "autoplay":true, "autoHeight": "true"}'>
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg"></div>
-                <div class="hero-overlay"></div>
-                <div class="hero-inner">
-                    <div class="container th-container2">
-                        <div class="row gy-4 align-items-center justify-content-center text-center">
-                            <div class="col-xxl-8 col-xl-9 col-lg-10">
-                                <div class="hero-style7">
-                                    <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">A Home Away From Home for Your Loved Ones</h1>
-                                    <p class="hero-text" data-ani="slideinup" data-ani-delay="0.6s">Safe, comfortable assisted living with personalized senior care</p>
-                                    <div data-ani="slideinup" data-ani-delay="0.10">
-                                        <a href="{{ route('contact') }}" class="th-btn th-btn-icon2">Get Started <i class="far fa-long-arrow-right ms-3"></i></a>
+                                            <div class="col-lg-7 text-center">     
+                                                <div class="spacer-single"></div>
+                                                <div class="sw-text-wrapper">
+                                                    <div class="subtitle mb-2">Officialy Certified</div>
+                                                    <h1 class="slider-title mb-3">Refreshing Spaces With Sparkle And Care</h1>
+                                                    <p class="slider-teaser mb-3">Fast, Reliable, and Affordable Cleaning Service</p>
+                                                    <div class="spacer-10"></div>
+                                                    <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="contact.html">Book a Services</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="spacer-single"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sw-overlay op-4"></div>
+                            </div>
+                        </div>
+                        <!-- Slides -->
+
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="swiper-inner" data-bgimage="url(images/slider/2.webp)">
+                                <div class="sw-caption">
+                                    <div class="container">
+                                        <div class="row g-4 justify-content-center">
+
+                                            <div class="spacer-double"></div>
+
+                                            <div class="col-lg-7 text-center">     
+                                                <div class="spacer-single"></div>
+                                                <div class="sw-text-wrapper">
+                                                    <div class="subtitle mb-2">Officially Certified</div>
+                                                    <h1 class="slider-title mb-3">Expert Cleaning Services For Spotless Results</h1>
+                                                    <p class="slider-teaser mb-3">Fast, Reliable, and Affordable Cleaning Service</p>
+                                                    <div class="spacer-10"></div>
+                                                    <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="contact.html">Book a Services</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="spacer-single"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="sw-overlay op-4"></div>
+                            </div>
+                        </div>
+                        <!-- Slides -->
+                        
+
+                      </div>
+                      <!-- If we need pagination -->
+                      <div class="swiper-pagination"></div>
+
+                      <!-- If we need navigation buttons -->
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+
+                      <!-- If we need scrollbar -->
+                      <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="pt-0 relative z-1000">
+                <div class="container mt-min-50">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="bg-white p-30 rounded-1 shadow-soft">
+                                <div class="row g-4">
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="relative">
+                                            <i class="icofont-map-pins absolute fs-64 id-color"></i>
+                                            <div class="ps-80">
+                                                <h4 class="mb-0">Areas of Coverage</h4>
+                                                <p class="mb-0">Trust us to deliver reliable solutions.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="relative">
+                                            <i class="icofont-calendar absolute fs-64 id-color"></i>
+                                            <div class="ps-80">
+                                                <h4 class="mb-0">Booking Service</h4>
+                                                <p class="mb-0">Trust us to deliver reliable solutions.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="relative">
+                                            <i class="icofont-clock-time absolute fs-64 id-color"></i>
+                                            <div class="ps-80">
+                                                <h4 class="mb-0">24/7 Emergency</h4>
+                                                <p class="mb-0">Trust us to deliver reliable solutions.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.jpg"></div>
-                <div class="hero-overlay"></div>
-                <div class="hero-inner">
-                    <div class="container th-container2">
-                        <div class="row gy-4 align-items-center justify-content-center text-center">
-                            <div class="col-xxl-8 col-xl-9 col-lg-10">
-                                <div class="hero-style7">
-                                    <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Where Golden Years Find Peace and Comfort</h1>
-                                    <p class="hero-text" data-ani="slideinup" data-ani-delay="0.6s">Compassionate senior living with dignity, respect, and joy</p>
-                                    <div data-ani="slideinup" data-ani-delay="0.10">
-                                        <a href="{{ route('contact') }}" class="th-btn th-btn-icon2">Get Started <i class="far fa-long-arrow-right ms-3"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/Home-img/Personalized-Care-Plans.jpg"></div>
-                <div class="hero-overlay"></div>
-                <div class="hero-inner">
-                    <div class="container th-container2">
-                        <div class="row gy-4 align-items-center justify-content-center text-center">
-                            <div class="col-xxl-8 col-xl-9 col-lg-10">
-                                <div class="hero-style7">
-                                    <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Personalized Care Tailored to Individual Needs</h1>
-                                    <p class="hero-text" data-ani="slideinup" data-ani-delay="0.6s">Comprehensive support for physical, emotional, and social well-being</p>
-                                    <div data-ani="slideinup" data-ani-delay="0.10">
-                                        <a href="{{ route('contact') }}" class="th-btn th-btn-icon2">Get Started <i class="far fa-long-arrow-right ms-3"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <button data-slider-prev="#serviceSlider1" class="slider-arrow style-border2 slider-prev">
-            <img data-mask-src="assets/img/icon/arrow-left.svg" src="assets/img/icon/arrow-left.svg" alt="img">
-        </button>
-        <button data-slider-next="#serviceSlider1" class="slider-arrow style-border2 slider-next">
-            <img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img">
-        </button>
-    </div>
-</div>
-
-<style>
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.hero-inner {
-    position: relative;
-    z-index: 2;
-}
-
-.swiper-slide {
-    position: relative;
-}
-
-/* Reduced font size for hero titles */
-.hero-title {
-    font-size: 2.5rem !important; /* Adjust this value as needed */
-    line-height: 1.2 !important;
-}
-
-/* Center alignment enhancements */
-.text-center {
-    text-align: center !important;
-}
-
-
-/* Responsive font sizes */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 1.8rem !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-title {
-        font-size: 1.5rem !important;
-    }
-}
-
-
-
-</style>
+            </section>
