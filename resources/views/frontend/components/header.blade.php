@@ -7,9 +7,9 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="index.html">
-                                        <img class="logo-main" src="images/logo-black.webp" alt="" >
-                                        <img class="logo-scroll" src="images/logo-black.webp" alt="" >
-                                        <img class="logo-mobile" src="images/logo-black.webp" alt="" >
+                                        <img class="logo-main" src="assets/img/logo.png" alt="" >
+                                        <img class="logo-scroll" src="assets/img/logo-black.png" alt="" >
+                                        <img class="logo-mobile" src="assets/img/logo-black.png" alt="" >
                                     </a>
                                 </div>
                                 <!-- logo close -->
@@ -25,7 +25,7 @@
                                                             <div class="col-lg-3 col-md-4 text-center">
                                                                 <div class="relative hover text-center overflow-hidden soft-shadow rounded-1">
                                                                     <a href="index.html" class="p-0">
-                                                                        <img src="images/demo/homepage-1.webp" class="w-100 relative hover-scale-1-1" alt="">
+                                                                        <img src="assets/img/demo/homepage-1.webp" class="w-100 relative hover-scale-1-1" alt="">
                                                                     </a>
                                                                 </div>                            
                                                                 <h5 class="mt-3 mb-1">Homepage 1</h5>
