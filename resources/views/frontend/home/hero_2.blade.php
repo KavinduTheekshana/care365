@@ -1,81 +1,68 @@
 <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
-                <div class="v-center">
-                    <div class="swiper">
-                      <!-- Additional required wrapper -->
-                      <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url(images/slider/1.webp)">
-                                <div class="sw-caption">
-                                    <div class="container">
-                                        <div class="row g-4 justify-content-center">
-
-                                            <div class="spacer-double"></div>
-
-                                            <div class="col-lg-7 text-center">     
-                                                <div class="spacer-single"></div>
-                                                <div class="sw-text-wrapper">
-                                                    <div class="subtitle mb-2">Officialy Certified</div>
-                                                    <h1 class="slider-title mb-3">Refreshing Spaces With Sparkle And Care</h1>
-                                                    <p class="slider-teaser mb-3">Fast, Reliable, and Affordable Cleaning Service</p>
-                                                    <div class="spacer-10"></div>
-                                                    <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="contact.html">Book a Services</a>
-                                                </div>
-                                            </div>
-
-                                            <div class="spacer-single"></div>
+    <div class="v-center">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg)">
+                        <div class="sw-caption">
+                            <div class="container">
+                                <div class="row g-4 justify-content-center">
+                                    <div class="spacer-double"></div>
+                                    <div class="col-lg-8 text-center">
+                                        <div class="spacer-single"></div>
+                                        <div class="sw-text-wrapper">
+                                            <div class="subtitle mb-2">Compassionate & Personalized Care</div>
+                                            <h1 class="slider-title mb-3">A Warm, Homelike Environment for Golden Years</h1>
+                                            <p class="slider-teaser mb-3">Enhancing quality of life with dedicated support for comfort, safety, and well-being.</p>
+                                            <div class="spacer-10"></div>
+                                            <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="contact.html">Schedule a Visit</a>
                                         </div>
                                     </div>
+                                    <div class="spacer-single"></div>
                                 </div>
-                                <div class="sw-overlay op-4"></div>
                             </div>
                         </div>
-                        <!-- Slides -->
-
-                        <!-- Slides -->
-                        <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url(images/slider/2.webp)">
-                                <div class="sw-caption">
-                                    <div class="container">
-                                        <div class="row g-4 justify-content-center">
-
-                                            <div class="spacer-double"></div>
-
-                                            <div class="col-lg-7 text-center">     
-                                                <div class="spacer-single"></div>
-                                                <div class="sw-text-wrapper">
-                                                    <div class="subtitle mb-2">Officially Certified</div>
-                                                    <h1 class="slider-title mb-3">Expert Cleaning Services For Spotless Results</h1>
-                                                    <p class="slider-teaser mb-3">Fast, Reliable, and Affordable Cleaning Service</p>
-                                                    <div class="spacer-10"></div>
-                                                    <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="contact.html">Book a Services</a>
-                                                </div>
-                                            </div>
-
-                                            <div class="spacer-single"></div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="sw-overlay op-4"></div>
-                            </div>
-                        </div>
-                        <!-- Slides -->
-                        
-
-                      </div>
-                      <!-- If we need pagination -->
-                      <div class="swiper-pagination"></div>
-
-                      <!-- If we need navigation buttons -->
-                      <div class="swiper-button-prev"></div>
-                      <div class="swiper-button-next"></div>
-
-                      <!-- If we need scrollbar -->
-                      <div class="swiper-scrollbar"></div>
+                        <div class="sw-overlay op-4"></div>
                     </div>
                 </div>
-            </section>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.jpg)">
+                        <div class="sw-caption">
+                            <div class="container">
+                                <div class="row g-4 justify-content-center">
+                                    <div class="spacer-double"></div>
+                                    <div class="col-lg-8 text-center">
+                                        <div class="spacer-single"></div>
+                                        <div class="sw-text-wrapper">
+                                            <div class="subtitle mb-2">Specialized Support</div>
+                                            <h1 class="slider-title mb-3">Safe & Secure Elderly Care for Every Need</h1>
+                                            <p class="slider-teaser mb-3">Providing specialized care for dementia, Parkinson's, and paralysis with dignity and compassion.</p>
+                                            <div class="spacer-10"></div>
+                                            <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="contact.html">View Our Services</a>
+                                        </div>
+                                    </div>
+                                    <div class="spacer-single"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sw-overlay op-4"></div>
+                    </div>
+                </div>
+                <!-- Slide 3 - You can add a third slide if needed -->
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>
 
 
             <section class="pt-0 relative z-1000">
