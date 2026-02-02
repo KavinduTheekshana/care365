@@ -8,11 +8,10 @@
         <div class="row g-3 align-items-center">
             <div class="col-lg-6">
                 <div class="relative z-1000">
-                    <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">Terms and Conditions</h1>
+                    <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">Terms & Conditions</h1>
 
                     <p class="lead col-lg-10 mb-0 wow fadeInUp" data-wow-delay=".4s">
-                        We are committed to protecting your privacy and ensuring the security of your personal information. This policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our elder care services.
-
+                        Welcome to care36t5.com. These Terms and Conditions govern your use of our website and elder care services. By accessing our services, you agree to be bound by these terms. Please read them carefully.
 
                     </p>
 
@@ -22,7 +21,7 @@
 
             <div class="col-lg-6">
                 <img 
-                    src="assets/images/misc/67346543567.png" 
+                    src="assets/images/misc/5634673473476.png" 
                     class="w-100 wow" 
                     data-wow-delay=".6s" 
                     alt=""
