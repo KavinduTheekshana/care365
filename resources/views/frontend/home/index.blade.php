@@ -19,9 +19,9 @@
 @section('content')
     @include('frontend.home.hero_2')
     @include('frontend.home.about')
+    @include('frontend.home.services')
 
     <!--
-    @include('frontend.home.services')
     @include('frontend.home.specialities_2')
     @include('frontend.home.videoarea')
 -->
