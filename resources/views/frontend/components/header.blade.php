@@ -20,16 +20,7 @@
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
                                     <li><a class="menu-item" href="{{ route('home') }}">Home</a></li>
-                                    <li><a class="menu-item" href="{{ route('services') }}">Services</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="service-single.html">Residential Cleaning</a></li>
-                                            <li><a class="menu-item" href="service-single.html">Commercial Cleaning</a></li>
-                                            <li><a class="menu-item" href="service-single.html">Deep Cleaning</a></li>
-                                            <li><a class="menu-item" href="service-single.html">Move-In/Move-Out Cleaning</a></li>
-                                            <li><a class="menu-item" href="service-single.html">Post-Construction Cleaning</a></li>
-                                            <li><a class="menu-item" href="service-single.html">Carpet and Upholstery Cleaning</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a class="menu-item" href="{{ route('services') }}">Services</a></li>
                                     <li><a class="menu-item" href="how-it-works.html">How It Works</a></li>
                                     <li><a class="menu-item" href="about.html">About</a></li>
                                     <li><a class="menu-item" href="projects.html">Projects</a></li>

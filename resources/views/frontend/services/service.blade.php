@@ -1,47 +1,45 @@
-<section class="space" id="service-sec">
+<section class="relative overflow-hidden">
     <div class="container">
-        <div class="title-area text-center mb-50">
-            <span class="sub-title style2 text-anim" data-cue="slideInUp">Our Services</span>
-            <h2 class="sec-title text-anim2" data-cue="slideInUp">Safe And Secure Elderly Care</h2>
-            <p class="fs-18 text-anim2" data-cue="slideInUp">Discover our comprehensive services, providing personalized support and engaging activities to enhance the well-being and quality of life for seniors.</p>
-        </div>
-        
-        @if($services->count() > 0)
-        <div class="row gy-4">
-            @foreach($services as $service)
-            <div class="col-xl-4 col-lg-6 col-md-12">
-                <div class="service-card">
-                    <a class="icon-btn style3" href="{{ url('/' . $service->title_slug) }}">
-                        <img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img">
-                    </a>
-                    <div class="box-img" data-mask-src="assets/img/shape/service_card_mask1_1.jpg">
-                        @if($service->image_path)
-                        <img src="{{ asset('services_img/' . $service->image_path) }}" alt="{{ $service->title }}">
-                        @else
-                        <img src="assets/img/service/service_card_1_1.jpg" alt="{{ $service->title }}">
-                        @endif
-                    </div>
-                    <div class="box-content">
-                        <h3 class="box-title">
-                            <a href="{{ url('/' . $service->title_slug) }}">
-                                {{ $service->title }}
-                            </a>
-                        </h3>
-                        <p class="box-text">
-                            {{ Str::limit($service->description, 150) }}
+        <div class="row g-4">
+            @forelse ($services as $service)
+                <div class="col-lg-4 col-sm-6 d-flex">
+                    <div class="relative mb-3 p-3 w-100 rounded-1 shadow-soft d-flex flex-column">
+                        <a href="{{ url('/' . $service->title_slug) }}" 
+                           class="d-block hover mb-3">
+                            <div class="relative overflow-hidden rounded-1 shadow-soft">
+                                <!-- "Read More" overlay -->
+                                <div class="absolute z-2 start-0 w-100 abs-middle fs-36 text-white text-center">
+                                    <span class="btn-main hover-op-1">Read More</span>
+                                </div>
+
+                                <!-- Dynamic service image with fixed aspect ratio -->
+                                <div class="ratio ratio-16x9">
+                                    <img src="{{ asset('services_img/' . $service->image_path) }}" 
+                                         class="img-fluid hover-scale-1-2" 
+                                         style="object-fit: cover; width: 100%; height: 100%;"
+                                         alt="{{ $service->title }}">
+                                </div>
+                            </div>
+                        </a>
+
+                        <h4 class="mb-2">{{ $service->title }}</h4>
+                        <p class="mb-0" 
+                           style="display: -webkit-box; 
+                                  -webkit-line-clamp: 3; 
+                                  -webkit-box-orient: vertical; 
+                                  overflow: hidden; 
+                                  text-overflow: ellipsis; 
+                                  line-height: 1.6; 
+                                  white-space: normal;">
+                            {{ $service->description }}
                         </p>
                     </div>
                 </div>
-            </div>
-            @endforeach
+            @empty
+                <div class="col-12 text-center py-5">
+                    <p class="lead">No services available at the moment.</p>
+                </div>
+            @endforelse
         </div>
-        @else
-        <div class="text-center py-5">
-            <div class="alert alert-info">
-                <h4>No Services Available</h4>
-                <p>Please check back later or contact us for more information.</p>
-            </div>
-        </div>
-        @endif
     </div>
 </section>
