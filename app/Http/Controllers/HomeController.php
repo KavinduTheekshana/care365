@@ -25,11 +25,10 @@ class HomeController extends Controller
                    ->take(5)
                    ->get();
         
-        // Get random 4 public testimonials for slider (2 slides on desktop)
         $testimonials = Testimonial::where('is_public', true)
-                                  ->inRandomOrder()
-                                  ->take(4)
-                                  ->get();
+                                ->inRandomOrder()
+                                ->get();
+
         
         // Get public services
         $services = Service::where('is_public', true)

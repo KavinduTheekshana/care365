@@ -1,67 +1,62 @@
-<section class="testi-area-1 space overflow-hidden bg-white" id="testi-sec">
+<section>
     <div class="container">
-        <div class="title-area text-center">
-            <span class="sub-title style2 text-anim" data-cue="slideInUp">Testimonials</span>
-            <h2 class="sec-title text-anim" data-cue="slideInUp">What Families Say About Us</h2>
-            <p class="fs-18 text-anim2" data-cue="slideInUp">Read the heartwarming stories from families who entrusted their loved ones to our care.</p>
+        <div class="row g-4">
+            <div class="col-lg-6 offset-lg-3 text-center">
+                <div class="subtitle wow fadeInUp mb-3">Testimonials</div>
+                <h2 class="mb-4 wow fadeInUp" data-wow-delay=".2s">Our Happy Customers</h2>
+            </div>
         </div>
-        
-        @if($testimonials->count() > 0)
-        <div class="row gy-50 flex-row-reverse">
-            <div class="slider-area testi-slider1" data-cue="slideInUp">
-                <div class="swiper th-slider has-shadow" id="testiSlide1" data-slider-options='{"autoHeight": false,"breakpoints":{"0":{"slidesPerView":1},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"1"},"1200":{"slidesPerView":"2"},"1600":{"slidesPerView":"2"}}}'>
-                    <div class="swiper-wrapper">
-                        @foreach($testimonials as $testimonial)
-                        <div class="swiper-slide">
-                            <div class="testi-card">
-                                <div class="testi-1-quote">
-                                    <img src="assets/img/icon/quote_icon.svg" alt="icon">
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            @if($testimonials->count() > 0)
+                <div class="owl-carousel owl-theme wow fadeInUp" id="testimonial-carousel">
+                    @foreach($testimonials as $testimonial)
+                        <div class="item">
+                            <div class="relative p-2">
+                                <div class="relative">
+                                    @if($testimonial->image_path)
+                                        <img class="relative z-2 w-80px mb-3 rounded-1" alt="{{ $testimonial->name }}" src="{{ asset('testimonial_img/' . $testimonial->image_path) }}">
+                                    @else
+                                        <div class="relative z-2 w-80px h-80px mb-3 rounded-1 bg-light d-flex align-items-center justify-content-center">
+                                            <i class="fa fa-user text-muted fa-2x"></i>
+                                        </div>
+                                    @endif
                                 </div>
-                                <div class="testi-bg-mask" data-mask-src="assets/img/shape/testi_card_mask1_1.jpg"></div>
-                                <div class="testi-card-profile">
-                                    <div class="testi-card-avater">
-                                        @if($testimonial->image_path)
-                                        <img src="{{ asset('testimonial_img/' . $testimonial->image_path) }}" alt="{{ $testimonial->name }}" width="80" height="80">
-                                        @else
-                                        <img src="assets/img/testimonial/dummy.jpg" alt="{{ $testimonial->name }}" width="80" height="80">
-                                        @endif
-                                    </div>
-                                    <div class="testi-card-profile-detaile">
-                                        <h3 class="box-title">{{ $testimonial->name }}</h3>
-                                        <p class="box-desig">{{ $testimonial->position }}</p>
-                                    </div>
+                                <div class="mt-4 text-dark fw-600">
+                                    {{ $testimonial->name }}
+                                    @if($testimonial->position)
+                                        <span>{{ $testimonial->position }}</span>
+                                    @else
+                                        <span>Customer</span>
+                                    @endif
                                 </div>
-
-                                <div class="testi-card_review">
-                                    @for($i = 1; $i <= 5; $i++)
-                                        @if($i <= $testimonial->rating)
-                                        <i class="fa-sharp fa-solid fa-star"></i>
-                                        @else
-                                        <i class="fa-sharp fa-regular fa-star"></i>
-                                        @endif
-                                    @endfor
-                                    <span class="rating-number ms-2">({{ $testimonial->rating }}/5)</span>
+                                <div class="de-rating-ext mb-3">
+                                    <span class="d-stars">
+                                        @for($i = 1; $i <= 5; $i++)
+                                            @if($i <= $testimonial->rating)
+                                                <i class="fa fa-star text-warning"></i>
+                                            @else
+                                                <i class="fa fa-star text-light"></i>
+                                            @endif
+                                        @endfor
+                                    </span>
                                 </div>
-                                
-                                <p class="box-text">"{{ $testimonial->message }}"</p>
+                                <p class="mb-0">"{{ $testimonial->message }}"</p>
                             </div>
                         </div>
-                        @endforeach
-                    </div>
-                    <div class="slider-pagination-wrap mt-30">
-                        <button data-slider-prev="#testiSlide1" class="slider-arrow default"><i class="far fa-arrow-left"></i></button>
-                        <div class="slider-pagination"></div>
-                        <button data-slider-next="#testiSlide1" class="slider-arrow default"><i class="far fa-arrow-right"></i></button>
+                    @endforeach
+                </div>
+            @else
+                <!-- No testimonials message -->
+                <div class="col-12 text-center py-5">
+                    <div class="d-inline-block p-4 rounded-3 bg-light">
+                        <i class="fa fa-comments fa-3x text-muted mb-3"></i>
+                        <h4 class="mb-3">No Testimonials Yet</h4>
+                        <p class="mb-0 text-muted">Check back soon to see what our customers are saying!</p>
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
-        @else
-        <div class="text-center py-5">
-            <div class="alert alert-info">
-                <p>No testimonials available at the moment.</p>
-            </div>
-        </div>
-        @endif
     </div>
 </section>
