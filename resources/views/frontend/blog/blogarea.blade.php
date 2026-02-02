@@ -1,46 +1,49 @@
-<section class="th-blog-wrapper space-top space-extra-bottom">
+<section>
     <div class="container">
-        <div class="row gy-40">
+        <div class="row g-4">
+
             @forelse ($blogs as $blog)
-                <div class="col-xl-4 col-md-6" data-cue="slideInUp">
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <a href="{{ url('/' . $blog->title_slug) }}">
-                                <img src="{{ image_url($blog->image_path, 'blog') }}" alt="{{ $blog->title }}">
-                            </a>
+                <div class="col-lg-4 col-md-6">
+                    <div class="relative">
+                        <div class="post-image rounded-1 mb-2">
+                            <div class="abs start-0 top-0 bg-color-2 text-dark p-3 pb-2 m-3 text-center fw-600 rounded-1">
+                                <div class="fs-36 mb-0">{{ $blog->date->format('d') }}</div>
+                                <span>{{ $blog->date->format('M') }}</span>
+                            </div>
+                            <img 
+                                alt="{{ $blog->title }}" 
+                                src="{{ image_url($blog->image_path, 'blog') }}" 
+                                class="lazy"
+                            >
                         </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <a href="{{ route('blog') }}">
-                                    <i class="fas fa-user"></i> {{ $blog->author ?? 'Jordan Park' }}
+                        <div class="pt-2 h-100">
+                            <h4>
+                                <a class="text-dark" href="{{ url('/' . $blog->title_slug) }}">
+                                    {{ $blog->title }}
                                 </a>
-                                <a href="{{ route('blog') }}">
-                                    <i class="fas fa-calendar"></i> {{ \Carbon\Carbon::parse($blog->date)->format('d M, Y') }}
-                                </a>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="{{ url('/' . $blog->title_slug) }}">
-                                    {{ Str::limit($blog->title, 60) }}
-                                </a>
-                            </h3>
-                            <div class="btn-wrap">
-                                <a href="{{ url('/' . $blog->title_slug) }}" class="link-btn th-btn-icon">
-                                    Read More
-                                </a>
-                            </div>
+                            </h4>
+                            <p class="mb-3">
+                                {{ Str::limit($blog->description, 110) }}
+                            </p>
                         </div>
                     </div>
                 </div>
             @empty
-                <div class="col-12 text-center">
-                    <p>No public blogs available at the moment.</p>
+                <div class="col-12 text-center py-5">
+                    <p>No public blog posts available right now.</p>
                 </div>
             @endforelse
-        </div>
 
-        <!-- Pagination -->
-        <div class="th-pagination mt-50 text-center" data-cue="slideInUp">
-            {{ $blogs->links('pagination::bootstrap-5') }}
+            <!-- pagination begin -->
+            <div class="col-lg-12 pt-4 text-center">
+                <div class="d-inline-block">
+                    <nav aria-label="Page navigation example">
+                        {{ $blogs->links() }}
+                    </nav>
+                </div>
+            </div>
+            <!-- pagination end -->
+
         </div>
     </div>
 </section>
