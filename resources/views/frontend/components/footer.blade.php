@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
-                        <div class="row">
+                        <div class="row"> 
                             <div class="col-lg-4 col-sm-6">
                                 <div class="widget">
                                     <h5>Company</h5>
