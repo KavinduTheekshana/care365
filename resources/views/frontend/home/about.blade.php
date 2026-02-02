@@ -36,7 +36,7 @@
                     <div class="row g-4">
                         <div class="col-lg-4 col-md-6">
                             <div class="relative">
-                                <img src="images/icons/black/medical-care-icon.webp" class="abs bg-color-2 w-100px p-15 rounded-10 mb-3 wow scaleIn" alt="Medical care icon">
+                                <img src="assets/images/icons/black/673476347.png" class="abs bg-color-2 w-100px p-15 rounded-10 mb-3 wow scaleIn" alt="Medical care icon">
                                 <div class="relative ps-100 ms-4 wow fadeInUp">
                                     <h4>Comprehensive Medical Care</h4>
                                     <p class="mb-0">Tailored medical support with dedicated professionals committed to compassionate care and overall well-being.</p>
@@ -46,7 +46,7 @@
 
                         <div class="col-lg-4 col-md-6">
                             <div class="relative">
-                                <img src="images/icons/black/nutrition-icon.webp" class="abs bg-color-2 w-100px p-15 rounded-10 mb-3 wow scaleIn" alt="Nutrition icon">
+                                <img src="assets/images/icons/black/1422994-200.png" class="abs bg-color-2 w-100px p-15 rounded-10 mb-3 wow scaleIn" alt="Nutrition icon">
                                 <div class="relative ps-100 ms-4 wow fadeInUp">
                                     <h4>Nutritious Meals</h4>
                                     <p class="mb-0">Meticulously crafted meals celebrating wholesome ingredients and culinary excellence for optimal health.</p>
@@ -56,7 +56,7 @@
 
                         <div class="col-lg-4 col-md-6">
                             <div class="relative">
-                                <img src="images/icons/black/activities-icon.webp" class="abs bg-color-2 w-100px p-15 rounded-10 mb-3 wow scaleIn" alt="Activities icon">
+                                <img src="assets/images/icons/black/57436776.png" class="abs bg-color-2 w-100px p-15 rounded-10 mb-3 wow scaleIn" alt="Activities icon">
                                 <div class="relative ps-100 ms-4 wow fadeInUp">
                                     <h4>Recreational Activities</h4>
                                     <p class="mb-0">Engaging social programs designed to ignite passions, foster connections, and enrich life with creativity.</p>
