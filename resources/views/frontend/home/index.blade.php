@@ -22,10 +22,11 @@
     @include('frontend.home.services')
 
     @include('frontend.home.testimonial')
+    @include('frontend.home.videoarea')
+
 
     <!--
     @include('frontend.home.specialities_2')
-    @include('frontend.home.videoarea')
 -->
 
 

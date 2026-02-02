@@ -34,7 +34,7 @@
                                     <li><a class="menu-item" href="about.html">About</a></li>
                                     <li><a class="menu-item" href="projects.html">Projects</a></li>
                                     <li><a class="menu-item" href="blog.html">Blog</a></li>
-                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
+                                    <li><a class="menu-item" href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </div>
                             <div class="de-flex-col">
