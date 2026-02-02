@@ -19,22 +19,22 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
-                                    <li><a class="menu-item" href="{{ route('home') }}">Home</a></li>
-                                    <li><a class="menu-item" href="{{ route('services') }}">Services</a></li>
-                                    <li><a class="menu-item" href="{{ route('howitworks') }}">How It Works</a></li>
-                                    <li><a class="menu-item" href="{{ route('about') }}">About</a></li>
-                                    <li><a class="menu-item" href="{{ route('gallery') }}">Gallery</a></li>
-                                    <li><a class="menu-item" href="{{ route('blog') }}">Blog</a></li>
-                                    <li><a class="menu-item" href="{{ route('contact') }}">Contact</a></li>
+                                    <li><a class="menu-item {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
+                                    <li><a class="menu-item {{ request()->routeIs('services') ? 'active' : '' }}" href="{{ route('services') }}">Services</a></li>
+                                    <li><a class="menu-item {{ request()->routeIs('howitworks') ? 'active' : '' }}" href="{{ route('howitworks') }}">How It Works</a></li>
+                                    <li><a class="menu-item {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
+                                    <li><a class="menu-item {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{ route('gallery') }}">Gallery</a></li>
+                                    <li><a class="menu-item {{ request()->routeIs('blog') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
+                                    <li><a class="menu-item {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </div>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <div class="h-phone xs-hide">
                                         <span>Need Help?</span>
-                                        <h5>+1 5000 6000</h5>
+                                        <h5>(+94)77 660 40 40</h5>
                                     </div>    
-                                    <a href="book-service.html" class="btn-main">Book Service Now</a>
+                                    <a href="{{ route('contact') }}" class="btn-main">Book Service Now</a>
                                     <span id="menu-btn"></span>
                                 </div>
                             </div>
