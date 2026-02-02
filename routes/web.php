@@ -18,6 +18,7 @@ use App\Http\Controllers\TermsConditionController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\WeCareController;
 use App\Http\Controllers\DigitalWellbeingController;
+use App\Http\Controllers\HowWorkController;
 
 
 
@@ -74,6 +75,9 @@ Route::get('/we-care', [WeCareController::class, 'index'])->name('wecare');
 // Digital Wellbeing Page
 Route::get('/digital-wellbeing', [DigitalWellbeingController::class, 'index'])->name('digitalwellbeing');
 
+
+// How It Works Page
+Route::get('/how-it-works', [HowWorkController::class, 'index'])->name('howitworks');
 
 // Catch-all dynamic routes - MUST BE LAST
 Route::get('/{slug}', [RouteController::class, 'resolve']);

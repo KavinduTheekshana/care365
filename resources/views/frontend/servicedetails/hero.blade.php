@@ -17,7 +17,7 @@
 
                         <div class="col-lg-6">
                                   <img 
-                                    src="assets/images/misc/Home-Health-Icon-1.png" 
+                                    src="assets/images/misc/6436465347.png" 
                                     class="w-100 wow" 
                                     data-wow-delay=".6s" 
                                     alt=""

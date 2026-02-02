@@ -21,7 +21,7 @@
                                 <ul id="mainmenu">
                                     <li><a class="menu-item" href="{{ route('home') }}">Home</a></li>
                                     <li><a class="menu-item" href="{{ route('services') }}">Services</a></li>
-                                    <li><a class="menu-item" href="how-it-works.html">How It Works</a></li>
+                                    <li><a class="menu-item" href="{{ route('howitworks') }}">How It Works</a></li>
                                     <li><a class="menu-item" href="about.html">About</a></li>
                                     <li><a class="menu-item" href="projects.html">Projects</a></li>
                                     <li><a class="menu-item" href="blog.html">Blog</a></li>
