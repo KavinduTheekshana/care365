@@ -25,7 +25,7 @@
                 <div class="container relative z-2">
                     <div class="row g-4">
                         <div class="col-lg-5 text-center">
-                            <h2 class="mb-0">We Are a Trusted Cleaning Company</h2>
+                            <h2 class="mb-0">A Trusted Home Where Care Comes First</h2>
                         </div>
                         <div class="col-lg-6  text-center">
                             <div class="d-inline-block text-center mx-4">
