@@ -173,7 +173,7 @@
             
             <div style="background: #fef3c7; border-left: 5px solid #fbbf24; padding: 25px; margin: 30px 0;">
                 <p style="color: #92400e; font-size: 16px; margin: 0; font-weight: 600;">
-                    To exercise these rights, please contact us at privacy@care36t5.com
+                    To exercise these rights, please contact us at info@care36t5.com
                 </p>
             </div>
         </div>

@@ -80,7 +80,7 @@
                                     </p>
                                 </div>
                                 <ul class="menu-simple">
-                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="{{ route('termsconditions') }}">Terms &amp; Conditions</a></li>
                                     <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                                 </ul>
                             </div>
