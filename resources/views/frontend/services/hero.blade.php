@@ -5,8 +5,8 @@
         width: 100%;
         height: 370px;
         background-image: url('assets/images/breadcrumb/image2.png');
-        background-size: cover;
-        background-position: center;
+        background-size: 100% 100%; /* Forces image to fit exactly */
+        background-position: center center;
         background-repeat: no-repeat;
         display: flex;
         align-items: center;
@@ -47,7 +47,7 @@
     @media (max-width: 768px) {
         .breadcrumb-area {
             height: 250px;
-            background-attachment: scroll; /* Better mobile performance */
+            background-attachment: scroll;
         }
         
         .breadcrumb-content h1 {

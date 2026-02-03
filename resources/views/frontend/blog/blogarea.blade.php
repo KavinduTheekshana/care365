@@ -47,3 +47,27 @@
         </div>
     </div>
 </section>
+
+
+<style>
+    /* All blog images will be exactly 220px tall */
+    .image-fixed-size {
+        height: 220px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    /* Make sure images cover the area properly */
+    .image-fixed-size img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    /* Optional hover effect */
+    .image-fixed-size:hover img {
+        transform: scale(1.05);
+    }
+</style>
