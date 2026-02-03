@@ -20,10 +20,10 @@
                     color: #000000; 
                     border: none; 
                     border-radius: 50px; 
-                    padding: 12px 32px;          /* ← increased from py-2 px-5 */
+                    padding: 12px 32px;          
                     transition: all 0.3s ease; 
                     text-decoration: none;
-                    font-size: 16px;             /* optional: slight font bump for comfort */
+                    font-size: 16px;             
                     min-width: 160px;">
                 Join Now
             </a>

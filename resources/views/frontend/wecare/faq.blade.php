@@ -1,55 +1,48 @@
-<div class="space overflow-hidden" id="FAQ">
+<section id="FAQ">
     <div class="container">
-        <div class="row gy-40 gx-60">
-            <div class="col-xxl-7 col-xl-7">
-                <div class="title-area">
-                    <span class="sub-title style2 text-anim" data-cue="slideInUp">quick answers</span>
-                    <h2 class="sec-title text-anim2" data-cue="slideInLeft">Frequently Ask Questions</h2>
-                </div>
-                
-                @if($faqs->count() > 0)
-                <div class="faq-wrap1 pe-xl-4">
-                    <div class="accordion" id="faqAccordion">
+        <div class="row g-4">
+            <div class="col-lg-6 offset-lg-3 text-center">                            
+                <div class="subtitle wow fadeInUp mb-3">Questions</div>
+                <h2 class="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Questions</h2>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion s2 wow fadeInUp">
+
+                    @if($faqs->isEmpty())
+                        <div class="text-center py-5">
+                            <p>No frequently asked questions available at the moment.</p>
+                        </div>
+                    @else
                         @foreach($faqs as $index => $faq)
-                        <div class="accordion-card" data-cue="slideInUp">
-                            <div class="accordion-header" id="collapse-item-{{ $index + 1 }}">
-                                <button class="accordion-button {{ $index == 0 ? '' : 'collapsed' }}" 
-                                        type="button" 
-                                        data-bs-toggle="collapse" 
-                                        data-bs-target="#collapse-{{ $index + 1 }}" 
-                                        aria-expanded="{{ $index == 0 ? 'true' : 'false' }}" 
-                                        aria-controls="collapse-{{ $index + 1 }}">
-                                    <span class="count">{{ $index + 1 }}.</span> {{ $faq->question }}
-                                </button>
-                            </div>
-                            <div id="collapse-{{ $index + 1 }}" 
-                                 class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}" 
-                                 aria-labelledby="collapse-item-{{ $index + 1 }}" 
-                                 data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-text">{{ $faq->answer }}</p>
+                            <div class="accordion-section">
+                                <!-- Title / Question -->
+                                <div class="accordion-section-title" 
+                                     data-tab="#accordion-{{ $index + 1 }}">
+                                    {{ $faq->question }}
+                                </div>
+
+                                <!-- Content / Answer -->
+                                <div class="accordion-section-content" 
+                                     id="accordion-{{ $index + 1 }}">
+                                    <p class="mb-0">{!! nl2br(e($faq->answer)) !!}</p>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
-                    </div>
-                    
-                    <div class="text-center mt-4">
-                        <a href="{{ route('faq') }}" class="th-btn style-border3">View All FAQs</a>
-                    </div>
-                </div>
-                @else
-                <div class="alert alert-info">
-                    <p>No frequently asked questions available at the moment.</p>
-                </div>
-                @endif
+                    @endif
 
-            </div>
-            <div class="col-xxl-5 col-xl-5 align-self-center" data-cue="slideInUp">
-                <div class="faq-img-box1 global-img" data-cue="slideInUp">
-                    <img src="assets/img/Home-img/galary-img6.png" alt="faq_img">
                 </div>
+                
+                <!-- View All Button -->
+                <div class="text-center mt-4 wow fadeInUp" data-wow-delay=".4s">
+                    <a href="{{ route('faq') }}" >
+                        View All FAQs
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
-</div>
+</section>
