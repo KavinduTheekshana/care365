@@ -2,19 +2,22 @@
             <div class="container">
                 <div class="row gx-5">
                     <div class="col-lg-4 col-sm-6">
-                        <img class="logo-main" src="assets/img/logo.png" alt="" 
+                        <img class="logo-main" src="assets/img/care365.svg" alt="" 
                             style="max-height: 15vh; width: auto; height: auto;">
                         <div class="spacer-20"></div>
                         <p>
                             At Care 365, we provide compassionate, personalized senior care in a warm and welcoming environment. Our dedicated team ensures comfort, safety, and dignity, treating every resident like family.
                         </p>
-
                         <div class="social-icons mb-sm-30">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-discord"></i></a>
-                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://www.facebook.com/Care36t5/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/carethreesixtyfive?utm_source=qr&igsh=MTRkNHhuNWx2ZDd6cw%3D%3D" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
@@ -70,8 +73,8 @@
                         <div class="col-md-12">
                             <div class="de-flex">
                                 <div class="col-lg-5 col-12">
-                                    <p class="copyright">Copyright &copy; <?= date('Y') ?> Care365. All rights reserved.</p>
-                                    <p style="color: #999; font-size: 13px; margin: 8px 0 0;">
+                                    <p class="copyright mb-1">Copyright &copy; <?= date('Y') ?> Care365. All rights reserved.</p>
+                                    <p style="color: #999; font-size: 13px; ">
                                         Design &amp; Developed by 
                                         <a href="https://creatxsoftware.com/" target="_blank" rel="noopener noreferrer" 
                                         style="color: #999; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">
