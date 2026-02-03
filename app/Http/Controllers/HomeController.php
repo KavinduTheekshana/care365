@@ -14,16 +14,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::where('is_public', true)
-                    ->orderBy('date', 'desc')
-                    ->take(3)
-                    ->get();
-        
-        // Get random 8 FAQs with visibility
-        $faqs = Faq::where('visibility', true)
-                   ->inRandomOrder()
-                   ->take(5)
-                   ->get();
+
         
         $testimonials = Testimonial::where('is_public', true)
                                 ->inRandomOrder()
@@ -36,22 +27,11 @@ class HomeController extends Controller
                           ->take(6)
                           ->get();
 
-        // Get all active stories ordered by sort_order
-        $successStories = SuccessStory::where('is_active', true)
-            ->orderBy('sort_order')
-            ->get();
-        
-        // Group stories for proper display
-        $groupedStories = $this->groupSuccessStories($successStories);
         
         // Return view with all data
         return view('frontend.home.index', compact(
-            'blogs', 
-            'faqs', 
             'testimonials', 
             'services',
-            'successStories',
-            'groupedStories'
         ));
     }
 
