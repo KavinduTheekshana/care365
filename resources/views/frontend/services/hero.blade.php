@@ -1,38 +1,75 @@
-<section class="bg-color-3 section-dark text-light pb-0 relative overflow-hidden">
-    <img src="assets/images/deco/s1.webp" class="w-5 mt-min-60 abs start-10 bottom-10 wow scaleOut" alt="">
-    <div id="shine-wrapper">
-        <div class="template shine"></div>
-    </div>
-    <div class="container relative z-1000">
-        <div class="row g-3 align-items-center">
-            <div class="col-lg-6">
-                <div class="relative z-1000">
-                    <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">Our Services</h1>
+<style>
+    /* Breadcrumb Section Styles */
+    .breadcrumb-area {
+        position: relative;
+        width: 100%;
+        height: 370px;
+        background-image: url('assets/images/breadcrumb/image2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
 
-                    <p class="lead col-lg-10 mb-0 wow fadeInUp" data-wow-delay=".4s">
-                        Discover our comprehensive services, providing personalized support and engaging activities to enhance the well-being and quality of life for seniors.
-                    </p>
+    /* Background overlay for better text readability */
+    .breadcrumb-area::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        z-index: 1;
+    }
 
-                    <div class="spacer-single"></div>
-                </div>
-            </div>
+    /* Content container */
+    .breadcrumb-content {
+        position: relative;
+        z-index: 2;
+        color: white;
+    }
 
-            <div class="col-lg-6">
-                <img 
-                    src="assets/images/misc/10551084.png" 
-                    class="w-100 wow" 
-                    data-wow-delay=".6s" 
-                    alt=""
-                    style="
-                        width: 100%;
-                        height: auto;
-                        max-height: 68vh;              /* ≈ desktop / large viewport */
-                        min-height: 30vh;              /* prevents it from becoming too tiny */
-                    "
-                    data-0="transform: translateY(0px);"
-                    data-500="transform: translateY(300px);"
-                >
-            </div>
-        </div>
+    /* Main heading styles */
+    .breadcrumb-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .breadcrumb-area {
+            height: 250px;
+            background-attachment: scroll; /* Better mobile performance */
+        }
+        
+        .breadcrumb-content h1 {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .breadcrumb-area {
+            height: 200px;
+        }
+        
+        .breadcrumb-content h1 {
+            font-size: 2rem;
+        }
+    }
+</style>
+<br/>
+<!-- Breadcrumb Section -->
+<section class="breadcrumb-area mt-6">
+    <!-- Content -->
+    <div class="breadcrumb-content">
+        <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">Our Services</h1>
     </div>
 </section>
