@@ -1,5 +1,5 @@
 
-            <section class="pt-30 pb-0">
+            <section class="pt-30 pb-0" id="Admissions">
                 <div class="container relative">
                     <div class="row g-4 gx-5 align-items-center">
                         <div class="col-lg-6 relative">
