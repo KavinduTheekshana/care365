@@ -60,3 +60,50 @@
         </div>
     </div>
 </section>
+
+<!-- Keep these CDNs (important: jQuery first, then Owl) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    var owl = $('#testimonial-carousel');
+
+    // Safety: destroy any previous broken instance first
+    if (owl.hasClass('owl-loaded')) {
+        owl.trigger('destroy.owl.carousel');
+        owl.removeClass('owl-loaded owl-drag owl-grab');
+        owl.find('.owl-stage-outer').children().unwrap();
+        owl.find('.owl-stage').children().unwrap();
+        owl.find('.owl-item').children().unwrap();
+        owl.find('.owl-dots, .owl-nav').remove();
+    }
+
+    owl.owlCarousel({
+        loop: true,                     // important for continuous autoplay
+        margin: 20,
+        nav: false,                      // keep your left/right arrows
+        dots: true,                     // ← this enables the bottom dots (pagination)
+        dotsEach: true,                 // shows one dot per item (clean look)
+        autoplay: true,                 // enable auto slide
+        autoplayTimeout: 5000,          // 5 seconds between slides (change if you want longer/shorter)
+        autoplayHoverPause: true,       // pause when mouse over (good UX)
+        autoplaySpeed: 800,             // transition speed (smooth but not too slow)
+        smartSpeed: 1000,               // main animation smoothness
+        slideTransition: 'ease',        // 'ease' or 'linear' — 'ease' feels more natural/professional
+        navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+        responsive: {
+            0:    { items: 1 },
+            768:  { items: 2 },
+            1024: { items: 4 }
+        }
+    });
+
+    // Force autoplay start after short delay (fixes 90% of "autoplay not starting" cases)
+    setTimeout(function() {
+        if (owl.find('.owl-item').length > 1) {  // only if there are multiple slides
+            owl.trigger('play.owl.autoplay', [5000]);  // match your timeout
+        }
+    }, 300);  // 300ms delay helps when images/content load slowly
+});
+</script>
