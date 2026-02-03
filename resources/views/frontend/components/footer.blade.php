@@ -2,8 +2,8 @@
             <div class="container">
                 <div class="row gx-5">
                     <div class="col-lg-4 col-sm-6">
-                        <img class="logo-main" src="assets/img/care365.svg" alt="" 
-                            style="max-height: 15vh; width: auto; height: auto;">
+                        <img class="logo-main" src="assets/img/logo3.png" alt="" 
+                            style="max-height: 15vh; width: auto; height: auto; filter: brightness(0) invert(1);">
                         <div class="spacer-20"></div>
                         <p>
                             At Care 365, we provide compassionate, personalized senior care in a warm and welcoming environment. Our dedicated team ensures comfort, safety, and dignity, treating every resident like family.

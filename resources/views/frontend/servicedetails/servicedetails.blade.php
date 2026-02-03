@@ -39,7 +39,7 @@
                             <p style="color: #6b7280; font-size: 1rem; margin: 0;">Contact us now for a free consultation</p>
                         </div>
 
-<!-- Phone Box -->
+
                         <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 8px; text-align: center; margin-bottom: 1.5rem; border-left: 4px solid #3b82f6;">
                             <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 0.5rem;">Call Us Anytime</p>
                             <a href="tel:+94776604040" style="color: #1e3a8a; text-decoration: none; font-size: 1.5rem; font-weight: 700; display: block;">
