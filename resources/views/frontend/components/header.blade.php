@@ -43,7 +43,6 @@
                                             <li><a class="menu-item" href="{{ route('digitalwellbeing') }}#Online-Admissions" class="scroll-link">Online-Admissions</a></li>
                                         </ul>
                                     </li>                                                                    
-                                    <li><a class="menu-item {{ request()->routeIs('howitworks') ? 'active' : '' }}" href="{{ route('howitworks') }}">How It Works</a></li>
 
                                     <li><a class="menu-item {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
 

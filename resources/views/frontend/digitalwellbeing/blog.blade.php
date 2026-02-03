@@ -1,4 +1,4 @@
-<section>
+<section id="News-Center">
     <div class="container">
         <div class="row g-4">
 
