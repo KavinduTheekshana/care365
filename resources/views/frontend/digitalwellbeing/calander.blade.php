@@ -3,10 +3,11 @@ Calendar Area
 ==============================-->
 <section class="space bg-white overflow-hidden" id="Calander">
     <div class="container">
-        <div class="title-area text-center mb-5">
-            <span class="sub-title style2 text-anim" data-cue="slideInUp">Calendar</span>
-            <h2 class="sec-title text-anim" data-cue="slideInUp">Do not Miss our Memorable Events</h2>
-        </div>
+
+            <div class="col-lg-6 offset-lg-3 text-center">
+                <div class="subtitle wow fadeInUp mb-3">Calendar</div>
+                <h2 class="mb-4 wow fadeInUp" data-wow-delay=".2s">Do not Miss our Memorable Events</h2>
+            </div>
         
         <div class="calendar-grid-container">
             <!-- Row 1: January - May -->
