@@ -1,56 +1,32 @@
-<div class="overflow-hidden space overflow-hidden" id="Admissions">
-    <div class="container">
-        <div class="about-wrap1">
-            <div class="row gy-40 gx-60 align-items-center flex-row-reverse">
-                <div class="col-xxl-7 align-self-center">
-                    <div class="img-box1" data-cue="slideInUp" data-delay="300">
-                        <div class="img1">
-                            <img
-                                src="assets/img/we care/01.jpg"
-                                alt="About"
-                                style="border-radius: 20px; width: 100%; height: auto;"
-                            >
+
+            <section class="pt-30 pb-0">
+                <div class="container relative">
+                    <div class="row g-4 gx-5 align-items-center">
+                        <div class="col-lg-6 relative">
+                            <div class="relative z-1000">
+                                <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Admissions</div>
+                                <h2>Our Goal Is To Make Your Life Better</h2>
+                                <p>
+                                    We simplify admissions with our easy online system, allowing you to
+                                    initiate the process from anywhere globally. Secure online payments are accepted via credit card in multiple
+                                    currencies, and installment plans are available. Log in to view payments and history.
+                                    While initial steps are digital, the final contract requires in-person signing before
+                                    admission. Our team guides you through each step for a smooth transition.
+                                </p>
+                                <p>
+                                    We’re committed to making this important decision straightforward.
+                                    Contact us with any questions – we’re here to support you.
+                                </p>
+
+                                <a href="{{ route('about') }}" class="btn-main">Learn More</a>
+                            </div>
                         </div>
+
+                            <div class="col-lg-6">
+                                <img src="assets/img/we care/01.jpg" class="w-100" alt="" 
+                                    style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 2px solid #f0f0f0;">
+                            </div>
+
                     </div>
                 </div>
-                <div class="col-xxl-5">
-                    <div class="title-area mb-40">
-                        <span class="sub-title style2 text-anim" 
-                              data-cue="slideInUp"
-                              style="font-size: 0.95rem; font-weight: 500; display: inline-block;">
-                            Admissions
-                        </span>
-                        <h2 class="sec-title text-anim2" 
-                            data-cue="slideInLeft" 
-                            data-delay="300"
-                            style="font-size: clamp(1.8rem, 5vw, 2.4rem); line-height: 1.2; margin-bottom: 1rem;">
-                            Our Goal Is To Make Your Life Better
-                        </h2>
-                        <p class="fs-18 mt-4" 
-                           data-cue="slideInUp"
-                           style="font-size: clamp(0.95rem, 2.6vw, 1.05rem); line-height: 1.65; margin-top: 1.25rem;">
-                            We simplify admissions with our easy online system, allowing you to
-                            initiate the process from anywhere globally. Secure online payments are accepted via credit card in multiple
-                            currencies, and installment plans are available. Log in to view payments and history.
-                            While initial steps are digital, the final contract requires in-person signing before
-                            admission. Our team guides you through each step for a smooth transition.
-                        </p>
-                        <p class="fs-18 mt-4" 
-                           data-cue="slideInUp"
-                           style="font-size: clamp(0.95rem, 2.6vw, 1.05rem); line-height: 1.65; margin-top: 1.25rem;">
-                            We’re committed to making this important decision straightforward.
-                            Contact us with any questions – we’re here to support you.
-                        </p>
-                    </div>
-                    <div class="btn-wrap mt-50" data-cue="slideInUp">
-                        <a class="th-btn" 
-                           href="{{ route('about') }}"
-                           style="font-size: 0.95rem; padding: 0.75rem 1.6rem;">
-                            Learn More
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+            </section>
