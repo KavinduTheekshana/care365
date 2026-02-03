@@ -115,42 +115,171 @@
 
             
 
-            <style>
-                 /* Set the section height to 65vh */
-                section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
-                    height: 77.78vh !important;
-                    min-height: 77.78vh !important;
-                }
+ <style>
+/* Hero Section Height - Set to 700px as client requested */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
+    height: 700px !important;
+    min-height: 700px !important;
+}
 
-                /* Make all containers fill the height */
-                section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .v-center,
-                section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper,
-                section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-slide,
-                section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
-                    height: 100%;
-                }
+/* Make all containers fill the 700px height */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .v-center,
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper,
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-slide,
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
+    height: 100%;
+}
 
-                /* Ensure background images cover properly */
-                section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
-                    background-size: cover;
-                    background-position: center;
-                }
+/* Ensure background images cover properly within 700px height */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-                /* Add or enhance the dark overlay */
-                section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
-                    z-index: 1;
-                }
+/* MAIN OVERLAY - Standard for all screens */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Reduced from 0.5 to 0.4 for better visibility */
+    z-index: 1;
+}
 
-                /* Make sure text content appears above the overlay */
-                section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .sw-caption {
-                    position: relative;
-                    z-index: 2;
-                }
-            </style>
+/* Text content above overlay */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .sw-caption {
+    position: relative;
+    z-index: 2;
+}
+
+/* Desktop font sizes for 700px height */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
+    font-size: 2.5rem !important; /* 40px */
+    line-height: 1.2 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
+    font-size: 1rem !important; /* 16px */
+    margin-bottom: 1rem !important;
+}
+
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* ====== MOBILE RESPONSIVENESS ====== */
+
+/* Tablet - 768px and below */
+@media (max-width: 768px) {
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
+        height: 500px !important;
+        min-height: 500px !important;
+    }
+    
+    /* Better mobile image positioning */
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+    
+    /* LIGHTER overlay for mobile - text is already smaller so needs less darkness */
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
+        background: rgba(0, 0, 0, 0.35) !important; /* Lighter than desktop */
+    }
+    
+    /* Tablet font sizes */
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
+        font-size: 1.75rem !important; /* 28px */
+        line-height: 1.3 !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
+        font-size: 0.875rem !important; /* 14px */
+        margin-bottom: 0.75rem !important;
+    }
+    
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
+        font-size: 0.95rem !important; /* 15px */
+        line-height: 1.4 !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* Small mobile - 576px and below */
+@media (max-width: 576px) {
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
+        height: 450px !important;
+        min-height: 450px !important;
+        padding: 0 15px !important;
+    }
+    
+    /* Even lighter overlay for small screens */
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
+        background: rgba(0, 0, 0, 0.3) !important; /* Much lighter for mobile */
+    }
+    
+    /* Mobile font sizes */
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
+        font-size: 1.5rem !important; /* 24px */
+        line-height: 1.3 !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
+        font-size: 0.8rem !important; /* 13px */
+        margin-bottom: 0.5rem !important;
+    }
+    
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
+        font-size: 0.875rem !important; /* 14px */
+        line-height: 1.4 !important;
+        margin-bottom: 0.75rem !important;
+    }
+}
+
+/* Extra small mobile - 375px and below */
+@media (max-width: 375px) {
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
+        height: 400px !important;
+        min-height: 400px !important;
+    }
+    
+    /* Very light overlay for tiny screens */
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
+        background: rgba(0, 0, 0, 0.25) !important; /* Minimal overlay */
+    }
+    
+    /* Smallest font sizes */
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
+        font-size: 1.25rem !important; /* 20px */
+        line-height: 1.25 !important;
+    }
+    
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
+        font-size: 0.75rem !important; /* 12px */
+    }
+    
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
+        font-size: 0.8125rem !important; /* 13px */
+        line-height: 1.35 !important;
+    }
+}
+
+/* Alternative: Gradient overlay (optional - looks more modern) */
+/* Uncomment this if you want a gradient instead */
+/*
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.2), 
+        rgba(0, 0, 0, 0.4)
+    ) !important;
+}
+*/
+</style>
