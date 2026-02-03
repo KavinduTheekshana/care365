@@ -5,7 +5,7 @@
             @forelse ($blogs as $blog)
                 <div class="col-lg-4 col-md-6">
                     <div class="relative">
-                        <div class="post-image rounded-1 mb-2">
+                        <div class="post-image rounded-1 mb-2" style="height: 250px; overflow: hidden; position: relative;">
                             <div class="abs start-0 top-0 bg-color-2 text-dark p-3 pb-2 m-3 text-center fw-600 rounded-1">
                                 <div class="fs-36 mb-0">{{ $blog->date->format('d') }}</div>
                                 <span>{{ $blog->date->format('M') }}</span>
@@ -13,7 +13,8 @@
                             <img 
                                 alt="{{ $blog->title }}" 
                                 src="{{ image_url($blog->image_path, 'blog') }}" 
-                                class="lazy"
+                                class="lazy w-100 h-100"
+                                style="object-fit: cover;"
                             >
                         </div>
                         <div class="pt-2 h-100">
@@ -47,27 +48,3 @@
         </div>
     </div>
 </section>
-
-
-<style>
-    /* All blog images will be exactly 220px tall */
-    .image-fixed-size {
-        height: 220px;
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    /* Make sure images cover the area properly */
-    .image-fixed-size img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-    
-    /* Optional hover effect */
-    .image-fixed-size:hover img {
-        transform: scale(1.05);
-    }
-</style>
