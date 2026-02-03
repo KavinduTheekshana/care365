@@ -43,7 +43,7 @@
             <!-- View All Button  -->
             <div class="col-12 text-center mt-5">
                 <a href="{{ route('blog') }}" 
-                class="btn btn-sm px-4 py-2 fw-600" 
+                class="blg-btn px-4 py-2 fw-600" 
                 style="background-color: #FFFFFF; 
                         color: #fad643; 
                         border: 2px solid #fad643; 
@@ -58,7 +58,7 @@
 </section>
 
 <style>
-    .btn:hover {
+    .blg-btn:hover {
     background-color: #fad643 !important;
     color: #FFFFFF !important;
     transform: translateY(-2px);

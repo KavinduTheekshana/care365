@@ -15,8 +15,9 @@
         <!-- Button wrapper with flexbox for centering -->
         <div class="btn-wrap mt-50 d-flex justify-content-center" data-cue="slideInUp">
             <a href="{{ route('wecare') }}" 
-            class="btn btn-sm fw-600 join-now-btn" 
+            class="  fw-600 join-now-btn" 
             style="background-color: #fad643; 
+                    text-align: center; 
                     color: #000000; 
                     border: none; 
                     border-radius: 50px; 
