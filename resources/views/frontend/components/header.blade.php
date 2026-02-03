@@ -24,8 +24,16 @@
                                     <li><a class="menu-item {{ request()->routeIs('howitworks') ? 'active' : '' }}" href="{{ route('howitworks') }}">How It Works</a></li>
                                     <li><a class="menu-item {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
                                     <li><a class="menu-item {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{ route('gallery') }}">Gallery</a></li>
-                                    <li><a class="menu-item {{ request()->routeIs('blog') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
                                     <li><a class="menu-item {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
+                                    <li><a class="menu-item {{ request()->routeIs('wecare') ? 'active' : '' }}" href="{{ route('wecare') }}">We Care</a>
+                                        <ul>
+                                            <li><a class="menu-item" href="{{ route('wecare') }}#Packages" class="scroll-link">Packages</a></li>
+                                            <li><a class="menu-item" href="{{ route('services') }}" class="scroll-link">Services</a></li>
+                                            <li><a class="menu-item" href="{{ route('wecare') }}#FAQ" class="scroll-link">FAQ</a></li>
+                                            <li><a class="menu-item" href="{{ route('wecare') }}#Admissions" class="scroll-link">Admissions</a></li>
+                                            <li><a class="menu-item" href="{{ route('wecare') }}#Meal-Plan" class="scroll-link">Meal-Plan</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="de-flex-col">
