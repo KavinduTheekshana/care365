@@ -1,5 +1,5 @@
 
-            <section class="pt-30 pb-0 border-top">
+            <section class="overflow-hidden space  bg-white" id="Meal-Plan" >
                 <div class="container relative">
                     <div class="row g-4 gx-5 align-items-center">
                         
@@ -19,7 +19,7 @@
                             <div class="relative z-1000">
                                 <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Meal Plan</div>
                                 <h2>Our Approach to Healthy Dining</h2>
-                                <p>                            
+                                <p style="text-align: justify;">                            
                                     We offer balanced and nutritious meal plans designed by our dietary experts. However, 
                                     we understand that dietary needs can vary. For special occasions or specific health situations, 
                                     we are happy to customize meal options according to individual requirements. Our flexible approach 
@@ -27,6 +27,13 @@
                                     Just let us know how we can accommodate your loved one's dietary guidelines for a personalized dining 
                                     experience.
                                 </p>
+                                <p style="text-align: justify;">
+                                    Our care home prioritizes both nourishment and enjoyment at every meal. Fresh ingredients, 
+                                    hygienic preparation, and compassionate service ensure residents feel comfortable and cared for. 
+                                    Mealtimes are designed to be pleasant social moments, supporting overall well-being while respecting 
+                                    each resident’s health, culture, and personal preferences.
+                                </p><br/><br/>
+
 
                             </div>
                         </div>

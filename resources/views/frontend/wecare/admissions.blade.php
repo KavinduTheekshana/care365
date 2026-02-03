@@ -6,14 +6,14 @@
                             <div class="relative z-1000">
                                 <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Admissions</div>
                                 <h2>Our Goal Is To Make Your Life Better</h2>
-                                <p>
+                                <p style="text-align: justify;">
                                     We simplify admissions with our easy online system, allowing you to
                                     initiate the process from anywhere globally. Secure online payments are accepted via credit card in multiple
                                     currencies, and installment plans are available. Log in to view payments and history.
                                     While initial steps are digital, the final contract requires in-person signing before
                                     admission. Our team guides you through each step for a smooth transition.
                                 </p>
-                                <p>
+                                <p style="text-align: justify;">
                                     We’re committed to making this important decision straightforward.
                                     Contact us with any questions – we’re here to support you.
                                 </p>
