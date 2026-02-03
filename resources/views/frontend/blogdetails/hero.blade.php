@@ -1,9 +1,6 @@
 
             <section class="bg-color-3 text-light relative overflow-hidden">
-                <img src="images/deco/s1.webp" class="w-5 mt-min-60 abs start-10 bottom-30 wow scaleOut" alt="">
-                <div id="shine-wrapper">
-                    <div class="template shine"></div>
-                </div>
+
                 <div class="container relative z-1000">                    
                     <div class="row g-3 align-items-center justify-content-center">
                         <div class="col-lg-8">
