@@ -63,3 +63,22 @@
                 </div>
             </div>
         </header>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('#mainmenu a');
+    const menuBtn = document.getElementById('menu-btn');
+    
+    menuItems.forEach(function(item) {
+        item.addEventListener('click', function(e) {
+            if (window.innerWidth <= 991) {
+                // Small delay for smooth scrolling to work
+                setTimeout(function() {
+                    menuBtn.click(); // Trigger menu close
+                }, 100);
+            }
+        });
+    });
+});
+</script>
