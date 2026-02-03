@@ -1,54 +1,67 @@
-<section class="bg-smoke2 space overflow-hidden" id="News-Center">
+<section>
     <div class="container">
-        <div class="title-area text-center">
-            <span class="sub-title style2 text-anim" data-cue="slideInUp">Articles & Tips</span>
-            <h2 class="sec-title text-anim" data-cue="slideInUp">Latest Articles & Blog</h2>
-        </div>
-        
-        @if($blogs->count() > 0)
-        <div class="row gy-40 justify-content-center">
-            @foreach($blogs as $blog)
-            <div class="col-xl-4 col-lg-6" data-cue="slideInUp">
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <a href="{{ blog_url($blog) }}">
-                            <img src="{{ image_url($blog->image_path, 'blog') }}" alt="{{ $blog->title }}">
-                        </a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-user"></i>{{ $blog->name }}</span>
-                            <span><i class="fas fa-calendar"></i>{{ format_date($blog->date) }}</span>
+        <div class="row g-4">
+
+            <div class="col-lg-6 offset-lg-3 text-center">
+                <div class="subtitle wow fadeInUp mb-3">Articles & Tips</div>
+                <h2 class="mb-4 wow fadeInUp" data-wow-delay=".2s">Latest Articles & Blog</h2>
+            </div>
+
+            @forelse ($blogs as $blog)
+                <div class="col-lg-4 col-md-6">
+                    <div class="relative">
+                        <div class="post-image rounded-1 mb-2" style="height: 250px; overflow: hidden; position: relative;">
+                            <div class="abs start-0 top-0 bg-color-2 text-dark p-3 pb-2 m-3 text-center fw-600 rounded-1">
+                                <div class="fs-36 mb-0">{{ $blog->date->format('d') }}</div>
+                                <span>{{ $blog->date->format('M') }}</span>
+                            </div>
+                            <img 
+                                alt="{{ $blog->title }}" 
+                                src="{{ image_url($blog->image_path, 'blog') }}" 
+                                class="lazy w-100 h-100"
+                                style="object-fit: cover;"
+                            >
                         </div>
-                        <h3 class="box-title">
-                            <a href="{{ blog_url($blog) }}">
-                                {{ $blog->title }}
-                            </a>
-                        </h3>
-                        <p class="blog-excerpt mt-2 mb-3">
-                            {{ excerpt($blog->description, 120) }}
-                        </p>
-                        <div class="btn-wrap">
-                            <a href="{{ blog_url($blog) }}" class="link-btn th-btn-icon">
-                                Read More
-                            </a>
+                        <div class="pt-2 h-100">
+                            <h4>
+                                <a class="text-dark" href="{{ url('/' . $blog->title_slug) }}">
+                                    {{ $blog->title }}
+                                </a>
+                            </h4>
+                            <p class="mb-3">
+                                {{ Str::limit($blog->description, 110) }}
+                            </p>
                         </div>
                     </div>
                 </div>
+            @empty
+                <div class="col-12 text-center py-5">
+                    <p>No public blog posts available right now.</p>
+                </div>
+            @endforelse
+
+            <!-- View All Button  -->
+            <div class="col-12 text-center mt-5">
+                <a href="{{ route('blog') }}" 
+                class="btn btn-sm px-4 py-2 fw-600" 
+                style="background-color: #FFFFFF; 
+                        color: #fad643; 
+                        border: 2px solid #fad643; 
+                        border-radius: 50px; 
+                        transition: all 0.3s ease;">
+                    View All Articles
+                </a>
             </div>
-            @endforeach
+
         </div>
-        
-        <div class="text-center mt-50">
-            <a href="{{ route('blog') }}" class="th-btn style-border3">View All Blogs</a>
-        </div>
-        
-        @else
-        <div class="text-center py-5">
-            <div class="alert alert-info">
-                <p>No blog posts available at the moment.</p>
-            </div>
-        </div>
-        @endif
     </div>
 </section>
+
+<style>
+    .btn:hover {
+    background-color: #fad643 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+</style>

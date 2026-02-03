@@ -34,10 +34,17 @@
                                             <li><a class="menu-item" href="{{ route('wecare') }}#Admissions" class="scroll-link">Admissions</a></li>
                                             <li><a class="menu-item" href="{{ route('wecare') }}#Meal-Plan" class="scroll-link">Meal-Plan</a></li>
                                         </ul>
-                                    </li>                                    
+                                    </li>    
+                                    <li><a class="menu-item {{ request()->routeIs('digitalwellbeing') ? 'active' : '' }}" href="{{ route('digitalwellbeing') }}">Digital Wellbeing</a>
+                                        <ul>
+                                            <li><a class="menu-item" href="{{ route('digitalwellbeing') }}#News-Center" class="scroll-link">News-Center</a></li>
+                                            <li><a class="menu-item" href="{{ route('digitalwellbeing') }}#Calander" class="scroll-link">Calander</a></li>
+                                            <li><a class="menu-item" href="{{ route('gallery') }}" class="scroll-link">Gallery</a></li>
+                                            <li><a class="menu-item" href="{{ route('digitalwellbeing') }}#Online-Admissions" class="scroll-link">Online-Admissions</a></li>
+                                        </ul>
+                                    </li>                                                                    
                                     <li><a class="menu-item {{ request()->routeIs('howitworks') ? 'active' : '' }}" href="{{ route('howitworks') }}">How It Works</a></li>
 
-                                    <li><a class="menu-item {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{ route('gallery') }}">Gallery</a></li>
                                     <li><a class="menu-item {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
 
                                 </ul>
