@@ -33,7 +33,7 @@ class HomeController extends Controller
         // Get public services
         $services = Service::where('is_public', true)
                           ->orderBy('created_at', 'desc')
-                          ->take(10)
+                          ->take(6)
                           ->get();
 
         // Get all active stories ordered by sort_order

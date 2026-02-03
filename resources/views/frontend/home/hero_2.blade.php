@@ -118,8 +118,8 @@
             <style>
                  /* Set the section height to 65vh */
                 section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
-                    height: 100vh !important;
-                    min-height: 100vh !important;
+                    height: 77.78vh !important;
+                    min-height: 77.78vh !important;
                 }
 
                 /* Make all containers fill the height */

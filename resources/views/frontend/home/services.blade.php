@@ -51,6 +51,28 @@
                 </div>
                 @endforeach
             </div>
+            <!-- Button to View All Services-->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="{{ route('services') }}"
+                    style="display: inline-block;
+                            padding: 0.5rem 1.5rem;
+                            font-size: 0.92rem;
+                            font-weight: 500;
+                            line-height: 1.4;
+                            color: #3a7bd5;
+                            background-color: #ffffff;
+                            border: 2px solid #3a7bd5;
+                            border-radius: 50px;
+                            text-decoration: none;
+                            transition: all 0.3s ease;
+                            box-shadow: 0 2px 6px rgba(58, 123, 213, 0.1);"
+                    onmouseover="this.style.backgroundColor='#3a7bd5'; this.style.color='#ffffff'; this.style.boxShadow='0 4px 12px rgba(58, 123, 213, 0.25)';"
+                    onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#3a7bd5'; this.style.boxShadow='0 2px 6px rgba(58, 123, 213, 0.1)';">
+                        View All Services
+                    </a>
+                </div>
+            </div>
         @else
             <!-- No Services Message -->
             <div class="row">
