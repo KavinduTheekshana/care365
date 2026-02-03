@@ -277,7 +277,10 @@
     }
 }
 
-
+/* Smooth Transitions 
+* {
+    transition: all 0.3s ease;
+}*/
 
 /* Focus States for Accessibility */
 .enquire-btn:focus {
