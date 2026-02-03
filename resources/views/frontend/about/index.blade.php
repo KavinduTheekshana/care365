@@ -19,6 +19,8 @@
 @section('content')
     @include('frontend.about.hero')
     @include('frontend.about.about')
+    @include('frontend.about.journey')
+    @include('frontend.about.homes')
     @include('frontend.about.careers')
 
 @endsection

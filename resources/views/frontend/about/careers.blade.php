@@ -10,7 +10,7 @@
                             <div class="relative z-1000">
                                 <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Join Our Team</div>
                                 <h2>Make a Difference in Elderly Care</h2>
-                                <p>Join our compassionate team of caregivers and healthcare professionals! We offer rewarding career opportunities where you can make a meaningful impact in the lives of seniors. Enjoy competitive compensation, ongoing training, and the fulfillment of providing dignified care to those who need it most.</p>
+                                <p>Join our team of passionate professionals dedicated to enriching lives. At Care365, we offer rewarding career opportunities for those driven to make a meaningful difference through compassionate care. Explore roles that align with your expertise and values.</p>
 
                                 <a href="{{ route('contact') }}" class="btn-main">Join Our Team</a>
                             </div>

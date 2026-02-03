@@ -22,7 +22,10 @@
     @include('frontend.wecare.daypackages')
     @include('frontend.wecare.otherpackage')
     @include('frontend.wecare.packageaddons')
-
+   
+    @include('frontend.wecare.faq')
+    @include('frontend.wecare.admissions')
+    @include('frontend.wecare.mealplan')
 
 
 
