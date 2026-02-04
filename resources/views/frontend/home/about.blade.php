@@ -9,24 +9,20 @@
                                     homelike environment. Our dedicated team is committed to enhancing the quality of 
                                     life for our residents, ensuring their comfort, safety, and well-being. We treat every 
                                     resident like family, providing the support and care they need to live life
-                                     to the fullest.</p>                            
-                                    </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="row g-4">
-                                <div class="col-6">
-                                    <img src="assets\img\Home-img\galary-img2.png" class="img-fluid rounded-10 mb-4 w-70 ms-30 wow scaleIn" alt="">
-                                    <img src="assets\img\Home-img\galaryimg1.png" class="img-fluid rounded-10 wow scaleIn" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <div class="spacer-single sm-hide"></div>
-                                    <img src="assets\img\Home-img\02f06849_560x560.jpg" class="img-fluid rounded-10 mb-4 wow scaleIn" alt="">
-                                    <img src="assets\img\Home-img\private-duty-caregiver-2.jpeg" class="img-fluid rounded-10 w-70 wow scaleIn" alt="">
-                                </div>
+                                    to the fullest.</p>
+                                <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
+                                data-wow-delay=".6s" 
+                                href="{{ route('services') }}">
+                                    See Our Care Services 
+                                </a>                            
                             </div>
                         </div>
 
+                        <div class="col-lg-6">
+                            <img src="assets\images\about\56646646png.png" 
+                                class="img-fluid rounded-10 wow scaleIn" 
+                                alt="Care 365 Senior Care Facility">
+                        </div>
                     </div>
                 </div>
             </section>
