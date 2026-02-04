@@ -28,13 +28,11 @@
 
                                         </ul>
                                     </li> 
-                                    <li><a class="menu-item {{ request()->routeIs('wecare') ? 'active' : '' }}" href="{{ route('wecare') }}">We Care</a>
+                                    <li><a class="menu-item {{ request()->routeIs('wecare') ? 'active' : '' }}" href="{{ route('wecare') }}">Care Options</a>
                                         <ul>
-                                            <li><a class="menu-item" href="{{ route('wecare') }}#Packages" class="scroll-link">Packages</a></li>
-                                            <li><a class="menu-item" href="{{ route('services') }}" class="scroll-link">Services</a></li>
-                                            <li><a class="menu-item" href="{{ route('wecare') }}#FAQ" class="scroll-link">FAQ</a></li>
-                                            <li><a class="menu-item" href="{{ route('wecare') }}#Admissions" class="scroll-link">Admissions</a></li>
-                                            <li><a class="menu-item" href="{{ route('wecare') }}#Meal-Plan" class="scroll-link">Meal-Plan</a></li>
+                                            <li><a class="menu-item" href="{{ route('wecare') }}#Packages" class="scroll-link">Packages & Pricing</a></li>
+                                            <li><a class="menu-item" href="{{ route('wecare') }}#Admissions-Process" class="scroll-link">Admissions Process</a></li>
+                                            <li><a class="menu-item" href="{{ route('wecare') }}#homes" class="scroll-link">Our Homes (Locations)</a></li>
                                         </ul>
                                     </li>    
                                     <li><a class="menu-item {{ request()->routeIs('digitalwellbeing') ? 'active' : '' }}" href="{{ route('digitalwellbeing') }}">Explore</a>

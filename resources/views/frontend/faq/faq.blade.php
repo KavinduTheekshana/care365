@@ -40,4 +40,20 @@
             </div>
         </div>
     </div>
+    <div style="text-align: center; background: #ffffff;   margin-top: 100px;">
+        <h3 style="font-size: 26px; font-weight: 600; color: #0F172A; margin: 0 0 12px 0;">
+            Still Have Questions?
+        </h3>
+        <p style="font-size: 15px; color: #64748B; margin: 0 0 25px 0;  margin-left: auto; margin-right: auto; line-height: 1.6;">
+            We’re here to help. Reach out to us for more details about admissions, care services, 
+            and how we can support your loved one.
+        </p>
+        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp"
+        data-wow-delay=".6s"
+        href="https://wa.me/94779191818"
+        target="_blank">
+            Request Admission Information
+        </a>
+    </div>
+
 </section>
