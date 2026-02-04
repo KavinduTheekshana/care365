@@ -71,6 +71,6 @@
 <section class="breadcrumb-area mt-6">
     <!-- Content -->
     <div class="breadcrumb-content">
-        <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">Digital Wellbeing</h1>
+        <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">Explore </h1>
     </div>
 </section>
