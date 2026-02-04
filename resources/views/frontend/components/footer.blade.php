@@ -15,6 +15,9 @@
                             <a href="https://www.instagram.com/carethreesixtyfive?utm_source=qr&igsh=MTRkNHhuNWx2ZDd6cw%3D%3D" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
+                            <a href="https://wa.me/94776604040" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
                             <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-youtube"></i>
                             </a>
@@ -24,7 +27,7 @@
                         <div class="row"> 
                             <div class="col-lg-4 col-sm-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h5>Quick Links</h5>
                                     <ul>
                                         <li><a href="{{ route('home') }}">Home</a></li>
                                         <li><a href="{{ route('services') }}">Our Services</a></li>
@@ -49,20 +52,22 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
                         <div class="widget">
-                            <div class="fw-bold text-white"><i class="icofont-wall-clock me-2 id-color-2"></i>We're Open</div>
-                            Monday - Saturday 08.00 - 18.00
+                            <h5>Contact Info</h5>
 
+
+                            <div class="fw-bold text-white"><i class="icofont-ui-call me-2 id-color-2"></i>Call / WhatsApp</div>
+                            <a href="tel:+94776604040" class="text-white">+94 77 660 40 40</a><br>
+                            <a href="https://wa.me/94779191818" class="text-white">+94 779 191 818 (WhatsApp)</a>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color-2"></i>Email</div>
+                            <a href="mailto:info@care36t5.com" class="text-white">info@care36t5.com</a>
                             <div class="spacer-20"></div>
 
                             <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color-2"></i>Office Location</div>
-                            407 C1, Nomis Weragala Mw, Hokandara South,
-                            Thalawathugoda,
-                            Sri Lanka.
-
-                            <div class="spacer-20"></div>
-
-                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color-2"></i>Send a Message</div>
-                            info@care36t5.com
+                            407 C1, Nomis Weragala Mw, Hokandara South,<br>
+                            Thalawathugoda, Sri Lanka.
                         </div>
                     </div>
                 </div>
