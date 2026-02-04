@@ -23,8 +23,8 @@
     @include('frontend.wecare.otherpackage')
     @include('frontend.wecare.packageaddons')
     @include('frontend.wecare.admissions')
-    @include('frontend.wecare.faq')
-    @include('frontend.wecare.mealplan')
+    @include('frontend.wecare.location')
+
 
 
 

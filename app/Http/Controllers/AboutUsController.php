@@ -25,16 +25,12 @@ class AboutUsController extends Controller
                             ->orderBy('display_order')
                             ->get();
         
-        // Get all public Care Homes
-        $carehomes = CareHome::where('is_public', true)
-                            ->orderBy('created_at', 'desc')
-                            ->get();
 
         $testimonials = Testimonial::where('is_public', true)
                             ->inRandomOrder()
                              ->take(4)
                             ->get();
         
-        return view('frontend.about.index', compact('services', 'whoweares', 'carehomes', 'testimonials'));
+        return view('frontend.about.index', compact('services', 'whoweares',  'testimonials'));
     }
 }
