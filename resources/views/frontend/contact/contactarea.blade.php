@@ -1,6 +1,3 @@
-
-
-
 <section class="relative overflow-hidden">
     <div class="container">
         <div class="row g-4 grid-divider">
@@ -8,28 +5,28 @@
                 <div class="text-center">       
                     <i class="bg-color text-light fs-32 p-30 circle mb-3 fa fa-phone"></i>
                     <h5 class="mb-0">Call Us</h5>
-                    (+94) 77 660 40 40
+                    <a href="tel:+94776604040" class="text-decoration-none">(+94) 77 660 40 40</a>
                 </div>
             </div>
             <div class="col-md-3 wow fadeInRight" data-wow-delay=".4s">
                 <div class="text-center">                  
                     <i class="bg-color text-light fs-32 p-30 circle mb-3 fa fa-user"></i>    
                     <h5 class="mb-0">Support / Inquiries</h5>
-                    (+94) 77 660 40 40
+                    <a href="tel:+94776604040" class="text-decoration-none">(+94) 77 660 40 40</a>
                 </div>
             </div>
             <div class="col-md-3 wow fadeInRight" data-wow-delay=".6s">
                 <div class="text-center">                         
                     <i class="bg-color text-light fs-32 p-30 circle mb-3 fa-brands fa-whatsapp"></i>  
                     <h5 class="mb-0">Whatsapp</h5>
-                    077 919 1818
+                    <a href="https://wa.me/94779191818" target="_blank" class="text-decoration-none">077 919 1818</a>
                 </div>
             </div>
             <div class="col-md-3 wow fadeInRight" data-wow-delay=".8s">
                 <div class="text-center">
                     <i class="bg-color text-light fs-32 p-30 circle mb-3 fa fa-envelope"></i>
                     <h5 class="mb-0">Email</h5>
-                    info@care36t5.com
+                    <a href="mailto:info@care36t5.com" class="text-decoration-none">info@care36t5.com</a>
                 </div>
             </div>
         </div>
