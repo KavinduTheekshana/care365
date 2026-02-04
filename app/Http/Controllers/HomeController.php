@@ -9,6 +9,9 @@ use App\Models\Testimonial;
 use App\Models\Service;
 use App\Models\Gallery;
 use App\Models\SuccessStory;
+use App\Models\Package;
+use App\Models\CareHome;
+
 
 class HomeController extends Controller
 {
@@ -20,6 +23,13 @@ class HomeController extends Controller
                                 ->inRandomOrder()
                                 ->get();
 
+        // Get packages with their features
+        $packages = Package::with(['features' => function($query) {
+            $query->where('is_active', true);
+        }])
+        ->where('status', 'active')
+        ->orderBy('price_lkr', 'asc')
+        ->get();
         
         // Get public services
         $services = Service::where('is_public', true)
@@ -27,11 +37,17 @@ class HomeController extends Controller
                           ->take(6)
                           ->get();
 
+                // Get all public Care Homes
+        $carehomes = CareHome::where('is_public', true)
+                            ->orderBy('created_at', 'desc')
+                            ->get();
         
         // Return view with all data
         return view('frontend.home.index', compact(
             'testimonials', 
             'services',
+            'packages',
+            'carehomes'
         ));
     }
 
