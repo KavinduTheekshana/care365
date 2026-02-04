@@ -5,10 +5,25 @@
                         <img class="logo-main" src="assets/img/logo3.png" alt="" 
                             style="max-height: 15vh; width: auto; height: auto; filter: brightness(0) invert(1);">
                         <div class="spacer-20"></div>
-                        <p>
-                            At Care 365, we provide compassionate, personalized senior care in a warm and welcoming environment. Our dedicated team ensures comfort, safety, and dignity, treating every resident like family.
+                        <h5 class="text-white mb-3">Newsletter</h5>
+                        <p style="color: rgba(255,255,255,0.5); font-size: 0.95rem; line-height: 1.4; margin: 0 0 15px 0;">
+                            Care tips, updates & availability — straight to your inbox
                         </p>
-                        <div class="social-icons mb-sm-30">
+                        
+                        <form action="#" method="post" style="margin: 0;">
+<div style="max-width: 320px;">
+    <div style="display: flex; border: 1px solid #6c757d; border-radius: 999px; overflow: hidden; background: transparent;">
+        <input type="email" placeholder="Your email"
+               style="flex: 1; padding: 8px 14px; font-size: 0.875rem; background: transparent; border: none; color: white; outline: none; min-width: 0;"
+               required>
+        <button type="submit"
+                style="padding: 8px 18px; font-size: 0.875rem; font-weight: 500; color: white; background: transparent; border: none; cursor: pointer; white-space: nowrap;">
+            Subscribe
+        </button>
+    </div>
+</div>
+                        </form>
+                        <div class="social-icons mb-sm-30 mt-4">
                             <a href="https://www.facebook.com/Care36t5/" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
