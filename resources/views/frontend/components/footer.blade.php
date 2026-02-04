@@ -11,17 +11,17 @@
                         </p>
                         
                         <form action="#" method="post" style="margin: 0;">
-<div style="max-width: 320px;">
-    <div style="display: flex; border: 1px solid #6c757d; border-radius: 999px; overflow: hidden; background: transparent;">
-        <input type="email" placeholder="Your email"
-               style="flex: 1; padding: 8px 14px; font-size: 0.875rem; background: transparent; border: none; color: white; outline: none; min-width: 0;"
-               required>
-        <button type="submit"
-                style="padding: 8px 18px; font-size: 0.875rem; font-weight: 500; color: white; background: transparent; border: none; cursor: pointer; white-space: nowrap;">
-            Subscribe
-        </button>
-    </div>
-</div>
+                            <div style="max-width: 320px;">
+                                <div style="display: flex; border: 1px solid #6c757d; border-radius: 999px; overflow: hidden; background: transparent;">
+                                    <input type="email" placeholder="Your email"
+                                        style="flex: 1; padding: 8px 14px; font-size: 0.875rem; background: transparent; border: none; color: white; outline: none; min-width: 0;"
+                                        required>
+                                    <button type="submit"
+                                            style="padding: 8px 18px; font-size: 0.875rem; font-weight: 500; color: white; background: transparent; border: none; cursor: pointer; white-space: nowrap;">
+                                        Subscribe
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                         <div class="social-icons mb-sm-30 mt-4">
                             <a href="https://www.facebook.com/Care36t5/" target="_blank" rel="noopener noreferrer">
