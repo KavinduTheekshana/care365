@@ -70,42 +70,70 @@
     <div class="container mt-min-50">
         <div class="row">
             <div class="col-lg-12">
-                <div class="bg-white p-30 rounded-1 shadow-soft">
+                <div class="bg-white p-20 rounded-1 shadow-soft">
                     <div class="row g-4">
 
-                        <!-- Feature 1 -->
-                        <div class="col-lg-4 col-md-6">
+                        <!-- Feature 1: Years of Experience -->
+                        <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-heart-alt absolute fs-64 id-color"></i>
-                                <div class="ps-80">
-                                    <h4 class="mb-0">Holistic Care</h4>
-                                    <p class="mb-0">Complete care for body, mind, and spirit.</p>
+                                <i class="icofont-history absolute id-color" style="font-size: 36px;"></i>
+                                <div class="ps-60">
+                                    <h4 class="mb-0" style="font-size: 16px;">Years of Experience</h4>
+                                    <p class="mb-0" style="font-size: 13px;">Decades of trusted senior care expertise.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Feature 2 -->
-                        <div class="col-lg-4 col-md-6">
+                        <!-- Feature 2: 24/7 Medical Support -->
+                        <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-ui-clip-board absolute fs-64 id-color"></i>
-                                <div class="ps-80">
-                                    <h4 class="mb-0">Customized Plans</h4>
-                                    <p class="mb-0">Personalized care for individual needs.</p>
+                                <i class="icofont-stethoscope-alt absolute id-color" style="font-size: 36px;"></i>
+                                <div class="ps-60">
+                                    <h4 class="mb-0" style="font-size: 16px;">24/7 Medical Support</h4>
+                                    <p class="mb-0" style="font-size: 13px;">Round-the-clock professional healthcare.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Feature 3 -->
-                        <div class="col-lg-4 col-md-6">
+                        <!-- Feature 3: Secure & Comfortable Facilities -->
+                        <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-users-alt-5 absolute fs-64 id-color"></i>
-                                <div class="ps-80">
-                                    <h4 class="mb-0">24/7 Support</h4>
-                                    <p class="mb-0">Caring staff available anytime.</p>
+                                <i class="icofont-home absolute id-color" style="font-size: 36px;"></i>
+                                <div class="ps-60">
+                                    <h4 class="mb-0" style="font-size: 16px;">Secure & Comfortable Facilities</h4>
+                                    <p class="mb-0" style="font-size: 13px;">Safe, home-like environment.</p>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Feature 4: Testimonials / Star Ratings -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="relative">
+                                <i class="icofont-star absolute id-color" style="font-size: 36px;"></i>
+                                <div class="ps-60">
+                                    <h4 class="mb-0" style="font-size: 16px;">Excellent Reviews</h4>
+                                    <p class="mb-0" style="font-size: 13px;">Highly rated by families.</p>
+                                    <div class="rating-stars mt-1">
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <span class="ms-1" style="font-size: 11px;">(4.9/5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- CTA Link Centered Below Features -->
+                    <div class="text-center mt-4 pt-2">
+                        <a href="#testimonials" class="text-decoration-none" 
+                           style="font-size: 14px; font-weight: 600; color: #2c3e50;">
+                            <i class="icofont-arrow-right me-1" style="font-size: 12px;"></i>
+                            See Why Families Trust Care365
+                        </a>
                     </div>
                 </div>
             </div>
