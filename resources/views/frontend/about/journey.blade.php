@@ -165,7 +165,7 @@
 </head>
 <body>
 
-    <section class="vision-mission-section">
+    <section class="vision-mission-section" id="who-we-are">
         
         <!-- Section Header -->
         <div class="section-header">
