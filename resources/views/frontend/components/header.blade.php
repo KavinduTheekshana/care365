@@ -20,10 +20,12 @@
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
                                     <li><a class="menu-item {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
-                                    <li><a class="menu-item {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About Us</a>
+                                    <li><a class="menu-item {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About Care365</a>
                                         <ul>
                                             <li><a class="menu-item" href="{{ route('about') }}#who-we-are" class="scroll-link">Vision|Mission</a></li>
-                                            <li><a class="menu-item" href="{{ route('about') }}#our-homes" class="scroll-link">Our-Homes</a></li>
+                                            <li><a class="menu-item" href="{{ route('about') }}#Why-Choose-Care365" class="scroll-link">Why Choose Care365 </a></li>
+                                            <li><a class="menu-item" href="{{ route('about') }}#Care-Team " class="scroll-link">Management & Care Team  </a></li>
+
                                         </ul>
                                     </li> 
                                     <li><a class="menu-item {{ request()->routeIs('wecare') ? 'active' : '' }}" href="{{ route('wecare') }}">We Care</a>
