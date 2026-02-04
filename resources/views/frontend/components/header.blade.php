@@ -27,7 +27,15 @@
                                             <li><a class="menu-item" href="{{ route('about') }}#Care-Team " class="scroll-link">Management & Care Team  </a></li>
 
                                         </ul>
-                                    </li> 
+                                    </li>
+                                    <li><a class="menu-item {{ request()->routeIs('services') ? 'active' : '' }}" href="{{ route('services') }}">Care Services</a>
+                                        <ul>
+                                            <li><a class="menu-item" href="{{ route('services') }}" class="scroll-link">Medical & Nursing Care</a></li>
+                                            <li><a class="menu-item" href="{{ route('services') }}" class="scroll-link">Daily Living Support </a></li>
+                                            <li><a class="menu-item" href="{{ route('services') }}" class="scroll-link">Therapy & Activities</a></li>
+                                            <li><a class="menu-item" href="{{ route('services') }}#Meal-Plan" class="scroll-link">Meals & Nutrition</a></li>
+                                        </ul>
+                                    </li>  
                                     <li><a class="menu-item {{ request()->routeIs('wecare') ? 'active' : '' }}" href="{{ route('wecare') }}">Care Options</a>
                                         <ul>
                                             <li><a class="menu-item" href="{{ route('wecare') }}#Packages" class="scroll-link">Packages & Pricing</a></li>

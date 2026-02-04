@@ -1,5 +1,11 @@
-<section class="relative overflow-hidden">
+<section class="relative overflow-hidden border-top">
     <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-6 offset-lg-3 text-center">
+                <div class="subtitle wow fadeInUp mb-3">Our Services</div>
+                <h2 class="mb-4 wow fadeInUp" data-wow-delay=".2s">Safe And Secure Elderly Care</h2>
+            </div>
+        </div>
         <div class="row g-4">
             @forelse ($services as $service)
                 <div class="col-lg-4 col-sm-6 d-flex">
