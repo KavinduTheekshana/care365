@@ -3,27 +3,47 @@
         <div class="row g-4 gx-5 align-items-center">
             <div class="col-lg-6 relative">
                 <div class="relative z-1000">
-                    <div class="subtitle wow fadeInUp" data-wow-delay=".0s">About Care365</div>
-                    <h2>Compassionate Care for Your Loved Ones</h2>
-                    <p>We are dedicated to providing exceptional elderly care services in a warm, nurturing environment. With experienced caregivers and healthcare professionals, we ensure your loved ones receive personalized attention, medical support, and companionship they deserve. Our commitment is to enhance quality of life while maintaining dignity and independence.</p>
+                    <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Why Care365</div>
+                    <h2>Why Choose Our Care Home</h2>
+                    
+                    <!-- Bullet Proof Points -->
+                    <ul style="list-style: none; padding: 0; margin: 25px 0 30px 0;">
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 18px; font-size: 16px; color: #475569; line-height: 1.6;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="min-width: 24px; margin-right: 12px; margin-top: 2px;">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong style="color: #0F172A;">Qualified caregivers & nurses</strong></span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 18px; font-size: 16px; color: #475569; line-height: 1.6;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="min-width: 24px; margin-right: 12px; margin-top: 2px;">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong style="color: #0F172A;">Transparent care plans</strong></span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 18px; font-size: 16px; color: #475569; line-height: 1.6;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="min-width: 24px; margin-right: 12px; margin-top: 2px;">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong style="color: #0F172A;">Secure, homely environments</strong></span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; margin-bottom: 18px; font-size: 16px; color: #475569; line-height: 1.6;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="min-width: 24px; margin-right: 12px; margin-top: 2px;">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong style="color: #0F172A;">Trusted by overseas families</strong></span>
+                        </li>
+                    </ul>
+                    
+                    <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
+                       data-wow-delay=".6s" 
+                       href="{{ route('services') }}">
+                        See Our Care Services 
+                    </a>
                 </div>
             </div>
-
-
-                        <div class="col-lg-6">
-                            <div class="row g-4">
-                                <div class="col-6">
-                                    <img src="assets\img\Home-img\galary-img2.png" class="img-fluid rounded-10 mb-4 w-70 ms-30 wow scaleIn" alt="">
-                                    <img src="assets\img\Home-img\galaryimg1.png" class="img-fluid rounded-10 wow scaleIn" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <div class="spacer-single sm-hide"></div>
-                                    <img src="assets\img\Home-img\02f06849_560x560.jpg" class="img-fluid rounded-10 mb-4 wow scaleIn" alt="">
-                                    <img src="assets\img\Home-img\private-duty-caregiver-2.jpeg" class="img-fluid rounded-10 w-70 wow scaleIn" alt="">
-                                </div>
-                            </div>
-                        </div>
-
+            <div class="col-lg-6">
+                <img src="assets\images\about\56646646png.png" class="img-fluid rounded-10 wow scaleIn" alt="Care365 - Quality Elderly Care">
+            </div>
         </div>
     </div>
 </section>

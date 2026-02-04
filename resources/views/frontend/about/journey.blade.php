@@ -15,14 +15,6 @@
             margin-bottom: 60px;
         }
 
-        .subtitle {
-            font-size: 14px;
-            font-weight: 600;
-            color: #2563EB;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-        }
 
         .section-header h2 {
             font-size: 42px;
