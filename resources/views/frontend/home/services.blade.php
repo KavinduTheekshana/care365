@@ -26,8 +26,7 @@
                         <a href="{{ service_url($service) }}" class="d-block hover h-100">
                             <div class="relative overflow-hidden rounded-1 shadow-soft d-flex flex-column h-100">
                                 <!-- Decorative flower (optional) -->
-                                <img src="images/misc/flowers-crop-3-white.webp"
-                                     class="w-50 end-0 absolute hover-op-0" alt="">
+
                                 
                                 <!-- Read More overlay – centered vertically -->
                                 <div class="absolute z-2 start-0 w-100 abs-middle fs-36 text-white text-center">

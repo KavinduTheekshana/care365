@@ -44,7 +44,7 @@
                         loop 
                         playsinline
                         preload="metadata"
-                        poster="{{ asset('assets/images/Video/video-thumbnail.jpg') }}">
+                        poster="{{ asset('assets/images/Video/325456.png') }}">
                         <source src="{{ asset('assets/images/Video/AI Video for web .mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
