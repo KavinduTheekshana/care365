@@ -5,6 +5,7 @@
                         <img class="logo-main" src="assets/img/logo/care365_light.svg" alt="" 
                             style="max-height: 15vh; width: auto; height: auto; ">
                         <div class="spacer-20"></div>
+                        <!--
                         <h5 class="text-white mb-3">Newsletter</h5>
                         <p style="color: rgba(255,255,255,0.5); font-size: 0.95rem; line-height: 1.4; margin: 0 0 15px 0;">
                             Care tips, updates & availability — straight to your inbox
@@ -23,6 +24,10 @@
                                 </div>
                             </div>
                         </form>
+                            -->
+                         <p>
+                            At Care 365, we provide compassionate, personalized senior care in a warm and welcoming environment. Our dedicated team ensures comfort, safety, and dignity, treating every resident like family.
+                        </p>
                         <div class="social-icons mb-sm-30 mt-4">
                             <a href="https://www.facebook.com/Care36t5/" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-facebook-f"></i>
@@ -33,9 +38,7 @@
                             <a href="https://wa.me/94776604040" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
-                            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-youtube"></i>
-                            </a>
+
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
