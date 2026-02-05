@@ -3,7 +3,7 @@
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-                <!-- Slide 1 -->
+                <!-- Slide 1 - Main Headline Focus -->
                 <div class="swiper-slide">
                     <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg)">
                         <div class="sw-caption">
@@ -13,11 +13,14 @@
                                     <div class="col-lg-8 text-center">
                                         <div class="spacer-single"></div>
                                         <div class="sw-text-wrapper">
-                                            <div class="subtitle mb-2">Compassionate & Personalized Care</div>
-                                            <h1 class="slider-title mb-3">A Warm, Homelike Environment for Golden Years</h1>
-                                            <p class="slider-teaser mb-3">Enhancing quality of life with dedicated support for comfort, safety, and well-being.</p>
+                                            <div class="subtitle mb-2">Premium Luxury Retirement Homes in Sri Lanka</div>
+                                            <h1 class="slider-title mb-3">With Dignity, Safety & Compassion</h1>
+                                            <p class="slider-teaser mb-3">Trusted by families locally and abroad to care for their loved ones.</p>
                                             <div class="spacer-10"></div>
-                                            <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="{{ route('contact') }}">Schedule a Visit</a>
+                                            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                                                <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
+                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book a Visit / Virtual Tour</a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="spacer-single"></div>
@@ -27,7 +30,7 @@
                         <div class="sw-overlay op-4"></div>
                     </div>
                 </div>
-                <!-- Slide 2 -->
+                <!-- Slide 2 - Luxury & Compassion Focus -->
                 <div class="swiper-slide">
                     <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.jpg)">
                         <div class="sw-caption">
@@ -37,11 +40,14 @@
                                     <div class="col-lg-8 text-center">
                                         <div class="spacer-single"></div>
                                         <div class="sw-text-wrapper">
-                                            <div class="subtitle mb-2">Specialized Support</div>
-                                            <h1 class="slider-title mb-3">Safe & Secure Elderly Care for Every Need</h1>
-                                            <p class="slider-teaser mb-3">Providing specialized care for dementia, Parkinson's, and paralysis with dignity and compassion.</p>
+                                            <div class="subtitle mb-2">Premium Luxury Living</div>
+                                            <h1 class="slider-title mb-3">Where Compassion Meets Premium Care</h1>
+                                            <p class="slider-teaser mb-3">Experience luxury retirement living with personalized care, safety, and dignity for your loved ones.</p>
                                             <div class="spacer-10"></div>
-                                            <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="{{ route('services') }}">View Our Services</a>
+                                            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                                                <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
+                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Schedule a Virtual Tour</a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="spacer-single"></div>
@@ -51,7 +57,33 @@
                         <div class="sw-overlay op-4"></div>
                     </div>
                 </div>
-                <!-- Slide 3 - You can add a third slide if needed -->
+                <!-- Slide 3 - Trust & Family Focus -->
+                <div class="swiper-slide">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/happy-seniors-nursing-home.webp)">
+                        <div class="sw-caption">
+                            <div class="container">
+                                <div class="row g-4 justify-content-center">
+                                    <div class="spacer-double"></div>
+                                    <div class="col-lg-8 text-center">
+                                        <div class="spacer-single"></div>
+                                        <div class="sw-text-wrapper">
+                                            <div class="subtitle mb-2">Trusted by Families Worldwide</div>
+                                            <h1 class="slider-title mb-3">Sri Lanka's Premier Retirement Homes</h1>
+                                            <p class="slider-teaser mb-3">Providing exceptional care with dignity, safety, and compassion for elderly residents.</p>
+                                            <div class="spacer-10"></div>
+                                            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                                                <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Get Admission Details</a>
+                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book an In-Person Visit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer-single"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sw-overlay op-4"></div>
+                    </div>
+                </div>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
