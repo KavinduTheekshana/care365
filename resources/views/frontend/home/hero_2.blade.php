@@ -18,7 +18,7 @@
                                             <p class="slider-teaser mb-3">Trusted by families locally and abroad to care for their loved ones.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
+                                                <a class="btn-main bg-color-2  mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
                                                 <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book a Visit / Virtual Tour</a>
                                             </div>
                                         </div>
@@ -50,7 +50,7 @@
                                             <p class="slider-teaser mb-3">Experience luxury retirement living with personalized care, safety, and dignity for your loved ones.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
+                                                <a class="btn-main bg-color-2  mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
                                                 <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Schedule a Virtual Tour</a>
                                             </div>
                                         </div>
@@ -82,7 +82,7 @@
                                             <p class="slider-teaser mb-3">Providing exceptional care with dignity, safety, and compassion for elderly residents.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2 text-dark mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Get Admission Details</a>
+                                                <a class="btn-main bg-color-2  mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Get Admission Details</a>
                                                 <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book an In-Person Visit</a>
                                             </div>
                                         </div>
