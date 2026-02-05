@@ -58,28 +58,28 @@
                                 <div class="row" style="display: flex; flex-wrap: wrap; margin: 0 -10px;">
                                     <div class="form-group col-md-6" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 50%; max-width: 50%;">
                                         <input type="text" class="form-control" name="name" id="name" placeholder="Your name*" required 
-                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #e5e7eb; background: transparent; font-size: 15px; color: #374151; outline: none; transition: all 0.3s ease;"
-                                            onfocus="this.style.borderBottomColor='#fbbf24';" 
-                                            onblur="this.style.borderBottomColor='#e5e7eb';">
+                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none; transition: all 0.3s ease;"
+                                            onfocus="this.style.borderBottomColor='#0A3F87';" 
+                                            onblur="this.style.borderBottomColor='#48b1fb';">
                                     </div>
                                     <div class="form-group col-md-6" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 50%; max-width: 50%;">
                                         <input type="email" class="form-control" name="email" id="email" placeholder="Email Address*" required 
-                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #e5e7eb; background: transparent; font-size: 15px; color: #374151; outline: none; transition: all 0.3s ease;"
-                                            onfocus="this.style.borderBottomColor='#fbbf24';" 
-                                            onblur="this.style.borderBottomColor='#e5e7eb';">
+                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none; transition: all 0.3s ease;"
+                                            onfocus="this.style.borderBottomColor='#0A3F87';" 
+                                            onblur="this.style.borderBottomColor='#48b1fb';">
                                     </div>
                                     <div class="form-group col-md-6" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 50%; max-width: 50%;">
                                         <input type="text" class="form-control" name="number" id="number" placeholder="Phone Number*" required 
-                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #e5e7eb; background: transparent; font-size: 15px; color: #374151; outline: none; transition: all 0.3s ease;"
-                                            onfocus="this.style.borderBottomColor='#fbbf24';" 
-                                            onblur="this.style.borderBottomColor='#e5e7eb';">
+                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none; transition: all 0.3s ease;"
+                                            onfocus="this.style.borderBottomColor='#0A3F87';" 
+                                            onblur="this.style.borderBottomColor='#48b1fb';">
                                     </div>
 
                                     <div class="form-group col-md-6" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 50%; max-width: 50%;">
                                         <select name="subject" id="subject" class="form-select" required 
-                                                style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #e5e7eb; background: transparent; font-size: 15px; color: #6b7280; outline: none; transition: all 0.3s ease; cursor: pointer;"
-                                                onfocus="this.style.borderBottomColor='#fbbf24'; this.style.color='#374151';" 
-                                                onblur="this.style.borderBottomColor='#e5e7eb';"
+                                                style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #6b7280; outline: none; transition: all 0.3s ease; cursor: pointer;"
+                                                onfocus="this.style.borderBottomColor='#0A3F87'; this.style.color='#374151';" 
+                                                onblur="this.style.borderBottomColor='#48b1fb';"
                                                 onchange="this.style.color='#374151';">
                                             <option value="" disabled selected hidden>Select Service*</option>
                                             <option value="Medical Care">Medical Care</option>
@@ -104,15 +104,15 @@
                                     </div>
                                     <div class="form-group col-12" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 100%; max-width: 100%;">
                                         <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Write a message*" required 
-                                                style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #e5e7eb; background: transparent; font-size: 15px; color: #374151; outline: none; resize: vertical; font-family: inherit; transition: all 0.3s ease;"
-                                                onfocus="this.style.borderBottomColor='#fbbf24';" 
-                                                onblur="this.style.borderBottomColor='#e5e7eb';"></textarea>
+                                                style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none; resize: vertical; font-family: inherit; transition: all 0.3s ease;"
+                                                onfocus="this.style.borderBottomColor='#0A3F87';" 
+                                                onblur="this.style.borderBottomColor='#48b1fb';"></textarea>
                                     </div>
                                     <div class="form-btn col-12" style="padding: 0 10px; margin-top: 20px; flex: 0 0 100%; max-width: 100%;">
                                         <button type="submit" class="th-btn style5" id="submitBtn" 
-                                                style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #ffffff; border: none; padding: 16px 40px; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2); position: relative; overflow: hidden;"
-                                                onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(251, 191, 36, 0.4)'; this.style.background='linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)';"
-                                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(30, 58, 138, 0.2)'; this.style.background='linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)';">
+                                                style="background: #0A3F87; color: #ffffff; border: none; padding: 16px 40px; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(10, 63, 135, 0.2); position: relative; overflow: hidden;"
+                                                onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(10, 63, 135, 0.4)'; this.style.background='#48b1fb';"
+                                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(10, 63, 135, 0.2)'; this.style.background='#0A3F87';">
                                             <span class="btn-text" style="display: inline-block;">Submit Message</span>
                                             <span class="btn-loader" style="display: none; align-items: center; gap: 8px;">
                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle;">
