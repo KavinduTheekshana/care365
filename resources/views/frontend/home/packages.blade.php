@@ -1,329 +1,166 @@
-<section class="bg-white overflow-hidden py-5" id="Packages">
-    <div class="container">
-        <!-- Title Area -->
-        <div class="title-area text-center mb-5 pb-3">
-            <div class="subtitle text-uppercase mb-2" style="color: #3498db; font-size: 13px; letter-spacing: 2px; font-weight: 600;">
-                Pricing Plan
+
+
+    <!-- How It Works Section -->
+    <section class="border-top" id="Admissions-Process">
+                    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-6 offset-lg-3 text-center" style="margin-bottom: 70px;">
+                <div class="subtitle wow fadeInUp mb-3">How to Proceed</div>
+                <h2 class="mb-4 wow fadeInUp" data-wow-delay=".2s">The Process of Admitting to Our Homes</h2>
             </div>
-            <h2 class="mb-3" style="font-size: 36px; font-weight: 700; color: #2c3e50;">Care Options & Packages</h2>
-            <p class="lead mb-0 text-muted mx-auto" style="max-width: 600px; font-size: 16px; line-height: 1.6;">
-                 Flexible care packages designed to match different needs and lifestyles. 
-            </p>
-        </div>
-        
-        @if($packages->isEmpty())
-            <div class="text-center py-5">
-                <div class="alert alert-light border d-inline-block px-4 py-3">
-                    <i class="fa-solid fa-info-circle me-2" style="color: #3498db;"></i>
-                    No packages available at the moment. Please check back soon.
+        </div>  
+        <!-- Steps Container -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; position: relative; align-items: start;">
+            
+            <!-- SVG Connecting Lines -->
+            <svg style="position: absolute; top: 42px; left: 13%; width: 74%; height: 150px; z-index: 0; pointer-events: none;" viewBox="0 0 1000 150" preserveAspectRatio="none">
+                <!-- First curve (going down from step 1 to step 2) -->
+                <path d="M 80 20 Q 250 120, 420 20" stroke="#C7D2DD" stroke-width="3" fill="none" stroke-dasharray="12,12" stroke-linecap="round" />
+                <!-- Second curve (going down from step 2 to step 3) -->
+                <path d="M 580 20 Q 750 120, 920 20" stroke="#C7D2DD" stroke-width="3" fill="none" stroke-dasharray="12,12" stroke-linecap="round" />
+            </svg>
+
+            <!-- Step 1: Select Package -->
+            <div style="text-align: center; position: relative; z-index: 1; padding: 0 20px;">
+                <!-- Circle Number -->
+                <div class="step-circle" style="width: 85px; height: 85px; background: #2563EB; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 35px auto; transition: all 0.4s ease; cursor: pointer;">
+                    <span style="font-size: 38px; font-weight: 700; color: #ffffff; line-height: 1;">1</span>
                 </div>
+                
+                <!-- Title -->
+                <h3 style="font-size: 26px; font-weight: 700; color: #1F2937; margin: 0 0 18px 0; letter-spacing: -0.4px; line-height: 1.2;">Select Package</h3>
+                
+                <!-- Description -->
+                <p style="font-size: 16px; color: #6B7280; line-height: 1.65; margin: 0; font-weight: 400;">
+                    Pay for the selected package via our website and get the membership.
+                </p>
             </div>
-        @else
-            <div class="row justify-content-center g-4">
-                @foreach($packages as $index => $package)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="pricing-card bg-white position-relative d-flex flex-column" 
-                             style="border-radius: 16px; 
-                                    overflow: hidden; 
-                                    border: 1px solid #e8ecef;
-                                    transition: all 0.3s ease;
-                                    height: 100%;
-                                    min-height: 550px;">
-                            
-                            <!-- Accent Border Top -->
-                            <div class="accent-border" style="height: 4px; background: #3498db;"></div>
-                            
-                            <!-- Pricing Header -->
-                            <div class="pricing-header text-center px-4 pt-5 pb-4">
-                                <h3 class="package-title mb-4" style="font-size: 22px; font-weight: 600; color: #2c3e50;">
-                                    {{ $package->title }}
-                                </h3>
-                                
-                                <div class="pricing-amount mb-2">
-                                    <h2 class="price mb-1" style="font-size: 44px; font-weight: 700; color: #2c3e50; line-height: 1;">
-                                        {{ $package->formatted_price_lkr }}
-                                    </h2>
-                                    <p class="text-muted mb-2" style="font-size: 13px; font-weight: 500;">
-                                        ({{ $package->formatted_price_usd }})
-                                    </p>
-                                </div>
-                                <span class="d-inline-block px-3 py-1" 
-                                      style="background-color: #f8f9fa; 
-                                             color: #6c757d; 
-                                             font-size: 12px; 
-                                             border-radius: 20px;
-                                             font-weight: 500;">
-                                    Upwards Monthly
-                                </span>
-                            </div>
-                            
-                            <!-- Divider -->
-                            <div class="mx-4" style="height: 1px; background-color: #e8ecef;"></div>
-                            
-                            <!-- Pricing Body -->
-                            <div class="pricing-body px-4 py-4 flex-grow-1" 
-                                 style="max-height: 280px; 
-                                        overflow-y: auto;
-                                        overflow-x: hidden;">
-                                @if($package->features->isNotEmpty())
-                                    <ul class="features-list mb-0" style="list-style: none; padding: 0;">
-                                        @foreach($package->features as $feature)
-                                            <li class="feature-item d-flex align-items-start mb-3">
-                                                <i class="fa-solid fa-check flex-shrink-0 me-3 mt-1" 
-                                                   style="color: #3498db; font-size: 16px;"></i>
-                                                <span class="feature-text" style="color: #5a6c7d; 
-                                                             font-size: 14px; 
-                                                             line-height: 1.6;">
-                                                    {{ $feature->feature }}
-                                                </span>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @else
-                                    <div class="text-center py-5">
-                                        <i class="fa-solid fa-box-open mb-3" style="font-size: 32px; color: #dee2e6;"></i>
-                                        <p class="text-muted mb-0" style="font-size: 13px;">
-                                            Features will be added soon
-                                        </p>
-                                    </div>
-                                @endif
-                            </div>
-                            
-                            <!-- Pricing Footer -->
-                            <div class="pricing-footer px-4 pb-4 pt-2">
-                                <a href="{{ route('contact') }}" 
-                                   class="enquire-btn d-block text-center py-2 text-decoration-none"
-                                   style="background-color: white;
-                                          color: #3498db;
-                                          border: 2px solid #3498db;
-                                          border-radius: 8px;
-                                          font-size: 13px;
-                                          font-weight: 600;
-                                          letter-spacing: 0.5px;
-                                          transition: all 0.3s ease;">
-                                    Enquire Now
-                                    <i class="fa-solid fa-arrow-right ms-2" style="font-size: 11px;"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+
+            <!-- Step 2: Onboard Digital -->
+            <div style="text-align: center; position: relative; z-index: 1; padding: 0 20px;">
+                <!-- Circle Number -->
+                <div class="step-circle" style="width: 85px; height: 85px; background: #2563EB; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 35px auto; transition: all 0.4s ease; cursor: pointer;">
+                    <span style="font-size: 38px; font-weight: 700; color: #ffffff; line-height: 1;">2</span>
+                </div>
+                
+                <!-- Title -->
+                <h3 style="font-size: 26px; font-weight: 700; color: #1F2937; margin: 0 0 18px 0; letter-spacing: -0.4px; line-height: 1.2;">Onboard Digital</h3>
+                
+                <!-- Description -->
+                <p style="font-size: 16px; color: #6B7280; line-height: 1.65; margin: 0; font-weight: 400;">
+                    You will have an account in our platform and can check the updated medical records and other things of your elder via our platform.
+                </p>
             </div>
-        @endif
-    </div>
-        <div class="row mt-5">
-            <div class="col-12 text-center">
-                <a href="{{ route('wecare') }}#Packages"
-                style="display: inline-block;
-                        padding: 0.7rem 2rem;
-                        font-size: 0.95rem;
-                        font-weight: 600;
-                        line-height: 1.4;
-                        color: #3a7bd5;
-                        background-color: #ffffff;
-                        border: 2px solid #3a7bd5;
-                        border-radius: 8px;              /* ← soft rounded corners (not full pill) */
-                        text-decoration: none;
-                        transition: all 0.3s ease;
-                        box-shadow: 0 3px 10px rgba(58, 123, 213, 0.12);"
-                onmouseover="this.style.backgroundColor='#3a7bd5'; 
-                                this.style.color='#ffffff'; 
-                                this.style.boxShadow='0 6px 16px rgba(58, 123, 213, 0.3)';"
-                onmouseout="this.style.backgroundColor='#ffffff'; 
-                            this.style.color='#3a7bd5'; 
-                            this.style.boxShadow='0 3px 10px rgba(58, 123, 213, 0.12)';">
-                     View All Packages
-                </a>
+
+            <!-- Step 3: Admit your Loved Ones -->
+            <div style="text-align: center; position: relative; z-index: 1; padding: 0 20px;">
+                <!-- Circle Number -->
+                <div class="step-circle" style="width: 85px; height: 85px; background: #2563EB; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 35px auto; transition: all 0.4s ease; cursor: pointer;">
+                    <span style="font-size: 38px; font-weight: 700; color: #ffffff; line-height: 1;">3</span>
+                </div>
+                
+                <!-- Title -->
+                <h3 style="font-size: 26px; font-weight: 700; color: #1F2937; margin: 0 0 18px 0; letter-spacing: -0.4px; line-height: 1.2;">Admit your Loved Ones</h3>
+                
+                <!-- Description -->
+                <p style="font-size: 16px; color: #6B7280; line-height: 1.65; margin: 0; font-weight: 400;">
+                    Visit our home and admit your member by yourself or by a guardian.
+                </p>
             </div>
+
+        </div>
         </div>
 
+                    <div style="text-align: center; background: #ffffff; padding: 5px 3px; margin-top: 50px;">
 
-</section>
+                        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp"
+                        data-wow-delay=".6s"
+                        href="{{ route('services') }}">
+                            Learn More About Our Services
+                        </a>
+                    </div>
+        
+    </section>
 
-<style>
-/* Card Hover Effect */
-.pricing-card {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
+    <!-- Responsive CSS & Hover Effects -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-.pricing-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(52, 152, 219, 0.15);
-    border-color: #3498db !important;
-}
+        /* Hover Effect - Blue to Yellow */
+        .step-circle:hover {
+            background: #F59E0B !important;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+        }
 
-/* Custom Scrollbar for Pricing Body */
-.pricing-body::-webkit-scrollbar {
-    width: 6px;
-}
+        @media (max-width: 1024px) {
+            section {
+                padding: 70px 30px !important;
+            }
+            
+            div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                gap: 40px !important;
+            }
+        }
 
-.pricing-body::-webkit-scrollbar-track {
-    background: #f1f3f5;
-    border-radius: 10px;
-}
+        @media (max-width: 768px) {
+            section {
+                padding: 50px 20px !important;
+            }
+            
+            div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 60px !important;
+            }
+            
+            /* Hide desktop SVG on mobile */
+            svg {
+                display: none !important;
+            }
+            
+            /* Add mobile connectors */
+            div[style*="grid-template-columns: repeat(3, 1fr)"] > div:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                bottom: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 3px;
+                height: 40px;
+                background-image: repeating-linear-gradient(
+                    to bottom,
+                    #C7D2DD,
+                    #C7D2DD 8px,
+                    transparent 8px,
+                    transparent 16px
+                );
+                border-radius: 2px;
+            }
+        }
 
-.pricing-body::-webkit-scrollbar-thumb {
-    background: #3498db;
-    border-radius: 10px;
-}
+        @media (max-width: 480px) {
+            section {
+                padding: 40px 15px !important;
+            }
+            
+            div[style*="width: 85px; height: 85px"] {
+                width: 75px !important;
+                height: 75px !important;
+            }
+            
+            span[style*="font-size: 38px"] {
+                font-size: 34px !important;
+            }
+            
+            h3[style*="font-size: 26px"] {
+                font-size: 22px !important;
+            }
+            
+            p[style*="font-size: 16px"] {
+                font-size: 15px !important;
+            }
+        }
+    </style>
 
-.pricing-body::-webkit-scrollbar-thumb:hover {
-    background: #2980b9;
-}
-
-/* Firefox Scrollbar */
-.pricing-body {
-    scrollbar-width: thin;
-    scrollbar-color: #3498db #f1f3f5;
-}
-
-/* Button Hover Effect */
-.enquire-btn:hover {
-    background-color: #3498db !important;
-    color: white !important;
-    transform: scale(1.02);
-}
-
-.enquire-btn:hover i {
-    transform: translateX(4px);
-}
-
-/* Check Icon Animation */
-.feature-item i {
-    transition: transform 0.3s ease;
-}
-
-.pricing-card:hover .feature-item i {
-    transform: scale(1.1);
-}
-
-/* FIXED: Feature Text Wrapping - Improved Solution */
-.feature-item {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-}
-
-.feature-text {
-    /* Force text wrapping */
-    word-wrap: break-word;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    max-width: 100%;
-    width: 100%;
-    display: block;
-    
-    /* Prevent long words from breaking layout */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    
-    /* Ensure proper line breaking */
-    white-space: normal;
-    line-break: anywhere;
-}
-
-/* For extremely long unbroken text */
-.feature-text {
-    word-break: break-all; /* Break any word if needed */
-    overflow-wrap: anywhere; /* Modern property for better breaking */
-}
-
-/* Responsive Typography */
-@media (max-width: 991.98px) {
-    .title-area h2 {
-        font-size: 32px !important;
-    }
-    
-    .title-area .lead {
-        font-size: 15px !important;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .title-area h2 {
-        font-size: 28px !important;
-    }
-    
-    .package-title {
-        font-size: 20px !important;
-    }
-    
-    .price {
-        font-size: 38px !important;
-    }
-    
-    .pricing-amount p {
-        font-size: 12px !important;
-    }
-    
-    .feature-text {
-        font-size: 13px !important;
-        line-height: 1.5 !important;
-    }
-    
-    .pricing-body {
-        padding: 1.5rem 1.25rem !important;
-        max-height: 250px !important;
-    }
-    
-    .pricing-header {
-        padding: 2rem 1.25rem 1.5rem !important;
-    }
-    
-    .pricing-card {
-        min-height: 500px !important;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    .feature-item {
-        margin-bottom: 0.75rem !important;
-    }
-    
-    .feature-text {
-        font-size: 12px !important;
-    }
-}
-
-/* For very small screens */
-@media (max-width: 375px) {
-    .feature-text {
-        font-size: 11px !important;
-        line-height: 1.4 !important;
-    }
-    
-    .feature-item i {
-        font-size: 14px !important;
-        margin-right: 0.5rem !important;
-    }
-}
-
-/* Smooth Transitions 
-* {
-    transition: all 0.3s ease;
-}*/
-
-/* Focus States for Accessibility */
-.enquire-btn:focus {
-    outline: 2px solid #f1c40f;
-    outline-offset: 2px;
-}
-
-/* Ensure feature list items don't overflow */
-.features-list {
-    width: 100%;
-    padding-right: 4px; /* Space for scrollbar */
-}
-
-/* Additional fix for long feature names */
-.pricing-card .feature-item {
-    min-height: 24px; /* Ensure consistent height */
-    align-items: flex-start;
-}
-</style>
