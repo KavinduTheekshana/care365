@@ -17,6 +17,11 @@
                 <p style="color: #4b5563; line-height: 1.8; font-size: 1rem; text-align: justify;">
                     {{ $service->description }}
                 </p>
+                 <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
+                       data-wow-delay=".6s" 
+                       href="tel:+94776604040">
+                        Start the Admission Process 
+                    </a>
             </div>
 
             <div class="col-lg-6">
