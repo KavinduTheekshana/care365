@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (popupShown) return;
     modal.style.display = 'flex';
     popupShown = true;
-    //sessionStorage.setItem(sessionKey, 'true');
+    sessionStorage.setItem(sessionKey, 'true');
     setTimeout(() => {
       const input = modal.querySelector('input[name="name"]');
       if (input) input.focus();
@@ -230,7 +230,6 @@ document.addEventListener('DOMContentLoaded', function() {
             credentials: 'same-origin'
         })
         .then(response => {
-            // Return both status and parsed data
             return response.json().then(data => ({
                 status: response.status,
                 ok: response.ok,
@@ -240,10 +239,17 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(result => {
             console.log('Response:', result);
             
-            // Check if successful
             if (result.ok && result.data.success === true) {
                 // Show success notification
                 showNotification('Guide sent! Check your inbox', 'success');
+                
+                // Reset form
+                form.reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
                 
                 // Close popup after 2 seconds
                 setTimeout(() => {
