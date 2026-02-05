@@ -1,57 +1,101 @@
-<section class="position-relative bg-white overflow-hidden space" id="how-we-work">
-        <!-- <div class="why-bg-shape1-2 shape-mockup jump d-xxl-block d-none" data-bottom="0" data-right="1%">
-            <img src="assets/img/shape/shape1-26.png" alt="img">
-        </div> -->
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="sub-title style2 text-anim" data-cue="slideInUp"> How We Work</span>
-                <h2 class="sec-title text-anim" data-cue="slideInUp">How We Care For You</h2>
-                <p class="fs-18 text-anim2" data-cue="slideInUp">Experience quality care with our dedicated team of professionals</p>
-            </div>
-            <div class="row gy-40">
-                <div class="col-xl-6">
-                    <div class="process-slide-image">
-                        <div class="img background-img bg-white" 
-                            data-bg-src="assets/img/Home-img/our-mission-image-final_orig.png"
-                            style="background-image: url('assets/img/Home-img/our-mission-image-final_orig.png');">
+<section class="pt-0">
+    <div class="container">
+        <div class="row g-3">
+            <?php
+                $services = [
+                    [
+                        'icon' => 'assets/images/icons/black/5017575.png',
+                        'alt' => 'Medical care icon',
+                        'title' => 'Holistic Approach',
+                        'description' => 'Complete care for body, mind, and spirit.'
+                    ],
+                    [
+                        'icon' => 'assets/images/icons/black/6546564.png',
+                        'alt' => 'Medication icon',
+                        'title' => 'Customized Care Plans',
+                        'description' => 'Personalized plans tailored to individual needs.'
+                    ],
+                    [
+                        'icon' => 'assets/images/icons/black/57436776.png',
+                        'alt' => 'Personal assistance icon',
+                        'title' => 'Comprehensive Services',
+                        'description' => 'Wide range of daily and medical services.'
+                    ],
+                    [
+                        'icon' => 'assets/images/icons/black/654654.png',
+                        'alt' => 'Nutrition icon',
+                        'title' => 'Community & Engagement',
+                        'description' => 'Social activities that inspire connection and joy.'
+                    ],
+                    [
+                        'icon' => 'assets/images/icons/black/6546564.png',
+                        'alt' => 'Activities icon',
+                        'title' => 'Quality & Friendly Staff',
+                        'description' => 'Trained, caring, and compassionate professionals.'
+                    ],
+                    [
+                        'icon' => 'assets/images/icons/black/564564.png',
+                        'alt' => 'Support icon',
+                        'title' => '24/7 Support',
+                        'description' => 'Care and assistance available day and night.'
+                    ],
+                    [
+                        'icon' => 'assets/images/icons/black/66767467467.png',
+                        'alt' => 'Support icon',
+                        'title' => 'Comfort & Quality of Life',
+                        'description' => 'Safe, comfortable living with dignity.'
+                    ],
+                    [
+                        'icon' => 'assets/images/icons/black/6467437634.png',
+                        'alt' => 'Support icon',
+                        'title' => 'Continuum of Care',
+                        'description' => 'Ongoing care as needs evolve.'
+                    ]
+                ];
+
+
+            
+            foreach ($services as $index => $service):
+                // Add mt-3 class to items after the first row (3 items)
+                $mtClass = $index >= 3 ? 'mt-3' : '';
+            ?>
+            <div class="col-lg-4 col-md-6 <?php echo $mtClass; ?>">
+                <div class="col-lg-4 col-md-6 <?php echo $mtClass; ?>">
+                    <div class="relative d-flex align-items-start gap-3">
+                        <img src="<?php echo $service['icon']; ?>" 
+                            class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
+                            alt="<?php echo $service['alt']; ?>" 
+                            style="flex-shrink: 0;">
+                        <div class="wow fadeInUp" style="flex: 0 1 120px;">
+                            <h5 class="mb-1" style="font-size: 16px;"><?php echo $service['title']; ?></h5>
+                            <p class="mb-0" style="font-size: 13px;"><?php echo $service['description']; ?></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6">
-                    <div class="process-card" data-cue="slideInUp">
-                        <div class="process-bg-mask" data-mask-src="assets/img/shape/process_card_mask1_1.jpg"></div>
-                        <div class="box-icon">
-                            <img src="assets/img/icon/checkmark2.svg" alt="img">
-                        </div>
-                        <div class="box-content">
-                            <h4 class="box-title">Schedule a Consultation</h4>
-                            <p class="box-text">Connect with our caring team to discuss your unique needs. We prioritize understanding your story and requirements for personalized care.</p>
-                        </div>
-                        <div class="box-number">01</div>
-                    </div>
-                    <div class="process-card" data-cue="slideInUp">
-                        <div class="process-bg-mask" data-mask-src="assets/img/shape/process_card_mask1_1.jpg"></div>
-                        <div class="box-icon">
-                            <img src="assets/img/icon/checkmark2.svg" alt="img">
-                        </div>
-                        <div class="box-content">
-                            <h4 class="box-title">Personalized Care Plan</h4>
-                            <p class="box-text">Our team creates a tailored care plan addressing your specific needs - from medical care to social activities and nutritious meals.</p>
-                        </div>
-                        <div class="box-number">02</div>
-                    </div>
-                    <div class="process-card" data-cue="slideInUp">
-                        <div class="process-bg-mask" data-mask-src="assets/img/shape/process_card_mask1_1.jpg"></div>
-                        <div class="box-icon">
-                            <img src="assets/img/icon/checkmark2.svg" alt="img">
-                        </div>
-                        <div class="box-content">
-                            <h4 class="box-title">Compassionate 24/7 Support</h4>
-                            <p class="box-text">Experience unwavering care with our dedicated staff available around the clock. Our modern facility ensures comfort, dignity and well-being.</p>
-                        </div>
-                        <div class="box-number">03</div>
-                    </div>
-                </div>
             </div>
+
+
+            
+            <?php endforeach; ?>
         </div>
-    </section>
+    </div>
+    
+    <!-- 
+    <div style="text-align: center; background: #ffffff; padding: 40px 30px; border-bottom: 2px solid #E2E8F0;">
+        <h3 style="font-size: 26px; font-weight: 600; color: #0F172A; margin: 0 0 12px 0;">
+            Explore Our Care Services
+        </h3>
+        <p style="font-size: 15px; color: #64748B; margin: 0 0 25px 0; margin-left: auto; margin-right: auto; line-height: 1.6; max-width: 500px;">
+            Discover personalized care solutions designed to support comfort, dignity, and well-being at every stage.
+        </p>
+        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp"
+            data-wow-delay=".6s"
+            href="{{ route('services') }}">
+            Learn More About Our Services
+        </a>
+    </div>
+     -->
+</section>
+
+
+

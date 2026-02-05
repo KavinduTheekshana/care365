@@ -1,4 +1,4 @@
-            <section class="pt-30 pb-0 ">
+            <section class="pt-30 pb-0 border-top">
                 <div class="container relative">
                     <div class="row g-4 gx-5 align-items-center">
                         
