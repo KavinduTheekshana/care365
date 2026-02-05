@@ -2,8 +2,8 @@
             <div class="container">
                 <div class="row gx-5">
                     <div class="col-lg-4 col-sm-6">
-                        <img class="logo-main" src="assets/img/logo3.png" alt="" 
-                            style="max-height: 15vh; width: auto; height: auto; filter: brightness(0) invert(1);">
+                        <img class="logo-main" src="assets/img/logo/care365_light.svg" alt="" 
+                            style="max-height: 15vh; width: auto; height: auto; ">
                         <div class="spacer-20"></div>
                         <h5 class="text-white mb-3">Newsletter</h5>
                         <p style="color: rgba(255,255,255,0.5); font-size: 0.95rem; line-height: 1.4; margin: 0 0 15px 0;">
