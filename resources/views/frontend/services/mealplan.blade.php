@@ -33,7 +33,7 @@
                                     Mealtimes are designed to be pleasant social moments, supporting overall well-being while respecting 
                                     each resident’s health, culture, and personal preferences.
                                 </p>
-                                <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
+                                <a class="btn-main bg-color-2  mb-3 wow fadeInUp" 
                                 data-wow-delay=".6s" 
                                 href="assets/images/mealplan/Food Menu.pdf" 
                                 target="_blank">
