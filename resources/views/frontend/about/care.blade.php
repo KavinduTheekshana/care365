@@ -4,49 +4,49 @@
             <?php
                 $services = [
                     [
-                        'icon' => 'assets/images/icons/black/5017575.png',
+                        'icon' => 'assets/images/icons/white/5634674.png',
                         'alt' => 'Medical care icon',
                         'title' => 'Holistic Approach',
                         'description' => 'Complete care for body, mind, and spirit.'
                     ],
                     [
-                        'icon' => 'assets/images/icons/black/6546564.png',
+                        'icon' => 'assets/images/icons/white/calendar.webp',
                         'alt' => 'Medication icon',
                         'title' => 'Customized Care Plans',
                         'description' => 'Personalized plans tailored to individual needs.'
                     ],
                     [
-                        'icon' => 'assets/images/icons/black/57436776.png',
+                        'icon' => 'assets/images/icons/white/5456456.png',
                         'alt' => 'Personal assistance icon',
                         'title' => 'Comprehensive Services',
                         'description' => 'Wide range of daily and medical services.'
                     ],
                     [
-                        'icon' => 'assets/images/icons/black/654654.png',
+                        'icon' => 'assets/images/icons/white/65456467.png',
                         'alt' => 'Nutrition icon',
                         'title' => 'Community & Engagement',
                         'description' => 'Social activities that inspire connection and joy.'
                     ],
                     [
-                        'icon' => 'assets/images/icons/black/6546564.png',
+                        'icon' => 'assets/images/icons/white/eco-friendly.webp',
                         'alt' => 'Activities icon',
                         'title' => 'Quality & Friendly Staff',
                         'description' => 'Trained, caring, and compassionate professionals.'
                     ],
                     [
-                        'icon' => 'assets/images/icons/black/564564.png',
+                        'icon' => 'assets/images/icons/white/56435634.png',
                         'alt' => 'Support icon',
                         'title' => '24/7 Support',
                         'description' => 'Care and assistance available day and night.'
                     ],
                     [
-                        'icon' => 'assets/images/icons/black/66767467467.png',
+                        'icon' => 'assets/images/icons/white/calendar.webp',
                         'alt' => 'Support icon',
                         'title' => 'Comfort & Quality of Life',
                         'description' => 'Safe, comfortable living with dignity.'
                     ],
                     [
-                        'icon' => 'assets/images/icons/black/6467437634.png',
+                        'icon' => 'assets/images/icons/white/45764.png',
                         'alt' => 'Support icon',
                         'title' => 'Continuum of Care',
                         'description' => 'Ongoing care as needs evolve.'
