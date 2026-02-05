@@ -68,7 +68,7 @@
                 <p style="font-size: 15px; color: #64748B; margin: 0 0 25px 0; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6;">
                     Visit us and experience the exceptional care our team provides
                 </p>
-                    <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
+                    <a class="btn-main bg-color-2  mb-3 wow fadeInUp" 
                        data-wow-delay=".6s" 
                        href="{{ route('contact') }}">
                         Book a Visit 

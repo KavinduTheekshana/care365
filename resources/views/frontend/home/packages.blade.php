@@ -73,7 +73,7 @@
 
                     <div style="text-align: center; background: #ffffff; padding: 5px 3px; margin-top: 50px;">
 
-                        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp"
+                        <a class="btn-main bg-color-2  mb-3 wow fadeInUp"
                         data-wow-delay=".6s"
                         href="{{ route('services') }}">
                             Learn More About Our Services
@@ -90,9 +90,8 @@
 
         /* Hover Effect - Blue to Yellow */
         .step-circle:hover {
-            background: #F59E0B !important;
+            background: #02367d !important;
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
         }
 
         @media (max-width: 1024px) {

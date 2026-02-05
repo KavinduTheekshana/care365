@@ -117,7 +117,7 @@
             Care365 was founded to provide safe, dignified and compassionate elder care in Sri Lanka.
         </p>
 
-        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
+        <a class="btn-main bg-color-2  mb-3 wow fadeInUp" 
            data-wow-delay=".6s" 
            href="{{ route('contact') }}">
             Talk to Our Team

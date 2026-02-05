@@ -34,7 +34,7 @@
                         </li>
                     </ul>
                     
-                    <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
+                    <a class="btn-main bg-color-2  mb-3 wow fadeInUp" 
                        data-wow-delay=".6s" 
                        href="{{ route('services') }}">
                         See Our Care Services 
