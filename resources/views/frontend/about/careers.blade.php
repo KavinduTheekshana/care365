@@ -3,7 +3,10 @@
                     <div class="row g-4 gx-5 align-items-center">
                         
                         <div class="col-lg-6">
-                            <img src="assets/images/misc/6235665.png" class="w-100" alt="Join Care365 Team">
+                            <img src="assets/images/misc/tu7768537853.png"
+                                class="img-fluid rounded-10 wow scaleIn object-fit-cover"
+                                style="max-width: 100%; max-height: 700px;"
+                                alt="Care365 - Quality Elderly Care">                            
                         </div>
 
                         <div class="col-lg-6 relative">
