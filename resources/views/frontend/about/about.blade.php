@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <img src="assets\images\about\335a0ec9-b538-406f-81ea-be75b2ab204a.png" class="img-fluid rounded-10 wow scaleIn" alt="Care365 - Quality Elderly Care">
+                <img src="assets\images\about\6347837634.png" class="img-fluid rounded-10 wow scaleIn" alt="Care365 - Quality Elderly Care">
             </div>
         </div>
     </div>
