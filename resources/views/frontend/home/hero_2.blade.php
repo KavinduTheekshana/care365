@@ -28,6 +28,11 @@
                             </div>
                         </div>
                         <div class="sw-overlay op-4"></div>
+                        <!-- PHSRC Registered Badge -->
+                        <div class="phsrc-badge">
+                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <span class="phsrc-text">PHSRC Registered</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Slide 2 - Luxury & Compassion Focus -->
@@ -55,6 +60,11 @@
                             </div>
                         </div>
                         <div class="sw-overlay op-4"></div>
+                        <!-- PHSRC Registered Badge -->
+                        <div class="phsrc-badge">
+                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <span class="phsrc-text">PHSRC Registered</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Slide 3 - Trust & Family Focus -->
@@ -82,6 +92,11 @@
                             </div>
                         </div>
                         <div class="sw-overlay op-4"></div>
+                        <!-- PHSRC Registered Badge -->
+                        <div class="phsrc-badge">
+                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <span class="phsrc-text">PHSRC Registered</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -215,6 +230,44 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     z-index: 2;
 }
 
+/* ====== PHSRC REGISTERED BADGE STYLING ====== */
+.phsrc-badge {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2px 2px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phsrc-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.phsrc-badge img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.phsrc-badge .phsrc-text {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    max-width: 80px;
+}
+
 /* Desktop font sizes for 700px height */
 section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
     font-size: 2.5rem !important; /* 40px */
@@ -253,6 +306,23 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         background: rgba(0, 0, 0, 0.35) !important; /* Lighter than desktop */
     }
     
+    /* PHSRC Badge - Tablet */
+    .phsrc-badge {
+        top: 80px;
+        right: 15px;
+        padding: 2px 2px;
+        gap: 8px;
+    }
+    
+    .phsrc-badge img {
+        height: 40px;
+    }
+    
+    .phsrc-badge .phsrc-text {
+        font-size: 10px;
+        max-width: 70px;
+    }
+    
     /* Tablet font sizes */
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
         font-size: 1.75rem !important; /* 28px */
@@ -285,6 +355,25 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         background: rgba(0, 0, 0, 0.3) !important; /* Much lighter for mobile */
     }
     
+    /* PHSRC Badge - Mobile */
+    .phsrc-badge {
+        top: 45px;
+        right: 12px;
+        padding: 2px 2px;
+        gap: 6px;
+        border-radius: 6px;
+    }
+    
+    .phsrc-badge img {
+        height: 35px;
+    }
+    
+    .phsrc-badge .phsrc-text {
+        font-size: 9px;
+        max-width: 60px;
+        letter-spacing: 0.3px;
+    }
+    
     /* Mobile font sizes */
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
         font-size: 1.5rem !important; /* 24px */
@@ -314,6 +403,23 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     /* Very light overlay for tiny screens */
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
         background: rgba(0, 0, 0, 0.25) !important; /* Minimal overlay */
+    }
+    
+    /* PHSRC Badge - Extra Small */
+    .phsrc-badge {
+        top: 50px;
+        right: 10px;
+        padding: 2px 2px;
+        gap: 5px;
+    }
+    
+    .phsrc-badge img {
+        height: 30px;
+    }
+    
+    .phsrc-badge .phsrc-text {
+        font-size: 8px;
+        max-width: 50px;
     }
     
     /* Smallest font sizes */
