@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="d-inline-block text-center mx-4">
-                                <h4 class="mb-1">4.8 out of 5</h4>
+                                <h4 class="mb-1">4.9 out of 5</h4>
                                 <div class="de-rating-ext fs-18">
                                     <div class="d-stars">
                                         <i class="fa fa-star"></i>
