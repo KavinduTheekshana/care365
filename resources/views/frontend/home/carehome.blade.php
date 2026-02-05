@@ -1,5 +1,5 @@
 
-<section class="bg-white space overflow-hidden team-area-1" id="homes" style="padding: 100px 0;">
+<section class="bg-white space overflow-hidden team-area-1 border-top" id="homes" style="padding: 100px 0;">
     <div class="container">
         <div class="row justify-content-between align-items-center" style="margin-bottom: 60px;">
             <div class="col-xxl-7 col-xl-7 col-md-8">
