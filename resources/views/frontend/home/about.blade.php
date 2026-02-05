@@ -33,7 +33,7 @@
                     <div class="row g-3">
                         <div class="col-lg-4 col-md-6">
                             <div class="relative d-flex align-items-start gap-3">
-                                <img src="assets/images/icons/black/673476347.png" 
+                                <img src="assets/images/icons/white/5456456.png" 
                                     class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
                                     alt="Medical care icon" 
                                     style="flex-shrink: 0;">
@@ -46,7 +46,7 @@
 
                         <div class="col-lg-4 col-md-6">
                             <div class="relative d-flex align-items-start gap-3">
-                                <img src="assets/images/icons/black/6546564.png" 
+                                <img src="assets/images/icons/white/45764.png" 
                                     class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
                                     alt="Medication icon" 
                                     style="flex-shrink: 0;">
@@ -59,7 +59,7 @@
 
                         <div class="col-lg-4 col-md-6">
                             <div class="relative d-flex align-items-start gap-3">
-                                <img src="assets/images/icons/black/57436776.png" 
+                                <img src="assets/images/icons/white/564646367.png" 
                                     class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
                                     alt="Personal assistance icon" 
                                     style="flex-shrink: 0;">
@@ -72,7 +72,7 @@
 
                         <div class="col-lg-4 col-md-6 mt-3">
                             <div class="relative d-flex align-items-start gap-3">
-                                <img src="assets/images/icons/black/1422994-200.png" 
+                                <img src="assets/images/icons/white/5634743.png" 
                                     class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
                                     alt="Nutrition icon" 
                                     style="flex-shrink: 0;">
@@ -85,7 +85,7 @@
 
                         <div class="col-lg-4 col-md-6 mt-3">
                             <div class="relative d-flex align-items-start gap-3">
-                                <img src="assets/images/icons/black/6546564.png" 
+                                <img src="assets/images/icons/white/65456467.png" 
                                     class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
                                     alt="Activities icon" 
                                     style="flex-shrink: 0;">
@@ -99,7 +99,7 @@
                         <!-- Optional: Add a 6th item if needed -->
                         <div class="col-lg-4 col-md-6 mt-3">
                             <div class="relative d-flex align-items-start gap-3">
-                                <img src="assets/images/icons/black/564564.png" 
+                                <img src="assets/images/icons/white/56435634.png" 
                                     class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
                                     alt="Support icon" 
                                     style="flex-shrink: 0;">
