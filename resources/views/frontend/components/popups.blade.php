@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 notificationBar.style.display = 'none';
                 notificationBar.style.animation = '';
             }, 500);
-            //localStorage.setItem('notificationBarClosed', 'true');
+            localStorage.setItem('notificationBarClosed', 'true');
         }
     }
     
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (ctaButton) {
         ctaButton.addEventListener('click', function() {
             // Mark as enquired so bar doesn't show again
-            //localStorage.setItem('hasEnquired', 'true');
+            localStorage.setItem('hasEnquired', 'true');
             
             // Optional: Send analytics event
             if (typeof gtag !== 'undefined') {
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Store time when closed
     function storeCloseTime() {
-        //localStorage.setItem('notificationBarClosedTime', Date.now().toString());
+        localStorage.setItem('notificationBarClosedTime', Date.now().toString());
     }
     
     // Update close function to store time
