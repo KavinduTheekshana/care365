@@ -4,7 +4,7 @@
             <div class="col-lg-6 relative">
                 <div class="relative z-1000">
                     <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Why Care365</div>
-                    <h2>Why Choose Our Care Home</h2>
+                    <h2>Why Choose Care365</h2>
                     
                     <!-- Bullet Proof Points -->
                     <ul style="list-style: none; padding: 0; margin: 25px 0 30px 0;">
