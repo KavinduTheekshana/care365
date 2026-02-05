@@ -16,9 +16,9 @@
         <div class="btn-wrap mt-50 d-flex justify-content-center" data-cue="slideInUp">
             <a href="{{ route('wecare') }}" 
             class="  fw-600 join-now-btn" 
-            style="background-color: #fad643; 
+            style="background-color: #48b1fb; 
                     text-align: center; 
-                    color: #000000; 
+                    color: #FFFFFF; 
                     border: none; 
                     border-radius: 50px; 
                     padding: 12px 32px;          

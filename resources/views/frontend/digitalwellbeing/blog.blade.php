@@ -11,7 +11,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="relative">
                         <div class="post-image rounded-1 mb-2" style="height: 250px; overflow: hidden; position: relative;">
-                            <div class="abs start-0 top-0 bg-color-2 text-dark p-3 pb-2 m-3 text-center fw-600 rounded-1">
+                            <div class="abs start-0 top-0 bg-color-2 p-3 pb-2 m-3 text-center fw-600 rounded-1 text-white">
                                 <div class="fs-36 mb-0">{{ $blog->date->format('d') }}</div>
                                 <span>{{ $blog->date->format('M') }}</span>
                             </div>
@@ -45,8 +45,8 @@
                 <a href="{{ route('blog') }}" 
                 class="blg-btn px-4 py-2 fw-600" 
                 style="background-color: #FFFFFF; 
-                        color: #fad643; 
-                        border: 2px solid #fad643; 
+                        color: #48b1fb; 
+                        border: 2px solid #48b1fb; 
                         border-radius: 50px; 
                         transition: all 0.3s ease;">
                     View All Articles
@@ -59,9 +59,10 @@
 
 <style>
     .blg-btn:hover {
-    background-color: #fad643 !important;
+    background-color: #0A3F87 !important;
     color: #FFFFFF !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 </style>
+
+
