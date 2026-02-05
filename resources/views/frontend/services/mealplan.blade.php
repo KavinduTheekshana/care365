@@ -9,7 +9,7 @@
                                 src="assets/img/we care/Food Carousel.json"
                                 background="transparent" 
                                 speed="1" 
-                                style="width: 100%; height: 500px;" 
+                                style="width: 100%; height: 450px;" 
                                 loop 
                                 autoplay>
                             </dotlottie-player>
@@ -35,7 +35,7 @@
                                 </p>
                                 <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
                                 data-wow-delay=".6s" 
-                                href="assets/images/mealplan/meal-planner.pdf" 
+                                href="assets/images/mealplan/Food Menu.pdf" 
                                 target="_blank">
                                     Download Meal Plan
                                 </a>
