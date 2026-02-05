@@ -10,7 +10,7 @@
                                     life for our residents, ensuring their comfort, safety, and well-being. We treat every 
                                     resident like family, providing the support and care they need to live life
                                     to the fullest.</p>
-                                <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
+                                <a class="btn-main bg-color-2  mb-3 wow fadeInUp" 
                                 data-wow-delay=".6s" 
                                 href="{{ route('services') }}">
                                     See Our Care Services 
@@ -119,7 +119,7 @@
                         <p style="font-size: 15px; color: #64748B; margin: 0 0 25px 0;  margin-left: auto; margin-right: auto; line-height: 1.6;">
                             Discover personalized care solutions designed to support comfort, dignity, and well-being at every stage.
                         </p>
-                        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp"
+                        <a class="btn-main bg-color-2  mb-3 wow fadeInUp"
                         data-wow-delay=".6s"
                         href="{{ route('services') }}">
                             Learn More About Our Services
