@@ -41,9 +41,12 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <img src="assets\images\about\6347837634.png" class="img-fluid rounded-10 wow scaleIn" alt="Care365 - Quality Elderly Care">
-            </div>
+                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                    <img src="assets/images/about/78437834.png"
+                        class="img-fluid rounded-10 wow scaleIn object-fit-cover"
+                        style="max-width: 100%; max-height: 700px;"
+                        alt="Care365 - Quality Elderly Care">
+                </div>
         </div>
     </div>
 </section>
