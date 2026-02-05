@@ -19,6 +19,7 @@
 @section('content')
     @include('frontend.home.hero_2')
     @include('frontend.home.about')
+    @include('frontend.home.leadmagnet')
     @include('frontend.home.packages')
     @include('frontend.home.carehome')
     @include('frontend.home.services')
