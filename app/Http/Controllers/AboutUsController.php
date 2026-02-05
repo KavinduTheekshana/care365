@@ -8,7 +8,7 @@ use App\Models\Service;
 use App\Models\Whoweare;
 use App\Models\CareHome;
 use App\Models\Testimonial;
-
+use App\Models\Team;
 
 class AboutUsController extends Controller
 {
@@ -30,7 +30,11 @@ class AboutUsController extends Controller
                             ->inRandomOrder()
                              ->take(4)
                             ->get();
+
+        $teamMembers = Team::where('active', true)
+                           ->orderBy('id')  
+                           ->get();
         
-        return view('frontend.about.index', compact('services', 'whoweares',  'testimonials'));
+        return view('frontend.about.index', compact('services', 'whoweares',  'testimonials', 'teamMembers'));
     }
 }

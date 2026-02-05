@@ -30,10 +30,7 @@
                                     </li>
                                     <li><a class="menu-item {{ request()->routeIs('services') ? 'active' : '' }}" href="{{ route('services') }}">Care Services</a>
                                         <ul>
-                                            @foreach ($header_services as $service)
-                                            <li><a class="menu-item" href="{{ service_url($service) }}" class="scroll-link">{{ $service->title }}</a></li>
-                                            @endforeach
-
+                                            <li><a class="menu-item" href="{{ route('services') }}" class="scroll-link">Our Services</a></li>
                                             <li><a class="menu-item" href="{{ route('services') }}#Meal-Plan" class="scroll-link">Meals & Nutrition</a></li>
                                         </ul>
                                     </li>  

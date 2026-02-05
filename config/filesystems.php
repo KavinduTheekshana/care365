@@ -108,6 +108,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'team_img' => [
+            'driver'     => 'local',
+            'root'       => public_path('team_img'),
+            'url'        => env('APP_URL').'/team_img',
+            'visibility' => 'public',
+            'throw'      => false,
+        ],
     ],
 
     /*

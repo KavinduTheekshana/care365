@@ -112,7 +112,7 @@
                     </div>
                 </div>
                                     <!-- CTA Section -->
-                    <div style="text-align: center; background: #ffffff; padding: 40px 30px; border-bottom: 2px solid #E2E8F0;">
+                    <div style="text-align: center; background: #ffffff; padding: 5px 3px; margin-top: 50px;">
                         <h3 style="font-size: 26px; font-weight: 600; color: #0F172A; margin: 0 0 12px 0;">
                             Explore Our Care Services
                         </h3>
