@@ -47,8 +47,8 @@
                 style="
                     background: transparent;
                     color: #2196F3;
-                    padding: 4px 10px;          /* very compact */
-                    font-size: 0.75rem;         /* quite small text */
+                    padding: 4px 10px;
+                    font-size: 0.75rem;
                     font-weight: 500;
                     border-radius: 4px;
                     text-decoration: none;
@@ -57,7 +57,7 @@
                     border: 1px solid #2196F3;
                     cursor: pointer;
                     text-align: center;
-                    min-width: 90px;            /* prevents it from becoming too narrow */
+                    min-width: 90px;
                     line-height: 1.2;
                 "
                 onmouseover="this.style.background='#2196F3'; this.style.color='white';"
@@ -116,60 +116,96 @@
         }
     }
     
-    /* Responsive adjustments */
+    /* Tablet adjustments */
     @media (max-width: 992px) {
         #top-notification-bar .container {
             padding: 0 15px !important;
         }
-        
-        #top-notification-bar span span:first-child {
-            font-size: 0.7rem !important;
-            padding: 4px 12px !important;
-        }
-        
-        #top-notification-bar span span:last-child {
-            font-size: 0.88rem !important;
-        }
-        
-        #top-notification-bar a {
-            padding: 7px 18px !important;
-            font-size: 0.85rem !important;
-            min-width: 120px !important;
-        }
     }
     
+    /* Mobile - Compact and user-friendly */
     @media (max-width: 768px) {
         #top-notification-bar {
-            padding: 12px 0 !important;
+            padding: 8px 0 !important;
         }
         
+        #top-notification-bar .container {
+            padding: 0 10px !important;
+        }
+        
+        /* Make text more compact */
         #top-notification-bar span {
-            flex-direction: column !important;
-            align-items: flex-start !important;
             gap: 6px !important;
         }
         
-        #top-notification-bar span span:last-child {
-            font-size: 0.85rem !important;
+        #top-notification-bar span span:first-child {
+            font-size: 0.65rem !important;
+            padding: 2px 8px !important;
         }
         
+        #top-notification-bar span span:last-child {
+            font-size: 0.75rem !important;
+            line-height: 1.3;
+        }
+        
+        /* Compact button */
         #top-notification-bar a {
-            padding: 7px 16px !important;
-            font-size: 0.82rem !important;
-            min-width: 110px !important;
+            padding: 6px 12px !important;
+            font-size: 0.7rem !important;
+            min-width: 80px !important;
+            border-width: 1px !important;
+        }
+        
+        /* Slightly bigger close button for easier tapping */
+        #close-notification {
+            font-size: 1.1rem !important;
+            width: 24px !important;
+            height: 24px !important;
+            padding: 0 !important;
+            margin-left: 6px !important;
         }
     }
     
+    /* Small mobile - Even more compact */
     @media (max-width: 576px) {
-        #top-notification-bar a {
-            padding: 6px 14px !important;
-            font-size: 0.78rem !important;
-            min-width: 100px !important;
+        #top-notification-bar {
+            padding: 7px 0 !important;
+        }
+        
+        #top-notification-bar .container {
+            padding: 0 8px !important;
         }
         
         #top-notification-bar span span:last-child {
-            font-size: 0.82rem !important;
-            line-height: 1.4;
+            font-size: 0.72rem !important;
+        }
+        
+        #top-notification-bar a {
+            padding: 5px 10px !important;
+            font-size: 0.68rem !important;
+            min-width: 75px !important;
+        }
+    }
+    
+    /* Very small screens */
+    @media (max-width: 400px) {
+        #top-notification-bar {
+            padding: 6px 0 !important;
+        }
+        
+        #top-notification-bar span span:last-child {
+            font-size: 0.7rem !important;
+        }
+        
+        #top-notification-bar a {
+            padding: 4px 8px !important;
+            font-size: 0.65rem !important;
+            min-width: 70px !important;
+        }
+        
+        #close-notification {
+            width: 22px !important;
+            height: 22px !important;
         }
     }
 </style>
