@@ -28,7 +28,15 @@
                             </div>
                         </a>
 
-                        <h4 class="mb-2">{{ $service->title }}</h4>
+                        <h4 class="mb-2 service-title" style="
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;">
+    {{ Str::limit($service->title, 35) }} <!-- Adjust character limit -->
+</h4>
                         <p class="mb-0" 
                            style="display: -webkit-box; 
                                   -webkit-line-clamp: 3; 
