@@ -19,7 +19,7 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <img src="assets/images/about/6443654647.png" 
+                            <img src="assets/images/about/Landing Page.png" 
                                 class="img-fluid rounded-10 wow scaleIn object-fit-cover"
                                 style="width: 100%; max-height: 700px;"  
                                 alt="Care 365 Senior Care Facility">
