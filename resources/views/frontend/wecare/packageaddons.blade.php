@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', renderPackageAddons);
 
 /* Icon Hover Animation - Blue to Yellow */
 .feature-card:hover .box-icon {
-    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%) !important;
+background: linear-gradient(135deg, #1E90FF 0%, #2563EB 100%) !important;
 }
 
 /* Icon color change on hover */

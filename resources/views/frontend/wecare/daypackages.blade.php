@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="text-center">
-                            <a class="btn-main bg-color-2 text-dark" href="{{ route('contact') }}">Book Now</a>
+                            <a class="btn-main bg-color-2 " href="{{ route('contact') }}">Book Now</a>
                         </div>
                         <div class="spacer-20"></div>
                     </div>

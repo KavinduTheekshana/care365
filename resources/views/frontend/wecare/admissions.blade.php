@@ -81,9 +81,8 @@
 
         /* Hover Effect - Blue to Yellow */
         .step-circle:hover {
-            background: #F59E0B !important;
+            background: #02367d !important;
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
         }
 
         @media (max-width: 1024px) {
