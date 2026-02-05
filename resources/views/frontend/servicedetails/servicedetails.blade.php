@@ -17,7 +17,7 @@
                 <p style="color: #4b5563; line-height: 1.8; font-size: 1rem; text-align: justify;">
                     {{ $service->description }}
                 </p>
-                 <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp" 
+                 <a class="btn-main bg-color-2  mb-3 wow fadeInUp" 
                        data-wow-delay=".6s" 
                        href="tel:+94776604040">
                         Start the Admission Process 
@@ -65,8 +65,8 @@
                             </div>
 
                             <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f9fafb; border-radius: 8px;">
-                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <i class="fa fa-clock-o" style="color: #1e3a8a; font-size: 1.25rem;"></i>
+                                <div style="width: 40px; height: 40px; background:#48b1fb; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa fa-clock-o" style="color: white; font-size: 1.25rem;"></i>
                                 </div>
                                 <div>
                                     <p style="margin: 0; color: #1e3a8a; font-weight: 600; font-size: 0.95rem;">Quick Response</p>
@@ -112,8 +112,10 @@
                     <div style="padding: 2rem 1.5rem;">
                         <h5 style="margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600; color: #1e3a8a; line-height: 1.4;">{{ $relatedService->title }}</h5>
                         <p style="margin-bottom: 1.5rem; color: #6b7280; line-height: 1.6; font-size: 0.95rem;">{{ Str::limit($relatedService->description, 100) }}</p>
-                        <a href="{{ url('/' . $relatedService->title_slug) }}" 
-                           style="display: inline-block; padding: 0.75rem 1.75rem; background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">Learn More →</a>
+                            <a href="{{ url('/' . $relatedService->title_slug) }}" 
+                            style="display: inline-block; padding: 0.75rem 1.75rem; background: #48b1fb; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 3px 10px rgba(72, 177, 251, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;"
+                            onmouseover="this.style.background='#0A3F87'; this.style.boxShadow='0 5px 15px rgba(10, 63, 135, 0.4)'; this.style.transform='translateY(-2px)';"
+                            onmouseout="this.style.background='#48b1fb'; this.style.boxShadow='0 3px 10px rgba(72, 177, 251, 0.3)'; this.style.transform='translateY(0)';">Learn More →</a>
                     </div>
                 </div>
             </div>
