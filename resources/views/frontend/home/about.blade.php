@@ -29,86 +29,101 @@
             </section>
 
             <section class="pt-0">
-    <div class="container">
-        <div class="row g-3">
-            <div class="col-lg-4 col-md-6">
-                <div class="relative d-flex align-items-start gap-3">
-                    <img src="assets/images/icons/black/673476347.png" 
-                         class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                         alt="Medical care icon" 
-                         style="flex-shrink: 0;">
-                    <div class="wow fadeInUp">
-                        <h5 class="mb-1" style="font-size: 16px;">Medical & Nursing Care</h5>
-                        <p class="mb-0" style="font-size: 13px;">Professional healthcare services and nursing support.</p>
-                    </div>
-                </div>
-            </div>
+                <div class="container">
+                    <div class="row g-3">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="relative d-flex align-items-start gap-3">
+                                <img src="assets/images/icons/black/673476347.png" 
+                                    class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
+                                    alt="Medical care icon" 
+                                    style="flex-shrink: 0;">
+                                <div class="wow fadeInUp">
+                                    <h5 class="mb-1" style="font-size: 16px;">Medical & Nursing Care</h5>
+                                    <p class="mb-0" style="font-size: 13px;">Professional healthcare services and nursing support.</p>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="relative d-flex align-items-start gap-3">
-                    <img src="assets/images/icons/black/6546564.png" 
-                         class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                         alt="Medication icon" 
-                         style="flex-shrink: 0;">
-                    <div class="wow fadeInUp">
-                        <h5 class="mb-1" style="font-size: 16px;">Medication Management</h5>
-                        <p class="mb-0" style="font-size: 13px;">Proper administration and tracking of medications.</p>
-                    </div>
-                </div>
-            </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="relative d-flex align-items-start gap-3">
+                                <img src="assets/images/icons/black/6546564.png" 
+                                    class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
+                                    alt="Medication icon" 
+                                    style="flex-shrink: 0;">
+                                <div class="wow fadeInUp">
+                                    <h5 class="mb-1" style="font-size: 16px;">Medication Management</h5>
+                                    <p class="mb-0" style="font-size: 13px;">Proper administration and tracking of medications.</p>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="relative d-flex align-items-start gap-3">
-                    <img src="assets/images/icons/black/57436776.png" 
-                         class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                         alt="Personal assistance icon" 
-                         style="flex-shrink: 0;">
-                    <div class="wow fadeInUp">
-                        <h5 class="mb-1" style="font-size: 16px;">Personal Assistance</h5>
-                        <p class="mb-0" style="font-size: 13px;">Help with daily activities and personal care.</p>
-                    </div>
-                </div>
-            </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="relative d-flex align-items-start gap-3">
+                                <img src="assets/images/icons/black/57436776.png" 
+                                    class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
+                                    alt="Personal assistance icon" 
+                                    style="flex-shrink: 0;">
+                                <div class="wow fadeInUp">
+                                    <h5 class="mb-1" style="font-size: 16px;">Personal Assistance</h5>
+                                    <p class="mb-0" style="font-size: 13px;">Help with daily activities and personal care.</p>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-4 col-md-6 mt-3">
-                <div class="relative d-flex align-items-start gap-3">
-                    <img src="assets/images/icons/black/1422994-200.png" 
-                         class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                         alt="Nutrition icon" 
-                         style="flex-shrink: 0;">
-                    <div class="wow fadeInUp">
-                        <h5 class="mb-1" style="font-size: 16px;">Nutritious Meals</h5>
-                        <p class="mb-0" style="font-size: 13px;">Healthy, balanced meals tailored to dietary needs.</p>
-                    </div>
-                </div>
-            </div>
+                        <div class="col-lg-4 col-md-6 mt-3">
+                            <div class="relative d-flex align-items-start gap-3">
+                                <img src="assets/images/icons/black/1422994-200.png" 
+                                    class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
+                                    alt="Nutrition icon" 
+                                    style="flex-shrink: 0;">
+                                <div class="wow fadeInUp">
+                                    <h5 class="mb-1" style="font-size: 16px;">Nutritious Meals</h5>
+                                    <p class="mb-0" style="font-size: 13px;">Healthy, balanced meals tailored to dietary needs.</p>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="col-lg-4 col-md-6 mt-3">
-                <div class="relative d-flex align-items-start gap-3">
-                    <img src="assets/images/icons/black/6546564.png" 
-                         class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                         alt="Activities icon" 
-                         style="flex-shrink: 0;">
-                    <div class="wow fadeInUp">
-                        <h5 class="mb-1" style="font-size: 16px;">Recreational Activities</h5>
-                        <p class="mb-0" style="font-size: 13px;">Engaging social and leisure activities.</p>
+                        <div class="col-lg-4 col-md-6 mt-3">
+                            <div class="relative d-flex align-items-start gap-3">
+                                <img src="assets/images/icons/black/6546564.png" 
+                                    class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
+                                    alt="Activities icon" 
+                                    style="flex-shrink: 0;">
+                                <div class="wow fadeInUp">
+                                    <h5 class="mb-1" style="font-size: 16px;">Recreational Activities</h5>
+                                    <p class="mb-0" style="font-size: 13px;">Engaging social and leisure activities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Optional: Add a 6th item if needed -->
+                        <div class="col-lg-4 col-md-6 mt-3">
+                            <div class="relative d-flex align-items-start gap-3">
+                                <img src="assets/images/icons/black/564564.png" 
+                                    class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
+                                    alt="Support icon" 
+                                    style="flex-shrink: 0;">
+                                <div class="wow fadeInUp">
+                                    <h5 class="mb-1" style="font-size: 16px;">24/7 Support</h5>
+                                    <p class="mb-0" style="font-size: 13px;">Round-the-clock care and assistance.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Optional: Add a 6th item if needed -->
-            <div class="col-lg-4 col-md-6 mt-3">
-                <div class="relative d-flex align-items-start gap-3">
-                    <img src="assets/images/icons/black/564564.png" 
-                         class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                         alt="Support icon" 
-                         style="flex-shrink: 0;">
-                    <div class="wow fadeInUp">
-                        <h5 class="mb-1" style="font-size: 16px;">24/7 Support</h5>
-                        <p class="mb-0" style="font-size: 13px;">Round-the-clock care and assistance.</p>
+                                    <!-- CTA Section -->
+                    <div style="text-align: center; background: #ffffff; padding: 40px 30px; border-bottom: 2px solid #E2E8F0;">
+                        <h3 style="font-size: 26px; font-weight: 600; color: #0F172A; margin: 0 0 12px 0;">
+                            Explore Our Care Services
+                        </h3>
+                        <p style="font-size: 15px; color: #64748B; margin: 0 0 25px 0;  margin-left: auto; margin-right: auto; line-height: 1.6;">
+                            Discover personalized care solutions designed to support comfort, dignity, and well-being at every stage.
+                        </p>
+                        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp"
+                        data-wow-delay=".6s"
+                        href="{{ route('services') }}">
+                            Learn More About Our Services
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
+            </section>
