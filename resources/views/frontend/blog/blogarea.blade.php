@@ -24,7 +24,8 @@
                                 </a>
                             </h4>
                             <p class="mb-3">
-                                {{ Str::limit($blog->description, 110) }}
+                                {{ Str::limit(strip_tags($blog->description), 110) }}
+
                             </p>
                         </div>
                     </div>
