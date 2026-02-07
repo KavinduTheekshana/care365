@@ -41,19 +41,25 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
-                        <div class="row"> 
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="widget">
-                                    <h5>Quick Links</h5>
-                                    <ul>
-                                        <li><a href="{{ route('home') }}">Home</a></li>
-                                        <li><a href="{{ route('services') }}">Our Services</a></li>
-                                        <li><a href="{{ route('gallery') }}">Gallery</a></li>
-                                        <li><a href="{{ route('about') }}">About Us</a></li>
-                                        <li><a href="{{ route('blog') }}">Blog</a></li>
-                                        <li><a href="{{ route('howitworks') }}">How It Works</a></li>
-                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="widget-area">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-sm-6 col-xl-auto" data-cue="slideInUp">
+                    <div class="widget footer-widget">
+                        <div class="th-widget-about">
+                            <div class="about-logo">
+                                <a href="index.html"><img src="logo/care365_light.svg" alt="Care 365"
+                                        width="150px"></a>
+                            </div>
+                            <p class="about-text">Join Care 365's extraordinary odyssey, infused with compassion
+                                and dignity, pursuing a life well-lived.</p>
+                            <div class="info-box">
+                                <div class="box-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                             </div>
                             <div class="col-lg-8 col-sm-6">

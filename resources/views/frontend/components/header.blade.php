@@ -1,31 +1,33 @@
 <header class="header-light">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="de-flex sm-pt10">
-                            <div class="de-flex-col">
-                                <!-- logo begin -->
-                                <div id="logo">
-                                    <a href="{{ route('home') }}">
-                                        <img class="logo-main" src="assets/img/logo.png" alt="" 
-                                            style="max-height: 60px; width: auto; height: auto;">
-                                        <img class="logo-scroll" src="assets/img/logo.png" alt="" 
-                                            style="max-height: 60px; width: auto; height: auto;">
-                                        <img class="logo-mobile" src="assets/img/logo.png" alt="" 
-                                            style="max-height: 60px; width: auto; height: auto;">
-                                    </a>
-                                </div>
-                                <!-- logo close -->
-                            </div>
-                            <div class="de-flex-col header-col-mid">
-                                <ul id="mainmenu">
-                                    <li><a class="menu-item {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
-                                    <li><a class="menu-item {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About Care365</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="{{ route('about') }}#who-we-are" class="scroll-link">Vision|Mission</a></li>
-                                            <li><a class="menu-item" href="{{ route('about') }}#Why-Choose-Care365" class="scroll-link">Why Choose Care365 </a></li>
-                                            <li><a class="menu-item" href="{{ route('about') }}#Care-Team " class="scroll-link">Management & Care Team  </a></li>
-
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto">
+                        <div class="header-logo">
+                            <a href="{{ route('home') }}">
+                                <img src="logo/care365_light.svg" alt="Care 365">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-auto me-xxl-auto">
+                        <nav class="main-menu d-none d-lg-inline-block">
+                            <ul>
+                                <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
+                                    <a href="{{ route('home') }}">Home</a>
+                                </li>
+                                <li class="menu-item-has-children {{ request()->routeIs('about*') ? 'active' : '' }}">
+                                    <a href="{{ route('about') }}">About Us</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('about') }}#who-we-are" class="scroll-link">Who We Are</a></li>
+                                        <li><a href="{{ route('about') }}#how-we-work" class="scroll-link">How We Work</a></li>
+                                        <li><a href="{{ route('about') }}#our-homes" class="scroll-link">Our Homes</a></li>
+                                    </ul>
+                                </li>
+                                <!--
+                                <li class="menu-item-has-children {{ request()->routeIs('services') ? 'active' : '' }}">
+                                    <a href="{{route('services')}}">Services</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{{ route('services') }}#Packages" class="scroll-link">Packages</a></li>
+                                            <li><a href="{{ route('services') }}#Calander" class="scroll-link">Calander</a></li>
                                         </ul>
                                     </li>
                                     <li><a class="menu-item {{ request()->routeIs('services') ? 'active' : '' }}" href="{{ route('services') }}">Care Services</a>

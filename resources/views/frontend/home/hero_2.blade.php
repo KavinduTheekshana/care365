@@ -1,27 +1,32 @@
-<section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
-    <div class="v-center">
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slide 1 - Main Headline Focus -->
-                <div class="swiper-slide">
-                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg)">
-                        <div class="sw-caption">
-                            <div class="container">
-                                <div class="row g-4 justify-content-center">
-                                    <div class="spacer-double"></div>
-                                    <div class="col-lg-8 text-center">
-                                        <div class="spacer-single"></div>
-                                        <div class="sw-text-wrapper">
-                                            <div class="subtitle mb-2">Premium Luxury Retirement Homes in Sri Lanka</div>
-                                            <h1 class="slider-title mb-3">With Dignity, Safety & Compassion</h1>
-                                            <p class="slider-teaser mb-3">Trusted by families locally and abroad to care for their loved ones.</p>
-                                            <div class="spacer-10"></div>
-                                            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2  mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
-                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book a Visit / Virtual Tour</a>
-                                            </div>
-                                        </div>
+<div class="th-hero-wrapper hero-7" id="hero" style="height: 70vh;">
+
+    <div class="hero-left-social">
+        <ul>
+            <li><span class="hero-border"></span></li>
+            <li class="follow-text">
+                <h6>FOLLOW US -</h6>
+            </li>
+            <li><a href="https://www.facebook.com/Care36t5"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="swiper th-slider" id="heroSlider8" data-slider-options='{"effect":"fade", "autoplay":true, "autoHeight": "true"}'>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="th-hero-bg" data-bg-src="assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-inner">
+                    <div class="container th-container2">
+                        <div class="row gy-4 align-items-center justify-content-center text-center">
+                            <div class="col-xxl-8 col-xl-9 col-lg-10">
+                                <div class="hero-style7">
+                                    <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">A Home Away From Home for Your Loved Ones</h1>
+                                    <p class="hero-text" data-ani="slideinup" data-ani-delay="0.6s">Safe, comfortable assisted living with personalized senior care</p>
+                                    <div data-ani="slideinup" data-ani-delay="0.10">
+                                        <a href="{{ route('contact') }}" class="th-btn th-btn-icon2">Get Started <i class="far fa-long-arrow-right ms-3"></i></a>
                                     </div>
                                     <div class="spacer-single"></div>
                                 </div>
@@ -228,51 +233,35 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
 section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .sw-caption {
     position: relative;
     z-index: 2;
-}
-
-/* ====== PHSRC REGISTERED BADGE STYLING ====== */
-.phsrc-badge {
-    position: absolute;
-    top: 100px;
-    right: 20px;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 2px 2px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: 10px;
-    backdrop-filter: blur(5px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+    padding: 20px 0;
 }
 
-.phsrc-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+.th-hero-wrapper.hero-7 .swiper-slide {
+    position: relative;
+    height: 70vh !important;
 }
 
-.phsrc-badge img {
-    height: 50px;
-    width: auto;
-    display: block;
+.th-hero-wrapper.hero-7 .swiper-wrapper,
+.th-hero-wrapper.hero-7 .swiper-slide {
+    height: 100%;
 }
 
-.phsrc-badge .phsrc-text {
-    font-size: 11px;
-    font-weight: 700;
-    color: #2c3e50;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    line-height: 1.3;
-    max-width: 80px;
+/* Hero titles */
+.hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
 }
 
-/* Desktop font sizes for 700px height */
-section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
-    font-size: 2.5rem !important; /* 40px */
-    line-height: 1.2 !important;
-    margin-bottom: 0.5rem !important;
+/* Hero text */
+.hero-text {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
 }
 
 section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
@@ -280,172 +269,192 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     margin-bottom: 1rem !important;
 }
 
-section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
-    font-size: 1.125rem !important; /* 18px */
-    line-height: 1.5 !important;
-    margin-bottom: 1.5rem !important;
+/* Ensure container takes full height */
+.hero-inner .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* ====== MOBILE RESPONSIVENESS ====== */
+.hero-inner .row {
+    width: 100%;
+}
 
-/* Tablet - 768px and below */
+/* Button responsive */
+.hero-style7 .th-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+}
+
+/* Large tablets and small desktops */
+@media (max-width: 1199px) {
+    .th-hero-wrapper.hero-7 {
+        height: 90vh !important;
+    }
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 90vh !important;
+    }
+}
+
+/* Responsive adjustments for tablets and small laptops */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2rem !important;
+    }
+
+    .hero-text {
+        font-size: 1rem !important;
+    }
+}
+
+/* Tablet devices */
 @media (max-width: 768px) {
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
-        height: 500px !important;
-        min-height: 500px !important;
+    .th-hero-wrapper.hero-7 {
+        height: 60vh !important;
     }
-    
-    /* Better mobile image positioning */
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
-        background-position: center center !important;
-        background-size: cover !important;
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 60vh !important;
     }
-    
-    /* LIGHTER overlay for mobile - text is already smaller so needs less darkness */
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
-        background: rgba(0, 0, 0, 0.35) !important; /* Lighter than desktop */
+
+    .hero-title {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.8rem !important;
     }
-    
-    /* PHSRC Badge - Tablet */
-    .phsrc-badge {
-        top: 80px;
-        right: 15px;
-        padding: 2px 2px;
-        gap: 8px;
+
+    .hero-text {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.2rem !important;
     }
-    
-    .phsrc-badge img {
-        height: 40px;
+
+    .hero-style7 .th-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
     }
-    
-    .phsrc-badge .phsrc-text {
-        font-size: 10px;
-        max-width: 70px;
+
+    .hero-inner {
+        padding: 15px 0;
     }
-    
-    /* Tablet font sizes */
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
-        font-size: 1.75rem !important; /* 28px */
+}
+
+/* Mobile devices */
+@media (max-width: 576px) {
+    .th-hero-wrapper.hero-7 {
+        height: 55vh !important;
+    }
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 55vh !important;
+    }
+
+    .hero-title {
+        font-size: 1.3rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .hero-text {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-style7 .th-btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+
+    .hero-inner {
+        padding: 10px 0;
+    }
+
+    .col-xxl-8, .col-xl-9, .col-lg-10 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Extra small devices (320px and below) */
+@media (max-width: 420px) {
+    .th-hero-wrapper.hero-7 {
+        height: 50vh !important;
+    }
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 50vh !important;
+    }
+
+    .hero-title {
+        font-size: 1.1rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .hero-text {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .hero-style7 .th-btn {
+        padding: 7px 18px;
+        font-size: 0.8rem;
+    }
+
+    .hero-inner {
+        padding: 8px 0;
+    }
+}
+
+/* Very small devices (280px - old phones) */
+@media (max-width: 320px) {
+    .th-hero-wrapper.hero-7 {
+        height: 45vh !important;
+    }
+
+    .th-hero-wrapper.hero-7 .swiper-slide {
+        height: 45vh !important;
+    }
+
+    .hero-title {
+        font-size: 1rem !important;
         line-height: 1.3 !important;
         margin-bottom: 0.4rem !important;
     }
-    
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
-        font-size: 0.875rem !important; /* 14px */
-        margin-bottom: 0.75rem !important;
+
+    .hero-text {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.7rem !important;
     }
-    
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
-        font-size: 0.95rem !important; /* 15px */
-        line-height: 1.4 !important;
-        margin-bottom: 1rem !important;
+
+    .hero-style7 .th-btn {
+        padding: 6px 15px;
+        font-size: 0.75rem;
     }
 }
 
-/* Small mobile - 576px and below */
+/* Slider arrows responsive */
+@media (max-width: 768px) {
+    .slider-arrow {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .slider-arrow img {
+        width: 18px !important;
+    }
+}
+
 @media (max-width: 576px) {
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
-        height: 450px !important;
-        min-height: 450px !important;
-        padding: 0 15px !important;
+    .slider-arrow {
+        width: 35px !important;
+        height: 35px !important;
     }
-    
-    /* Even lighter overlay for small screens */
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
-        background: rgba(0, 0, 0, 0.3) !important; /* Much lighter for mobile */
-    }
-    
-    /* PHSRC Badge - Mobile */
-    .phsrc-badge {
-        top: 45px;
-        right: 12px;
-        padding: 2px 2px;
-        gap: 6px;
-        border-radius: 6px;
-    }
-    
-    .phsrc-badge img {
-        height: 35px;
-    }
-    
-    .phsrc-badge .phsrc-text {
-        font-size: 9px;
-        max-width: 60px;
-        letter-spacing: 0.3px;
-    }
-    
-    /* Mobile font sizes */
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
-        font-size: 1.5rem !important; /* 24px */
-        line-height: 1.3 !important;
-        margin-bottom: 0.3rem !important;
-    }
-    
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
-        font-size: 0.8rem !important; /* 13px */
-        margin-bottom: 0.5rem !important;
-    }
-    
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
-        font-size: 0.875rem !important; /* 14px */
-        line-height: 1.4 !important;
-        margin-bottom: 0.75rem !important;
-    }
-}
 
-/* Extra small mobile - 375px and below */
-@media (max-width: 375px) {
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
-        height: 400px !important;
-        min-height: 400px !important;
-    }
-    
-    /* Very light overlay for tiny screens */
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
-        background: rgba(0, 0, 0, 0.25) !important; /* Minimal overlay */
-    }
-    
-    /* PHSRC Badge - Extra Small */
-    .phsrc-badge {
-        top: 50px;
-        right: 10px;
-        padding: 2px 2px;
-        gap: 5px;
-    }
-    
-    .phsrc-badge img {
-        height: 30px;
-    }
-    
-    .phsrc-badge .phsrc-text {
-        font-size: 8px;
-        max-width: 50px;
-    }
-    
-    /* Smallest font sizes */
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
-        font-size: 1.25rem !important; /* 20px */
-        line-height: 1.25 !important;
-    }
-    
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
-        font-size: 0.75rem !important; /* 12px */
-    }
-    
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
-        font-size: 0.8125rem !important; /* 13px */
-        line-height: 1.35 !important;
+    .slider-arrow img {
+        width: 15px !important;
     }
 }
-
-/* Alternative: Gradient overlay (optional - looks more modern) */
-/* Uncomment this if you want a gradient instead */
-/*
-section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
-    background: linear-gradient(to bottom, 
-        rgba(0, 0, 0, 0.2), 
-        rgba(0, 0, 0, 0.4)
-    ) !important;
-}
-*/
 </style>
