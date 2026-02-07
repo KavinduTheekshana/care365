@@ -10,50 +10,16 @@ class FaqSeeder extends Seeder
 {
     public function run(): void
     {
+        // Disable foreign key checks just in case
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        // Clear existing FAQs
         Faq::truncate();
+
+        // Re-enable foreign key checks
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $faqs = [
-
-            // ── New Care365-specific FAQs (added) ──
-            [
-                'question' => 'What type of care does Care365 provide?',
-                'answer' => 'Care365 provides residential elder care with 24/7 caregiver and nursing support. Our services include medical supervision, daily personal assistance, medication management, meals, housekeeping, and recreational activities.',
-                'visibility' => 'public',
-            ],
-            [
-                'question' => 'Are nurses and caregivers available at all times?',
-                'answer' => 'Yes. Trained caregivers are available around the clock, with qualified nurses overseeing medical needs and emergency response at all times.',
-                'visibility' => 'public',
-            ],
-            [
-                'question' => 'How do admissions work?',
-                'answer' => 'Admissions begin with a discussion with our care advisors to understand the resident’s needs. Once suitability is confirmed, we guide you through documentation, care planning, and room allocation in a clear and supportive manner.',
-                'visibility' => 'public',
-            ],
-            [
-                'question' => 'Can families visit residents?',
-                'answer' => 'Yes. Family visits are encouraged during designated visiting hours, ensuring residents maintain strong emotional connections while preserving a calm living environment.',
-                'visibility' => 'public',
-            ],
-            [
-                'question' => 'Do you accept residents with medical conditions?',
-                'answer' => 'We accommodate residents with varying medical needs, subject to assessment. This allows us to ensure we can safely and appropriately meet each resident’s care requirements.',
-                'visibility' => 'public',
-            ],
-            [
-                'question' => 'What meals are provided?',
-                'answer' => 'Residents receive nutritious, well-balanced meals prepared according to dietary needs, medical conditions, and personal preferences.',
-                'visibility' => 'public',
-            ],
-            [
-                'question' => 'How do you support families living overseas?',
-                'answer' => 'We provide clear communication, updates when required, and a reliable local care team—so overseas family members can stay informed and confident about their loved one’s wellbeing.',
-                'visibility' => 'public',
-            ],
-
-            // ── Original / general FAQs (kept) ──
             [
                 'question' => 'What types of care services are provided?',
                 'answer' => 'We offer a range of care services including assistance with activities of daily living, medication management, and specialized memory care.',
@@ -131,10 +97,11 @@ class FaqSeeder extends Seeder
             ],
         ];
 
+        // Insert all FAQs
         foreach ($faqs as $faq) {
             Faq::create($faq);
         }
 
-        $this->command->info('✅ FAQs seeded successfully! (' . count($faqs) . ' records added)');
+        $this->command->info('✅ FAQs seeded successfully!');
     }
 }

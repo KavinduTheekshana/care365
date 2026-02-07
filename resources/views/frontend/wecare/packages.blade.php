@@ -1,20 +1,16 @@
-<section class="bg-white overflow-hidden py-5" id="Packages">
+<!--
+<section class="bg-smoke2 overflow-hidden space" id="Packages">
     <div class="container">
-        <!-- Title Area -->
-        <div class="title-area text-center mb-5 pb-3">
-            <div class="subtitle text-uppercase mb-2" style="color: #3498db; font-size: 13px; letter-spacing: 2px; font-weight: 600;">
-                Pricing Plan
-            </div>
-            <h2 class="mb-3" style="font-size: 36px; font-weight: 700; color: #2c3e50;">Our Packages</h2>
-            <p class="lead mb-0 text-muted mx-auto" style="max-width: 600px; font-size: 16px; line-height: 1.6;">
-                Comprehensive care packages designed to meet the unique needs of our residents.
-            </p>
+        <div class="title-area text-center mb-5">
+            <span class="sub-title style2 text-anim" data-cue="slideInUp">Pricing Plan</span>
+            <h2 class="sec-title text-anim" data-cue="slideInUp">Our Packages</h2>
+            <p class="fs-18 text-anim2" data-cue="slideInUp">Comprehensive care packages designed to meet the unique needs of our residents.</p>
         </div>
         
         @if($packages->isEmpty())
             <div class="text-center py-5">
-                <div class="alert alert-light border d-inline-block px-4 py-3">
-                    <i class="fa-solid fa-info-circle me-2" style="color: #3498db;"></i>
+                <div class="alert alert-info d-inline-block">
+                    <i class="fa-solid fa-info-circle me-2"></i>
                     No packages available at the moment. Please check back soon.
                 </div>
             </div>
@@ -22,88 +18,57 @@
             <div class="row justify-content-center g-4">
                 @foreach($packages as $index => $package)
                     <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="pricing-card bg-white position-relative d-flex flex-column" 
-                             style="border-radius: 16px; 
-                                    overflow: hidden; 
-                                    border: 1px solid #e8ecef;
-                                    transition: all 0.3s ease;
-                                    height: 100%;
-                                    min-height: 550px;">
+                        <div class="pricing-card-grid shadow-sm" data-cue="slideInUp" data-cue-delay="{{ $index * 200 }}" style="border-radius: 12px; overflow: hidden; ">
+                            <div class="pricing-1-bg_mask"></div>
                             
-                            <!-- Accent Border Top -->
-                            <div class="accent-border" style="height: 4px; background: #3498db;"></div>
-                            
-                            <!-- Pricing Header -->
-                            <div class="pricing-header text-center px-4 pt-5 pb-4">
-                                <h3 class="package-title mb-4" style="font-size: 22px; font-weight: 600; color: #2c3e50;">
+                            <div class="pricing-header text-center p-4 border-bottom">
+                                <h3 class="box-title mb-3" style="font-size: 24px; font-weight: 600; color: #2c3e50;">
                                     {{ $package->title }}
                                 </h3>
                                 
                                 <div class="pricing-amount mb-2">
-                                    <h2 class="price mb-1" style="font-size: 44px; font-weight: 700; color: #2c3e50; line-height: 1;">
+                                    <h2 class="price mb-0" style="font-size: 42px; font-weight: 700; color: #2c3e50; line-height: 1;">
                                         {{ $package->formatted_price_lkr }}
                                     </h2>
-                                    <p class="text-muted mb-2" style="font-size: 13px; font-weight: 500;">
+                                    <p class="text-muted mb-0" style="font-size: 14px;">
                                         ({{ $package->formatted_price_usd }})
                                     </p>
                                 </div>
-                                <span class="d-inline-block px-3 py-1" 
-                                      style="background-color: #f8f9fa; 
-                                             color: #6c757d; 
-                                             font-size: 12px; 
-                                             border-radius: 20px;
-                                             font-weight: 500;">
+                                <span class="bg-transparent" style="color: #555; font-size: 13px; line-height: 1.6;">
                                     Upwards Monthly
                                 </span>
                             </div>
                             
-                            <!-- Divider -->
-                            <div class="mx-4" style="height: 1px; background-color: #e8ecef;"></div>
-                            
-                            <!-- Pricing Body -->
-                            <div class="pricing-body px-4 py-4 flex-grow-1" 
-                                 style="max-height: 280px; 
-                                        overflow-y: auto;
-                                        overflow-x: hidden;">
+                            <div class="pricing-body p-4">
                                 @if($package->features->isNotEmpty())
                                     <ul class="features-list mb-0" style="list-style: none; padding: 0;">
                                         @foreach($package->features as $feature)
                                             <li class="feature-item d-flex align-items-start mb-3">
-                                                <i class="fa-solid fa-check flex-shrink-0 me-3 mt-1" 
-                                                   style="color: #3498db; font-size: 16px;"></i>
-                                                <span class="feature-text" style="color: #5a6c7d; 
-                                                             font-size: 14px; 
-                                                             line-height: 1.6;">
+                                                <i class="fa-solid fa-circle-check flex-shrink-0 me-3 mt-1" style="color: #4CAF50; font-size: 18px;"></i>
+                                                <span style="color: #555; font-size: 15px; line-height: 1.6;">
                                                     {{ $feature->feature }}
                                                 </span>
                                             </li>
                                         @endforeach
                                     </ul>
                                 @else
-                                    <div class="text-center py-5">
-                                        <i class="fa-solid fa-box-open mb-3" style="font-size: 32px; color: #dee2e6;"></i>
-                                        <p class="text-muted mb-0" style="font-size: 13px;">
+                                    <div class="text-center py-4">
+                                        <i class="fa-solid fa-box-open text-muted mb-3" style="font-size: 40px; opacity: 0.3;"></i>
+                                        <p class="text-muted mb-0" style="font-size: 14px;">
                                             Features will be added soon
                                         </p>
                                     </div>
                                 @endif
                             </div>
                             
-                            <!-- Pricing Footer -->
-                            <div class="pricing-footer px-4 pb-4 pt-2">
-                                <a href="{{ route('contact') }}" 
-                                   class="enquire-btn d-block text-center py-2 text-decoration-none"
-                                   style="background-color: white;
-                                          color: #3498db;
-                                          border: 2px solid #3498db;
-                                          border-radius: 8px;
-                                          font-size: 13px;
-                                          font-weight: 600;
-                                          letter-spacing: 0.5px;
-                                          transition: all 0.3s ease;">
-                                    Enquire Now
-                                    <i class="fa-solid fa-arrow-right ms-2" style="font-size: 11px;"></i>
-                                </a>
+                            <div class="pricing-footer pb-5 pt-3">
+                                <div class="d-flex justify-content-end">  
+                                    <a href="{{ route('contact') }}" class="enquire-link d-inline-flex align-items-center gap-2 fw-medium text-decoration-none"
+                                    style="color: #2c3e50; font-size: 16px;">
+                                        Enquire Now
+                                        <i class="fa-solid fa-arrow-right ms-2" style="font-size: 14px;"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -114,189 +79,163 @@
 </section>
 
 <style>
-/* Card Hover Effect */
-.pricing-card {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    /* Reduce text size on mobile */
+@media (max-width: 767.98px) {
+    .pricing-card-grid .box-title {
+        font-size: 21px !important;      /* was 24px */
+    }
+    
+    .pricing-card-grid .price {
+        font-size: 36px !important;      /* was 42px */
+    }
+    
+    .pricing-card-grid .feature-item span {
+        font-size: 14px !important;      /* was 15px */
+    }
+    
+    .pricing-card-grid .pricing-amount p {
+        font-size: 13px !important;
+    }
+    
+    /* Optional: slightly less padding on mobile if cards feel too tall */
+    .pricing-body {
+        padding: 1.5rem !important;     /* reduced from p-4 (2rem) */
+    }
 }
 
-.pricing-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(52, 152, 219, 0.15);
-    border-color: #3498db !important;
+.enquire-link {
+    transition: all 0.3s ease;
 }
 
-/* Custom Scrollbar for Pricing Body */
-.pricing-body::-webkit-scrollbar {
+.enquire-link:hover {
+    color: #4CAF50 !important;
+}
+
+.enquire-link:hover i {
+    transform: translateX(6px);
+}
+</style>
+-->
+
+
+
+<section class="price-sec-2 overflow-hidden space"  id="Packages">
+    <div class="container th-container2">
+        <div class="title-area text-center mb-5">
+            <span class="sub-title style2 text-anim" data-cue="slideInUp">Pricing Plan</span>
+            <h2 class="sec-title text-anim" data-cue="slideInUp">Our Packages</h2>
+            <p class="fs-18 text-anim2" data-cue="slideInUp">Comprehensive care packages designed to meet the unique needs of our residents.</p>
+        </div>
+        
+        <!-- Single Package Section -->
+        <div class="wrapper-pack">
+            <div class="row gy-4 justify-content-center">
+                @forelse($packages as $index => $package)
+                    @php
+                        // Determine if this is the "Best Value" package
+                        $isBestValue = $package->is_best_value ?? ($index == 1);
+                    @endphp
+                    
+                    <div class="col-xl-4 col-md-6" data-cue="slideInUp">
+                        <div class="price-card {{ $isBestValue ? 'active-plan' : '' }} h-100 d-flex flex-column">
+                            @if($isBestValue)
+                                <p class="premium">Best Value For You</p>
+                            @else
+                                <p class="premium">&nbsp;</p>
+                            @endif
+                            
+                            <div class="price-card-inner flex-grow-1 d-flex flex-column">
+                                <h3 class="box-title">{{ $package->title }}</h3>
+                                <p class="box-text">
+                                    {{ $package->room_type }} room • 
+                                    {{ $package->sharing_capacity }} {{ $package->sharing_capacity > 1 ? 'sharing' : 'single' }} • 
+                                    @switch($package->bathroom_type)
+                                        @case('ensuite')
+                                            En-suite Bathroom
+                                            @break
+                                        @case('shared')
+                                            Shared Bathroom
+                                            @break
+                                        @case('mixed')
+                                            Mixed Bathroom Types
+                                            @break
+                                        @default
+                                            {{ $package->bathroom_type }}
+                                    @endswitch
+                                </p>
+                                
+                                <div class="price_card-wrap">
+                                    <a href="{{ route('contact') }}" class="th-btn">Enquire Now</a>
+                                    <h4 class="price-card_price">
+                                        <span class="currency-sing">Rs.</span>
+                                        {{ number_format($package->price_lkr, 0) }}
+                                        <span class="duration"></span>
+                                        @if($package->price_usd)
+                                            <br>
+                                            <small class="d-block text-muted mt-1" style="font-size: 14px;">
+                                                (${{ number_format($package->price_usd, 0) }})
+                                            </small>
+                                        @endif
+                                        <span class="bg-transparent" style="color: #555; font-size: 13px; line-height: 1.6;">
+                                            Upwards Monthly
+                                        </span>
+                                    </h4>
+                                </div>
+
+                                <div class="checklist flex-grow-1">
+                                    <ul class="features-list-scroll">
+                                        @forelse($package->features as $feature)
+                                            <li class="{{ !$feature->is_active ? 'unavailable' : '' }}">
+                                                <i class="fa-solid fa-check"></i> {{ $feature->feature }}
+                                            </li>
+                                        @empty
+                                            <li class="text-muted">No features listed yet</li>
+                                        @endforelse
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12 text-center">
+                        <div class="alert alert-info">
+                            <p>No packages available at the moment. Please check back later.</p>
+                        </div>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+
+/* Features list with scroll */
+.features-list-scroll {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 0.6rem;
+}
+
+
+
+/* Custom scrollbar styling */
+.features-list-scroll::-webkit-scrollbar {
     width: 6px;
 }
 
-.pricing-body::-webkit-scrollbar-track {
-    background: #f1f3f5;
+.features-list-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
     border-radius: 10px;
 }
 
-.pricing-body::-webkit-scrollbar-thumb {
-    background: #3498db;
+.features-list-scroll::-webkit-scrollbar-thumb {
+    background: #888;
     border-radius: 10px;
 }
 
-.pricing-body::-webkit-scrollbar-thumb:hover {
-    background: #2980b9;
-}
-
-/* Firefox Scrollbar */
-.pricing-body {
-    scrollbar-width: thin;
-    scrollbar-color: #3498db #f1f3f5;
-}
-
-/* Button Hover Effect */
-.enquire-btn:hover {
-    background-color: #3498db !important;
-    color: white !important;
-    transform: scale(1.02);
-}
-
-.enquire-btn:hover i {
-    transform: translateX(4px);
-}
-
-/* Check Icon Animation */
-.feature-item i {
-    transition: transform 0.3s ease;
-}
-
-.pricing-card:hover .feature-item i {
-    transform: scale(1.1);
-}
-
-/* FIXED: Feature Text Wrapping - Improved Solution */
-.feature-item {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-}
-
-.feature-text {
-    /* Force text wrapping */
-    word-wrap: break-word;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    max-width: 100%;
-    width: 100%;
-    display: block;
-    
-    /* Prevent long words from breaking layout */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    
-    /* Ensure proper line breaking */
-    white-space: normal;
-    line-break: anywhere;
-}
-
-/* For extremely long unbroken text */
-.feature-text {
-    word-break: break-all; /* Break any word if needed */
-    overflow-wrap: anywhere; /* Modern property for better breaking */
-}
-
-/* Responsive Typography */
-@media (max-width: 991.98px) {
-    .title-area h2 {
-        font-size: 32px !important;
-    }
-    
-    .title-area .lead {
-        font-size: 15px !important;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .title-area h2 {
-        font-size: 28px !important;
-    }
-    
-    .package-title {
-        font-size: 20px !important;
-    }
-    
-    .price {
-        font-size: 38px !important;
-    }
-    
-    .pricing-amount p {
-        font-size: 12px !important;
-    }
-    
-    .feature-text {
-        font-size: 13px !important;
-        line-height: 1.5 !important;
-    }
-    
-    .pricing-body {
-        padding: 1.5rem 1.25rem !important;
-        max-height: 250px !important;
-    }
-    
-    .pricing-header {
-        padding: 2rem 1.25rem 1.5rem !important;
-    }
-    
-    .pricing-card {
-        min-height: 500px !important;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    .feature-item {
-        margin-bottom: 0.75rem !important;
-    }
-    
-    .feature-text {
-        font-size: 12px !important;
-    }
-}
-
-/* For very small screens */
-@media (max-width: 375px) {
-    .feature-text {
-        font-size: 11px !important;
-        line-height: 1.4 !important;
-    }
-    
-    .feature-item i {
-        font-size: 14px !important;
-        margin-right: 0.5rem !important;
-    }
-}
-
-/* Smooth Transitions 
-* {
-    transition: all 0.3s ease;
-}*/
-
-/* Focus States for Accessibility */
-.enquire-btn:focus {
-    outline: 2px solid #f1c40f;
-    outline-offset: 2px;
-}
-
-/* Ensure feature list items don't overflow */
-.features-list {
-    width: 100%;
-    padding-right: 4px; /* Space for scrollbar */
-}
-
-/* Additional fix for long feature names */
-.pricing-card .feature-item {
-    min-height: 24px; /* Ensure consistent height */
-    align-items: flex-start;
+.features-list-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 </style>

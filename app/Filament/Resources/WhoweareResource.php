@@ -22,8 +22,6 @@ class WhoweareResource extends Resource
     protected static ?string $navigationGroup = 'Frontend Management';
 
     protected static ?int $navigationSort = 8;
-    
-    protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {
