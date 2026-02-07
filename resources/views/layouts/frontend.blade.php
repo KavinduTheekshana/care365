@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="zxx" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -71,108 +71,98 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!--==============================
-    All CSS File
-    ============================== -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/preloader.css') }}">
-    @stack('styles')
 
-    {{-- Schema.org Markup for Local Business --}}
-    @verbatim
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "NursingHome",
-    "name": "Care365",
-    "description": "Luxury retirement living where seniors thrive with joy, independence, and exceptional care in Sri Lanka.",
-    "url": "{{ url('/') }}",
-    "telephone": "0779191818",
-    "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "LK"
-    },
-    "sameAs": [
-        "https://www.facebook.com/Care36t5"
-    ]
-    }
-    </script>
-    @endverbatim
+    
+    <!-- CSS Files
+    ================================================== -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="assets/css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" >
+    <link href="assets/css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="assets/css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+
+
+        @stack('styles')
+
+        {{-- Schema.org Markup for Local Business --}}
+        @verbatim
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "NursingHome",
+        "name": "Care365",
+        "description": "Luxury retirement living where seniors thrive with joy, independence, and exceptional care in Sri Lanka.",
+        "url": "{{ url('/') }}",
+        "telephone": "0779191818",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "LK"
+        },
+        "sameAs": [
+            "https://www.facebook.com/Care36t5"
+        ]
+        }
+        </script>
+        @endverbatim
+
 </head>
 
-<body class="bg-smoke2">
+<body>
+    <div id="wrapper">
+        @include('frontend.components.popups')
+        <div class="float-text show-on-scroll">
+            <span><a href="#">Scroll to top</a></span>
+        </div>
+        <div class="scrollbar-v show-on-scroll"></div>
 
-    <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
 
-    <!-- Preloader -->
-    @include('frontend.components.preloader')
+        <!-- header begin -->
+        @include('frontend.components.header')
 
-    <!--********************************
-    Code Start From Here
-    ******************************** -->
-    <div class="cursor-follower"></div>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
 
-    @include('frontend.components.mobile-header')
-    @include('frontend.components.header')
-    @yield('content')
-    @include('frontend.components.footer')
+            <div id="top"></div>
 
-    <!--********************************
-    Code End  Here
-    ******************************** -->
+                @yield('content')
 
-    <!-- Scroll To Top -->
-    <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-            </path>
-        </svg>
+
+            
+        </div>
+        <!-- content close -->
+
+        <!-- footer begin -->
+        @include('frontend.components.footer')
+        <!-- footer close -->
     </div>
 
-    <!--==============================
-    All Js File
-    ============================== -->
-    <!-- Jquery -->
-    <script src="{{ asset('assets/js/vendor/jquery-3.7.1.min.js') }}"></script>
-    <!-- Swiper Js -->
-    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
-    <!-- Bootstrap -->
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <!-- Magnific Popup -->
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <!-- Counter Up -->
-    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
-    <!-- Range Slider -->
-    <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
-    <!-- Isotope Filter -->
-    <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
-    <!-- Cue Js -->
-    <script src="{{ asset('assets/js/scrollCue.min.js') }}"></script>
-    <!-- Gsap -->
-    <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
-    <!-- Scroll Trigger -->
-    <script src="{{ asset('assets/js/ScrollTrigger.min.js') }}"></script>
-    <!-- Split Text -->
-    <script src="{{ asset('assets/js/SplitText.min.js') }}"></script>
-    <!-- Lenis Js -->
-    <script src="{{ asset('assets/js/lenis.min.js') }}"></script>
-    <!-- Perticle Js -->
-    <script src="{{ asset('assets/js/particles.min.js') }}"></script>
-    <script src="{{ asset('assets/js/particles-config.js') }}"></script>
-    <!-- Main Js File -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-    <!-- Preloader Js -->
-    <script src="{{ asset('assets/js/preloader.js') }}"></script>
-    @stack('scripts')
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/designesia.js"></script>
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/custom-marquee.js"></script>
+    <script src="assets/js/custom-swiper-1.js"></script>
+    <script src="assets/js/jquery.event.move.js"></script>
+    <script src="assets/js/jquery.twentytwenty.js"></script>
+
+    <script>
+    $(window).on("load", function(){
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+    });
+    </script>
+
 </body>
+
+
 
 </html>

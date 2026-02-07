@@ -9,50 +9,45 @@ use App\Models\Testimonial;
 use App\Models\Service;
 use App\Models\Gallery;
 use App\Models\SuccessStory;
+use App\Models\Package;
+use App\Models\CareHome;
+
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::where('is_public', true)
-                    ->orderBy('date', 'desc')
-                    ->take(3)
-                    ->get();
+
         
-        // Get random 8 FAQs with visibility
-        $faqs = Faq::where('visibility', true)
-                   ->inRandomOrder()
-                   ->take(5)
-                   ->get();
-        
-        // Get random 4 public testimonials for slider (2 slides on desktop)
         $testimonials = Testimonial::where('is_public', true)
-                                  ->inRandomOrder()
-                                  ->take(4)
-                                  ->get();
+                                ->inRandomOrder()
+                                ->get();
+
+        // Get packages with their features
+        $packages = Package::with(['features' => function($query) {
+            $query->where('is_active', true);
+        }])
+        ->where('status', 'active')
+        ->orderBy('price_lkr', 'asc')
+        ->get();
         
         // Get public services
         $services = Service::where('is_public', true)
                           ->orderBy('created_at', 'desc')
-                          ->take(10)
+                          ->take(6)
                           ->get();
 
-        // Get all active stories ordered by sort_order
-        $successStories = SuccessStory::where('is_active', true)
-            ->orderBy('sort_order')
-            ->get();
-        
-        // Group stories for proper display
-        $groupedStories = $this->groupSuccessStories($successStories);
+                // Get all public Care Homes
+        $carehomes = CareHome::where('is_public', true)
+                            ->orderBy('created_at', 'desc')
+                            ->get();
         
         // Return view with all data
         return view('frontend.home.index', compact(
-            'blogs', 
-            'faqs', 
             'testimonials', 
             'services',
-            'successStories',
-            'groupedStories'
+            'packages',
+            'carehomes'
         ));
     }
 

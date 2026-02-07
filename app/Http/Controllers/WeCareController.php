@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Package;
 use App\Models\Faq;
+use App\Models\CareHome;
+use App\Models\DayPackage;
 
 class WeCareController extends Controller
 {
@@ -27,8 +29,17 @@ class WeCareController extends Controller
                    ->take(5)
                    ->get();
 
+                // Get all public Care Homes
+        $carehomes = CareHome::where('is_public', true)
+                            ->orderBy('created_at', 'desc')
+                            ->get();
 
-        return view('frontend.wecare.index', compact('packages', 'faqs'));
+        $dayPackages = DayPackage::where('active', true)
+                                 ->orderBy('price', 'asc')
+                                 ->get();
+
+
+        return view('frontend.wecare.index', compact('packages', 'faqs','carehomes', 'dayPackages'));
 
     }
 }

@@ -1,84 +1,59 @@
-<div class="space">
+<section id="FAQ">
     <div class="container">
-        <div class="row gy-40 gx-60">
-            <div class="col-xxl-7 col-xl-7">
-                <div class="title-area">
-                    <h2 class="sec-title text-anim2" data-cue="slideInLeft">Frequently Ask Questions</h2>
-                    <p class="desc">Find answers to common questions about our elder care services, ensuring you have all the information you need to make informed decisions for your loved ones.</p>
-                </div>
+        <div class="row g-4">
+            <div class="col-lg-6 offset-lg-3 text-center">                            
+                <div class="subtitle wow fadeInUp mb-3">Questions</div>
+                <h2 class="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Questions</h2>
+            </div>
+        </div>
 
-                @if($faqs->count() > 0)
-                <div class="faq-wrap1 pe-xl-4">
-                    <div class="accordion" id="faqAccordion">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion s2 wow fadeInUp">
+
+                    @if($faqs->isEmpty())
+                        <div class="text-center py-5">
+                            <p>No frequently asked questions available at the moment.</p>
+                        </div>
+                    @else
                         @foreach($faqs as $index => $faq)
-                        <div class="accordion-card style3" data-cue="slideInUp">
-                            <div class="accordion-header" id="collapse-item-{{ $index + 1 }}">
-                                <button class="accordion-button {{ $index == 0 ? '' : 'collapsed' }}" 
-                                        type="button" 
-                                        data-bs-toggle="collapse" 
-                                        data-bs-target="#collapse-{{ $index + 1 }}" 
-                                        aria-expanded="{{ $index == 0 ? 'true' : 'false' }}" 
-                                        aria-controls="collapse-{{ $index + 1 }}">
-                                    <span class="count">{{ $index + 1 }}.</span> {{ $faq->question }}
-                                </button>
-                            </div>
-                            <div id="collapse-{{ $index + 1 }}" 
-                                 class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}" 
-                                 aria-labelledby="collapse-item-{{ $index + 1 }}" 
-                                 data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-text">{{ $faq->answer }}</p>
+                            <div class="accordion-section">
+                                <!-- Title / Question -->
+                                <div class="accordion-section-title" 
+                                     data-tab="#accordion-{{ $index + 1 }}">
+                                    {{ $faq->question }}
+                                </div>
+
+                                <!-- Content / Answer -->
+                                <div class="accordion-section-content" 
+                                     id="accordion-{{ $index + 1 }}">
+                                    <p class="mb-0">{!! nl2br(e($faq->answer)) !!}</p>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
-                    </div>
-                </div>
-                @else
-                <div class="alert alert-info">
-                    <p>No frequently asked questions available at the moment. Please check back later or contact us directly.</p>
-                </div>
-                @endif
-            </div>
-            
-            <div class="col-xxl-5 col-xl-5" data-cue="slideInUp">
-                <div class="info-wrap" data-cue="slideInUp">
-                    <div class="top">
-                        <h4 class="box-title">Didn't Find the Answer? Ask us Question?</h4>
-                        <p class="box-text">Call us directly, submit a sample or email us!</p>
-                    </div>
+                    @endif
 
-                    <div class="info-box" data-cue="slideInUp">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/faq-call.svg" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4 class="box-title">Call Us</h4>
-                            <p class="box-text"><a href="tel:+94776604040">(+94)77 660 40 40</a></p>
-                            <p class="box-text">Available 24/7 for booking & travel assistance</p>
-                        </div>
-                    </div>
-                    <div class="info-box" data-cue="slideInUp">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/faq-email.svg" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4 class="box-title">E-mail</h4>
-                            <p class="box-text"><a href="mailto:info@care36t5.com">info@care36t5.com</a></p>
-                            <p class="box-text">custom packages, or general questions</p>
-                        </div>
-                    </div>
-                    <div class="info-box" data-cue="slideInUp">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/faq-location.svg" alt="img">
-                        </div>
-                        <div class="content">
-                            <h4 class="box-title">Visit Us</h4>
-                            <p class="box-text">407 C1, Nomis Weragala Mw, Hokandara South. Thalawathugoda, Sri Lanka</p>
-                        </div>
-                    </div>
                 </div>
+                
+
+                
             </div>
         </div>
     </div>
-</div>
+    <div style="text-align: center; background: #ffffff;   margin-top: 100px;">
+        <h3 style="font-size: 26px; font-weight: 600; color: #0F172A; margin: 0 0 12px 0;">
+            Still Have Questions?
+        </h3>
+        <p style="font-size: 15px; color: #64748B; margin: 0 0 25px 0;  margin-left: auto; margin-right: auto; line-height: 1.6;">
+            We’re here to help. Reach out to us for more details about admissions, care services, 
+            and how we can support your loved one.
+        </p>
+        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp"
+        data-wow-delay=".6s"
+        href="https://wa.me/94779191818"
+        target="_blank">
+            Request Admission Information
+        </a>
+    </div>
+
+</section>

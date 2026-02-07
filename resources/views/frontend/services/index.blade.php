@@ -17,6 +17,9 @@
 
 @section('content')
     @include('frontend.services.hero')
+    @include('frontend.services.hero_2')
     @include('frontend.services.service')
+    @include('frontend.services.mealplan')
+
 
 @endsection
