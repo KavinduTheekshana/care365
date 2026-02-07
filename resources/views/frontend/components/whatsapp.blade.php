@@ -3,7 +3,7 @@
 .whatsapp-chat-widget {
     position: fixed;
     bottom: 10px;
-    right: 20px;
+    left: 20px;
     z-index: 9999;
     font-family: Arial, sans-serif;
 }
@@ -42,7 +42,7 @@
 .whatsapp-chat-box {
     position: absolute;
     bottom: 70px;
-    right: 0;
+    left: 0;
     width: 320px;
     background: white;
     border-radius: 12px;
@@ -232,7 +232,7 @@
 @media (max-width: 768px) {
     .whatsapp-chat-widget {
         bottom: 10px;
-        right: 15px;
+        left: 15px;
     }
     
     .whatsapp-btn {
@@ -250,7 +250,7 @@
     
     .whatsapp-chat-box {
         width: 300px;
-        right: 0px;
+        right: -10px;
     }
     
     .chat-body {
@@ -261,7 +261,7 @@
 @media (max-width: 480px) {
     .whatsapp-chat-box {
         width: 280px;
-        right: 0px;
+        right: -20px;
     }
 }
 </style>
