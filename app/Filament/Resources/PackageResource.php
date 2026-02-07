@@ -19,7 +19,7 @@ class PackageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
-    protected static ?string $navigationGroup = 'Accommodation';
+    protected static ?string $navigationGroup = 'Frontend Management';
 
     public static function form(Form $form): Form
     {

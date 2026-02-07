@@ -28,73 +28,209 @@
                                     <div data-ani="slideinup" data-ani-delay="0.10">
                                         <a href="{{ route('contact') }}" class="th-btn th-btn-icon2">Get Started <i class="far fa-long-arrow-right ms-3"></i></a>
                                     </div>
+                                    <div class="spacer-single"></div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="sw-overlay op-4"></div>
+                        <!-- PHSRC Registered Badge -->
+                        <div class="phsrc-badge">
+                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <span class="phsrc-text">PHSRC Registered</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 - Luxury & Compassion Focus -->
+                <div class="swiper-slide">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.jpg)">
+                        <div class="sw-caption">
+                            <div class="container">
+                                <div class="row g-4 justify-content-center">
+                                    <div class="spacer-double"></div>
+                                    <div class="col-lg-8 text-center">
+                                        <div class="spacer-single"></div>
+                                        <div class="sw-text-wrapper">
+                                            <div class="subtitle mb-2">Premium Luxury Living</div>
+                                            <h1 class="slider-title mb-3">Where Compassion Meets Premium Care</h1>
+                                            <p class="slider-teaser mb-3">Experience luxury retirement living with personalized care, safety, and dignity for your loved ones.</p>
+                                            <div class="spacer-10"></div>
+                                            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                                                <a class="btn-main bg-color-2  mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
+                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Schedule a Virtual Tour</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer-single"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sw-overlay op-4"></div>
+                        <!-- PHSRC Registered Badge -->
+                        <div class="phsrc-badge">
+                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <span class="phsrc-text">PHSRC Registered</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 - Trust & Family Focus -->
+                <div class="swiper-slide">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/happy-seniors-nursing-home.webp)">
+                        <div class="sw-caption">
+                            <div class="container">
+                                <div class="row g-4 justify-content-center">
+                                    <div class="spacer-double"></div>
+                                    <div class="col-lg-8 text-center">
+                                        <div class="spacer-single"></div>
+                                        <div class="sw-text-wrapper">
+                                            <div class="subtitle mb-2">Trusted by Families Worldwide</div>
+                                            <h1 class="slider-title mb-3">Sri Lanka's Premier Retirement Homes</h1>
+                                            <p class="slider-teaser mb-3">Providing exceptional care with dignity, safety, and compassion for elderly residents.</p>
+                                            <div class="spacer-10"></div>
+                                            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                                                <a class="btn-main bg-color-2  mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Get Admission Details</a>
+                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book an In-Person Visit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer-single"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sw-overlay op-4"></div>
+                        <!-- PHSRC Registered Badge -->
+                        <div class="phsrc-badge">
+                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.jpg"></div>
-                <div class="hero-overlay"></div>
-                <div class="hero-inner">
-                    <div class="container th-container2">
-                        <div class="row gy-4 align-items-center justify-content-center text-center">
-                            <div class="col-xxl-8 col-xl-9 col-lg-10">
-                                <div class="hero-style7">
-                                    <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Where Golden Years Find Peace and Comfort</h1>
-                                    <p class="hero-text" data-ani="slideinup" data-ani-delay="0.6s">Compassionate senior living with dignity, respect, and joy</p>
-                                    <div data-ani="slideinup" data-ani-delay="0.10">
-                                        <a href="{{ route('contact') }}" class="th-btn th-btn-icon2">Get Started <i class="far fa-long-arrow-right ms-3"></i></a>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="pt-0 relative z-1000">
+    <div class="container mt-min-50">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bg-white p-20 rounded-1 shadow-soft">
+                    <div class="row g-4">
+
+                        <!-- Feature 1: Years of Experience -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="relative">
+                                <i class="icofont-history absolute id-color" style="font-size: 36px;"></i>
+                                <div class="ps-60">
+                                    <h4 class="mb-0" style="font-size: 16px;">Years of Experience</h4>
+                                    <p class="mb-0" style="font-size: 13px;">Decades of trusted senior care expertise.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2: 24/7 Medical Support -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="relative">
+                                <i class="icofont-stethoscope-alt absolute id-color" style="font-size: 36px;"></i>
+                                <div class="ps-60">
+                                    <h4 class="mb-0" style="font-size: 16px;">24/7 Medical Support</h4>
+                                    <p class="mb-0" style="font-size: 13px;">Round-the-clock professional healthcare.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3: Secure & Comfortable Facilities -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="relative">
+                                <i class="icofont-home absolute id-color" style="font-size: 36px;"></i>
+                                <div class="ps-60">
+                                    <h4 class="mb-0" style="font-size: 16px;">Secure & Comfortable Facilities</h4>
+                                    <p class="mb-0" style="font-size: 13px;">Safe, home-like environment.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4: Testimonials / Star Ratings -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="relative">
+                                <i class="icofont-star absolute id-color" style="font-size: 36px;"></i>
+                                <div class="ps-60">
+                                    <h4 class="mb-0" style="font-size: 16px;">Excellent Reviews</h4>
+                                    <p class="mb-0" style="font-size: 13px;">Highly rated by families.</p>
+                                    <div class="rating-stars mt-1">
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
+                                        <span class="ms-1" style="font-size: 11px;">(4.9/5)</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="th-hero-bg" data-bg-src="assets/img/Home-img/Personalized-Care-Plans.jpg"></div>
-                <div class="hero-overlay"></div>
-                <div class="hero-inner">
-                    <div class="container th-container2">
-                        <div class="row gy-4 align-items-center justify-content-center text-center">
-                            <div class="col-xxl-8 col-xl-9 col-lg-10">
-                                <div class="hero-style7">
-                                    <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">Personalized Care Tailored to Individual Needs</h1>
-                                    <p class="hero-text" data-ani="slideinup" data-ani-delay="0.6s">Comprehensive support for physical, emotional, and social well-being</p>
-                                    <div data-ani="slideinup" data-ani-delay="0.10">
-                                        <a href="{{ route('contact') }}" class="th-btn th-btn-icon2">Get Started <i class="far fa-long-arrow-right ms-3"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    
+                    <!-- CTA Link Centered Below Features -->
+                    <div class="text-center mt-4 pt-2">
+                        <a href="#testimonials" class="text-decoration-none" 
+                           style="font-size: 14px; font-weight: 600; color: #2c3e50;">
+                            <i class="icofont-arrow-right me-1" style="font-size: 12px;"></i>
+                            See Why Families Trust Care365
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <button data-slider-prev="#serviceSlider1" class="slider-arrow style-border2 slider-prev">
-            <img data-mask-src="assets/img/icon/arrow-left.svg" src="assets/img/icon/arrow-left.svg" alt="img">
-        </button>
-        <button data-slider-next="#serviceSlider1" class="slider-arrow style-border2 slider-next">
-            <img data-mask-src="assets/img/icon/arrow-right.svg" src="assets/img/icon/arrow-right.svg" alt="img">
-        </button>
     </div>
-</div>
+</section>
 
-<style>
-.hero-overlay {
+            
+
+ <style>
+/* Hero Section Height - Set to 700px as client requested */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
+    height: 700px !important;
+    min-height: 700px !important;
+}
+
+/* Make all containers fill the 700px height */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .v-center,
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper,
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-slide,
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
+    height: 100%;
+}
+
+/* Ensure background images cover properly within 700px height */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* MAIN OVERLAY - Standard for all screens */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4); /* Reduced from 0.5 to 0.4 for better visibility */
     z-index: 1;
 }
 
-.hero-inner {
+/* Text content above overlay */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .sw-caption {
     position: relative;
     z-index: 2;
     height: 100%;
@@ -128,9 +264,9 @@
     margin-bottom: 1.5rem !important;
 }
 
-/* Center alignment enhancements */
-.text-center {
-    text-align: center !important;
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
+    font-size: 1rem !important; /* 16px */
+    margin-bottom: 1rem !important;
 }
 
 /* Ensure container takes full height */

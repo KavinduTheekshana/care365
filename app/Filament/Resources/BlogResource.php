@@ -100,11 +100,24 @@ class BlogResource extends Resource
 
                 Forms\Components\Section::make('Content & Image')
                     ->schema([
-                        Forms\Components\Textarea::make('description')
+                        Forms\Components\RichEditor::make('description')
                             ->label('Description')
-                            ->rows(8)
-                            ->maxLength(5000)
                             ->required()
+                            ->maxLength(5000)
+                            ->toolbarButtons([
+                                'bold',
+                                'italic',
+                                'underline',
+                                'strike',
+                                'link',
+                                'heading',
+                                'bulletList',
+                                'orderedList',
+                                'blockquote',
+                                'codeBlock',
+                                'undo',
+                                'redo',
+                            ])
                             ->columnSpanFull(),
 
                         Forms\Components\FileUpload::make('image_path')
@@ -195,7 +208,8 @@ class BlogResource extends Resource
                     ->limit(60)
                     ->tooltip(fn ($record) => $record->description)
                     ->searchable()
-                    ->wrap(),
+                    ->wrap()
+                    ->html(),
 
                 Tables\Columns\IconColumn::make('is_public')
                     ->label('Public')

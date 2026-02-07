@@ -2,11 +2,11 @@
     <div class="container">
         {{-- Category Filter (only show if there are galleries) --}}
         @if($galleries->isNotEmpty())
-            <div class="gallery-filter-wrap mb-5">
+            <div class="gallery-filter-wrap mb-5" style="padding: 30px 0;">
                 <div class="text-center">
-                    <button class="filter-btn active" data-filter="all">All Images</button>
+                    <button class="filter-btn active" data-filter="all" style="background: white; color: #1e40af; border: 2px solid #1e40af; padding: 10px 28px; margin: 5px; cursor: pointer; border-radius: 6px; font-weight: 500; transition: all 0.3s ease; font-size: 14px;">All Images</button>
                     @foreach($categories as $category)
-                        <button class="filter-btn" data-filter="{{ Str::slug($category) }}">
+                        <button class="filter-btn" data-filter="{{ Str::slug($category) }}" style="background: white; border: 2px solid #e5e7eb; color: #6b7280; padding: 10px 28px; margin: 5px; cursor: pointer; border-radius: 6px; font-weight: 500; transition: all 0.3s ease; font-size: 14px;">
                             {{ $category }}
                         </button>
                     @endforeach
@@ -15,182 +15,151 @@
         @endif
 
         {{-- Gallery Grid --}}
-        <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-grid" id="galleryGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-bottom: 50px;">
             @forelse($galleries as $index => $gallery)
-                <div class="gallery-item" data-category="{{ Str::slug($gallery->category_name) }}">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
+                <div class="gallery-item" data-category="{{ Str::slug($gallery->category_name) }}" style="opacity: 1; transform: scale(1); transition: all 0.3s ease;">
+                    <div class="gallery-card" style="position: relative; overflow: hidden; border-radius: 8px; background: white; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); cursor: pointer; border: 1px solid #f3f4f6;">
+                        <div class="gallery-img" style="position: relative; overflow: hidden;">
                             <img 
                                 src="{{ asset('gallery_img/' . $gallery->image_path) }}" 
                                 alt="{{ $gallery->category_name ?? 'Gallery Image' }}"
                                 loading="lazy"
-                                width="100%"
-                                height="300"
+                                style="width: 100%; height: 280px; object-fit: cover; transition: transform 0.4s ease;"
                                 onerror="this.onerror=null; this.src='{{ asset('images/no-image-available.jpg') }}'; this.alt='Image not available';"
+                                onclick="openLightbox('{{ asset('gallery_img/' . $gallery->image_path) }}', '{{ $gallery->category_name ?? 'Gallery Image' }}')"
                             >
                             @if(file_exists(public_path('gallery_img/' . $gallery->image_path)))
-                                <a href="{{ asset('gallery_img/' . $gallery->image_path) }}" class="icon-btnn th-popup-image">
-                                    <i class="fa-regular fa-magnifying-glass"></i>
-                                </a>
+                                <div class="icon-btnn" onclick="openLightbox('{{ asset('gallery_img/' . $gallery->image_path) }}', '{{ $gallery->category_name ?? 'Gallery Image' }}')" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; z-index: 3; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                    <i class="fa-regular fa-magnifying-glass" style="font-size: 18px; color: #1e40af;"></i>
+                                </div>
                             @endif
-                            <div class="gallery-category-label">{{ $gallery->category_name ?? 'Uncategorized' }}</div>
+                            <div class="gallery-category-label" style="position: absolute; top: 12px; left: 12px; background: white; color: #1e40af; padding: 6px 14px; border-radius: 6px; font-size: 11px; font-weight: 600; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-transform: uppercase; letter-spacing: 0.5px;">{{ $gallery->category_name ?? 'Uncategorized' }}</div>
                         </div>
                     </div>
                 </div>
             @empty
-                <div class="col-12 text-center py-5 my-5 empty-gallery-state">
-                    <i class="fa-solid fa-images fa-5x text-muted mb-4"></i>
-                    <h3 class="text-muted">No images in the gallery yet</h3>
-                    <p class="text-secondary mb-4">Check back later or add some beautiful moments!</p>
-
+                <div class="col-12 text-center py-5 my-5 empty-gallery-state" style="min-height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white; border-radius: 8px; border: 2px dashed #e5e7eb; grid-column: 1 / -1;">
+                    <i class="fa-solid fa-images fa-5x mb-4" style="color: #d1d5db; opacity: 0.5;"></i>
+                    <h3 style="color: #374151; font-weight: 600; margin-bottom: 0.5rem; font-size: 20px;">No images in the gallery yet</h3>
+                    <p style="color: #9ca3af; margin-bottom: 0; font-size: 14px;">Check back later for updates</p>
                 </div>
             @endforelse
         </div>
     </div>
     
+    {{-- Lightbox Modal --}}
+    <div id="lightboxModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.92); z-index: 9999; backdrop-filter: blur(20px);">
+        <button onclick="closeLightbox()" style="position: absolute; top: 24px; right: 24px; background: white; color: #374151; border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 20px; cursor: pointer; z-index: 10001; box-shadow: 0 2px 12px rgba(0,0,0,0.3); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; font-weight: 400;">
+            ✕
+        </button>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%; display: flex; flex-direction: column; align-items: center;">
+            <img id="lightboxImg" src="" alt="" style="max-width: 100%; max-height: 82vh; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.1));">
+            <p id="lightboxCaption" style="color: white; margin-top: 24px; font-size: 15px; font-weight: 500; text-align: center; background: rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 6px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);"></p>
+        </div>
+    </div>
 </div>
 
 <style>
-.gallery-filter-wrap {
-    padding: 20px 0;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.filter-btn {
-    background: #f8f9fa;
-    border: 2px solid #e9ecef;
-    padding: 10px 25px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.filter-btn:hover {
-    background: #e9ecef;
-    border-color: #dee2e6;
-}
-
-.filter-btn.active {
-    background: var(--theme-color, #007bff);
-    color: white;
-    border-color: var(--theme-color, #007bff);
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.gallery-item {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 0.3s ease;
-}
-
-.gallery-item.hidden {
-    display: none;
-    opacity: 0;
-    transform: scale(0.8);
-}
-
-.gallery-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.gallery-img {
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery-img img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-card:hover .gallery-img img {
-    transform: scale(1.1);
-}
-
-.gallery-category-label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    z-index: 2;
-}
-
-.icon-btnn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.95);
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.6;
-    transition: all 0.25s ease;
-    z-index: 3;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    font-size: 1.4rem;           /* bigger icon if you want */
-    color: #333;
+.gallery-card:hover img {
+    transform: scale(1.05);
 }
 
 .gallery-card:hover .icon-btnn {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1 !important;
 }
 
-.empty-gallery-state {
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #f8f9fa;
-    border-radius: 12px;
-    border: 2px dashed #dee2e6;
+.gallery-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
 }
 
-.empty-gallery-state i {
-    opacity: 0.6;
+.filter-btn:hover {
+    background: #f9fafb !important;
+    border-color: #1e40af !important;
+    color: #1e40af !important;
+    transform: translateY(-1px);
 }
 
-.empty-gallery-state h3 {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.filter-btn.active {
+    background: #1e40af !important;
+    color: white !important;
+    border-color: #1e40af !important;
+}
+
+#lightboxModal {
+    animation: fadeIn 0.3s ease;
+}
+
+#lightboxModal button:hover {
+    background: #f3f4f6 !important;
+    color: #1e40af !important;
+    transform: scale(1.1);
+}
+
+.gallery-item.hidden {
+    display: none !important;
 }
 
 @media (max-width: 768px) {
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+        gap: 16px !important;
     }
     
     .filter-btn {
-        padding: 8px 20px;
-        font-size: 14px;
+        padding: 8px 20px !important;
+        font-size: 13px !important;
+        margin: 3px !important;
+    }
+    
+    #lightboxModal button {
+        top: 16px !important;
+        right: 16px !important;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 18px !important;
     }
 }
 </style>
 
 <script>
+// Lightbox Functions
+function openLightbox(imageSrc, caption) {
+    const modal = document.getElementById('lightboxModal');
+    const img = document.getElementById('lightboxImg');
+    const captionText = document.getElementById('lightboxCaption');
+    
+    modal.style.display = 'block';
+    img.src = imageSrc;
+    captionText.textContent = caption;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('lightboxModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close on clicking outside the image
+document.getElementById('lightboxModal')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeLightbox();
+    }
+});
+
+// Close on ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
+// Gallery Filter with URL and localStorage Support
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Gallery page loaded');
     
@@ -217,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.history.replaceState({path: newUrl}, '', newUrl);
         }
     } else if (storageFilter && storageTime && (currentTime - storageTime) < 10000) {
-        // Use localStorage filter if recent
+        // Use localStorage filter if recent (within 10 seconds)
         activeFilter = storageFilter;
         console.log('Using localStorage filter:', activeFilter);
         
@@ -237,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function applyFilter(filterValue) {
         console.log('Applying filter:', filterValue);
         
-        // Find and click the corresponding filter button
+        // Find and activate the corresponding filter button
         const filterBtns = document.querySelectorAll('.filter-btn');
         let found = false;
         
@@ -265,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Fallback to "all"
             const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
             if (allBtn) {
-                allBtn.click();
+                filterGalleryItems('all');
             }
         }
     }
@@ -281,6 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (filterValue === 'all' || itemCategory === filterValue) {
                 item.classList.remove('hidden');
+                item.style.display = 'block';
                 setTimeout(() => {
                     item.style.opacity = '1';
                     item.style.transform = 'scale(1)';
@@ -290,6 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 item.style.transform = 'scale(0.8)';
                 setTimeout(() => {
                     item.classList.add('hidden');
+                    item.style.display = 'none';
                 }, 300);
             }
         });
