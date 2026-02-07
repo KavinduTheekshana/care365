@@ -103,7 +103,7 @@ class BlogResource extends Resource
                         Forms\Components\RichEditor::make('description')
                             ->label('Description')
                             ->required()
-                            ->maxLength(5000)
+                            ->maxLength(50000)
                             ->toolbarButtons([
                                 'bold',
                                 'italic',
