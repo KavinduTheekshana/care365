@@ -16,14 +16,10 @@ use App\Models\CareHome;
 class HomeController extends Controller
 {
     public function index()
-    {
-
-        
+    {   
         $testimonials = Testimonial::where('is_public', true)
                                 ->inRandomOrder()
                                 ->get();
-
-
         
         // Get public services
         $services = Service::where('is_public', true)
