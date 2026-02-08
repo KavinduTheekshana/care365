@@ -23,13 +23,7 @@ class HomeController extends Controller
                                 ->inRandomOrder()
                                 ->get();
 
-        // Get packages with their features
-        $packages = Package::with(['features' => function($query) {
-            $query->where('is_active', true);
-        }])
-        ->where('status', 'active')
-        ->orderBy('price_lkr', 'asc')
-        ->get();
+
         
         // Get public services
         $services = Service::where('is_public', true)
@@ -46,7 +40,6 @@ class HomeController extends Controller
         return view('frontend.home.index', compact(
             'testimonials', 
             'services',
-            'packages',
             'carehomes'
         ));
     }
