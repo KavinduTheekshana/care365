@@ -48,7 +48,7 @@
             We’re here to help. Reach out to us for more details about admissions, care services, 
             and how we can support your loved one.
         </p>
-        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp"
+        <a class="btn-main bg-color-2  mb-3 wow fadeInUp"
         data-wow-delay=".6s"
         href="https://wa.me/94779191818"
         target="_blank">
