@@ -19,27 +19,25 @@ class ViewServiceProvider extends ServiceProvider
     /**
      * Bootstrap services.
      */
-    public function boot(): void
-    {
-        // Share footer services with the correct footer view path
-        View::composer(
-            ['frontend.components.header', 'frontend.components.footer', 'layouts.footer', 'partials.footer'],
-            function ($view) {
-                // Get ALL public services once (most performant)
-                $publicServices = Service::where('is_public', true)
-                    ->select('title', 'title_slug')
-                    ->get();                    // ← no ->latest() anymore
+public function boot(): void
+{
+    // Share services only with footer views
+    View::composer(
+        ['frontend.components.footer', 'layouts.footer', 'partials.footer'], 
+        function ($view) {
+            // Get ALL public services once (most performant)
+            $publicServices = Service::where('is_public', true)
+                ->select('title', 'title_slug')
+                ->get();                    // ← no ->latest() anymore
 
-                // Shuffle once and take what we need
-                $shuffled = $publicServices->shuffle();
+            // Shuffle once and take what we need
+            $shuffled = $publicServices->shuffle();
 
-                $view->with([
-                    'header_services' => $shuffled->take(3),
-                    'footer_services' => $shuffled->take(5),
-                ]);
-            }
-        );
-
-        
-    }
+            // Only share footer_services (no header_services)
+            $view->with([
+                'footer_services' => $shuffled->take(5),
+            ]);
+        }
+    );
+}
 }
