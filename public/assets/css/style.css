@@ -7493,6 +7493,13 @@ footer .tiny-border span {
   width: 60px;
 }
 
+/* Fix for icon aspect ratios - ensure images maintain proper proportions */
+img.w-60px,
+img.w-100px {
+  object-fit: contain;
+  height: auto;
+}
+
 .w-70px {
   width: 70px;
 }

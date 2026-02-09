@@ -46,7 +46,7 @@
                         preload="metadata"
                         poster="{{ asset('assets/images/Video/325456.webp') }}">
                         <track kind="captions" src="" label="English" srclang="en" default>
-                        <source src="{{ asset('assets/images/Video/AI Video for web .mp4') }}" type="video/mp4">
+                        <source src="{{ asset('assets/images/Video/ai-video-for-web.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     

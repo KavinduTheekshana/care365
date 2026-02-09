@@ -84,6 +84,8 @@
 /* Service Icon */
 .service-icon {
     flex-shrink: 0;
+    object-fit: contain;
+    aspect-ratio: 1 / 1;
 }
 
 /* Service Content Wrapper */
