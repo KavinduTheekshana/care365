@@ -6,7 +6,8 @@
                             <img src="assets/images/misc/tu7768537853.png"
                                 class="img-fluid rounded-10 wow scaleIn object-fit-cover"
                                 style="max-width: 100%; max-height: 700px;"
-                                alt="Care365 - Quality Elderly Care">                            
+                                alt="Care365 - Quality Elderly Care"
+                                loading="lazy">                            
                         </div>
 
                         <div class="col-lg-6 relative">
@@ -42,7 +43,7 @@
                                         <i class="fa fa-star"></i>
                                     </div>
                                     <div class="fs-14 mb-0">Based on <span class="fw-bold">185 reviews</span></div>
-                                    <img src="assets/images/misc/trustpilot-invert.webp" class="w-120px" alt="">
+                                    <img src="assets/images/misc/trustpilot-invert.webp" class="w-120px" alt="excellent" loading="lazy">
                                 </div>
                             </div>
 
@@ -57,7 +58,7 @@
                                         <i class="fa fa-star"></i>
                                     </div>
                                     <div class="fs-14 mb-0">Based on <span class="fw-bold">200 reviews</span></div>
-                                    <img src="assets/images/misc/google.webp" class="w-120px" alt="">
+                                    <img src="assets/images/misc/google.webp" class="w-120px" alt="google" loading="lazy">
                                 </div>
                             </div>
                         </div>

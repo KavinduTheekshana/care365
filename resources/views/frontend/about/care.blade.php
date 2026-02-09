@@ -60,7 +60,8 @@
                 <div class="service-card">
                     <img src="<?php echo $service['icon']; ?>" 
                         class="service-icon bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                        alt="<?php echo $service['alt']; ?>">
+                        alt="<?php echo $service['alt']; ?>"
+                        loading="lazy">
                     <div class="service-content wow fadeInUp">
                         <h5 class="service-title"><?php echo $service['title']; ?></h5>
                         <p class="service-text"><?php echo $service['description']; ?></p>

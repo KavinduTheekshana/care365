@@ -119,7 +119,7 @@
     <img src="{{ asset('assets/images/breadcrumb/r6465465.jpg') }}" 
          alt="About Care365" 
          class="hero-image" 
-         fetchpriority="high">
+         fetchpriority="high" loading="lazy">
 
     <!-- Content -->
     <div class="breadcrumb-content">
