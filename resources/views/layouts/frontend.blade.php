@@ -138,10 +138,10 @@
         <!-- header close -->
 
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+        <main class="no-bottom no-top" id="content" role="main">
             <div id="top"></div>
             @yield('content')
-        </div>
+        </main>
         <!-- content close -->
 
         <!-- footer begin -->
