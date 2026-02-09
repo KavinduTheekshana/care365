@@ -160,16 +160,17 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     <div class="container mt-min-50">
         <div class="row">
             <div class="col-lg-12">
+                <!-- FIXED: Removed unnecessary background-size and background-repeat inline styles -->
                 <div class="bg-white p-20 rounded-1 shadow-soft">
                     <div class="row g-4">
 
                         <!-- Feature 1: Years of Experience -->
                         <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-history absolute id-color" style="font-size: 36px;"></i>
+                                <i class="icofont-history absolute id-color fs-36"></i>
                                 <div class="ps-60">
-                                    <h3 class="mb-0" style="font-size: 16px;">Years of Experience</h3>
-                                    <p class="mb-0" style="font-size: 13px;">Decades of trusted senior care expertise.</p>
+                                    <h3 class="mb-0 fs-16">Years of Experience</h3>
+                                    <p class="mb-0 fs-13">Decades of trusted senior care expertise.</p>
                                 </div>
                             </div>
                         </div>
@@ -177,10 +178,10 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                         <!-- Feature 2: 24/7 Medical Support -->
                         <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-stethoscope-alt absolute id-color" style="font-size: 36px;"></i>
+                                <i class="icofont-stethoscope-alt absolute id-color fs-36"></i>
                                 <div class="ps-60">
-                                    <h3 class="mb-0" style="font-size: 16px;">24/7 Medical Support</h3>
-                                    <p class="mb-0" style="font-size: 13px;">Round-the-clock professional healthcare.</p>
+                                    <h3 class="mb-0 fs-16">24/7 Medical Support</h3>
+                                    <p class="mb-0 fs-13">Round-the-clock professional healthcare.</p>
                                 </div>
                             </div>
                         </div>
@@ -188,10 +189,10 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                         <!-- Feature 3: Secure & Comfortable Facilities -->
                         <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-home absolute id-color" style="font-size: 36px;"></i>
+                                <i class="icofont-home absolute id-color fs-36"></i>
                                 <div class="ps-60">
-                                    <h3 class="mb-0" style="font-size: 16px;">Secure & Comfortable</h3>
-                                    <p class="mb-0" style="font-size: 13px;">Designed for safety, comfort, and peace.</p>
+                                    <h3 class="mb-0 fs-16">Secure & Comfortable</h3>
+                                    <p class="mb-0 fs-13">Designed for safety, comfort, and peace.</p>
                                 </div>
                             </div>
                         </div>
@@ -199,17 +200,17 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                         <!-- Feature 4: Engaging Activities -->
                         <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-users-alt-5 absolute id-color" style="font-size: 36px;"></i>
+                                <i class="icofont-users-alt-5 absolute id-color fs-36"></i>
                                 <div class="ps-60">
-                                    <h3 class="mb-0" style="font-size: 16px;">Engaging Activities</h3>
-                                    <p class="mb-0" style="font-size: 13px;">Highly rated by families.</p>
+                                    <h3 class="mb-0 fs-16">Engaging Activities</h3>
+                                    <p class="mb-0 fs-13">Highly rated by families.</p>
                                     <div class="rating-stars mt-1">
-                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
-                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
-                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
-                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
-                                        <i class="icofont-star text-warning" style="font-size: 12px;"></i>
-                                        <span class="ms-1" style="font-size: 11px;">(4.9/5)</span>
+                                        <i class="icofont-star text-warning fs-12"></i>
+                                        <i class="icofont-star text-warning fs-12"></i>
+                                        <i class="icofont-star text-warning fs-12"></i>
+                                        <i class="icofont-star text-warning fs-12"></i>
+                                        <i class="icofont-star text-warning fs-12"></i>
+                                        <span class="ms-1 fs-11">(4.9/5)</span>
                                     </div>
                                 </div>
                             </div>
@@ -219,9 +220,8 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                     
                     <!-- CTA Link Centered Below Features -->
                     <div class="text-center mt-4 pt-2">
-                        <a href="#testimonials" class="text-decoration-none" 
-                           style="font-size: 14px; font-weight: 600; color: #2c3e50;">
-                            <i class="icofont-arrow-right me-1" style="font-size: 12px;"></i>
+                        <a href="#testimonials" class="text-decoration-none fs-14 fw-600 text-dark">
+                            <i class="icofont-arrow-right me-1 fs-12"></i>
                             See Why Families Trust Care365
                         </a>
                     </div>
@@ -331,6 +331,37 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     margin-bottom: 1.5rem !important;
 }
 
+/* ====== FEATURE SECTION UTILITY CLASSES ====== */
+.fs-36 { font-size: 36px; }
+.fs-16 { font-size: 16px; }
+.fs-14 { font-size: 14px; }
+.fs-13 { font-size: 13px; }
+.fs-12 { font-size: 12px; }
+.fs-11 { font-size: 11px; }
+.fw-600 { font-weight: 600; }
+.ps-60 { padding-left: 60px; }
+.text-dark { color: #2c3e50; }
+
+/* Feature box hover effect */
+.bg-white.p-20.rounded-1.shadow-soft {
+    transition: box-shadow 0.3s ease;
+}
+
+.bg-white.p-20.rounded-1.shadow-soft:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Feature icons positioning */
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 /* ====== MOBILE RESPONSIVENESS ====== */
 
 /* Tablet - 768px and below */
@@ -390,6 +421,15 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         line-height: 1.4 !important;
         margin-bottom: 1rem !important;
     }
+    
+    /* Feature section responsive */
+    .ps-60 {
+        padding-left: 55px;
+    }
+    
+    .fs-36 {
+        font-size: 32px;
+    }
 }
 
 /* Small mobile - 576px and below */
@@ -441,6 +481,32 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         line-height: 1.4 !important;
         margin-bottom: 0.75rem !important;
     }
+    
+    /* Feature section mobile */
+    .ps-60 {
+        padding-left: 50px;
+    }
+    
+    .fs-36 {
+        font-size: 28px;
+    }
+    
+    .fs-16 {
+        font-size: 15px;
+    }
+    
+    .fs-13 {
+        font-size: 12px;
+    }
+    
+    /* Stack features on mobile for better readability */
+    .col-md-6 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .col-md-6:last-child {
+        margin-bottom: 0;
+    }
 }
 
 /* Extra small mobile - 375px and below */
@@ -482,7 +548,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         font-size: 0.75rem !important; /* 12px */
     }
     
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-thin.z-1000 .slider-teaser {
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
         font-size: 0.8125rem !important; /* 13px */
         line-height: 1.35 !important;
     }
