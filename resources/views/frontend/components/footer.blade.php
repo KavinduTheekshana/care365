@@ -45,7 +45,7 @@
                         <div class="row"> 
                             <div class="col-lg-4 col-sm-6">
                                 <div class="widget">
-                                    <h3 >Quick Links</h3>
+                                    <h3 style="color: #ffffff;">Quick Links</h3>
                                     <ul>
                                         <li><a href="{{ route('home') }}">Home</a></li>
                                         <li><a href="{{ route('services') }}">Our Services</a></li>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="col-lg-8 col-sm-6">
                                 <div class="widget">
-                                    <h3>Our Services</h3>
+                                    <h3 style="color: #ffffff;">Our Services</h3>
                                     <ul>
                                         @foreach($footer_services as $service)
                                         <li><a href="{{ service_url($service) }}">{{ $service->title }}</a></li>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
                         <div class="widget">
-                            <h3>Contact Info</h3>
+                            <h3 style="color: #ffffff;">Contact Info</h3>
 
 
                             <div class="fw-bold text-white"><i class="icofont-ui-call me-2 id-color-2"></i>Call / WhatsApp</div>
