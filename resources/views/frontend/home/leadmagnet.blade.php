@@ -67,7 +67,7 @@
 <!-- Notification Container -->
 <div id="notification-container" style="position:fixed;top:20px;right:20px;z-index:100000;pointer-events:none;"></div>
 
-<script>
+<script async>
 // Custom notification function
 function showNotification(message, type = 'error') {
   const container = document.getElementById('notification-container');
