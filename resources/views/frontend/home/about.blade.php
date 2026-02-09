@@ -23,7 +23,7 @@
                     class="img-fluid rounded-10 wow scaleIn object-fit-cover"
                     style="width: 100%; max-height: 700px;" 
                     width="600" height="400" 
-                    alt="Care 365 Senior Care Facility">
+                    alt="Care 365 Senior Care Facility" loading="lazy">
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
                 <div class="service-card">
                     <img src="assets/images/icons/white/5456456.png" 
                         class="service-icon bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                        alt="Medical care icon">
+                        alt="Medical care icon" loading="lazy">
                     <div class="service-content wow fadeInUp">
                         <h5 class="service-title">Medical & Nursing Care</h5>
                         <p class="service-text">Professional healthcare services and nursing support.</p>
@@ -48,7 +48,7 @@
                 <div class="service-card">
                     <img src="assets/images/icons/white/45764.png" 
                         class="service-icon bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                        alt="Medication icon">
+                        alt="Medication icon" loading="lazy">
                     <div class="service-content wow fadeInUp">
                         <h5 class="service-title">Medication Management</h5>
                         <p class="service-text">Proper administration and tracking of medications.</p>
@@ -60,7 +60,7 @@
                 <div class="service-card">
                     <img src="assets/images/icons/white/564646367.png" 
                         class="service-icon bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                        alt="Personal assistance icon">
+                        alt="Personal assistance icon" loading="lazy">
                     <div class="service-content wow fadeInUp">
                         <h5 class="service-title">Personal Assistance</h5>
                         <p class="service-text">Help with daily activities and personal care.</p>
@@ -72,7 +72,7 @@
                 <div class="service-card">
                     <img src="assets/images/icons/white/5634743.png" 
                         class="service-icon bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                        alt="Nutrition icon">
+                        alt="Nutrition icon" loading="lazy">
                     <div class="service-content wow fadeInUp">
                         <h5 class="service-title">Nutritious Meals</h5>
                         <p class="service-text">Healthy, balanced meals tailored to dietary needs.</p>
@@ -84,7 +84,7 @@
                 <div class="service-card">
                     <img src="assets/images/icons/white/65456467.png" 
                         class="service-icon bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                        alt="Activities icon">
+                        alt="Activities icon" loading="lazy">
                     <div class="service-content wow fadeInUp">
                         <h5 class="service-title">Recreational Activities</h5>
                         <p class="service-text">Engaging social and leisure activities.</p>
@@ -96,7 +96,7 @@
                 <div class="service-card">
                     <img src="assets/images/icons/white/56435634.png" 
                         class="service-icon bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                        alt="Support icon">
+                        alt="Support icon" loading="lazy">
                     <div class="service-content wow fadeInUp">
                         <h5 class="service-title">24/7 Support</h5>
                         <p class="service-text">Round-the-clock care and assistance.</p>

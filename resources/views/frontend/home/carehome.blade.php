@@ -58,12 +58,12 @@
                                     <img src="{{ asset('care_homes_img/' . pathinfo($carehome->image_path, PATHINFO_FILENAME) . '.webp') }}" 
                                          alt="{{ $carehome->title }}"
                                          width="60" height="60"
-                                         style="width: 100%; height: 100%; object-fit: cover;">
+                                         style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                                     @else
                                     <img src="{{ asset('assets/img/care-home/home-placeholder.webp') }}" 
                                          alt="{{ $carehome->title }}"
                                          width="60" height="60"
-                                         style="width: 100%; height: 100%; object-fit: cover;">
+                                         style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                                     @endif
                                 </span>
                                 <span class="content-wrap" style="flex: 1;">
@@ -110,7 +110,8 @@
                                     <div style="flex-shrink: 0; width: 280px;">
                                         @if($carehome->image_path)
                                             <img 
-                                                src="{{ asset('care_homes_img/' . pathinfo($carehome->image_path, PATHINFO_FILENAME) . '.webp') }}" 
+                                                src="{{ asset('care_homes_img/' . pathinfo($carehome->image_path, PATHINFO_FILENAME) . '.webp') }}"
+                                                loading="lazy" 
                                                 alt="{{ $carehome->title }}"
                                                 width="280" height="280"
                                                 style="
@@ -122,7 +123,8 @@
                                             >
                                         @else
                                             <img 
-                                                src="{{ asset('assets/img/care-home/home-placeholder.webp') }}" 
+                                                src="{{ asset('assets/img/care-home/home-placeholder.webp') }}"
+                                                loading="lazy" 
                                                 alt="{{ $carehome->title }}"
                                                 width="280" height="280"
                                                 style="

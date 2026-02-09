@@ -37,7 +37,7 @@
                                 <div class="ratio ratio-4x3 overflow-hidden">
                                     <img src="{{ image_url($service->image_path, 'service') }}"
                                          class="img-fluid object-fit-cover hover-scale-1-2"
-                                         alt="{{ $service->title }}">
+                                         alt="{{ $service->title }}" loading="lazy">
                                 </div>
                                 
                                 <!-- Title overlay at bottom -->
