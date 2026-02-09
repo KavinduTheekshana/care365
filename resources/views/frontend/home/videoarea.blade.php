@@ -63,7 +63,7 @@
                     <div class="ps-lg-5">
                         <div class="subtitle wow fadeInUp mb-3">Virtual Tour</div>
                         <h2 class="wow fadeInUp">Experience Our Homelike Environment</h2>
-                        <p class="wow fadeInUp">Take a virtual tour of Care 365 and see our warm, comfortable facilities where seniors thrive. Discover our compassionate environment, specialized care areas, and vibrant community spaces designed for comfort, safety, and well-being.</p>
+                        <p class="wow fadeInUp" style="color: #334155;">Take a virtual tour of Care 365 and see our warm, comfortable facilities where seniors thrive. Discover our compassionate environment, specialized care areas, and vibrant community spaces designed for comfort, safety, and well-being.</p>
                         <div class="spacer-10"></div>
                         <a class="btn-main" href="{{ route('contact') }}">Schedule a Visit</a>
                     </div>
@@ -76,6 +76,38 @@
 </section>
 
 <style>
+/* Subtitle - ensure proper contrast */
+.subtitle {
+    color: #1E293B;
+}
+
+/* Button Accessibility Fix */
+.btn-main {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #2563EB;
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #2563EB;
+}
+
+.btn-main:hover {
+    background-color: #1E40AF;
+    border-color: #1E40AF;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-main:focus {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
+}
+
 /* Custom Video Controls Styling */
 #scrollVideo::-webkit-media-controls-panel {
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
