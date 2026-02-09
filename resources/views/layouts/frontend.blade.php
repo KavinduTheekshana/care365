@@ -124,6 +124,7 @@
 
 <body>
     <div id="wrapper">
+        @include('frontend.components.popups')
         <div class="float-text show-on-scroll">
             <span><a href="#">Scroll to top</a></span>
         </div>
