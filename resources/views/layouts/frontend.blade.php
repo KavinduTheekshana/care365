@@ -22,7 +22,7 @@
     <meta property="og:description" content="@yield('meta_description', 'CARE 365: Luxury retirement living where seniors thrive with joy, independence, and exceptional care. We provide compassionate and personalized care for seniors in a warm and home-like environment in Sri Lanka.')">
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="@yield('og_image', asset('assets/img/logo.png'))">
+    <meta property="og:image" content="@yield('og_image', asset('assets/img/logo.webp'))">
     <meta property="og:site_name" content="Care365">
     <meta property="og:locale" content="en_US">
     
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'Care365 - Luxury Retirement Living in Sri Lanka | Elder Care Homes')">
     <meta name="twitter:description" content="@yield('meta_description', 'CARE 365: Luxury retirement living where seniors thrive with joy, independence, and exceptional care.')">
-    <meta name="twitter:image" content="@yield('og_image', asset('assets/img/logo.png'))">
+    <meta name="twitter:image" content="@yield('og_image', asset('assets/img/logo.webp'))">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,22 +41,22 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="manifest" href="{{ asset('assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="manifest" href="{{ asset('assets/img/logo.webp') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ asset('assets/img/logo.png') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/img/logo.webp') }}">
     
     <!--==============================
     Google Fonts
@@ -147,13 +147,13 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/designesia.js"></script>
-    <script src="assets/js/swiper.js"></script>
-    <script src="assets/js/custom-marquee.js"></script>
-    <script src="assets/js/custom-swiper-1.js"></script>
-    <script src="assets/js/jquery.event.move.js"></script>
-    <script src="assets/js/jquery.twentytwenty.js"></script>
+    <script src="assets/js/plugins.js" defer></script>
+    <script src="assets/js/designesia.js" defer></script>
+    <script src="assets/js/swiper.js" defer></script>
+    <script src="assets/js/custom-marquee.js" defer></script>
+    <script src="assets/js/custom-swiper-1.js" defer></script>
+    <script src="assets/js/jquery.event.move.js" defer></script>
+    <script src="assets/js/jquery.twentytwenty.js" defer></script>
 
     <script>
     $(window).on("load", function(){

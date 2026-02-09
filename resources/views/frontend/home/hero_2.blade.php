@@ -1,11 +1,15 @@
 <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
+    @push('head')
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" media="(min-width: 769px)">
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" media="(max-width: 768px)">
+    @endpush
     <div class="v-center">
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slide 1 - Main Headline Focus -->
                 <div class="swiper-slide">
-                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg)" data-bgimage-mobile="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.jpg)">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp)" data-bgimage-mobile="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp)">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -30,15 +34,14 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="
-assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
                 </div>
                 <!-- Slide 2 - Luxury & Compassion Focus -->
                 <div class="swiper-slide">
-                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.jpg)" data-bgimage-mobile="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L-mobile.jpg)">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.webp)" data-bgimage-mobile="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L-mobile.webp)">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -63,7 +66,7 @@ assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered" loading="lazy">
+                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
@@ -95,7 +98,7 @@ assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered" loading="lazy">
+                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>

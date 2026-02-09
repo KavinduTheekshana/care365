@@ -5,8 +5,8 @@
 @section('title', 'Care365 - Luxury Retirement Living in Sri Lanka | Best Elder Care Homes')
 
 @push('head')
-    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg') }}" media="(min-width: 769px)">
-    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.jpg') }}" media="(max-width: 768px)">
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" media="(min-width: 769px)">
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" media="(max-width: 768px)">
 @endpush
 
 @section('meta_author', 'Care365')
@@ -15,7 +15,7 @@
 
 @section('meta_keywords', 'Elder care homes in Sri Lanka, Elderly homes in Sri Lanka, Best retirement homes for seniors in Sri Lanka, Elder care, senior living facilities Sri Lanka, 24/7 medical elder care in Sri Lanka, Safe and secure elder care homes, Affordable luxury senior care Sri Lanka, Trusted elder care for Sri Lanka, Senior living with luxury amenities Sri Lanka, Senior Care facilities')
 
-@section('og_image', asset('assets/img/logo.png'))
+@section('og_image', asset('assets/img/logo.webp'))
 
 @section('og_type', 'website')
 
