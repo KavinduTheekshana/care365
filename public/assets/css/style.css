@@ -6974,9 +6974,20 @@ footer .widget_recent_post li a {
   color: #ccc;
 }
 
-footer .widget h5 {
+footer .widget h5,
+footer .widget h3 {
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+.footer-contact-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-contact-link:hover {
+  text-decoration-color: #fff;
 }
 
 footer .widget_list li {

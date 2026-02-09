@@ -45,7 +45,7 @@
                         <div class="row"> 
                             <div class="col-lg-4 col-sm-6">
                                 <div class="widget">
-                                    <h5>Quick Links</h5>
+                                    <h3 >Quick Links</h3>
                                     <ul>
                                         <li><a href="{{ route('home') }}">Home</a></li>
                                         <li><a href="{{ route('services') }}">Our Services</a></li>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="col-lg-8 col-sm-6">
                                 <div class="widget">
-                                    <h5>Our Services</h5>
+                                    <h3>Our Services</h3>
                                     <ul>
                                         @foreach($footer_services as $service)
                                         <li><a href="{{ service_url($service) }}">{{ $service->title }}</a></li>
@@ -70,17 +70,17 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
                         <div class="widget">
-                            <h5>Contact Info</h5>
+                            <h3>Contact Info</h3>
 
 
                             <div class="fw-bold text-white"><i class="icofont-ui-call me-2 id-color-2"></i>Call / WhatsApp</div>
-                            <a href="tel:+94776604040" class="text-white">+94 77 660 40 40</a><br>
-                            <a href="https://wa.me/94779191818" class="text-white">+94 779 191 818 (WhatsApp)</a>
+                            <a href="tel:+94776604040" class="text-white footer-contact-link">+94 77 660 40 40</a><br>
+                            <a href="https://wa.me/94779191818" class="text-white footer-contact-link">+94 779 191 818 (WhatsApp)</a>
 
                             <div class="spacer-20"></div>
 
                             <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color-2"></i>Email</div>
-                            <a href="mailto:info@care36t5.com" class="text-white">info@care36t5.com</a>
+                            <a href="mailto:info@care36t5.com" class="text-white footer-contact-link">info@care36t5.com</a>
                             <div class="spacer-20"></div>
 
                             <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color-2"></i>Office Location</div>
