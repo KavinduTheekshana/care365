@@ -8,11 +8,11 @@
                                 <div id="logo">
                                     <a href="{{ route('home') }}" aria-label="Care365 Home">
                                         <img class="logo-main" src="assets/img/logo.webp" alt="Care365 Logo" 
-                                            style="max-height: 60px; width: auto; height: auto;" width="82" height="60">
+                                            style="max-height: 60px; width: auto; height: auto;" width="82" height="60" loading="lazy">
                                         <img class="logo-scroll" src="assets/img/logo.webp" alt="Care365 Logo" 
-                                            style="max-height: 60px; width: auto; height: auto;" width="82" height="60">
+                                            style="max-height: 60px; width: auto; height: auto;" width="82" height="60" loading="lazy">
                                         <img class="logo-mobile" src="assets/img/logo.webp" alt="Care365 Logo" 
-                                            style="max-height: 60px; width: auto; height: auto;" width="82" height="60">
+                                            style="max-height: 60px; width: auto; height: auto;" width="82" height="60" loading="lazy">
                                     </a>
                                 </div>
                                 <!-- logo close -->
