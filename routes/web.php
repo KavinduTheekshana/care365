@@ -20,6 +20,7 @@ use App\Http\Controllers\WeCareController;
 use App\Http\Controllers\DigitalWellbeingController;
 use App\Http\Controllers\HowWorkController;
 use App\Http\Controllers\ExitPopupController;
+use App\Http\Controllers\SitemapController;
 
 
 
@@ -81,8 +82,11 @@ Route::get('/digital-wellbeing', [DigitalWellbeingController::class, 'index'])->
 Route::get('/how-it-works', [HowWorkController::class, 'index'])->name('howitworks');
 
 
-// Lead Magnet 
+// Lead Magnet
 Route::post('/exit-popup/submit', [ExitPopupController::class, 'submit'])->name('exit-popup.submit');
+
+// Sitemap
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 // Catch-all dynamic routes - MUST BE LAST
 Route::get('/{slug}', [RouteController::class, 'resolve']);

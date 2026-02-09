@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    
+
     {{-- Dynamic Title --}}
     <title>@yield('title', 'Care365 - Luxury Retirement Living in Sri Lanka | Elder Care Homes')</title>
-    
+
     {{-- Basic Meta Tags --}}
     <meta name="author" content="@yield('meta_author', 'Care365')">
     <meta name="description" content="@yield('meta_description', 'CARE 365: Luxury retirement living where seniors thrive with joy, independence, and exceptional care. We provide compassionate and personalized care for seniors in a warm and home-like environment in Sri Lanka.')">
@@ -25,7 +25,7 @@
     <meta property="og:image" content="@yield('og_image', asset('assets/img/logo.webp'))">
     <meta property="og:site_name" content="Care365">
     <meta property="og:locale" content="en_US">
-    
+
     {{-- Twitter Card Tags --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'Care365 - Luxury Retirement Living in Sri Lanka | Elder Care Homes')">
@@ -47,7 +47,7 @@
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/logo.webp') }}">
-    
+
     <!--==============================
     Resource Hints for Performance
     ============================== -->
@@ -66,7 +66,9 @@
     <!--==============================
     Google Fonts - Combined & Optimized
     ============================== -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Onest:wght@100..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Onest:wght@100..900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!--==============================
     Critical CSS (loaded immediately)
@@ -77,29 +79,68 @@
     <!--==============================
     Non-Critical CSS (loaded asynchronously)
     ============================== -->
-    <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
-    <link href="{{ asset('assets/css/swiper.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
-    <link href="{{ asset('assets/css/coloring.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
-    <link id="colors" href="{{ asset('assets/css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
+    <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" media="print"
+        onload="this.media='all'; this.onload=null;">
+    <link href="{{ asset('assets/css/swiper.css') }}" rel="stylesheet" type="text/css" media="print"
+        onload="this.media='all'; this.onload=null;">
+    <link href="{{ asset('assets/css/coloring.css') }}" rel="stylesheet" type="text/css" media="print"
+        onload="this.media='all'; this.onload=null;">
+    <link id="colors" href="{{ asset('assets/css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css"
+        media="print" onload="this.media='all'; this.onload=null;">
 
 
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" >
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVPVV72YJ5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QVPVV72YJ5');
+    </script>
+
+    {{-- Google Search Console  --}}
+    <meta name="google-site-verification" content="rtFgIYtRxlqOXwyPvRLxERPISEtvSZ0flkgD9e9WCbE" />
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-58HHBB2G');
+    </script>
+    <!-- End Google Tag Manager -->
 
     {{-- Fallback for browsers that don't support onload --}}
     <noscript>
         <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/swiper.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/coloring.css') }}" rel="stylesheet" type="text/css">
-        <link id="colors" href="{{ asset('assets/css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css">
+        <link id="colors" href="{{ asset('assets/css/colors/scheme-01.css') }}" rel="stylesheet"
+            type="text/css">
     </noscript>
 
     @stack('head')
     @stack('styles')
 
 
-        {{-- Schema.org Markup for Local Business --}}
-        @verbatim
+    {{-- Schema.org Markup for Local Business --}}
+    @verbatim
         <script type="application/ld+json">
         {
         "@context": "https://schema.org",
@@ -117,11 +158,15 @@
         ]
         }
         </script>
-        @endverbatim
+    @endverbatim
 
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58HHBB2G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <div id="wrapper">
         @include('frontend.components.popups')
         <div class="float-text show-on-scroll">
@@ -154,7 +199,7 @@
     ============================== -->
     {{-- Non-critical JavaScript - Deferred loading --}}
     <script src="{{ asset('assets/js/plugins.js') }}" defer></script>
-    
+
     {{-- Non-critical JavaScript - Deferred loading --}}
     <script src="{{ asset('assets/js/designesia.js') }}" defer></script>
     <script src="{{ asset('assets/js/swiper.js') }}" defer></script>
@@ -173,7 +218,7 @@
                     default_offset_pct: 0.5
                 });
                 $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({
-                    default_offset_pct: 0.5, 
+                    default_offset_pct: 0.5,
                     orientation: 'vertical'
                 });
             }
