@@ -1,15 +1,46 @@
+@push('head')
+<!-- Preload hero images with correct attributes for LCP optimization -->
+<link rel="preload" as="image" 
+      href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" 
+      media="(min-width: 769px)" 
+      fetchpriority="high" 
+      crossorigin>
+<link rel="preload" as="image" 
+      href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" 
+      media="(max-width: 768px)" 
+      fetchpriority="high" 
+      crossorigin>
+
+<!-- Inline critical CSS for immediate rendering -->
+<style>
+/* Critical above-fold styles - prevents render delay */
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
+    height: 700px !important;
+    min-height: 700px !important;
+}
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .v-center,
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper,
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-slide,
+section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
+    height: 100%;
+}
+.swiper-inner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+</style>
+@endpush
+
 <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
-    @push('head')
-    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" media="(min-width: 769px)" fetchpriority="high">
-    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" media="(max-width: 768px)" fetchpriority="high">
-    @endpush
     <div class="v-center">
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-                <!-- Slide 1 - Main Headline Focus -->
+                <!-- Slide 1 - Main Headline Focus - OPTIMIZED FOR LCP -->
                 <div class="swiper-slide">
-                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp)" data-bgimage-mobile="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp)" loading="lazy">
+                    <!-- Use inline background-image for immediate load, NO loading="lazy" -->
+                    <div class="swiper-inner" style="background-image: url('{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}');">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -22,7 +53,7 @@
                                             <p class="slider-teaser mb-3">Trusted by families locally and abroad to care for their loved ones.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2  mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
+                                                <a class="btn-main bg-color-2 mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
                                                 <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book a Visit / Virtual Tour</a>
                                             </div>
                                         </div>
@@ -34,14 +65,18 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" width="50" height="50" loading="lazy">
+                            <img src="{{ asset('assets/img/Home-img/PHSRC.webp') }}" alt="PHSRC Registered" width="50" height="50">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
                 </div>
+
                 <!-- Slide 2 - Luxury & Compassion Focus -->
                 <div class="swiper-slide">
-                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.webp)" data-bgimage-mobile="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L-mobile.webp)" loading="lazy">
+                    <div class="swiper-inner" 
+                         data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.webp)" 
+                         data-bgimage-mobile="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L-mobile.webp)" 
+                         loading="lazy">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -54,7 +89,7 @@
                                             <p class="slider-teaser mb-3">Experience luxury retirement living with personalized care, safety, and dignity for your loved ones.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2  mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
+                                                <a class="btn-main bg-color-2 mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
                                                 <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Schedule a Virtual Tour</a>
                                             </div>
                                         </div>
@@ -66,14 +101,18 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy" width="50" height="50" loading="lazy">
+                            <img src="{{ asset('assets/img/Home-img/PHSRC.webp') }}" alt="PHSRC Registered" width="50" height="50" loading="lazy">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
                 </div>
+
                 <!-- Slide 3 - Trust & Family Focus -->
                 <div class="swiper-slide">
-                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/happy-seniors-nursing-home.webp)" data-bgimage-mobile="url(assets/img/Home-img/happy-seniors-nursing-home-mobile.webp)" loading="lazy">
+                    <div class="swiper-inner" 
+                         data-bgimage="url(assets/img/Home-img/happy-seniors-nursing-home.webp)" 
+                         data-bgimage-mobile="url(assets/img/Home-img/happy-seniors-nursing-home-mobile.webp)" 
+                         loading="lazy">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -86,7 +125,7 @@
                                             <p class="slider-teaser mb-3">Providing exceptional care with dignity, safety, and compassion for elderly residents.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2  mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Get Admission Details</a>
+                                                <a class="btn-main bg-color-2 mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Get Admission Details</a>
                                                 <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book an In-Person Visit</a>
                                             </div>
                                         </div>
@@ -98,7 +137,7 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy" width="50" height="50" loading="lazy">
+                            <img src="{{ asset('assets/img/Home-img/PHSRC.webp') }}" alt="PHSRC Registered" width="50" height="50" loading="lazy">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
@@ -194,7 +233,9 @@
 
             
 
- <style>
+<style>
+/* ====== LCP OPTIMIZED STYLES ====== */
+
 /* Hero Section Height - Set to 700px as client requested */
 section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 {
     height: 700px !important;
@@ -303,6 +344,11 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner {
         background-position: center center !important;
         background-size: cover !important;
+    }
+    
+    /* Mobile background image switching */
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-slide:first-child .swiper-inner {
+        background-image: url('{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}') !important;
     }
     
     /* LIGHTER overlay for mobile - text is already smaller so needs less darkness */
@@ -436,20 +482,9 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         font-size: 0.75rem !important; /* 12px */
     }
     
-    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-teaser {
+    section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-thin.z-1000 .slider-teaser {
         font-size: 0.8125rem !important; /* 13px */
         line-height: 1.35 !important;
     }
 }
-
-/* Alternative: Gradient overlay (optional - looks more modern) */
-/* Uncomment this if you want a gradient instead */
-/*
-section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-inner::before {
-    background: linear-gradient(to bottom, 
-        rgba(0, 0, 0, 0.2), 
-        rgba(0, 0, 0, 0.4)
-    ) !important;
-}
-*/
 </style>
