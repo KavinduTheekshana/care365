@@ -53,49 +53,102 @@
                     ]
                 ];
 
-
-            
-            foreach ($services as $index => $service):
-                // Add mt-3 class to items after the first row (3 items)
-                $mtClass = $index >= 3 ? 'mt-3' : '';
+                foreach ($services as $index => $service):
+                    $mtClass = $index >= 3 ? 'mt-3' : '';
             ?>
             <div class="col-lg-4 col-md-6 <?php echo $mtClass; ?>">
-                <div class="col-lg-4 col-md-6 <?php echo $mtClass; ?>">
-                    <div class="relative d-flex align-items-start gap-3">
-                        <img src="<?php echo $service['icon']; ?>" 
-                            class="bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
-                            alt="<?php echo $service['alt']; ?>" 
-                            style="flex-shrink: 0;">
-                        <div class="wow fadeInUp" style="flex: 0 1 120px;">
-                            <h5 class="mb-1" style="font-size: 16px;"><?php echo $service['title']; ?></h5>
-                            <p class="mb-0" style="font-size: 13px;"><?php echo $service['description']; ?></p>
-                        </div>
+                <div class="service-card">
+                    <img src="<?php echo $service['icon']; ?>" 
+                        class="service-icon bg-color-2 w-60px p-10 rounded-10 wow scaleIn" 
+                        alt="<?php echo $service['alt']; ?>">
+                    <div class="service-content wow fadeInUp">
+                        <h5 class="service-title"><?php echo $service['title']; ?></h5>
+                        <p class="service-text"><?php echo $service['description']; ?></p>
                     </div>
                 </div>
             </div>
-
-
-            
             <?php endforeach; ?>
         </div>
     </div>
-    
-    <!-- 
-    <div style="text-align: center; background: #ffffff; padding: 40px 30px; border-bottom: 2px solid #E2E8F0;">
-        <h3 style="font-size: 26px; font-weight: 600; color: #0F172A; margin: 0 0 12px 0;">
-            Explore Our Care Services
-        </h3>
-        <p style="font-size: 15px; color: #64748B; margin: 0 0 25px 0; margin-left: auto; margin-right: auto; line-height: 1.6; max-width: 500px;">
-            Discover personalized care solutions designed to support comfort, dignity, and well-being at every stage.
-        </p>
-        <a class="btn-main bg-color-2 text-dark mb-3 wow fadeInUp"
-            data-wow-delay=".6s"
-            href="{{ route('services') }}">
-            Learn More About Our Services
-        </a>
-    </div>
-     -->
 </section>
 
+<style>
+/* Service Card Container */
+.service-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+}
 
+/* Service Icon */
+.service-icon {
+    flex-shrink: 0;
+}
 
+/* Service Content Wrapper */
+.service-content {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Service Title */
+.service-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Service Text */
+.service-text {
+    font-size: 13px;
+    margin-bottom: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+}
+
+/* Mobile Responsive - Below 768px */
+@media (max-width: 767px) {
+    .service-card {
+        gap: 12px;
+    }
+    
+    .service-icon {
+        width: 50px !important;
+        padding: 8px !important;
+    }
+    
+    .service-title {
+        font-size: 14px !important;
+    }
+    
+    .service-text {
+        font-size: 12px !important;
+    }
+}
+
+/* Extra Small Mobile - Below 576px */
+@media (max-width: 575px) {
+    .service-card {
+        gap: 10px;
+    }
+    
+    .service-icon {
+        width: 45px !important;
+        padding: 6px !important;
+    }
+    
+    .service-title {
+        font-size: 13px !important;
+        line-height: 1.3;
+    }
+    
+    .service-text {
+        font-size: 11px !important;
+        line-height: 1.4;
+    }
+}
+</style>
