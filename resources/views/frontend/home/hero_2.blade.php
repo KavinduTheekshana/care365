@@ -149,7 +149,7 @@
                         <!-- Feature 3: Secure & Comfortable Facilities -->
                         <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-brand-windows absolute id-color" style="font-size: 36px;"></i>
+                                <i class="icofont-home absolute id-color" style="font-size: 36px;"></i>
                                 <div class="ps-60">
                                     <h3 class="mb-0" style="font-size: 16px;">Secure & Comfortable</h3>
                                     <p class="mb-0" style="font-size: 13px;">Designed for safety, comfort, and peace.</p>
