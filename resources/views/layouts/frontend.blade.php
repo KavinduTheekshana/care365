@@ -82,6 +82,11 @@
     <link href="{{ asset('assets/css/coloring.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
     <link id="colors" href="{{ asset('assets/css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
 
+
+
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" >
+
+
     {{-- Fallback for browsers that don't support onload --}}
     <noscript>
         <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css">
