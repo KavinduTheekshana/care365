@@ -43,7 +43,7 @@
                     <a class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2 popup-youtube" href="https://www.youtube.com/watch?v=HyZvbVf2SSY">
                         <div class="player invert bg-color-2 no-border rounded-1 wow scaleIn"><span></span></div>
                     </a>
-                    <div class="image" data-bgimage="url(assets/img/Home-img/UNS_sliders_FP_eldercare-1.jpg) center"></div>
+                    <div class="image" data-bgimage="url(assets/img/Home-img/UNS_sliders_FP_eldercare-1.jpg) center" loading="lazy"></div>
                 </div>
                 <!-- Text -->
                 <div class="col-lg-6 offset-lg-6">
