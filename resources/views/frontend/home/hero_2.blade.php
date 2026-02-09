@@ -5,7 +5,7 @@
             <div class="swiper-wrapper">
                 <!-- Slide 1 - Main Headline Focus -->
                 <div class="swiper-slide">
-                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg)">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg)" data-bgimage-mobile="url(assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.jpg)">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -30,14 +30,15 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <img src="
+assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
                 </div>
                 <!-- Slide 2 - Luxury & Compassion Focus -->
                 <div class="swiper-slide">
-                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.jpg)">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.jpg)" data-bgimage-mobile="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L-mobile.jpg)">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -62,14 +63,14 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered" loading="lazy">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
                 </div>
                 <!-- Slide 3 - Trust & Family Focus -->
                 <div class="swiper-slide">
-                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/happy-seniors-nursing-home.webp)">
+                    <div class="swiper-inner" data-bgimage="url(assets/img/Home-img/happy-seniors-nursing-home.webp)" data-bgimage-mobile="url(assets/img/Home-img/happy-seniors-nursing-home-mobile.webp)">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -94,7 +95,7 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered">
+                            <img src="assets/img/Home-img/PHSRC.jpg" alt="PHSRC Registered" loading="lazy">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>

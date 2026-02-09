@@ -853,6 +853,9 @@
          $("body,div,section").css('background', function() {
             if ($(this).is('[data-bgimage]')) {
                 jQuery(this).addClass("bgcustom");
+                if (window.innerWidth <= 768 && $(this).is('[data-bgimage-mobile]')) {
+                    return $(this).data('bgimage-mobile');
+                }
             }
              return jQuery(this).data('bgimage');
          });

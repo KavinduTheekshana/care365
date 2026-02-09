@@ -85,7 +85,8 @@
 
 
 
-        @stack('styles')
+    @stack('head')
+    @stack('styles')
 
         {{-- Schema.org Markup for Local Business --}}
         @verbatim

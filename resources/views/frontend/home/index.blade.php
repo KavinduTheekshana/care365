@@ -4,6 +4,11 @@
 {{-- SEO Meta Tags for Homepage --}}
 @section('title', 'Care365 - Luxury Retirement Living in Sri Lanka | Best Elder Care Homes')
 
+@push('head')
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.jpg') }}" media="(min-width: 769px)">
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.jpg') }}" media="(max-width: 768px)">
+@endpush
+
 @section('meta_author', 'Care365')
 
 @section('meta_description', 'CARE 365: Luxury retirement living where seniors thrive with joy, independence, and exceptional care. We provide compassionate and personalized care for seniors in a warm and home-like environment. Our dedicated team is committed to enhancing the quality of life for our residents in Sri Lanka.')
