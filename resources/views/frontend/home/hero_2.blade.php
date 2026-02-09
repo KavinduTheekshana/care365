@@ -129,7 +129,7 @@
                             <div class="relative">
                                 <i class="icofont-history absolute id-color" style="font-size: 36px;"></i>
                                 <div class="ps-60">
-                                    <h4 class="mb-0" style="font-size: 16px;">Years of Experience</h4>
+                                    <h3 class="mb-0" style="font-size: 16px;">Years of Experience</h3>
                                     <p class="mb-0" style="font-size: 13px;">Decades of trusted senior care expertise.</p>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                             <div class="relative">
                                 <i class="icofont-stethoscope-alt absolute id-color" style="font-size: 36px;"></i>
                                 <div class="ps-60">
-                                    <h4 class="mb-0" style="font-size: 16px;">24/7 Medical Support</h4>
+                                    <h3 class="mb-0" style="font-size: 16px;">24/7 Medical Support</h3>
                                     <p class="mb-0" style="font-size: 13px;">Round-the-clock professional healthcare.</p>
                                 </div>
                             </div>
@@ -149,20 +149,20 @@
                         <!-- Feature 3: Secure & Comfortable Facilities -->
                         <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-home absolute id-color" style="font-size: 36px;"></i>
+                                <i class="icofont-brand-windows absolute id-color" style="font-size: 36px;"></i>
                                 <div class="ps-60">
-                                    <h4 class="mb-0" style="font-size: 16px;">Secure & Comfortable Facilities</h4>
-                                    <p class="mb-0" style="font-size: 13px;">Safe, home-like environment.</p>
+                                    <h3 class="mb-0" style="font-size: 16px;">Secure & Comfortable</h3>
+                                    <p class="mb-0" style="font-size: 13px;">Designed for safety, comfort, and peace.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Feature 4: Testimonials / Star Ratings -->
+                        <!-- Feature 4: Engaging Activities -->
                         <div class="col-lg-3 col-md-6">
                             <div class="relative">
-                                <i class="icofont-star absolute id-color" style="font-size: 36px;"></i>
+                                <i class="icofont-users-alt-5 absolute id-color" style="font-size: 36px;"></i>
                                 <div class="ps-60">
-                                    <h4 class="mb-0" style="font-size: 16px;">Excellent Reviews</h4>
+                                    <h3 class="mb-0" style="font-size: 16px;">Engaging Activities</h3>
                                     <p class="mb-0" style="font-size: 13px;">Highly rated by families.</p>
                                     <div class="rating-stars mt-1">
                                         <i class="icofont-star text-warning" style="font-size: 12px;"></i>

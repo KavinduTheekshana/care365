@@ -6,12 +6,12 @@
                             <div class="de-flex-col">
                                 <!-- logo begin -->
                                 <div id="logo">
-                                    <a href="{{ route('home') }}">
-                                        <img class="logo-main" src="assets/img/logo.webp" alt="" 
+                                    <a href="{{ route('home') }}" aria-label="Care365 Home">
+                                        <img class="logo-main" src="assets/img/logo.webp" alt="Care365 Logo" 
                                             style="max-height: 60px; width: auto; height: auto;">
-                                        <img class="logo-scroll" src="assets/img/logo.webp" alt="" 
+                                        <img class="logo-scroll" src="assets/img/logo.webp" alt="Care365 Logo" 
                                             style="max-height: 60px; width: auto; height: auto;">
-                                        <img class="logo-mobile" src="assets/img/logo.webp" alt="" 
+                                        <img class="logo-mobile" src="assets/img/logo.webp" alt="Care365 Logo" 
                                             style="max-height: 60px; width: auto; height: auto;">
                                     </a>
                                 </div>

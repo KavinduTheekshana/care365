@@ -29,13 +29,13 @@
                             At Care 365, we provide compassionate, personalized senior care in a warm and welcoming environment. Our dedicated team ensures comfort, safety, and dignity, treating every resident like family.
                         </p>
                         <div class="social-icons mb-sm-30 mt-4">
-                            <a href="https://www.facebook.com/Care36t5/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.facebook.com/Care36t5/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="https://www.instagram.com/carethreesixtyfive?utm_source=qr&igsh=MTRkNHhuNWx2ZDd6cw%3D%3D" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/carethreesixtyfive?utm_source=qr&igsh=MTRkNHhuNWx2ZDd6cw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
-                            <a href="https://wa.me/94776604040" target="_blank" rel="noopener noreferrer">
+                            <a href="https://wa.me/94776604040" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
 
