@@ -12,20 +12,20 @@
 .whatsapp-btn {
     display: flex;
     align-items: center;
-    background: #25D366;
+    background: #128C7E; /* Darker green for better contrast */
     color: white;
     padding: 12px 18px;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 4px 12px rgba(18, 140, 126, 0.3);
     transition: all 0.3s ease;
     animation: float 3s ease-in-out infinite;
 }
 
 .whatsapp-btn:hover {
-    background: #128C7E;
+    background: #0D6E63; /* Even darker on hover */
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 6px 16px rgba(18, 140, 126, 0.4);
 }
 
 .whatsapp-icon {
@@ -35,7 +35,8 @@
 
 .whatsapp-text {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700; /* Increased from 600 to 700 */
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Add subtle text shadow */
 }
 
 /* Chat Box */
