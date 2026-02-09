@@ -21,9 +21,9 @@
                                 <div class="testi-card-profile">
                                     <div class="testi-card-avater">
                                         @if($testimonial->image_path)
-                                        <img src="{{ asset('testimonial_img/' . $testimonial->image_path) }}" alt="{{ $testimonial->name }}" width="80" height="80">
+                                        <img src="{{ asset('testimonial_img/' . $testimonial->image_path) }}" alt="{{ $testimonial->name }}" width="80" height="80" loading="lazy">
                                         @else
-                                        <img src="assets/img/testimonial/dummy.jpg" alt="{{ $testimonial->name }}" width="80" height="80">
+                                        <img src="assets/img/testimonial/dummy.jpg" alt="{{ $testimonial->name }}" width="80" height="80" loading="lazy">
                                         @endif
                                     </div>
                                     <div class="testi-card-profile-detaile">

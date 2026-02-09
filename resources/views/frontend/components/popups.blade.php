@@ -46,22 +46,22 @@
                 <a href="tel:+94776604040" 
                 style="
                     background: transparent;
-                    color: #2196F3;
+                    color: #0D47A1;
                     padding: 4px 10px;
                     font-size: 0.75rem;
-                    font-weight: 500;
+                    font-weight: 600;
                     border-radius: 4px;
                     text-decoration: none;
                     display: inline-block;
                     transition: all 0.2s ease;
-                    border: 1px solid #2196F3;
+                    border: 1px solid #0D47A1;
                     cursor: pointer;
                     text-align: center;
                     min-width: 90px;
                     line-height: 1.2;
                 "
-                onmouseover="this.style.background='#2196F3'; this.style.color='white';"
-                onmouseout="this.style.background='transparent'; this.style.color='#2196F3';">
+                onmouseover="this.style.background='#0D47A1'; this.style.color='white';"
+                onmouseout="this.style.background='transparent'; this.style.color='#0D47A1';">
                     Enquire Now
                 </a>
                 

@@ -22,7 +22,7 @@
     <meta property="og:description" content="@yield('meta_description', 'CARE 365: Luxury retirement living where seniors thrive with joy, independence, and exceptional care. We provide compassionate and personalized care for seniors in a warm and home-like environment in Sri Lanka.')">
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="@yield('og_image', asset('assets/img/logo.png'))">
+    <meta property="og:image" content="@yield('og_image', asset('assets/img/logo.webp'))">
     <meta property="og:site_name" content="Care365">
     <meta property="og:locale" content="en_US">
     
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'Care365 - Luxury Retirement Living in Sri Lanka | Elder Care Homes')">
     <meta name="twitter:description" content="@yield('meta_description', 'CARE 365: Luxury retirement living where seniors thrive with joy, independence, and exceptional care.')">
-    <meta name="twitter:image" content="@yield('og_image', asset('assets/img/logo.png'))">
+    <meta name="twitter:image" content="@yield('og_image', asset('assets/img/logo.webp'))">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,52 +40,63 @@
     <meta name="msapplication-navbutton-color" content="#1A4137">
     <meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/logo.png') }}">
-    <link rel="manifest" href="{{ asset('assets/img/logo.png') }}">
+    <!-- Optimized Favicons (reduced redundancy) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/logo.webp') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ asset('assets/img/logo.png') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/img/logo.webp') }}">
     
     <!--==============================
-    Google Fonts
+    Resource Hints for Performance
     ============================== -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Onest:wght@100..900&display=swap" rel="stylesheet">
 
     <!--==============================
-    New fonts Added
+    Preload Critical Resources
     ============================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="{{ asset('assets/css/bootstrap.min.css') }}" as="style">
+    <link rel="preload" href="{{ asset('assets/css/style.css') }}" as="style">
+    <link rel="preload" href="{{ asset('assets/js/plugins.js') }}" as="script">
 
-    
-    <!-- CSS Files
-    ================================================== -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" >
-    <link href="assets/css/swiper.css" rel="stylesheet" type="text/css" >
+    <!--==============================
+    Google Fonts - Combined & Optimized
+    ============================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Onest:wght@100..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--==============================
+    Critical CSS (loaded immediately)
+    ============================== -->
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+
+    <!--==============================
+    Non-Critical CSS (loaded asynchronously)
+    ============================== -->
+    <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
+    <link href="{{ asset('assets/css/swiper.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
+    <link href="{{ asset('assets/css/coloring.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
+    <link id="colors" href="{{ asset('assets/css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
+
+
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" >
-    <link href="assets/css/coloring.css" rel="stylesheet" type="text/css" >
-    <!-- color scheme -->
-    <link id="colors" href="assets/css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
 
+    {{-- Fallback for browsers that don't support onload --}}
+    <noscript>
+        <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/swiper.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/coloring.css') }}" rel="stylesheet" type="text/css">
+        <link id="colors" href="{{ asset('assets/css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css">
+    </noscript>
 
-        @stack('styles')
+    @stack('head')
+    @stack('styles')
+
 
         {{-- Schema.org Markup for Local Business --}}
         @verbatim
@@ -124,18 +135,13 @@
 
         <!-- header begin -->
         @include('frontend.components.header')
-
         <!-- header close -->
+
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
-
+        <main class="no-bottom no-top" id="content" role="main">
             <div id="top"></div>
-
-                @yield('content')
-
-
-            
-        </div>
+            @yield('content')
+        </main>
         <!-- content close -->
 
         <!-- footer begin -->
@@ -143,26 +149,39 @@
         <!-- footer close -->
     </div>
 
+    <!--==============================
+    JavaScript Files - Optimized Loading
+    ============================== -->
+    {{-- Non-critical JavaScript - Deferred loading --}}
+    <script src="{{ asset('assets/js/plugins.js') }}" defer></script>
+    
+    {{-- Non-critical JavaScript - Deferred loading --}}
+    <script src="{{ asset('assets/js/designesia.js') }}" defer></script>
+    <script src="{{ asset('assets/js/swiper.js') }}" defer></script>
+    <script src="{{ asset('assets/js/custom-marquee.js') }}" defer></script>
+    <script src="{{ asset('assets/js/custom-swiper-1.js') }}" defer></script>
+    <script src="{{ asset('assets/js/jquery.event.move.js') }}" defer></script>
+    <script src="{{ asset('assets/js/jquery.twentytwenty.js') }}" defer></script>
 
-    <!-- Javascript Files
-    ================================================== -->
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/designesia.js"></script>
-    <script src="assets/js/swiper.js"></script>
-    <script src="assets/js/custom-marquee.js"></script>
-    <script src="assets/js/custom-swiper-1.js"></script>
-    <script src="assets/js/jquery.event.move.js"></script>
-    <script src="assets/js/jquery.twentytwenty.js"></script>
-
+    {{-- Initialize TwentyTwenty after all scripts load --}}
     <script>
-    $(window).on("load", function(){
-      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
-      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
-    });
+        // Use window load event for all resources including deferred scripts
+        window.addEventListener('load', function() {
+            // Check if jQuery and twentytwenty are available
+            if (typeof $ !== 'undefined' && $.fn.twentytwenty) {
+                $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({
+                    default_offset_pct: 0.5
+                });
+                $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({
+                    default_offset_pct: 0.5, 
+                    orientation: 'vertical'
+                });
+            }
+        });
     </script>
 
+    @stack('scripts')
+
 </body>
-
-
 
 </html>

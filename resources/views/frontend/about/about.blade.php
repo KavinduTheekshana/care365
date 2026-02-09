@@ -45,7 +45,9 @@
                     <img src="assets/images/about/About us pic.png"
                         class="img-fluid rounded-10 wow scaleIn object-fit-cover"
                         style="max-width: 100%; max-height: 700px;"
-                        alt="Care365 - Quality Elderly Care">
+                        alt="Care365 - Quality Elderly Care"
+                        loading="lazy"
+                        >
                 </div>
         </div>
     </div>

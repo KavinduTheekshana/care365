@@ -37,7 +37,7 @@
                                 <div class="ratio ratio-4x3 overflow-hidden">
                                     <img src="{{ image_url($service->image_path, 'service') }}"
                                          class="img-fluid object-fit-cover hover-scale-1-2"
-                                         alt="{{ $service->title }}">
+                                         alt="{{ $service->title }}" loading="lazy">
                                 </div>
                                 
                                 <!-- Title overlay at bottom -->
@@ -59,15 +59,15 @@
                             font-size: 0.92rem;
                             font-weight: 500;
                             line-height: 1.4;
-                            color: #3a7bd5;
+                            color: #2563eb;
                             background-color: #ffffff;
-                            border: 2px solid #3a7bd5;
+                            border: 2px solid #2563eb;
                             border-radius: 50px;
                             text-decoration: none;
                             transition: all 0.3s ease;
-                            box-shadow: 0 2px 6px rgba(58, 123, 213, 0.1);"
-                    onmouseover="this.style.backgroundColor='#3a7bd5'; this.style.color='#ffffff'; this.style.boxShadow='0 4px 12px rgba(58, 123, 213, 0.25)';"
-                    onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#3a7bd5'; this.style.boxShadow='0 2px 6px rgba(58, 123, 213, 0.1)';">
+                            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);"
+                    onmouseover="this.style.backgroundColor='#2563eb'; this.style.color='#ffffff'; this.style.boxShadow='0 4px 12px rgba(37, 99, 235, 0.25)';"
+                    onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#2563eb'; this.style.boxShadow='0 2px 6px rgba(37, 99, 235, 0.1)';">
                         View All Services
                     </a>
                 </div>

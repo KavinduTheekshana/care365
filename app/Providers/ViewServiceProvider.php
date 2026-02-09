@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Service;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Cache;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -19,27 +20,28 @@ class ViewServiceProvider extends ServiceProvider
     /**
      * Bootstrap services.
      */
-    public function boot(): void
-    {
-        // Share footer services with the correct footer view path
-        View::composer(
-            ['frontend.components.header', 'frontend.components.footer', 'layouts.footer', 'partials.footer'],
-            function ($view) {
-                // Get ALL public services once (most performant)
-                $publicServices = Service::where('is_public', true)
+public function boot(): void
+{
+    // Share services only with footer views
+    View::composer(
+        ['frontend.components.footer', 'layouts.footer', 'partials.footer'], 
+        function ($view) {
+            // Get ALL public services once (most performant)
+            // Cache for 1 hour to improve TTFB
+            $publicServices = Cache::remember('footer_services', 3600, function () {
+                return Service::where('is_public', true)
                     ->select('title', 'title_slug')
-                    ->get();                    // ← no ->latest() anymore
+                    ->get();
+            });
 
-                // Shuffle once and take what we need
-                $shuffled = $publicServices->shuffle();
+            // Shuffle once and take what we need
+            $shuffled = $publicServices->shuffle();
 
-                $view->with([
-                    'header_services' => $shuffled->take(3),
-                    'footer_services' => $shuffled->take(5),
-                ]);
-            }
-        );
-
-        
-    }
+            // Only share footer_services (no header_services)
+            $view->with([
+                'footer_services' => $shuffled->take(5),
+            ]);
+        }
+    );
+}
 }

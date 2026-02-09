@@ -5,15 +5,22 @@
         position: relative;
         width: 100%;
         height: 370px;
-        background-image: url('assets/images/breadcrumb/33.jpg');
-        background-size: 100% 100%; /* Forces image to fit exactly */
-        background-position: center center;
-        background-repeat: no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         box-sizing: border-box;
+    }
+
+    /* Hero Image for LCP optimization */
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
     }
 
     /* Background overlay for better text readability */
@@ -69,6 +76,11 @@
 <br/>
 <!-- Breadcrumb Section -->
 <section class="breadcrumb-area mt-6">
+    <img src="{{ asset('assets/images/breadcrumb/33.jpg') }}" 
+         alt="Terms & Conditions" 
+         class="hero-image" 
+         fetchpriority="high">
+
     <!-- Content -->
     <div class="breadcrumb-content">
         <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">Terms & Conditions</h1>

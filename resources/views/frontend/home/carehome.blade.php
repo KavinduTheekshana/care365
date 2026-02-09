@@ -1,4 +1,3 @@
-
 <section class="bg-white space overflow-hidden team-area-1 border-top" id="homes" style="padding: 100px 0;">
     <div class="container">
         <div class="row justify-content-between align-items-center" style="margin-bottom: 60px;">
@@ -7,7 +6,7 @@
                 <div class="relative z-1000">
                     <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Our Homes</div>
                     <h2>Designed with Modern Comforts and Amenities</h2>
-                    <p>Exciting times are ahead as Care365 prepares to open our brand-new, state-of-the-art facility in Sri Lanka.</p>
+                    <p style="color: #334155;">Exciting times are ahead as Care365 prepares to open our brand-new, state-of-the-art facility in Sri Lanka.</p>
                 </div>
             </div>
             
@@ -55,13 +54,15 @@
                                     flex-shrink: 0;
                                 ">
                                     @if($carehome->image_path)
-                                    <img src="{{ asset('care_homes_img/' . $carehome->image_path) }}" 
+                                    <img src="{{ asset('care_homes_img/' . pathinfo($carehome->image_path, PATHINFO_FILENAME) . '.webp') }}" 
                                          alt="{{ $carehome->title }}"
-                                         style="width: 100%; height: 100%; object-fit: cover;">
+                                         width="60" height="60"
+                                         style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                                     @else
-                                    <img src="assets/img/care-home/home-placeholder.jpg" 
+                                    <img src="{{ asset('assets/img/care-home/home-placeholder.webp') }}" 
                                          alt="{{ $carehome->title }}"
-                                         style="width: 100%; height: 100%; object-fit: cover;">
+                                         width="60" height="60"
+                                         style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                                     @endif
                                 </span>
                                 <span class="content-wrap" style="flex: 1;">
@@ -75,7 +76,7 @@
                                     <span class="desi" style="
                                         display: block;
                                         font-size: 13px;
-                                        color: #64748B;
+                                        color: #475569;
                                     ">{{ $carehome->subtitle }}</span>
                                 </span>
                             </button>
@@ -108,8 +109,10 @@
                                     <div style="flex-shrink: 0; width: 280px;">
                                         @if($carehome->image_path)
                                             <img 
-                                                src="{{ asset('care_homes_img/' . $carehome->image_path) }}" 
+                                                src="{{ asset('care_homes_img/' . pathinfo($carehome->image_path, PATHINFO_FILENAME) . '.webp') }}"
+                                                loading="lazy" 
                                                 alt="{{ $carehome->title }}"
+                                                width="280" height="280"
                                                 style="
                                                     border-radius: 10px;
                                                     width: 100%;
@@ -119,8 +122,10 @@
                                             >
                                         @else
                                             <img 
-                                                src="assets/img/care-home/home-placeholder.jpg" 
+                                                src="{{ asset('assets/img/care-home/home-placeholder.webp') }}"
+                                                loading="lazy" 
                                                 alt="{{ $carehome->title }}"
+                                                width="280" height="280"
                                                 style="
                                                     border-radius: 10px;
                                                     width: 100%;
@@ -149,7 +154,7 @@
                                                 <span style="
                                                     background-color: #EFF6FF;
                                                     border: 1px solid #2563EB;
-                                                    color: #2563EB;
+                                                    color: #1E40AF;
                                                     padding: 4px 12px;
                                                     border-radius: 16px;
                                                     font-size: 12px;
@@ -178,7 +183,7 @@
                                                 align-items: center;
                                                 gap: 6px;
                                             ">
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                                     <circle cx="12" cy="10" r="3"></circle>
                                                 </svg>
@@ -202,7 +207,7 @@
                                                 gap: 6px;
                                                 padding: 8px 16px;
                                                 background-color: #ffffff;
-                                                color: #2563EB;
+                                                color: #1E40AF;
                                                 text-decoration: none;
                                                 border-radius: 6px;
                                                 font-weight: 600;
@@ -210,7 +215,7 @@
                                                 border: 2px solid #2563EB;
                                                 transition: all 0.3s ease;
                                             ">
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                                                 </svg>
                                                 @if($carehome->contact_no)
@@ -228,7 +233,7 @@
                                                    display: inline-flex;
                                                    align-items: center;
                                                    gap: 6px;
-                                                   color: #2563EB;
+                                                   color: #1E40AF;
                                                    text-decoration: none;
                                                    font-size: 14px;
                                                    font-weight: 500;
@@ -252,7 +257,7 @@
                                         ">
                                             <span style="
                                                 font-size: 13px;
-                                                color: #64748B;
+                                                color: #475569;
                                                 margin-right: 4px;
                                             ">Follow us:</span>
                                             
@@ -264,7 +269,7 @@
                                                 width: 32px;
                                                 height: 32px;
                                                 background-color: #EFF6FF;
-                                                color: #2563EB;
+                                                color: #1E40AF;
                                                 border-radius: 6px;
                                                 text-decoration: none;
                                                 transition: all 0.3s ease;
@@ -282,7 +287,7 @@
                                                 width: 32px;
                                                 height: 32px;
                                                 background-color: #EFF6FF;
-                                                color: #2563EB;
+                                                color: #1E40AF;
                                                 border-radius: 6px;
                                                 text-decoration: none;
                                                 transition: all 0.3s ease;
@@ -321,6 +326,11 @@
 </section>
 
 <style>
+/* Subtitle - ensure proper contrast */
+.subtitle {
+    color: #1E293B;
+}
+
 /* Active Tab Styling */
 .nav-link.active {
     border-color: #2563EB !important;
@@ -334,6 +344,18 @@
 }
 
 
+
+a.gallery-link:hover {
+    color: #1E40AF !important;
+    text-decoration: underline !important;
+}
+
+/* Social Link Hover States */
+a[href*="facebook"]:hover,
+a[href*="instagram"]:hover {
+    background-color: #2563EB !important;
+    color: #ffffff !important;
+}
 
 /* Responsive Design */
 @media (max-width: 1199px) {
