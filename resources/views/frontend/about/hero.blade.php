@@ -4,15 +4,22 @@
         position: relative;
         width: 100%;
         height: 450px;                    /* Increased height */
-        background-image: url('assets/images/breadcrumb/r6465465.jpg');
-        background-size: cover;           /* Better than 100% 100% – maintains aspect ratio */
-        background-position: center center;
-        background-repeat: no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         box-sizing: border-box;
+    }
+
+    /* Hero Image for LCP optimization */
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
     }
 
     /* Dark overlay for text readability */
@@ -109,6 +116,11 @@
 
 <!-- Breadcrumb Section -->
 <section class="breadcrumb-area mt-6">
+    <img src="{{ asset('assets/images/breadcrumb/r6465465.jpg') }}" 
+         alt="About Care365" 
+         class="hero-image" 
+         fetchpriority="high">
+
     <!-- Content -->
     <div class="breadcrumb-content">
         <h1 class="wow fadeInUp mb-3" data-wow-delay=".2s">Caring for Seniors Like Family</h1>
