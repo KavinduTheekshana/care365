@@ -62,6 +62,7 @@
 </section>
 
 <!-- Keep these CDNs (important: jQuery first, then Owl) -->
+@push('scripts')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
@@ -107,3 +108,4 @@ $(document).ready(function(){
     }, 300);  // 300ms delay helps when images/content load slowly
 });
 </script>
+@endpush

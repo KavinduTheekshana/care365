@@ -83,7 +83,6 @@
     <link id="colors" href="{{ asset('assets/css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css" media="print" onload="this.media='all'; this.onload=null;">
 
 
-
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" >
 
 
@@ -153,8 +152,8 @@
     <!--==============================
     JavaScript Files - Optimized Loading
     ============================== -->
-    {{-- Critical JavaScript - Load immediately but don't block rendering --}}
-    <script src="{{ asset('assets/js/plugins.js') }}"></script>
+    {{-- Non-critical JavaScript - Deferred loading --}}
+    <script src="{{ asset('assets/js/plugins.js') }}" defer></script>
     
     {{-- Non-critical JavaScript - Deferred loading --}}
     <script src="{{ asset('assets/js/designesia.js') }}" defer></script>
