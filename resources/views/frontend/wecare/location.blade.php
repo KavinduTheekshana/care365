@@ -56,11 +56,11 @@
                                     @if($carehome->image_path)
                                     <img src="{{ asset('care_homes_img/' . $carehome->image_path) }}" 
                                          alt="{{ $carehome->title }}"
-                                         style="width: 100%; height: 100%; object-fit: cover;">
+                                         style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                                     @else
                                     <img src="assets/img/care-home/home-placeholder.jpg" 
                                          alt="{{ $carehome->title }}"
-                                         style="width: 100%; height: 100%; object-fit: cover;">
+                                         style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                                     @endif
                                 </span>
                                 <span class="content-wrap" style="flex: 1;">
@@ -109,6 +109,7 @@
                                             <img 
                                                 src="{{ asset('care_homes_img/' . $carehome->image_path) }}" 
                                                 alt="{{ $carehome->title }}"
+                                                loading="lazy"
                                                 style="
                                                     border-radius: 10px;
                                                     width: 100%;
@@ -120,6 +121,7 @@
                                             <img 
                                                 src="assets/img/care-home/home-placeholder.jpg" 
                                                 alt="{{ $carehome->title }}"
+                                                loading="lazy"
                                                 style="
                                                     border-radius: 10px;
                                                     width: 100%;
