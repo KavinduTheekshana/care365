@@ -1,7 +1,7 @@
 <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
     @push('head')
-    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" media="(min-width: 769px)">
-    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" media="(max-width: 768px)">
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" media="(max-width: 768px)" fetchpriority="high">
     @endpush
     <div class="v-center">
         <div class="swiper">
@@ -34,7 +34,7 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered">
+                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" width="50" height="50">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy">
+                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy" width="50" height="50">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy">
+                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy" width="50" height="50">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>

@@ -14566,14 +14566,14 @@ img {
   }
 }
 
-/* Optimization Fixes for Lighthouse */
+/* Optimization Fixes for Lighthouse - Use composited properties for performant motion */
 .menu-item {
   transition-property: transform, opacity, color !important;
+
 }
 
 .menu-item:hover {
   padding-right: 0 !important;
-  transform: translateX(5px);
 }
 
 /* Replaces inline JS for input focus to avoid main-thread work */

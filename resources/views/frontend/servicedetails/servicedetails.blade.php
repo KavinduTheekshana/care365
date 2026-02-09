@@ -4,9 +4,10 @@
             <div class="col-lg-6">
                 <!-- Service Image -->
                 <div style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                    <img src="{{ asset('services_img/' . $service->image_path) }}" 
+                    <img src="{{ asset('services_img/' . pathinfo($service->image_path, PATHINFO_FILENAME) . '.webp') }}" 
                          alt="{{ $service->title }}" 
-                         style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                         style="width: 100%; height: 400px; object-fit: cover; display: block;"
+                         width="800" height="400">
                 </div>
 
                 <h2 style="margin-bottom: 1.5rem; color: #1e3a8a; font-weight: 700; font-size: 2rem;">{{ $service->title }}</h2>
@@ -32,7 +33,8 @@
                     <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); padding: 2rem; text-align: center;">
                         <img src="{{ asset('assets/img/logo3.png') }}" 
                              alt="Company Logo" 
-                             style="max-width: 160px; width: 100%; height: auto; filter: brightness(0) invert(1);">
+                             style="max-width: 160px; width: 100%; height: auto; filter: brightness(0) invert(1);"
+                             width="160" height="117">
                     </div>
 
                     <!-- Content Section -->
@@ -104,9 +106,10 @@
             <div class="col-lg-4 col-md-6">
                 <div style="height: 100%; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; background-color: #fff; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; overflow: hidden;">
-                        <img src="{{ asset('services_img/' . $relatedService->image_path) }}" 
+                        <img src="{{ asset('services_img/' . pathinfo($relatedService->image_path, PATHINFO_FILENAME) . '.webp') }}" 
                              alt="{{ $relatedService->title }}"
-                             style="width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.3s ease;">
+                             style="width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.3s ease;"
+                             width="400" height="220">
                         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(30, 58, 138, 0.7) 100%);"></div>
                     </div>
                     <div style="padding: 2rem 1.5rem;">

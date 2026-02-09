@@ -16,7 +16,7 @@
                             <div class="relative p-2">
                                 <div class="relative">
                                     @if($testimonial->image_path)
-                                        <img class="relative z-2 w-80px mb-3 rounded-1" alt="{{ $testimonial->name }}" src="{{ asset('testimonial_img/' . $testimonial->image_path) }}">
+                                        <img class="relative z-2 w-80px mb-3 rounded-1" alt="{{ $testimonial->name }}" src="{{ asset('testimonial_img/' . $testimonial->image_path) }}" width="80" height="80">
                                     @else
                                         <div class="relative z-2 w-80px h-80px mb-3 rounded-1 bg-light d-flex align-items-center justify-content-center">
                                             <i class="fa fa-user text-muted fa-2x"></i>

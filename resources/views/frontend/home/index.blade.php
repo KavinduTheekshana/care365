@@ -5,8 +5,8 @@
 @section('title', 'Care365 - Luxury Retirement Living in Sri Lanka | Best Elder Care Homes')
 
 @push('head')
-    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" media="(min-width: 769px)">
-    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" media="(max-width: 768px)">
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" media="(max-width: 768px)" fetchpriority="high">
 @endpush
 
 @section('meta_author', 'Care365')
