@@ -16,7 +16,8 @@
                                 <span>{{ $blog->date->format('M') }}</span>
                             </div>
                             <img 
-                                alt="{{ $blog->title }}" 
+                                alt="{{ $blog->title }}"
+                                loading="lazy"
                                 src="{{ image_url($blog->image_path, 'blog') }}" 
                                 class="lazy w-100 h-100"
                                 style="object-fit: cover;"
