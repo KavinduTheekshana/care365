@@ -34,7 +34,7 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" width="50" height="50">
+                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" width="50" height="50" loading="lazy">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy" width="50" height="50">
+                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy" width="50" height="50" loading="lazy">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                         <div class="sw-overlay op-4"></div>
                         <!-- PHSRC Registered Badge -->
                         <div class="phsrc-badge">
-                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy" width="50" height="50">
+                            <img src="assets/img/Home-img/PHSRC.webp" alt="PHSRC Registered" loading="lazy" width="50" height="50" loading="lazy">
                             <span class="phsrc-text">PHSRC Registered</span>
                         </div>
                     </div>
