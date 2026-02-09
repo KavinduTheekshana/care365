@@ -24,7 +24,7 @@
                                          class="img-fluid hover-scale-1-2" 
                                          style="object-fit: cover; width: 100%; height: 100%;"
                                          width="640" height="360"
-                                         alt="{{ $service->title }}">
+                                         alt="{{ $service->title }}" loading="lazy">
                                 </div>
                             </div>
                         </a>
