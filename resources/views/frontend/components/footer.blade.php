@@ -177,9 +177,24 @@
         @include('frontend.components.whatsapp')
 
 
+<style>
+    /* Improve link contrast in footer */
+    .footer-contact-link {
+        color: #ffffff !important; /* Ensure white color */
+        text-decoration-thickness: 1px !important;
+        text-underline-offset: 3px !important;
+        font-weight: 500 !important;
+    }
 
+    /* Optional: Add hover effect */
+    .footer-contact-link:hover {
+        opacity: 0.9;
+        text-decoration-thickness: 2px !important;
+    }
 
+    /* If the background is too dark, consider making links slightly off-white */
+    .footer-contact-link {
+        color: #f0f0f0 !important; /* Slightly off-white for better contrast */
+    }
+</style>
 
-
-
-        
