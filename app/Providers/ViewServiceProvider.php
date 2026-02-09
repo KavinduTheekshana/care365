@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Service;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Cache;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -26,9 +27,12 @@ public function boot(): void
         ['frontend.components.footer', 'layouts.footer', 'partials.footer'], 
         function ($view) {
             // Get ALL public services once (most performant)
-            $publicServices = Service::where('is_public', true)
-                ->select('title', 'title_slug')
-                ->get();                    // ← no ->latest() anymore
+            // Cache for 1 hour to improve TTFB
+            $publicServices = Cache::remember('footer_services', 3600, function () {
+                return Service::where('is_public', true)
+                    ->select('title', 'title_slug')
+                    ->get();
+            });
 
             // Shuffle once and take what we need
             $shuffled = $publicServices->shuffle();
