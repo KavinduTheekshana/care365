@@ -65,12 +65,7 @@
                         <h2 class="wow fadeInUp">Experience Our Homelike Environment</h2>
                         <p class="wow fadeInUp" style="color: #334155;">Take a virtual tour of Care 365 and see our warm, comfortable facilities where seniors thrive. Discover our compassionate environment, specialized care areas, and vibrant community spaces designed for comfort, safety, and well-being.</p>
                         <div class="spacer-10"></div>
-                        <a class="btn-main" 
-                        href="{{ route('contact') }}" 
-                        style="background-color: #2563EB; color: #ffffff;">
-                            Schedule a Visit
-                        </a>
-
+                        <a class="btn-main" href="{{ route('contact') }}">Schedule a Visit</a>
                     </div>
                     <div class="spacer-double"></div>
                     <div class="spacer-single"></div>
