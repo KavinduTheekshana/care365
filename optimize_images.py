@@ -67,11 +67,30 @@ def optimize_images(directory):
                                 img = img.resize((800, new_height), Image.Resampling.LANCZOS)
                             
                             webp_path = os.path.join(root, f"{filename}.webp")
-                            if not os.path.exists(webp_path) or os.path.getsize(webp_path) > os.path.getsize(filepath): # simple check
-                                img.save(webp_path, 'WEBP', optimize=True, quality=80)
-                                print(f"Optimized Service Img: {webp_path}")
+                            # force overwrite or check if webp is smaller/exists
+                            img.save(webp_path, 'WEBP', optimize=True, quality=80)
+                            print(f"Optimized Service/CareHome Img: {webp_path}")
                      except Exception as e:
                         print(f"Error processing {filepath}: {e}")
+
+                # 5. Other large assets (Video poster, About, Icons)
+                elif "assets\\images" in root or "assets/images" in root:
+                    try:
+                        with Image.open(filepath) as img:
+                            # About Landing Page is ~500kb. Resize if huge.
+                            if "Landing Page" in filename and img.width > 1200:
+                                 ratio = 1200 / img.width
+                                 new_height = int(img.height * ratio)
+                                 img = img.resize((1200, new_height), Image.Resampling.LANCZOS)
+                            
+                            # Icons - keep size but convert to webp
+                            
+                            webp_path = os.path.join(root, f"{filename}.webp")
+                            if not os.path.exists(webp_path):
+                                img.save(webp_path, 'WEBP', optimize=True, quality=85)
+                                print(f"Optimized Asset: {webp_path}")
+                    except Exception as e:
+                        print(f"Error processing asset {filepath}: {e}")
 
 if __name__ == "__main__":
     base_dir = r"d:\Creatx Software\Project\Care365\care365\public"

@@ -19,9 +19,10 @@
             </div>
 
             <div class="col-lg-6">
-                <img src="assets/images/about/Landing Page.png" 
+                <img src="{{ asset('assets/images/about/Landing Page.webp') }}" 
                     class="img-fluid rounded-10 wow scaleIn object-fit-cover"
-                    style="width: 100%; max-height: 700px;"  
+                    style="width: 100%; max-height: 700px;" 
+                    width="600" height="400" 
                     alt="Care 365 Senior Care Facility">
             </div>
         </div>

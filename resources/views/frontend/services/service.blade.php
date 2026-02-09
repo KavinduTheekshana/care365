@@ -20,9 +20,10 @@
 
                                 <!-- Dynamic service image with fixed aspect ratio -->
                                 <div class="ratio ratio-16x9">
-                                    <img src="{{ asset('services_img/' . $service->image_path) }}" 
+                                    <img src="{{ asset('services_img/' . pathinfo($service->image_path, PATHINFO_FILENAME) . '.webp') }}" 
                                          class="img-fluid hover-scale-1-2" 
                                          style="object-fit: cover; width: 100%; height: 100%;"
+                                         width="640" height="360"
                                          alt="{{ $service->title }}">
                                 </div>
                             </div>

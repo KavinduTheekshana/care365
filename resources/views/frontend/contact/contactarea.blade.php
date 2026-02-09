@@ -57,29 +57,21 @@
                                 @csrf
                                 <div class="row" style="display: flex; flex-wrap: wrap; margin: 0 -10px;">
                                     <div class="form-group col-md-6" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 50%; max-width: 50%;">
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Your name*" required 
-                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none; transition: all 0.3s ease;"
-                                            onfocus="this.style.borderBottomColor='#0A3F87';" 
-                                            onblur="this.style.borderBottomColor='#48b1fb';">
+                                        <input type="text" class="form-control input-animate" name="name" id="name" placeholder="Your name*" required 
+                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none;">
                                     </div>
                                     <div class="form-group col-md-6" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 50%; max-width: 50%;">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email Address*" required 
-                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none; transition: all 0.3s ease;"
-                                            onfocus="this.style.borderBottomColor='#0A3F87';" 
-                                            onblur="this.style.borderBottomColor='#48b1fb';">
+                                        <input type="email" class="form-control input-animate" name="email" id="email" placeholder="Email Address*" required 
+                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none;">
                                     </div>
                                     <div class="form-group col-md-6" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 50%; max-width: 50%;">
-                                        <input type="text" class="form-control" name="number" id="number" placeholder="Phone Number*" required 
-                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none; transition: all 0.3s ease;"
-                                            onfocus="this.style.borderBottomColor='#0A3F87';" 
-                                            onblur="this.style.borderBottomColor='#48b1fb';">
+                                        <input type="text" class="form-control input-animate" name="number" id="number" placeholder="Phone Number*" required 
+                                            style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none;">
                                     </div>
 
                                     <div class="form-group col-md-6" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 50%; max-width: 50%;">
-                                        <select name="subject" id="subject" class="form-select" required 
-                                                style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #6b7280; outline: none; transition: all 0.3s ease; cursor: pointer;"
-                                                onfocus="this.style.borderBottomColor='#0A3F87'; this.style.color='#374151';" 
-                                                onblur="this.style.borderBottomColor='#48b1fb';"
+                                        <select name="subject" id="subject" class="form-select input-animate" required 
+                                                style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #6b7280; outline: none; cursor: pointer;"
                                                 onchange="this.style.color='#374151';">
                                             <option value="" disabled selected hidden>Select Service*</option>
                                             <option value="Medical Care">Medical Care</option>
@@ -103,10 +95,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-12" style="padding: 0 10px; margin-bottom: 25px; flex: 0 0 100%; max-width: 100%;">
-                                        <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Write a message*" required 
-                                                style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none; resize: vertical; font-family: inherit; transition: all 0.3s ease;"
-                                                onfocus="this.style.borderBottomColor='#0A3F87';" 
-                                                onblur="this.style.borderBottomColor='#48b1fb';"></textarea>
+                                        <textarea name="message" id="message" cols="30" rows="5" class="form-control input-animate" placeholder="Write a message*" required 
+                                                style="width: 100%; padding: 15px 20px; border: none; border-bottom: 2px solid #48b1fb; background: transparent; font-size: 15px; color: #374151; outline: none; resize: vertical; font-family: inherit;"></textarea>
                                     </div>
                                     <div class="form-btn col-12" style="padding: 0 10px; margin-top: 20px; flex: 0 0 100%; max-width: 100%;">
                                         <button type="submit" class="th-btn style5" id="submitBtn" 
