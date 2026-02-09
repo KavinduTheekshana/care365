@@ -85,7 +85,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                                         <div class="spacer-single"></div>
                                         <div class="sw-text-wrapper">
                                             <div class="subtitle mb-2">Premium Luxury Living</div>
-                                            <h1 class="slider-title mb-3">Where Compassion Meets Premium Care</h1>
+                                            <h2 class="slider-title mb-3">Where Compassion Meets Premium Care</h2>
                                             <p class="slider-teaser mb-3">Experience luxury retirement living with personalized care, safety, and dignity for your loved ones.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
@@ -121,7 +121,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                                         <div class="spacer-single"></div>
                                         <div class="sw-text-wrapper">
                                             <div class="subtitle mb-2">Trusted by Families Worldwide</div>
-                                            <h1 class="slider-title mb-3">Sri Lanka's Premier Retirement Homes</h1>
+                                            <h2 class="slider-title mb-3">Sri Lanka's Premier Retirement Homes</h2>
                                             <p class="slider-teaser mb-3">Providing exceptional care with dignity, safety, and compassion for elderly residents.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
@@ -160,7 +160,6 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     <div class="container mt-min-50">
         <div class="row">
             <div class="col-lg-12">
-                <!-- FIXED: Removed unnecessary background-size and background-repeat inline styles -->
                 <div class="bg-white p-20 rounded-1 shadow-soft">
                     <div class="row g-4">
 
@@ -169,7 +168,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                             <div class="relative">
                                 <i class="icofont-history absolute id-color fs-36"></i>
                                 <div class="ps-60">
-                                    <h3 class="mb-0 fs-16">Years of Experience</h3>
+                                    <p class="mb-0 fs-16 fw-600">Years of Experience</p>
                                     <p class="mb-0 fs-13">Decades of trusted senior care expertise.</p>
                                 </div>
                             </div>
@@ -180,7 +179,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                             <div class="relative">
                                 <i class="icofont-stethoscope-alt absolute id-color fs-36"></i>
                                 <div class="ps-60">
-                                    <h3 class="mb-0 fs-16">24/7 Medical Support</h3>
+                                    <p class="mb-0 fs-16 fw-600">24/7 Medical Support</p>
                                     <p class="mb-0 fs-13">Round-the-clock professional healthcare.</p>
                                 </div>
                             </div>
@@ -191,7 +190,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                             <div class="relative">
                                 <i class="icofont-home absolute id-color fs-36"></i>
                                 <div class="ps-60">
-                                    <h3 class="mb-0 fs-16">Secure & Comfortable</h3>
+                                    <p class="mb-0 fs-16 fw-600">Secure & Comfortable</p>
                                     <p class="mb-0 fs-13">Designed for safety, comfort, and peace.</p>
                                 </div>
                             </div>
@@ -202,7 +201,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                             <div class="relative">
                                 <i class="icofont-users-alt-5 absolute id-color fs-36"></i>
                                 <div class="ps-60">
-                                    <h3 class="mb-0 fs-16">Engaging Activities</h3>
+                                    <p class="mb-0 fs-16 fw-600">Engaging Activities</p>
                                     <p class="mb-0 fs-13">Highly rated by families.</p>
                                     <div class="rating-stars mt-1">
                                         <i class="icofont-star text-warning fs-12"></i>
@@ -275,6 +274,11 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     z-index: 2;
 }
 
+/* Subtitle styling with proper contrast */
+.subtitle {
+    color: #F0F9FF; /* Light blue-white for excellent contrast on dark backgrounds */
+}
+
 /* ====== PHSRC REGISTERED BADGE STYLING ====== */
 .phsrc-badge {
     position: absolute;
@@ -306,7 +310,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
 .phsrc-badge .phsrc-text {
     font-size: 11px;
     font-weight: 700;
-    color: #2c3e50;
+    color: #1E293B;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1.3;
@@ -318,6 +322,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     font-size: 2.5rem !important; /* 40px */
     line-height: 1.2 !important;
     margin-bottom: 0.5rem !important;
+    color: #ffffff;
 }
 
 section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
@@ -329,18 +334,28 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     font-size: 1.125rem !important; /* 18px */
     line-height: 1.5 !important;
     margin-bottom: 1.5rem !important;
+    color: #F8FAFC;
 }
 
 /* ====== FEATURE SECTION UTILITY CLASSES ====== */
 .fs-36 { font-size: 36px; }
-.fs-16 { font-size: 16px; }
+.fs-16 { 
+    font-size: 16px; 
+    color: #0F172A; /* Ensure dark color for headings */
+}
 .fs-14 { font-size: 14px; }
-.fs-13 { font-size: 13px; }
+.fs-13 { 
+    font-size: 13px;
+    color: #475569; /* Accessible gray color */
+}
 .fs-12 { font-size: 12px; }
-.fs-11 { font-size: 11px; }
+.fs-11 { 
+    font-size: 11px;
+    color: #475569; /* Accessible gray color */
+}
 .fw-600 { font-weight: 600; }
 .ps-60 { padding-left: 60px; }
-.text-dark { color: #2c3e50; }
+.text-dark { color: #1E293B !important; }
 
 /* Feature box hover effect */
 .bg-white.p-20.rounded-1.shadow-soft {

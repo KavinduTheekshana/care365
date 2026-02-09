@@ -81,32 +81,7 @@
     color: #1E293B;
 }
 
-/* Button Accessibility Fix */
-.btn-main {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: #2563EB;
-    color: #ffffff !important;
-    font-weight: 600;
-    font-size: 15px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 2px solid #2563EB;
-}
 
-.btn-main:hover {
-    background-color: #1E40AF;
-    border-color: #1E40AF;
-    color: #ffffff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-.btn-main:focus {
-    outline: 2px solid #2563EB;
-    outline-offset: 2px;
-}
 
 /* Custom Video Controls Styling */
 #scrollVideo::-webkit-media-controls-panel {

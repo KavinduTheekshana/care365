@@ -343,11 +343,7 @@
     border-color: #CBD5E1 !important;
 }
 
-/* Link Hover States */
-a[href*="contact"]:hover {
-    background-color: #2563EB !important;
-    color: #ffffff !important;
-}
+
 
 a.gallery-link:hover {
     color: #1E40AF !important;
