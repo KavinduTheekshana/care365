@@ -88,6 +88,34 @@ Route::post('/exit-popup/submit', [ExitPopupController::class, 'submit'])->name(
 // Sitemap
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
+// Storage Link Helper - Remove this route after running once
+Route::get('/create-storage-link', function () {
+    $target = storage_path('app/public');
+    $link = public_path('storage');
+
+    if (file_exists($link)) {
+        if (is_link($link)) {
+            return 'Storage link already exists!';
+        } else {
+            return 'Error: public/storage exists but is not a symbolic link. Please delete it first.';
+        }
+    }
+
+    if (function_exists('symlink')) {
+        try {
+            if (@symlink($target, $link)) {
+                return 'Storage link created successfully! You can now delete this route from web.php';
+            } else {
+                return 'Failed to create symbolic link. Contact your hosting provider.';
+            }
+        } catch (\Exception $e) {
+            return 'Exception: ' . $e->getMessage() . '<br>Contact your hosting provider to create the link manually.';
+        }
+    } else {
+        return 'Both symlink() and exec() are disabled. Contact your hosting provider.';
+    }
+});
+
 // Catch-all dynamic routes - MUST BE LAST
 Route::get('/{slug}', [RouteController::class, 'resolve']);
 
