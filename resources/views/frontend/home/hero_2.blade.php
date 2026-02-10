@@ -371,11 +371,13 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     position: relative;
 }
 
+/*
 .absolute {
     position: absolute;
     left: 0;
     top: 0;
 }
+/*
 
 /* ====== MOBILE RESPONSIVENESS ====== */
 
