@@ -1,4 +1,4 @@
-<section class="relative overflow-hidden">
+<section class="relative overflow-hidden" style="margin-bottom: 30px;">
     <div class="container">
         <div class="row g-4 grid-divider">
             <div class="col-md-3 wow fadeInRight" data-wow-delay=".2s">
@@ -34,16 +34,34 @@
 </section>
 
 
-<section class="bg-light relative no-top no-bottom overflow-hidden">
+<section class="bg-light relative no-top no-bottom bg-white" style="margin-bottom: 20px;">
     <div class="container-fluid position-relative half-fluid">
         <div class="container">
             <div class="row g-4">
                 <!-- Image -->
                 <div class="col-lg-6 position-lg-absolute left-half h-100">
-                    <a class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2 popup-youtube" href="https://www.youtube.com/watch?v=HyZvbVf2SSY">
-                        <div class="player invert bg-color-2 no-border rounded-1 wow scaleIn"><span></span></div>
-                    </a>
-                    <div class="image" data-bgimage="url(assets/img/Home-img/UNS_sliders_FP_eldercare-1.jpg) center" loading="lazy"></div>
+                    <video 
+                        id="scrollVideo"
+                        controls
+                        controlslist="nodownload"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                        muted 
+                        loop 
+                        playsinline
+                        preload="metadata"
+                        poster="{{ asset('assets/images/Video/325456.webp') }}">
+                        <track kind="captions" label="English" srclang="en">
+                        <source src="{{ asset('assets/images/Video/ai-video-for-web.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Fallback Image (shown if video fails to load) -->
+                    <div id="videoFallback" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ asset('assets/images/Video/325456.webp') }}'); background-size: cover; background-position: center;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; background: rgba(0,0,0,0.7); padding: 20px; border-radius: 8px;">
+                            <i class="fas fa-video" style="font-size: 48px; margin-bottom: 10px;"></i>
+                            <p style="margin: 0; font-size: 14px;">Video temporarily unavailable</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- Text -->
                 <div class="col-lg-6 offset-lg-6">
@@ -244,4 +262,121 @@ window.onclick = function(event) {
     color: #9ca3af;
     opacity: 1;
 }
+
+
+
+/* Video section styling */
+
+/* Custom Video Controls Styling */
+#scrollVideo::-webkit-media-controls-panel {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+#scrollVideo::-webkit-media-controls-play-button,
+#scrollVideo::-webkit-media-controls-current-time-display,
+#scrollVideo::-webkit-media-controls-time-remaining-display,
+#scrollVideo::-webkit-media-controls-timeline,
+#scrollVideo::-webkit-media-controls-volume-slider,
+#scrollVideo::-webkit-media-controls-mute-button,
+#scrollVideo::-webkit-media-controls-fullscreen-button {
+    filter: brightness(1.2);
+}
+
+/* Responsive Video Section Styles */
+@media (max-width: 991px) {
+    #video-section .col-lg-6:first-child > div {
+        min-height: 350px !important;
+    }
+    
+    #video-section .col-lg-6:last-child > div {
+        padding: 40px 20px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #video-section .col-lg-6:first-child > div {
+        min-height: 300px !important;
+    }
+    
+    #video-section .col-lg-6:last-child > div {
+        padding: 30px 20px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    #video-section .col-lg-6:first-child > div {
+        min-height: 280px !important;
+    }
+    
+    #video-section .col-lg-6:last-child > div {
+        padding: 25px 15px !important;
+    }
+}
+
+/* Ensure full height on desktop */
+@media (min-width: 992px) {
+    #video-section .row {
+        min-height: 600px;
+    }
+    
+    #video-section .col-lg-6:first-child > div {
+        min-height: 600px !important;
+    }
+    
+    #video-section .col-lg-6:last-child {
+        display: flex;
+        align-items: center;
+    }
+    
+    #video-section .col-lg-6:last-child > div {
+        padding: 80px 60px !important;
+        width: 100%;
+    }
+}
+
+/* Smooth video transitions */
+#scrollVideo {
+    transition: opacity 0.3s ease;
+}
+
+
+@media (max-width: 991px) {
+    .position-lg-absolute {
+        position: relative !important;
+        width: 100% !important;
+        height: 400px !important; /* Adjust height as needed */
+        margin-bottom: 20px;
+    }
+    
+    .offset-lg-6 {
+        margin-left: 0 !important;
+    }
+    
+    #scrollVideo {
+        position: relative !important;
+        height: 100%;
+    }
+    
+    .half-fluid .container {
+        padding: 0 15px;
+    }
+}
+
+/* Also ensure the video section is visible on small screens */
+@media (max-width: 768px) {
+    .position-lg-absolute {
+        height: 300px !important; /* Smaller height for mobile */
+    }
+}
+
+
+@media (min-width: 992px) {
+    .position-lg-absolute {
+        margin-bottom: 0 !important; /* No margin on desktop since it's absolute positioned */
+    }
+}
+
+
 </style>
+
+
