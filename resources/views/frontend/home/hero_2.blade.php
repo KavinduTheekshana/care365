@@ -1,12 +1,12 @@
 @push('head')
 <!-- Preload hero images with correct attributes for LCP optimization -->
 <link rel="preload" as="image" 
-      href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" 
+      href="{{ asset('assets/img/hero/1.webp') }}" 
       media="(min-width: 769px)" 
       fetchpriority="high" 
       crossorigin>
 <link rel="preload" as="image" 
-      href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" 
+      href="{{ asset('assets/img/hero/1.webp') }}" 
       media="(max-width: 768px)" 
       fetchpriority="high" 
       crossorigin>
@@ -40,7 +40,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                 <!-- Slide 1 - Main Headline Focus - OPTIMIZED FOR LCP -->
                 <div class="swiper-slide">
                     <!-- Use inline background-image for immediate load, NO loading="lazy" -->
-                    <div class="swiper-inner" style="background-image: url('{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}');">
+                    <div class="swiper-inner" style="background-image: url('{{ asset('assets/img/hero/1.webp') }}');">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -74,8 +74,8 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                 <!-- Slide 2 - Luxury & Compassion Focus -->
                 <div class="swiper-slide">
                     <div class="swiper-inner" 
-                         data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.webp)" 
-                         data-bgimage-mobile="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L-mobile.webp)" 
+                         data-bgimage="url(assets/img/hero/2.webp)" 
+                         data-bgimage-mobile="url(assets/img/hero/2_mobile.webp)" 
                          loading="lazy">
                         <div class="sw-caption">
                             <div class="container">
@@ -110,8 +110,8 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                 <!-- Slide 3 - Trust & Family Focus -->
                 <div class="swiper-slide">
                     <div class="swiper-inner" 
-                         data-bgimage="url(assets/img/Home-img/happy-seniors-nursing-home.webp)" 
-                         data-bgimage-mobile="url(assets/img/Home-img/happy-seniors-nursing-home-mobile.webp)" 
+                         data-bgimage="url(assets/img/hero/3.webp)" 
+                         data-bgimage-mobile="url(assets/img/hero/3_mobile.webp)" 
                          loading="lazy">
                         <div class="sw-caption">
                             <div class="container">
@@ -396,7 +396,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     
     /* Mobile background image switching */
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-slide:first-child .swiper-inner {
-        background-image: url('{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}') !important;
+        background-image: url('{{ asset('assets/img/hero/1_mobile.webp') }}') !important;
     }
     
     /* LIGHTER overlay for mobile - text is already smaller so needs less darkness */
