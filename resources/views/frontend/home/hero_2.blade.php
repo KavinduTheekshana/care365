@@ -85,7 +85,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                                         <div class="spacer-single"></div>
                                         <div class="sw-text-wrapper">
                                             <div class="subtitle mb-2">Premium Luxury Living</div>
-                                            <h2 class="slider-title mb-3">Where Compassion Meets Premium Care</h2>
+                                            <h2 class="slider-title mb-3" style="letter-spacing: 0.02em;">Where Compassion Meets Premium Care</h2>
                                             <p class="slider-teaser mb-3">Experience luxury retirement living with personalized care, safety, and dignity for your loved ones.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
@@ -323,6 +323,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     line-height: 1.2 !important;
     margin-bottom: 0.5rem !important;
     color: #ffffff;
+    letter-spacing: 0.05em !important; /* Desktop letter spacing */
 }
 
 section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
@@ -426,6 +427,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         font-size: 1.75rem !important; /* 28px */
         line-height: 1.3 !important;
         margin-bottom: 0.4rem !important;
+        letter-spacing: 0.03em !important; /* Tablet letter spacing */
     }
     
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
@@ -486,6 +488,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         font-size: 1.5rem !important; /* 24px */
         line-height: 1.3 !important;
         margin-bottom: 0.3rem !important;
+        letter-spacing: 0.02em !important; /* Mobile letter spacing */
     }
     
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
@@ -559,6 +562,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
         font-size: 1.25rem !important; /* 20px */
         line-height: 1.25 !important;
+        letter-spacing: 0.015em !important; /* Extra small letter spacing */
     }
     
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
