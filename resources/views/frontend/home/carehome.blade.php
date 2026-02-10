@@ -228,7 +228,7 @@
                                             <!-- Gallery Link -->
                                             <a href="{{ route('gallery') }}" 
                                                class="gallery-link" 
-                                               onclick="setGalleryFilter('{{ Str::slug($carehome->location) }}'); return true;"
+                                               onclick="setGalleryFilter('{{ $carehome->title }}'); return true;"
                                                style="
                                                    display: inline-flex;
                                                    align-items: center;
@@ -403,19 +403,16 @@ a[href*="instagram"]:hover {
 </style>
 
 <script>
-// Function to set gallery filter using slug
-function setGalleryFilter(locationSlug) {
-    console.log('Setting gallery filter for slug:', locationSlug);
+// Function to set gallery filter using title
+function setGalleryFilter(title) {
+    console.log('Setting gallery filter for title:', title);
     
-    // Store the slug in localStorage
-    localStorage.setItem('galleryFilterLocation', locationSlug);
+    // Store the title in localStorage
+    localStorage.setItem('galleryFilterLocation', title);
     localStorage.setItem('galleryFilterTime', Date.now());
-    
-    // Navigate to gallery page - don't use return false, let the href handle navigation
-    // window.location.href will be handled by the href attribute
 }
 
-// Alternative: Auto-attach to all gallery links
+// Auto-attach to all gallery links
 document.addEventListener('DOMContentLoaded', function() {
     const galleryLinks = document.querySelectorAll('a.gallery-link');
     
@@ -423,17 +420,14 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Get the location from the onclick attribute or data
             const onclickAttr = this.getAttribute('onclick');
             if (onclickAttr) {
-                // Extract the slug from onclick="setGalleryFilter('slug-here')"
                 const match = onclickAttr.match(/setGalleryFilter\('([^']+)'\)/);
                 if (match && match[1]) {
-                    const locationSlug = match[1];
-                    console.log('Found location slug from onclick:', locationSlug);
+                    const title = match[1];
                     
-                    // Store the slug in localStorage
-                    localStorage.setItem('galleryFilterLocation', locationSlug);
+                    // Store the title in localStorage
+                    localStorage.setItem('galleryFilterLocation', title);
                     localStorage.setItem('galleryFilterTime', Date.now());
                     
                     // Navigate to gallery page

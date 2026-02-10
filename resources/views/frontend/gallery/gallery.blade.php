@@ -159,15 +159,11 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Gallery Filter with URL and localStorage Support
+// Gallery Filter with localStorage Support
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Gallery page loaded');
     
-    // OPTION 1: Check URL for filter parameter (Most reliable)
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlFilter = urlParams.get('filter');
-    
-    // OPTION 2: Check localStorage
+    // Check localStorage for filter
     const storageFilter = localStorage.getItem('galleryFilterLocation');
     const storageTime = localStorage.getItem('galleryFilterTime');
     const currentTime = Date.now();
@@ -175,20 +171,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Determine which filter to use
     let activeFilter = 'all';
     
-    if (urlFilter) {
-        // URL parameter takes priority
-        activeFilter = urlFilter;
-        console.log('Using URL filter:', activeFilter);
-        
-        // Remove filter from URL without reloading
-        if (history.replaceState) {
-            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-            window.history.replaceState({path: newUrl}, '', newUrl);
-        }
-    } else if (storageFilter && storageTime && (currentTime - storageTime) < 10000) {
+    if (storageFilter && storageTime && (currentTime - storageTime) < 10000) {
         // Use localStorage filter if recent (within 10 seconds)
         activeFilter = storageFilter;
-        console.log('Using localStorage filter:', activeFilter);
+        console.log('Using localStorage filter (title):', activeFilter);
         
         // Clear storage
         localStorage.removeItem('galleryFilterLocation');
@@ -199,12 +185,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Apply the filter
     if (activeFilter && activeFilter !== 'all') {
-        applyFilter(activeFilter);
+        applyFilterByTitle(activeFilter);
     }
     
-    // Filter function
-    function applyFilter(filterValue) {
-        console.log('Applying filter:', filterValue);
+    // Filter function - match title with category_name
+    function applyFilterByTitle(titleFilter) {
+        console.log('Applying filter by title:', titleFilter);
+        
+        // Convert title to slug to match button data-filter
+        const slugFilter = titleFilter.toLowerCase()
+                                     .replace(/[^\w\s-]/g, '')
+                                     .replace(/\s+/g, '-')
+                                     .replace(/-+/g, '-')
+                                     .trim();
+        
+        console.log('Converted to slug:', slugFilter);
         
         // Find and activate the corresponding filter button
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -212,9 +207,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         filterBtns.forEach(btn => {
             const btnFilter = btn.getAttribute('data-filter');
-            console.log('Checking button filter:', btnFilter, 'against:', filterValue);
+            const btnText = btn.textContent.trim();
             
-            if (btnFilter === filterValue) {
+            console.log('Checking button:', btnText, 'filter:', btnFilter);
+            
+            // Match either by slug or by category name
+            if (btnFilter === slugFilter || btnText === titleFilter) {
                 console.log('Found matching button!');
                 found = true;
                 
@@ -225,17 +223,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn.classList.add('active');
                 
                 // Filter the gallery items
-                filterGalleryItems(filterValue);
+                filterGalleryItems(btnFilter);
             }
         });
         
         if (!found) {
-            console.warn('No filter button found for:', filterValue);
+            console.warn('No filter button found for:', titleFilter);
             // Fallback to "all"
-            const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
-            if (allBtn) {
-                filterGalleryItems('all');
-            }
+            filterGalleryItems('all');
         }
     }
     
@@ -246,7 +241,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         galleryItems.forEach(item => {
             const itemCategory = item.getAttribute('data-category');
-            console.log('Item category:', itemCategory);
             
             if (filterValue === 'all' || itemCategory === filterValue) {
                 item.classList.remove('hidden');
@@ -283,19 +277,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Apply filter
             filterGalleryItems(filterValue);
         });
-    });
-    
-    // Log all available filters for debugging
-    console.log('Available filters:');
-    filterBtns.forEach(btn => {
-        console.log('-', btn.getAttribute('data-filter'));
-    });
-    
-    // Log all gallery item categories for debugging
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    console.log('Gallery item categories:');
-    galleryItems.forEach(item => {
-        console.log('-', item.getAttribute('data-category'));
     });
 });
 </script>
