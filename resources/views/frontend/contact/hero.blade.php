@@ -5,7 +5,7 @@
         position: relative;
         width: 100%;
         height: 370px;
-        background-image: url('assets/images/breadcrumb/5643373476.jpg');
+        background-image: url('assets/images/breadcrumb/Contact Us.webp');
         background-size: 100% 100%; /* Forces image to fit exactly */
         background-position: center center;
         background-repeat: no-repeat;
