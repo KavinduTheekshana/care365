@@ -91,6 +91,8 @@ Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap')
 
 // Lead Form
 Route::get('/lead-form', [LeadFormController::class, 'index'])->name('lead-form');
+Route::get('/lead-form/submit', [LeadFormController::class, 'submit'])->name('lead-form.submit');
+
 
 
 // Catch-all dynamic routes - MUST BE LAST
