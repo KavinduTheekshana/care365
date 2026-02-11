@@ -131,7 +131,7 @@
 
         <a class="btn-main bg-color-2  mb-3 wow fadeInUp" 
            data-wow-delay=".6s" 
-           href="{{ route('contact') }}">
+           href="{{ route('lead-form') }}">
             Talk to Our Team
         </a>
     </div>
