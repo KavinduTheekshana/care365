@@ -21,6 +21,7 @@ use App\Http\Controllers\DigitalWellbeingController;
 use App\Http\Controllers\HowWorkController;
 use App\Http\Controllers\ExitPopupController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\LeadFormController;
 
 
 
@@ -87,6 +88,10 @@ Route::post('/exit-popup/submit', [ExitPopupController::class, 'submit'])->name(
 
 // Sitemap
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+
+// Lead Form
+Route::get('/lead-form', [LeadFormController::class, 'index'])->name('lead-form');
+
 
 // Catch-all dynamic routes - MUST BE LAST
 Route::get('/{slug}', [RouteController::class, 'resolve']);
