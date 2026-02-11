@@ -60,7 +60,7 @@
                                         <span>Need Help?</span>
                                         <h5>(+94)77 660 40 40</h5>
                                     </div>    
-                                    <a href="{{ route('contact') }}" class="btn-main">Book Service Now</a>
+                                    <a href="https://wa.me/94779191818" target="_blank" class="btn-main">Book Service Now</a>
                                     <span id="menu-btn"></span>
                                 </div>
                             </div>
