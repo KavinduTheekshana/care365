@@ -350,12 +350,7 @@ a.gallery-link:hover {
     text-decoration: underline !important;
 }
 
-/* Social Link Hover States */
-a[href*="facebook"]:hover,
-a[href*="instagram"]:hover {
-    background-color: #2563EB !important;
-    color: #ffffff !important;
-}
+
 
 /* Responsive Design */
 @media (max-width: 1199px) {

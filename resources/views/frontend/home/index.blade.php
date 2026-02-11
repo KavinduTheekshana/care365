@@ -36,15 +36,5 @@
     <!--
     @include('frontend.home.specialities_2')
 -->
-
-
-    
-    
-
-    
-
-
-   
-
     
  @endsection
