@@ -1,4 +1,4 @@
-<section>
+<section class="pb-5 pb-md-4">
     <div class="container">
         <div class="row g-4">
 
@@ -38,12 +38,8 @@
             @endforelse
 
             <!-- pagination begin -->
-            <div class="col-lg-12 pt-4 text-center">
-                <div class="d-inline-block">
-                    <nav aria-label="Page navigation example">
-                        {{ $blogs->links() }}
-                    </nav>
-                </div>
+            <div class="col-lg-12 pt-4">
+                {{ $blogs->links('vendor.pagination.custom') }}
             </div>
             <!-- pagination end -->
 
