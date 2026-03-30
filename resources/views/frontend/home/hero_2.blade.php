@@ -1,12 +1,12 @@
 @push('head')
 <!-- Preload hero images with correct attributes for LCP optimization -->
 <link rel="preload" as="image" 
-      href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}" 
+      href="{{ asset('assets/img/hero/1.webp') }}" 
       media="(min-width: 769px)" 
       fetchpriority="high" 
       crossorigin>
 <link rel="preload" as="image" 
-      href="{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}" 
+      href="{{ asset('assets/img/hero/1.webp') }}" 
       media="(max-width: 768px)" 
       fetchpriority="high" 
       crossorigin>
@@ -40,7 +40,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                 <!-- Slide 1 - Main Headline Focus - OPTIMIZED FOR LCP -->
                 <div class="swiper-slide">
                     <!-- Use inline background-image for immediate load, NO loading="lazy" -->
-                    <div class="swiper-inner" style="background-image: url('{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1.webp') }}');">
+                    <div class="swiper-inner" style="background-image: url('{{ asset('assets/img/hero/1.webp') }}');">
                         <div class="sw-caption">
                             <div class="container">
                                 <div class="row g-4 justify-content-center">
@@ -53,8 +53,8 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                                             <p class="slider-teaser mb-3">Trusted by families locally and abroad to care for their loved ones.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2 mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
-                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book a Visit / Virtual Tour</a>
+                                                <a class="btn-main bg-color-2 mb10 mb-3" href="{{ route('lead-form') }}#Admissions-Process">Request Admission Info</a>
+                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('lead-form') }}" style="border: 1px solid white;">Book a Visit / Virtual Tour</a>
                                             </div>
                                         </div>
                                     </div>
@@ -74,8 +74,8 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                 <!-- Slide 2 - Luxury & Compassion Focus -->
                 <div class="swiper-slide">
                     <div class="swiper-inner" 
-                         data-bgimage="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L.webp)" 
-                         data-bgimage-mobile="url(assets/img/Home-img/615b679fef36ca74d291148e_Depositphotos_25178721_L-mobile.webp)" 
+                         data-bgimage="url(assets/img/hero/2.webp)" 
+                         data-bgimage-mobile="url(assets/img/hero/2_mobile.webp)" 
                          loading="lazy">
                         <div class="sw-caption">
                             <div class="container">
@@ -85,12 +85,12 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                                         <div class="spacer-single"></div>
                                         <div class="sw-text-wrapper">
                                             <div class="subtitle mb-2">Premium Luxury Living</div>
-                                            <h2 class="slider-title mb-3">Where Compassion Meets Premium Care</h2>
+                                            <h2 class="slider-title mb-3" style="letter-spacing: 0.02em;">Where Compassion Meets Premium Care</h2>
                                             <p class="slider-teaser mb-3">Experience luxury retirement living with personalized care, safety, and dignity for your loved ones.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2 mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Request Admission Info</a>
-                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Schedule a Virtual Tour</a>
+                                                <a class="btn-main bg-color-2 mb10 mb-3" href="{{ route('lead-form') }}#Admissions-Process">Request Admission Info</a>
+                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('lead-form') }}" style="border: 1px solid white;">Schedule a Virtual Tour</a>
                                             </div>
                                         </div>
                                     </div>
@@ -110,8 +110,8 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                 <!-- Slide 3 - Trust & Family Focus -->
                 <div class="swiper-slide">
                     <div class="swiper-inner" 
-                         data-bgimage="url(assets/img/Home-img/happy-seniors-nursing-home.webp)" 
-                         data-bgimage-mobile="url(assets/img/Home-img/happy-seniors-nursing-home-mobile.webp)" 
+                         data-bgimage="url(assets/img/hero/3.webp)" 
+                         data-bgimage-mobile="url(assets/img/hero/3_mobile.webp)" 
                          loading="lazy">
                         <div class="sw-caption">
                             <div class="container">
@@ -125,8 +125,8 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
                                             <p class="slider-teaser mb-3">Providing exceptional care with dignity, safety, and compassion for elderly residents.</p>
                                             <div class="spacer-10"></div>
                                             <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                                                <a class="btn-main bg-color-2 mb10 mb-3" href="{{ route('wecare') }}#Admissions-Process">Get Admission Details</a>
-                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('contact') }}" style="border: 1px solid white;">Book an In-Person Visit</a>
+                                                <a class="btn-main bg-color-2 mb10 mb-3" href="{{ route('lead-form') }}#Admissions-Process">Get Admission Details</a>
+                                                <a class="btn-main bg-transparent border-light text-light mb10 mb-3" href="{{ route('lead-form') }}" style="border: 1px solid white;">Book an In-Person Visit</a>
                                             </div>
                                         </div>
                                     </div>
@@ -323,6 +323,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     line-height: 1.2 !important;
     margin-bottom: 0.5rem !important;
     color: #ffffff;
+    letter-spacing: 0.05em !important; /* Desktop letter spacing */
 }
 
 section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
@@ -371,11 +372,13 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     position: relative;
 }
 
+/*
 .absolute {
     position: absolute;
     left: 0;
     top: 0;
 }
+/*
 
 /* ====== MOBILE RESPONSIVENESS ====== */
 
@@ -394,7 +397,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     
     /* Mobile background image switching */
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .swiper-slide:first-child .swiper-inner {
-        background-image: url('{{ asset('assets/img/Home-img/personalized-care-tailoring-services-to-individual-needs-hero-1-mobile.webp') }}') !important;
+        background-image: url('{{ asset('assets/img/hero/1_mobile.webp') }}') !important;
     }
     
     /* LIGHTER overlay for mobile - text is already smaller so needs less darkness */
@@ -424,6 +427,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         font-size: 1.75rem !important; /* 28px */
         line-height: 1.3 !important;
         margin-bottom: 0.4rem !important;
+        letter-spacing: 0.03em !important; /* Tablet letter spacing */
     }
     
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
@@ -484,6 +488,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
         font-size: 1.5rem !important; /* 24px */
         line-height: 1.3 !important;
         margin-bottom: 0.3rem !important;
+        letter-spacing: 0.02em !important; /* Mobile letter spacing */
     }
     
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {
@@ -557,6 +562,7 @@ section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidd
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .slider-title {
         font-size: 1.25rem !important; /* 20px */
         line-height: 1.25 !important;
+        letter-spacing: 0.015em !important; /* Extra small letter spacing */
     }
     
     section.section-dark.text-light.no-top.no-bottom.position-relative.overflow-hidden.z-1000 .subtitle {

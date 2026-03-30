@@ -116,7 +116,7 @@
 
 <!-- Breadcrumb Section -->
 <section class="breadcrumb-area mt-6">
-    <img src="{{ asset('assets/images/breadcrumb/r6465465.jpg') }}" 
+    <img src="{{ asset('assets/images/breadcrumb/About Us.webp') }}" 
          alt="About Care365" 
          class="hero-image" 
          fetchpriority="high" loading="lazy">
@@ -131,7 +131,7 @@
 
         <a class="btn-main bg-color-2  mb-3 wow fadeInUp" 
            data-wow-delay=".6s" 
-           href="{{ route('contact') }}">
+           href="{{ route('lead-form') }}">
             Talk to Our Team
         </a>
     </div>

@@ -8,6 +8,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use App\Models\Guardian;
 use App\Models\Payment;
 
 class PaymentsRelationManager extends RelationManager
@@ -166,7 +167,9 @@ class PaymentsRelationManager extends RelationManager
                     ->modalDescription(fn (Payment $record) => 'Send payment receipt email to the guardian of ' . $record->client->name . '?')
                     ->action(function (Payment $record) {
                         $client = $record->client;
-                        $guardian = $client->guardians()->first();
+                        $guardian = Guardian::whereHas('clients', fn ($q) => $q->where('clients.id', $client->id))
+                            ->whereNotNull('email')
+                            ->first();
 
                         if (!$guardian || !$guardian->email) {
                             \Filament\Notifications\Notification::make()

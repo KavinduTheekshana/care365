@@ -9,6 +9,7 @@ class Expense extends Model
 {
     protected $fillable = [
         'branch_id',
+        'user_id',
         'expense_date',
         'category',
         'sub_category',
@@ -34,5 +35,10 @@ class Expense extends Model
     public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

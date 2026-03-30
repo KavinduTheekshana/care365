@@ -91,7 +91,7 @@
                             
                             <!-- Pricing Footer -->
                             <div class="pricing-footer px-4 pb-4 pt-2">
-                                <a href="{{ route('contact') }}" 
+                                <a href="{{ route('lead-form') }}" 
                                    class="enquire-btn d-block text-center py-2 text-decoration-none"
                                    style="background-color: white;
                                           color: #3498db;
@@ -284,7 +284,6 @@
 
 /* Focus States for Accessibility */
 .enquire-btn:focus {
-    outline: 2px solid #f1c40f;
     outline-offset: 2px;
 }
 

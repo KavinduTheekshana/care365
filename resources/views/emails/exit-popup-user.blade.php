@@ -135,25 +135,47 @@
         }
         .footer {
             background: #f5f5f7;
-            padding: 25px 30px;
+            padding: 18px 30px 14px;
             text-align: center;
             border-top: 1px solid #e8e8ed;
         }
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 15px 0;
-            flex-wrap: wrap;
+        .footer-brand {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2B6CB0;
         }
-        .contact-item {
-            color: #515154;
-            font-size: 13px;
-        }
-        .copyright {
+        .footer-contacts {
+            margin: 6px 0;
             font-size: 12px;
+            color: #515154;
+            line-height: 1.8;
+        }
+        .footer-contacts a {
+            color: #515154;
+            text-decoration: none;
+        }
+        .footer-separator {
+            color: #d1d1d6;
+            margin: 0 6px;
+        }
+        .footer-website a {
+            color: #2B6CB0;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .footer-copyright {
+            font-size: 10px;
+            color: #a1a1a6;
+            margin: 10px 0 0;
+        }
+        .footer-credit {
+            font-size: 10px;
+            color: #a1a1a6;
+            margin: 2px 0 0;
+        }
+        .footer-credit a {
             color: #86868b;
-            margin-top: 20px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -213,18 +235,18 @@
         </div>
         
         <div class="footer">
-            <div style="font-size: 20px; font-weight: 600; color: #2B6CB0; margin-bottom: 10px;">
-                Care 365
+            <div class="footer-brand">Care 365</div>
+            <div class="footer-contacts">
+                <a href="tel:+94776604040">+94 77 660 40 40</a>
+                <span class="footer-separator">|</span>
+                <a href="https://wa.me/94779191818">+94 779 191 818</a>
+                <span class="footer-separator">|</span>
+                <a href="mailto:info@care36t5.com">info@care36t5.com</a>
+                <br>
+                <span class="footer-website"><a href="https://care36t5.com/">www.care36t5.com</a></span>
             </div>
-            <p style="margin: 0 0 15px 0; color: #515154; font-size: 14px;">
-                Providing compassionate elder care solutions
-            </p>
-            
-
-            
-            <div class="copyright">
-                © {{ date('Y') }} Care 365. All rights reserved.<br>
-            </div>
+            <p class="footer-copyright">&copy; {{ date('Y') }} Care 365. All rights reserved.</p>
+            <p class="footer-credit">Design &amp; Developed by <a href="https://creatxsoftware.com/" target="_blank">CreatX Software</a></p>
         </div>
     </div>
 </body>

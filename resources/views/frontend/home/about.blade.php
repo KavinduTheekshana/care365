@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-lg-6">
-                <img src="{{ asset('assets/images/about/Landing Page.webp') }}" 
+                <img src="{{ asset('assets/images/about/Landing.webp') }}" 
                     class="img-fluid rounded-10 wow scaleIn object-fit-cover"
                     style="width: 100%; max-height: 700px;" 
                     width="600" height="400" 

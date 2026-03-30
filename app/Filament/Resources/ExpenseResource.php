@@ -109,6 +109,16 @@ class ExpenseResource extends Resource
                             ->native(false)
                             ->columnSpan(1),
 
+                        Forms\Components\Select::make('user_id')
+                            ->label('Spend By')
+                            ->relationship('user', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->nullable()
+                            ->native(false)
+                            ->placeholder('Select a user')
+                            ->columnSpan(1),
+
                         Forms\Components\DatePicker::make('expense_date')
                             ->label('Expense Date')
                             ->required()
@@ -202,6 +212,13 @@ class ExpenseResource extends Resource
                     ->searchable()
                     ->toggleable(),
 
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label('Spend By')
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable()
+                    ->default('-'),
+
                 Tables\Columns\TextColumn::make('category')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
@@ -289,6 +306,33 @@ class ExpenseResource extends Resource
                         'Refund' => 'Refund',
                     ])
                     ->searchable(),
+
+                Tables\Filters\SelectFilter::make('payment_method')
+                    ->label('Payment Method')
+                    ->options([
+                        'Cash' => 'Cash',
+                        'Bank Transfer' => 'Bank Transfer',
+                        'Card' => 'Card',
+                        'Check' => 'Check',
+                        'Online Payment' => 'Online Payment',
+                    ])
+                    ->placeholder('All Methods'),
+
+                Tables\Filters\SelectFilter::make('sub_category')
+                    ->label('Sub Category')
+                    ->options([
+                        'Supermarket' => 'Supermarket',
+                        'Shops' => 'Shops',
+                        'Electricity' => 'Electricity',
+                        'Water' => 'Water',
+                        'Mobile' => 'Mobile',
+                        'Internet' => 'Internet',
+                        'Staff 1' => 'Staff 1',
+                        'Staff 2' => 'Staff 2',
+                        'Staff 3' => 'Staff 3',
+                        'Other' => 'Other',
+                    ])
+                    ->placeholder('All Sub Categories'),
 
                 Tables\Filters\Filter::make('expense_date')
                     ->form([

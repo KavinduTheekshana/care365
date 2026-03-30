@@ -4,8 +4,12 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ClientResource\Pages;
 use App\Filament\Resources\ClientResource\RelationManagers;
+use App\Mail\ClientInvoiceMail;
 use App\Models\Client;
+use App\Models\Guardian;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Mail;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -226,14 +230,6 @@ class ClientResource extends Resource
                             ->preload()
                             ->helperText('Select one or more doctors for this client')
                             ->columnSpanFull(),
-                        Forms\Components\Select::make('guardians')
-                            ->label('Guardians')
-                            ->relationship('guardians', 'name')
-                            ->multiple()
-                            ->searchable()
-                            ->preload()
-                            ->helperText('Select one or more guardians for this client')
-                            ->columnSpanFull(),
                     ])
                     ->columns(2),
             ]);
@@ -352,6 +348,96 @@ class ClientResource extends Resource
                     ->preload(),
             ])
             ->actions([
+                Tables\Actions\Action::make('generate_invoice')
+                    ->label('Invoice')
+                    ->icon('heroicon-o-document-text')
+                    ->color('success')
+                    ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager']))
+                    ->form([
+                        Forms\Components\DatePicker::make('date_from')
+                            ->label('From Date')
+                            ->native(false),
+                        Forms\Components\DatePicker::make('date_until')
+                            ->label('Until Date')
+                            ->native(false)
+                            ->default(today()),
+                        Forms\Components\Toggle::make('send_email')
+                            ->label('Send invoice to guardian\'s email')
+                            ->helperText(fn (callable $get, Client $record = null) => $record
+                                ? ($record->guardians()->whereNotNull('email')->first()?->email
+                                    ? 'Will be sent to: ' . $record->guardians()->whereNotNull('email')->first()->email
+                                    : 'No guardian email found for this client')
+                                : '')
+                            ->default(false)
+                            ->columnSpanFull(),
+                    ])
+                    ->modalHeading('Generate Client Invoice')
+                    ->modalDescription('Select a date range to include in the invoice. Leave blank to include all payments.')
+                    ->modalSubmitActionLabel('Generate PDF')
+                    ->action(function (Client $record, array $data) {
+                        $query = $record->payments()->orderBy('payment_date');
+
+                        if (!empty($data['date_from'])) {
+                            $query->whereDate('payment_date', '>=', $data['date_from']);
+                        }
+                        if (!empty($data['date_until'])) {
+                            $query->whereDate('payment_date', '<=', $data['date_until']);
+                        }
+
+                        $payments = $query->get();
+                        $total = $payments->sum('amount');
+                        $guardian = $record->guardians()->whereNotNull('email')->first();
+                        $branch_name = $record->branch?->name;
+
+                        $invoiceData = [
+                            'client'      => $record,
+                            'payments'    => $payments,
+                            'total'       => $total,
+                            'guardian'    => $guardian,
+                            'branch_name' => $branch_name,
+                            'date_from'   => $data['date_from'] ?? null,
+                            'date_until'  => $data['date_until'] ?? null,
+                        ];
+
+                        // Send email to guardian if requested
+                        if (!empty($data['send_email'])) {
+                            if ($guardian && $guardian->email) {
+                                try {
+                                    Mail::to($guardian->email)
+                                        ->send(new ClientInvoiceMail($record, $guardian, $invoiceData));
+
+                                    \Filament\Notifications\Notification::make()
+                                        ->title('Invoice Sent')
+                                        ->success()
+                                        ->body('Invoice emailed to ' . $guardian->email)
+                                        ->send();
+                                } catch (\Exception $e) {
+                                    \Filament\Notifications\Notification::make()
+                                        ->title('Email Failed')
+                                        ->danger()
+                                        ->body('Could not send email: ' . $e->getMessage())
+                                        ->send();
+                                }
+                            } else {
+                                \Filament\Notifications\Notification::make()
+                                    ->title('No Guardian Email')
+                                    ->warning()
+                                    ->body('No guardian with an email address found for this client.')
+                                    ->send();
+                            }
+                        }
+
+                        $pdf = Pdf::loadView('pdf.client-invoice', $invoiceData)->setPaper('a4');
+
+                        $filename = 'invoice-' . str_replace(' ', '-', strtolower($record->name)) . '-' . now()->format('Ymd') . '.pdf';
+
+                        return response()->streamDownload(
+                            fn () => print($pdf->output()),
+                            $filename,
+                            ['Content-Type' => 'application/pdf']
+                        );
+                    }),
+
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
                     ->visible(fn () => auth()->user()->hasAnyRole(['admin', 'manager'])),
@@ -379,6 +465,7 @@ class ClientResource extends Resource
 
         // Only admin and manager can see doctor notes, documents, payments, and visitors
         if (!$isCareer) {
+            $relations[] = RelationManagers\GuardiansRelationManager::class;
             $relations[] = RelationManagers\DoctorNotesRelationManager::class;
             $relations[] = RelationManagers\DocumentsRelationManager::class;
             $relations[] = RelationManagers\PaymentsRelationManager::class;

@@ -51,7 +51,7 @@ class Client extends Model
      */
     public function guardians(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'client_guardian')
+        return $this->belongsToMany(Guardian::class, 'client_guardian')
             ->withTimestamps();
     }
 
