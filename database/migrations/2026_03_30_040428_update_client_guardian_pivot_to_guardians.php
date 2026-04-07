@@ -15,17 +15,31 @@ return new class extends Migration
         \DB::table('client_guardian')->truncate();
 
         Schema::table('client_guardian', function (Blueprint $table) {
+            // FIRST: Drop the foreign key constraint
+            $table->dropForeign(['user_id']);
+            
+            // SECOND: Drop the column
             $table->dropColumn('user_id');
+            
+            // THIRD: Add the new foreign key column
             $table->foreignId('guardian_id')->constrained('guardians')->cascadeOnDelete();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::table('client_guardian', function (Blueprint $table) {
+            // FIRST: Drop the guardian_id foreign key constraint
             $table->dropForeign(['guardian_id']);
+            
+            // SECOND: Drop the guardian_id column
             $table->dropColumn('guardian_id');
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            
+            // THIRD: Re-add user_id with foreign key constraint
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
         });
     }
 };
