@@ -162,32 +162,93 @@ class PaymentsRelationManager extends RelationManager
                     ->icon('heroicon-o-envelope')
                     ->color('success')
                     ->visible(fn (Payment $record) => auth()->user()->hasRole('admin') && !$record->email_sent)
-                    ->requiresConfirmation()
                     ->modalHeading('Send Payment Receipt')
-                    ->modalDescription(fn (Payment $record) => 'Send payment receipt email to the guardian of ' . $record->client->name . '?')
-                    ->action(function (Payment $record) {
+                    ->modalDescription(fn (Payment $record) => 'Select a guardian or enter a custom email to send the receipt for ' . $record->client->name . '.')
+                    ->form(function (Payment $record): array {
                         $client = $record->client;
-                        $guardian = Guardian::whereHas('clients', fn ($q) => $q->where('clients.id', $client->id))
-                            ->whereNotNull('email')
-                            ->first();
+                        $guardians = Guardian::whereHas('clients', fn ($q) => $q->where('clients.id', $client->id))
+                            ->get();
 
-                        if (!$guardian || !$guardian->email) {
+                        $guardianOptions = $guardians->mapWithKeys(fn ($g) => [
+                            $g->id => $g->name . ($g->email ? ' — ' . $g->email : ' (no email)'),
+                        ])->toArray();
+
+                        return [
+                            Forms\Components\Select::make('guardian_id')
+                                ->label('Select Guardian')
+                                ->options($guardianOptions)
+                                ->placeholder('Select a guardian...')
+                                ->nullable()
+                                ->live()
+                                ->helperText('Choose a guardian from the list, or leave empty and enter a custom email below.'),
+
+                            Forms\Components\TagsInput::make('custom_emails')
+                                ->label('Or Enter Emails Manually')
+                                ->placeholder('Type an email and press Enter')
+                                ->helperText('Add one or more emails. Press Enter after each. These will be used instead of the selected guardian\'s email.')
+                                ->nestedRecursiveRules(['email']),
+                        ];
+                    })
+                    ->action(function (Payment $record, array $data): void {
+                        $client = $record->client;
+                        $customEmails = $data['custom_emails'] ?? [];
+                        $guardianForPdf = null;
+                        $guardianEmail = null;
+                        $guardianName = 'Guardian';
+
+                        if (!empty($data['guardian_id'])) {
+                            $guardian = Guardian::find($data['guardian_id']);
+                            if ($guardian) {
+                                if (!$guardian->email && empty($customEmails)) {
+                                    \Filament\Notifications\Notification::make()
+                                        ->title('Cannot Send Email')
+                                        ->danger()
+                                        ->body('The selected guardian does not have an email address. Please enter emails manually.')
+                                        ->send();
+                                    return;
+                                }
+                                $guardianEmail = $guardian->email;
+                                $guardianName = $guardian->name;
+                                $guardianForPdf = $guardian;
+                            }
+                        }
+
+                        // Collect all recipients: guardian email + manual emails (deduplicated)
+                        $allEmails = collect($customEmails)
+                            ->merge($guardianEmail ? [$guardianEmail] : [])
+                            ->filter()
+                            ->unique()
+                            ->values()
+                            ->all();
+
+                        if (empty($allEmails)) {
                             \Filament\Notifications\Notification::make()
                                 ->title('Cannot Send Email')
                                 ->danger()
-                                ->body('This client has no guardian with email address.')
+                                ->body('Please select a guardian with an email or enter at least one email address.')
                                 ->send();
                             return;
                         }
 
-                        try {
-                            \Illuminate\Support\Facades\Mail::to($guardian->email)
-                                ->send(new \App\Mail\PaymentReceiptMail(
-                                    $record,
-                                    $guardian->name,
-                                    $client->name
-                                ));
+                        $failed = [];
+                        $sent = [];
 
+                        foreach ($allEmails as $email) {
+                            try {
+                                \Illuminate\Support\Facades\Mail::to($email)
+                                    ->send(new \App\Mail\PaymentReceiptMail(
+                                        $record,
+                                        $guardianName,
+                                        $client->name,
+                                        $guardianForPdf
+                                    ));
+                                $sent[] = $email;
+                            } catch (\Exception $e) {
+                                $failed[] = $email . ' (' . $e->getMessage() . ')';
+                            }
+                        }
+
+                        if (!empty($sent)) {
                             $record->update([
                                 'email_sent' => true,
                                 'email_sent_at' => now(),
@@ -196,13 +257,15 @@ class PaymentsRelationManager extends RelationManager
                             \Filament\Notifications\Notification::make()
                                 ->title('Email Sent Successfully')
                                 ->success()
-                                ->body('Payment receipt has been sent to ' . $guardian->email)
+                                ->body('Receipt sent to: ' . implode(', ', $sent))
                                 ->send();
-                        } catch (\Exception $e) {
+                        }
+
+                        if (!empty($failed)) {
                             \Filament\Notifications\Notification::make()
-                                ->title('Email Failed')
+                                ->title('Some Emails Failed')
                                 ->danger()
-                                ->body('Failed to send email: ' . $e->getMessage())
+                                ->body('Failed: ' . implode('; ', $failed))
                                 ->send();
                         }
                     }),
