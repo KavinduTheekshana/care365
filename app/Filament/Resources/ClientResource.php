@@ -381,6 +381,7 @@ class ClientResource extends Resource
             $relations[] = RelationManagers\GuardiansRelationManager::class;
             $relations[] = RelationManagers\DoctorNotesRelationManager::class;
             $relations[] = RelationManagers\DocumentsRelationManager::class;
+            $relations[] = RelationManagers\InvoicesRelationManager::class;
             $relations[] = RelationManagers\PaymentsRelationManager::class;
             $relations[] = RelationManagers\VisitorsRelationManager::class;
         }
