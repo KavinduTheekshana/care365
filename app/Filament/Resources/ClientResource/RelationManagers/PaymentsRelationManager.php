@@ -317,13 +317,16 @@ class PaymentsRelationManager extends RelationManager
         $sent   = [];
         $failed = [];
 
+        $emailBody    = view('emails.payment-receipt', ['guardianName' => $guardianName])->render();
+        $pdfOutput    = $pdf->output();
+
         foreach ($allEmails as $email) {
             try {
-                Mail::send([], [], function ($message) use ($email, $pdf, $filename, $client) {
+                Mail::send([], [], function ($message) use ($email, $emailBody, $pdfOutput, $filename, $client) {
                     $message->to($email)
                         ->subject('Payment Receipt — ' . $client->name . ' | CARE 365')
-                        ->html('<p>Dear Guardian,</p><p>Please find the attached payment receipt for <strong>' . $client->name . '</strong>.</p><p>Thank you,<br>Care 365 Team</p>')
-                        ->attachData($pdf->output(), $filename, ['mime' => 'application/pdf']);
+                        ->html($emailBody)
+                        ->attachData($pdfOutput, $filename, ['mime' => 'application/pdf']);
                 });
                 $sent[] = $email;
             } catch (\Exception $e) {
