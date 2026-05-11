@@ -26,25 +26,16 @@ class Payment extends Model
         'amount' => 'decimal:2',
     ];
 
-    /**
-     * The client this payment is for
-     */
     public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);
     }
 
-    /**
-     * The branch where the payment was made
-     */
     public function branch(): BelongsTo
     {
         return $this->belongsTo(Branch::class);
     }
 
-    /**
-     * The user who created this payment record
-     */
     public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
