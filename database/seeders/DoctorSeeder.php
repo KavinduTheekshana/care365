@@ -77,7 +77,10 @@ class DoctorSeeder extends Seeder
         ];
 
         foreach ($doctors as $doctorData) {
-            $doctor = Doctor::create($doctorData);
+            Doctor::firstOrCreate(
+                ['email' => $doctorData['email']],
+                $doctorData
+            );
         }
 
         // Assign doctors to clients
@@ -86,14 +89,16 @@ class DoctorSeeder extends Seeder
 
         if ($clients->isNotEmpty() && $allDoctors->isNotEmpty()) {
             foreach ($clients as $client) {
-                // Assign 1-3 doctors to each client
+                $existingDoctorIds = $client->doctors()->pluck('doctors.id')->toArray();
                 $assignedDoctors = $allDoctors->random(rand(1, 3));
 
                 foreach ($assignedDoctors as $doctor) {
-                    $client->doctors()->attach($doctor->id, [
-                        'assigned_date' => today()->subDays(rand(1, 90)),
-                        'notes' => 'Regular ' . strtolower($doctor->specialization) . ' consultation',
-                    ]);
+                    if (!in_array($doctor->id, $existingDoctorIds)) {
+                        $client->doctors()->attach($doctor->id, [
+                            'assigned_date' => today()->subDays(rand(1, 90)),
+                            'notes' => 'Regular ' . strtolower($doctor->specialization) . ' consultation',
+                        ]);
+                    }
                 }
             }
         }

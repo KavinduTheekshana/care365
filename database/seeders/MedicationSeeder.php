@@ -37,6 +37,10 @@ class MedicationSeeder extends Seeder
         $frequencies = ['morning', 'afternoon', 'evening', 'morning_afternoon', 'morning_evening', 'afternoon_evening', 'all_three'];
 
         foreach ($clients as $client) {
+            if ($client->medications()->exists()) {
+                continue;
+            }
+
             // Give each client 2-5 medications
             $medicationCount = rand(2, 5);
             $selectedMeds = collect($commonMedications)->random($medicationCount);

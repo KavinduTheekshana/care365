@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Client;
+use App\Models\Guardian;
 use App\Models\User;
 use App\Models\Branch;
 use Carbon\Carbon;
@@ -14,9 +15,9 @@ class ClientSeeder extends Seeder
     {
         $branches = Branch::all();
         $careers = User::whereHas('roles', fn($q) => $q->where('name', 'career'))->get();
-        $guardians = User::whereHas('roles', fn($q) => $q->where('name', 'user'))->get();
+        $guardians = Guardian::all();
 
-        if ($branches->isEmpty() || $careers->isEmpty() || $guardians->isEmpty()) {
+        if ($branches->isEmpty() || $careers->isEmpty()) {
             $this->command->warn('Required data missing. Ensure branches and users are seeded first.');
             return;
         }
@@ -118,28 +119,31 @@ class ClientSeeder extends Seeder
         ];
 
         foreach ($clients as $index => $clientData) {
-            $client = Client::create([
-                'reg_number' => $clientData['reg_number'],
-                'date' => today()->subDays(rand(30, 180)),
-                'name' => $clientData['name'],
-                'gender' => $clientData['gender'],
-                'dob' => $clientData['dob'],
-                'age' => $clientData['age'],
-                'height_cm' => $clientData['height_cm'],
-                'weight_kg' => $clientData['weight_kg'],
-                'bmi' => round($clientData['weight_kg'] / (($clientData['height_cm'] / 100) ** 2), 2),
-                'waist_circumference' => $clientData['waist_circumference'],
-                'hip_circumference' => $clientData['hip_circumference'],
-                'co_morbidities_risk_factors' => $clientData['co_morbidities_risk_factors'],
-                'complaints' => $clientData['complaints'],
-                'officer_in_charge_id' => $careers->random()->id,
-                'branch_id' => $branches->random()->id,
-            ]);
-
-            // Attach 1-2 guardians
-            $client->guardians()->attach(
-                $guardians->random(rand(1, 2))->pluck('id')->toArray()
+            $client = Client::firstOrCreate(
+                ['reg_number' => $clientData['reg_number']],
+                [
+                    'date' => today()->subDays(rand(30, 180)),
+                    'name' => $clientData['name'],
+                    'gender' => $clientData['gender'],
+                    'dob' => $clientData['dob'],
+                    'age' => $clientData['age'],
+                    'height_cm' => $clientData['height_cm'],
+                    'weight_kg' => $clientData['weight_kg'],
+                    'bmi' => round($clientData['weight_kg'] / (($clientData['height_cm'] / 100) ** 2), 2),
+                    'waist_circumference' => $clientData['waist_circumference'],
+                    'hip_circumference' => $clientData['hip_circumference'],
+                    'co_morbidities_risk_factors' => $clientData['co_morbidities_risk_factors'],
+                    'complaints' => $clientData['complaints'],
+                    'officer_in_charge_id' => $careers->random()->id,
+                    'branch_id' => $branches->random()->id,
+                ]
             );
+
+            if ($client->wasRecentlyCreated && $guardians->isNotEmpty()) {
+                $client->guardians()->attach(
+                    $guardians->random(min(rand(1, 2), $guardians->count()))->pluck('id')->toArray()
+                );
+            }
         }
 
         $this->command->info('Clients created successfully with guardians!');
