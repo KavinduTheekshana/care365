@@ -3,18 +3,21 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Notifications\ResetPasswordNotification;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements FilamentUser, CanResetPasswordContract
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasRoles;
+    use HasFactory, Notifiable, HasRoles, CanResetPassword;
 
     /**
      * The attributes that are mass assignable.
@@ -52,12 +55,21 @@ class User extends Authenticatable implements FilamentUser
     }
 
     /**
+     * Send the password reset notification immediately
+     * using notifyNow() to bypass queue completely.
+     * Works regardless of QUEUE_CONNECTION setting.
+     */
+    public function sendPasswordResetNotification($token): void
+    {
+        $notification = new ResetPasswordNotification($token);
+        $this->notifyNow($notification); // bypasses queue always
+    }
+
+    /**
      * Determine if the user can access the Filament panel.
      */
     public function canAccessPanel(Panel $panel): bool
     {
-        // All users with roles can access the panel
-        // But their permissions will differ based on role
         return $this->hasAnyRole(['admin', 'manager', 'career', 'chef', 'user']);
     }
 
