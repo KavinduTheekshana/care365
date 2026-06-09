@@ -126,11 +126,11 @@ class InvoicesRelationManager extends RelationManager
 
                         Forms\Components\TextInput::make('bank_ac_number_lkr')
                             ->label('Account No (LKR)')
-                            ->default('20410016001643 LKR'),
+                            ->default('204100160016433 LKR'),
 
                         Forms\Components\TextInput::make('bank_ac_number_usd')
                             ->label('Account No (USD)')
-                            ->default('20440216001643 USD')
+                            ->default('204402160016433 USD')
                             ->nullable(),
 
                         Forms\Components\TextInput::make('bank_name')
