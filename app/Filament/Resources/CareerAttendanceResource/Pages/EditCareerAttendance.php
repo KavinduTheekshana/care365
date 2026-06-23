@@ -26,4 +26,4 @@ class EditCareerAttendance extends EditRecord
 
         return $data;
     }
-}
+} 
