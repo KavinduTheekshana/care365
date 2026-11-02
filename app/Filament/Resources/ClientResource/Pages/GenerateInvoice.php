@@ -5,6 +5,7 @@ namespace App\Filament\Resources\ClientResource\Pages;
 use App\Filament\Resources\ClientResource;
 use App\Mail\ClientInvoiceMail;
 use App\Models\Client;
+use App\Models\PaymentType;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Forms;
 use Filament\Forms\Concerns\InteractsWithForms;
@@ -66,14 +67,7 @@ class GenerateInvoice extends Page implements HasForms
                     ->schema([
                         Forms\Components\CheckboxList::make('payment_types')
                             ->label('')
-                            ->options([
-                                'Monthly Fee'      => 'Monthly Fee',
-                                'Medical Expenses' => 'Medical Expenses',
-                                'Activity Fee'     => 'Activity Fee',
-                                'Special Care'     => 'Special Care',
-                                'Equipment'        => 'Equipment',
-                                'Other'            => 'Other',
-                            ])
+                            ->options(fn () => PaymentType::options())
                             ->columns(2)
                             ->columnSpanFull()
                             ->live(),
