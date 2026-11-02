@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources\ClientResource\RelationManagers;
 
+use App\Filament\Forms\Components\PaymentTypeSelect;
 use App\Models\Guardian;
 use App\Models\Payment;
+use App\Models\PaymentType;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -26,19 +28,7 @@ class PaymentsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('payment_type')
-                    ->label('Payment Type')
-                    ->options([
-                        'Monthly Fee'      => 'Monthly Fee',
-                        'Medical Expenses' => 'Medical Expenses',
-                        'Activity Fee'     => 'Activity Fee',
-                        'Special Care'     => 'Special Care',
-                        'Equipment'        => 'Equipment',
-                        'Other'            => 'Other',
-                    ])
-                    ->required()
-                    ->searchable()
-                    ->native(false),
+                PaymentTypeSelect::make(),
 
                 Forms\Components\DatePicker::make('payment_date')
                     ->label('Payment Date')
@@ -138,14 +128,8 @@ class PaymentsRelationManager extends RelationManager
 
                 Tables\Filters\SelectFilter::make('payment_type')
                     ->label('Payment Type')
-                    ->options([
-                        'Monthly Fee'      => 'Monthly Fee',
-                        'Medical Expenses' => 'Medical Expenses',
-                        'Activity Fee'     => 'Activity Fee',
-                        'Special Care'     => 'Special Care',
-                        'Equipment'        => 'Equipment',
-                        'Other'            => 'Other',
-                    ])
+                    ->options(fn () => PaymentType::options())
+                    ->searchable()
                     ->placeholder('All Types'),
 
                 Tables\Filters\TernaryFilter::make('email_sent')

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\ClientResource\RelationManagers;
 use App\Mail\ClientInvoiceDocMail;
 use App\Models\ClientInvoice;
 use App\Models\Guardian;
+use App\Models\PaymentType;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -65,16 +66,19 @@ class InvoicesRelationManager extends RelationManager
                             ->label('')
                             ->relationship()
                             ->schema([
+                                // Free text with payment type suggestions — type anything not in the list
                                 Forms\Components\TextInput::make('item_name')
-                                    ->label('Item')
+                                    ->label('Item / Payment Type')
                                     ->required()
-                                    ->placeholder('e.g. One Month Advance Deposit')
-                                    ->columnSpan(2),
+                                    ->datalist(fn () => array_values(PaymentType::options()))
+                                    ->placeholder('Pick a type or type your own')
+                                    ->live(onBlur: true)
+                                    ->columnSpan(3),
 
                                 Forms\Components\TextInput::make('description')
                                     ->label('Description / Sub-text')
                                     ->placeholder('e.g. Refundable Deposit - T & C Apply')
-                                    ->columnSpan(2),
+                                    ->columnSpan(3),
 
                                 Forms\Components\TextInput::make('price')
                                     ->label('Price (Rs)')
@@ -87,7 +91,8 @@ class InvoicesRelationManager extends RelationManager
                                         $price    = (float) ($get('price') ?? 0);
                                         $discount = (float) ($get('discount') ?? 0);
                                         $set('amount', max(0, round($price - $discount, 2)));
-                                    }),
+                                    })
+                                    ->columnSpan(2),
 
                                 Forms\Components\TextInput::make('discount')
                                     ->label('Discount (Rs)')
@@ -99,19 +104,29 @@ class InvoicesRelationManager extends RelationManager
                                         $price    = (float) ($get('price') ?? 0);
                                         $discount = (float) ($get('discount') ?? 0);
                                         $set('amount', max(0, round($price - $discount, 2)));
-                                    }),
+                                    })
+                                    ->columnSpan(2),
 
                                 Forms\Components\TextInput::make('amount')
                                     ->label('Amount (Rs)')
                                     ->numeric()
                                     ->default(0)
                                     ->disabled()
-                                    ->dehydrated(),
+                                    ->dehydrated()
+                                    ->columnSpan(2),
                             ])
-                            ->columns(3)
+                            ->columns(12)
                             ->defaultItems(1)
-                            ->addActionLabel('Add Item')
-                            ->reorderable('sort_order')
+                            ->addable()
+                            ->deletable()
+                            ->addActionLabel('Add Another Item')
+                            ->addAction(fn (Forms\Components\Actions\Action $action) => $action
+                                ->button()
+                                ->color('primary')
+                                ->icon('heroicon-m-plus'))
+                            ->reorderable()
+                            ->orderColumn('sort_order')
+                            ->itemLabel(fn (array $state): ?string => $state['item_name'] ?? null)
                             ->collapsible()
                             ->columnSpanFull(),
                     ]),
@@ -214,7 +229,8 @@ class InvoicesRelationManager extends RelationManager
             ->headerActions([
                 Tables\Actions\CreateAction::make()
                     ->label('New Invoice / Quotation')
-                                        ->mutateFormDataUsing(function (array $data): array {
+                    ->modalWidth('7xl')
+                    ->mutateFormDataUsing(function (array $data): array {
                         $data['branch_id']  = $this->getOwnerRecord()->branch_id;
                         $data['created_by'] = auth()->id();
                         return $data;
@@ -350,7 +366,8 @@ class InvoicesRelationManager extends RelationManager
                     }),
 
                 Tables\Actions\EditAction::make()
-                                        ->after(function (ClientInvoice $record): void {
+                    ->modalWidth('7xl')
+                    ->after(function (ClientInvoice $record): void {
                         $record->recalculateTotals();
                     }),
 
