@@ -247,6 +247,13 @@
     </div>
     @endif
 
+    {{-- Payment Type Filter Badge --}}
+    @if(!empty($payment_types))
+    <div class="period" style="background:#f0fdf4; border-color:#bbf7d0; color:#15803d;">
+        Types: {{ implode(', ', $payment_types) }}
+    </div>
+    @endif
+
     {{-- Items Table --}}
     <table class="items">
         <thead>

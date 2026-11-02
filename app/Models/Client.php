@@ -136,4 +136,12 @@ class Client extends Model
     {
         return $this->hasMany(VisitorLog::class);
     }
+
+    /**
+     * Invoices & quotations for this client
+     */
+    public function invoices()
+    {
+        return $this->hasMany(ClientInvoice::class);
+    }
 }

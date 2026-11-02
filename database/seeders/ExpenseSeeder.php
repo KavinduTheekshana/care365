@@ -450,6 +450,11 @@ class ExpenseSeeder extends Seeder
             ],
         ];
 
+        if (Expense::where('branch_id', $branch->id)->exists()) {
+            $this->command->warn('Expenses already exist. Skipping expense seeding.');
+            return;
+        }
+
         foreach ($expenses as $expense) {
             Expense::create($expense);
         }

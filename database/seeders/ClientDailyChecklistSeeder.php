@@ -35,18 +35,22 @@ class ClientDailyChecklistSeeder extends Seeder
                         $completedBy = $completed ? $careers->random()->id : null;
                         $completedAt = $completed ? $date->copy()->setTime(rand(8, 18), rand(0, 59)) : null;
 
-                        ClientDailyChecklist::create([
-                            'client_id' => $client->id,
-                            'date' => $date->toDateString(),
-                            'category' => $category,
-                            'task_key' => $taskKey,
-                            'task_name' => $taskName,
-                            'day_of_week' => $dayOfWeek,
-                            'completed' => $completed,
-                            'completed_by' => $completedBy,
-                            'completed_at' => $completedAt,
-                            'notes' => $completed && rand(1, 100) <= 30 ? 'Completed successfully' : null,
-                        ]);
+                        ClientDailyChecklist::firstOrCreate(
+                            [
+                                'client_id' => $client->id,
+                                'date' => $date->toDateString(),
+                                'category' => $category,
+                                'task_key' => $taskKey,
+                            ],
+                            [
+                                'task_name' => $taskName,
+                                'day_of_week' => $dayOfWeek,
+                                'completed' => $completed,
+                                'completed_by' => $completedBy,
+                                'completed_at' => $completedAt,
+                                'notes' => $completed && rand(1, 100) <= 30 ? 'Completed successfully' : null,
+                            ]
+                        );
                     }
                 }
             }

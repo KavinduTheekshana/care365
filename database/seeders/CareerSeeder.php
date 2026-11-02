@@ -263,23 +263,26 @@ class CareerSeeder extends Seeder
         ];
 
         foreach ($careers as $careerData) {
-            // Create user account for this career
-            $userName = explode(' ', $careerData['full_name']);
-            $user = User::create([
-                'name' => $careerData['full_name'],
-                'email' => $careerData['email'],
-                'password' => Hash::make('password123'),
-                'branch_id' => $branches->random()->id,
-            ]);
+            $user = User::firstOrCreate(
+                ['email' => $careerData['email']],
+                [
+                    'name' => $careerData['full_name'],
+                    'password' => Hash::make('password123'),
+                    'branch_id' => $branches->random()->id,
+                ]
+            );
 
-            // Assign career role
-            $user->assignRole('career');
+            if (!$user->hasRole('career')) {
+                $user->assignRole('career');
+            }
 
             // Calculate age
             $age = now()->diffInYears($careerData['date_of_birth']);
 
             // Create career profile
-            Career::create([
+            Career::firstOrCreate(
+                ['employee_id' => $careerData['employee_id']],
+                [
                 'user_id' => $user->id,
                 'employee_id' => $careerData['employee_id'],
                 'full_name' => $careerData['full_name'],
@@ -313,7 +316,8 @@ class CareerSeeder extends Seeder
                 'highest_qualification' => $careerData['highest_qualification'],
                 'years_of_experience' => $careerData['years_of_experience'],
                 'certifications' => $careerData['certifications'],
-            ]);
+                ]
+            );
         }
 
         $this->command->info('Successfully created 8 career staff records!');

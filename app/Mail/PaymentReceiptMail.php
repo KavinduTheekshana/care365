@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Guardian;
 use App\Models\Payment;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Bus\Queueable;
@@ -18,15 +19,17 @@ class PaymentReceiptMail extends Mailable
     public $payment;
     public $guardianName;
     public $clientName;
+    public ?Guardian $guardian;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(Payment $payment, string $guardianName, string $clientName)
+    public function __construct(Payment $payment, string $guardianName, string $clientName, ?Guardian $guardian = null)
     {
         $this->payment = $payment;
         $this->guardianName = $guardianName;
         $this->clientName = $clientName;
+        $this->guardian = $guardian;
     }
 
     /**
@@ -57,21 +60,21 @@ class PaymentReceiptMail extends Mailable
     public function attachments(): array
     {
         $client = $this->payment->client;
-        $guardian = $client->guardians()->first();
+        $guardian = $this->guardian ?? $client->guardians()->first();
 
         $pdfData = [
-            'payment' => $this->payment,
-            'client_name' => $client->name,
+            'payments'          => collect([$this->payment]),
+            'client_name'       => $client->name,
             'client_reg_number' => $client->reg_number,
-            'branch_name' => $this->payment->branch->name ?? null,
-            'guardian_name' => $guardian->name ?? null,
-            'guardian_email' => $guardian->email ?? null,
-            'guardian_phone' => $guardian->phone ?? null,
+            'branch_name'       => $this->payment->branch->name ?? null,
+            'guardian_name'     => $guardian->name ?? $this->guardianName,
+            'guardian_email'    => $guardian->email ?? null,
+            'guardian_phone'    => $guardian->phone ?? null,
         ];
 
-        $pdf = Pdf::loadView('pdf.payment-receipt', $pdfData);
+        $pdf = Pdf::loadView('pdf.payment-receipt', $pdfData)->setPaper('a4');
 
-        $filename = 'payment_receipt_' . str_pad($this->payment->id, 6, '0', STR_PAD_LEFT) . '.pdf';
+        $filename = 'receipt-' . str_pad($this->payment->id, 6, '0', STR_PAD_LEFT) . '.pdf';
 
         return [
             Attachment::fromData(fn () => $pdf->output(), $filename)

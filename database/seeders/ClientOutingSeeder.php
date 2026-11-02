@@ -50,6 +50,10 @@ class ClientOutingSeeder extends Seeder
         $transportModes = ['Car', 'Wheelchair', 'Walking', 'Taxi', 'Ambulance', 'Family Vehicle'];
 
         foreach ($clients as $client) {
+            if ($client->outings()->exists()) {
+                continue;
+            }
+
             // Create 3-7 outings for each client
             $outingCount = rand(3, 7);
 
